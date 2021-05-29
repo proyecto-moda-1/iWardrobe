@@ -31,11 +31,17 @@ class User(db.Model):
             # do not serialize the password, its a security breach
         }
 
+# class MyEnum(enum.Enum):
+#     one = "mujer"
+#     two = "hombre"
+#     three = "no binario"
+
+
 class Clothing(db.Model):
      id = db.Column(db.Integer, primary_key=True)
     #  user_id = db.Column(db.String(120), db.ForeingKey('user.id'), unique=True, nullable=False)
      image = db.Column(db.String)
-    #  categories = db.Column(db.String(120), unique=True, nullable=False)('value', Enum(MyEnum)) no sé muy bien cómo poner el enum, en la pagina no me queda claro el ejemlo
+    #  categories = db.Column(db.Enum(MyEnum), unique=False, nullable=False)
      clean= db.Column(db.String(120), unique=True, nullable=False)
 
      def __repr__(self):
