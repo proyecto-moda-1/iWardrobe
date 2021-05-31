@@ -18,7 +18,7 @@ def handle_hello():
     return jsonify(response_body), 200
     
 # @app.route('/clothing', methods=['GET', 'POST'])
-# def handle_hello():
+# def clothing_hello():
 
 #     response_body = {
 #         "msg": "Hello, this is your GET /user response "
@@ -27,7 +27,7 @@ def handle_hello():
 #     return jsonify(response_body), 200
 
 # @app.route('/outfits', methods=['GET', 'POST'])
-# def handle_hello():
+# def outfits_hello():
 
 #     response_body = {
 #         "msg": "Hello, this is your GET /user response "
@@ -36,7 +36,7 @@ def handle_hello():
 #     return jsonify(response_body), 200
 
 # @app.route('/collection', methods=['GET', 'POST'])
-# def handle_hello():
+# def collection_hello():
 
 #     response_body = {
 #         "msg": "Hello, this is your GET /user response "
@@ -44,11 +44,3 @@ def handle_hello():
 
 #     return jsonify(response_body), 200            
 
-# @app.route('/clothe_item', methods=['GET'])
-# def handle_hello():
-
-#     response_body = {
-#         "msg": "Hello, this is your GET /user response "
-#     }
-
-#     return jsonify(response_body), 200
