@@ -32,17 +32,17 @@ class User(db.Model):
         }
 
 # class MyEnum(enum.Enum):
-#     one = "mujer"
-#     two = "hombre"
-#     three = "no binario"
+#     one = "parte superior"
+#     two = "parte inferior"
+#     three = "....."
 
 
 class Clothing(db.Model):
      id = db.Column(db.Integer, primary_key=True)
-    #  user_id = db.Column(db.String(120), db.ForeingKey('user.id'), unique=True, nullable=False)
+    #  user_id = db.Column(db.Integer, db.ForeingKey('user.id'), unique=True, nullable=False)
      image = db.Column(db.String)
     #  categories = db.Column(db.Enum(MyEnum), unique=False, nullable=False)
-     clean= db.Column(db.String(120), unique=True, nullable=False)
+     clean= db.Column(db.Boolean, unique=True, nullable=False)
 
      def __repr__(self):
          return '<Clothing %r>' % self.clothing
@@ -56,13 +56,14 @@ class Clothing(db.Model):
              "clean": self.clean,
          }      
      
-# class ClothingOutfit (db.Model):
-#      clothing_outfit = db.relationship('Outfits', backref= "clothing", lazy=True)
-    #  HAY QUE REVISARLA   
+# clothing_outfit = db.Table('clothing_outfit',
+#     db.Column('clothing.id', db.Integer, db.ForeingKey('clothing.id', primary_key=True),
+#     db.Column('outfit.id', db.Integer, db.ForeingKey('outfit.id', primary_key=True)
+# ) 
 
 class Outfits(db.Model):
      id = db.Column(db.Integer, primary_key=True)
-    #  user_id = db.Column(db.String(120),db.ForeingKey('user.id'), unique=True, nullable=False)
+    #  user_id = db.Column(db.Integer,db.ForeingKey('user.id'), unique=True, nullable=False)
 
      def __repr__(self):
               return '<Outfits %r>' % self.outfits
@@ -73,14 +74,14 @@ class Outfits(db.Model):
               "user_id": self.user_id,
          }      
 
-# class CollectionOutfit (db.Model):
-#      collection_outfit= db.relationship('Collection', backref= "outfits", lazy=True)
-    #  HAY QUE REVISARLA
+# collection_outfit = db.Table('collection_outfit',
+#     db.Column('outfit.id', db.Integer, db.ForeingKey('outfit.id', primary_key=True),
+#     db.Column('collection.id', db.Integer, db.ForeingKey('collection.id', primary_key=True)
+# )
 
-     
 class Collection (db.Model):
      id = db.Column(db.Integer, primary_key=True)
-    #  user_id = db.Column(db.String(120), unique=True, nullable=False), ForeingKey('user.id')
+    #  user_id = db.Column(db.Integer, unique=True, nullable=False), ForeingKey('user.id')
      image = db.Column(db.String(120))
 
      def __repr__(self):
