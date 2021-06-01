@@ -66,7 +66,7 @@ class Clothing(db.Model):
              "clean": self.clean,
          }      
      
-class Outfits(db.Model):
+class Outfit(db.Model):
      id = db.Column(db.Integer, primary_key=True)
     #  user_id = db.Column(db.Integer, unique=True, nullable=False)
      name = db.Column(db.String(120))

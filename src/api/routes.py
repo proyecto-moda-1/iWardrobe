@@ -2,7 +2,7 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User, Clothing
+from api.models import db, User, Clothing, Outfit
 from api.utils import generate_sitemap, APIException
 
 api = Blueprint('api', __name__)
@@ -20,25 +20,26 @@ def get_all_users():
     return jsonify(serialized_users), 200
     
 @api.route('/clothing', methods=['GET', 'POST'])
-def get_all_clothing():
+def get_all_clothings():
+    all_clothings = Clothing.query.all()
 
-    all_clothing = clothing.query.all()
+    serialized_clothings = []
+    for clothing in all_clothings:
+        serialized_clothings.append(clothing.serialize())
+    print(all_clothings)
 
-    serialized_clothing = []
-    for clothing in all_clothing:
-        serialized_clothing.append(clothing.serialize())
-    print(all_clothing)
+    return jsonify(serialized_clothings), 200
 
-    return jsonify(serialized_clothing), 200
+@api.route('/outfit', methods=['GET', 'POST'])
+def get_all_outfits():
+    all_outfits = Outfit.query.all()
 
-# @api.route('/outfits', methods=['GET', 'POST'])
-# def outfits_hello():
+    serialized_outfits = []
+    for outfit in all_outfits:
+        serialized_outfits.append(outfit.serialize())
+    print(all_outfits)
 
-#     response_body = {
-#         "msg": "Hello, this is your GET /user response "
-#     }
-
-#     return jsonify(response_body), 200
+    return jsonify(serialized_outfits), 200
 
 # @app.route('/collection', methods=['GET', 'POST'])
 # def collection_hello():
