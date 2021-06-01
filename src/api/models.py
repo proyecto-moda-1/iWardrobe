@@ -72,7 +72,7 @@ class Outfit(db.Model):
      name = db.Column(db.String(120))
 
      def __repr__(self):
-              return '<Outfits %r>' % self.outfits
+              return '<Outfit %r>' % self.name
 
      def serialize(self):
           return {

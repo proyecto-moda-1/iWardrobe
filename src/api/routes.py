@@ -2,7 +2,7 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User, Clothing, Outfit
+from api.models import db, User, Clothing, Outfit, Collection
 from api.utils import generate_sitemap, APIException
 
 api = Blueprint('api', __name__)
@@ -41,11 +41,22 @@ def get_all_outfits():
 
     return jsonify(serialized_outfits), 200
 
-# @app.route('/collection', methods=['GET', 'POST'])
-# def collection_hello():
+@api.route('/collection', methods=['GET', 'POST'])
+def get_all_collections():
+    # all_collections = Collection.query.all
 
-#     response_body = {
-#         "msg": "Hello, this is your GET /user response "
-#     }
+    # serialized_collections = []
+    # for collection in all_collections:
+    #     serialized_collections.append(collection.serialize())
+    # print(all_collections)
 
-#     return jsonify(response_body), 200            
+    # return jsonify(serialized_collections), 200   
+
+
+    response_body = {
+        "msg": "Hello, this is your GET /user response "
+    }
+
+    return jsonify(response_body), 200   
+
+        
