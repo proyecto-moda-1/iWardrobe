@@ -1,27 +1,18 @@
-// import React, { useContext } from "react";
-// import { Context } from "../store/appContext";
-// import "../../styles/login.scss";
+// import React, { useContext, useState } from "react";
 
-// export const Login = () => {
-//     const { store, actions } = useContext(Context);
+// export default function Login() {
+//     const [username, setUsername] = useState("")
+//     const [password, setPassword] = useState("")
 
-//     return (
-//         <div id="login-code-container">
-//             <div name="loginform" id="loginform" action="/wp-login.php" method="post">
-//                 <div class="login-username">
-//                     <label for="user_login">Nombre de usuario o dirección de correo</label>
-//                     <input type="text" name="log" id="user_login" class="input" value="" size="20" />
-//                 </div>
-//                 <div class="login-password">
-//                     <label for="user_pass">Contraseña</label>
-//                     <input type="password" name="pwd" id="user_pass" class="input" value="" size="20" />
-//                 </div>
-//                 <p class="login-submit" />
-//                 <input type="submit" name="wp-submit" id="wp-submit" class="button button-primary" value="Acceder" />
-//                 <input type="hidden" name="redirect_to" value="/" />
-//             </div>
-//         </div>
-//         <a href="/wp-login.php?action=logout&amp;redirect_to=%2F">Desconectar</a>
+//     const handleSubmit = (e) => {
+//         e.preventDefault()
+//     }
+// }
 
-// 	)
-// };
+// return (
+//     <form onSubmit={handleSubmit}>
+//         <input placeholder="username" onChange={e => setUsername(e.target.value)} value={username} />
+//         <input type="password" placenholder="password" onChange={e => setPassword(e.target.value)} value={password} />
+//         <button>Login</button>
+//     </form>
+// )
