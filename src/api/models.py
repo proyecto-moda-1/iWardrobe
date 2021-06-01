@@ -46,6 +46,7 @@ class Clothing(db.Model):
      id = db.Column(db.Integer, primary_key=True)
     #  user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
      image = db.Column(db.String)
+     name = db.Column(db.String(120))
      category = db.Column(db.Enum(Category), unique=False, nullable=False)
      clean= db.Column(db.Boolean, unique=True, nullable=False)
 
@@ -53,20 +54,21 @@ class Clothing(db.Model):
      # outfits = db.relationship('....', secondary=clothing_outfit , back_populates="....", lazy=True)
 
      def __repr__(self):
-         return '<Clothing %r>' % self.user
+         return '<Clothing %r>' % self.name
 
      def serialize(self):
          return {
             "id": self.id,
-             "user_id": self.user_id,
+            #  "user_id": self.user_id,
              "image": self.image,
-            #  "categories": self.categories.name,
+             "name": self.name,
+             "categories": self.category.name,
              "clean": self.clean,
          }      
      
 class Outfits(db.Model):
      id = db.Column(db.Integer, primary_key=True)
-     user_id = db.Column(db.Integer, unique=True, nullable=False)
+    #  user_id = db.Column(db.Integer, unique=True, nullable=False)
      name = db.Column(db.String(120))
 
      def __repr__(self):
@@ -75,23 +77,25 @@ class Outfits(db.Model):
      def serialize(self):
           return {
               "id": self.id,
-              "user_id": self.user_id,
+            #   "user_id": self.user_id,
+              "name": self.name,
          } 
 
 class Collection(db.Model):
      id = db.Column(db.Integer, primary_key=True)
      image = db.Column(db.String(120))
-     user_id = db.Column(db.Integer, unique=True, nullable=False)
+    #  user_id = db.Column(db.Integer, unique=True, nullable=False)
      name = db.Column(db.String(120))
 
      def __repr__(self):
-        return '<Collection %r>' % self.collection
+        return '<Collection %r>' % self.image
 
      def serialize(self):
         return {
               "id": self.id,
-              "user_id": self.user_id,
+            #   "user_id": self.user_id,
               "image": self.image,
+              "name": self.name,
          }     
 
 # clothing_outfit = db.Table(db.Table('clothing_outfit',

@@ -22,11 +22,14 @@ def get_all_users():
 @api.route('/clothing', methods=['GET', 'POST'])
 def get_all_clothing():
 
-    response_body = {
-        "msg": "Hello, this is your GET /user response "
-    }
+    all_clothing = clothing.query.all()
 
-    return jsonify(response_body), 200
+    serialized_clothing = []
+    for clothing in all_clothing:
+        serialized_clothing.append(clothing.serialize())
+    print(all_clothing)
+
+    return jsonify(serialized_clothing), 200
 
 # @api.route('/outfits', methods=['GET', 'POST'])
 # def outfits_hello():
@@ -45,4 +48,3 @@ def get_all_clothing():
 #     }
 
 #     return jsonify(response_body), 200            
-
