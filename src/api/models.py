@@ -36,6 +36,12 @@ class User(db.Model):
             # do not serialize the password, its a security breach
         }
 
+
+clothing_outfit = db.Table('clothing_outfit',
+    db.Column('clothing_id', db.Integer, db.ForeignKey('clothing.id'), primary_key=True),
+    db.Column('outfit_id', db.Integer, db.ForeignKey('outfit.id'), primary_key=True)
+)
+
 class Category(enum.Enum):
     top = 1
     bottom = 2
@@ -51,7 +57,7 @@ class Clothing(db.Model):
      clean= db.Column(db.Boolean, unique=True, nullable=False)
 
      #RELACIONES
-    #  clothing_id = db.relationship('Clothing', secondary= clothing_outfit , back_populates="outfit_id", lazy=True)
+     outfits = db.relationship('Outfit', secondary= clothing_outfit , back_populates="clothing_items", lazy=True)
      
      def __repr__(self):
          return '<Clothing %r>' % self.name
@@ -59,12 +65,18 @@ class Clothing(db.Model):
      def serialize(self):
          return {
              "id": self.id,
-             "user_id": self.user_id,
+            #  "user_id": self.user_id,
              "image": self.image,
              "name": self.name,
              "categories": self.category.name,
              "clean": self.clean,
-         }      
+         } 
+
+collection_outfit = db.Table('collection_outfit',
+    db.Column('outfit_id', db.Integer, db.ForeignKey('outfit.id'), primary_key=True),
+    db.Column('collection_id', db.Integer, db.ForeignKey('collection.id'), primary_key=True)
+)
+                  
      
 class Outfit(db.Model):
      id = db.Column(db.Integer, primary_key=True)
@@ -72,8 +84,8 @@ class Outfit(db.Model):
      name = db.Column(db.String(120))
 
     #RELACIONES
-    #   outfit_id = db.relationship('Outfit', secondary= clothing_outfit , back_populates="", lazy=True)
-    #   outfit_id2 = db.relationship('Outfit', secondary= collection_outfit , back_populates="", lazy=True)
+     clothing_items = db.relationship('Clothing', secondary= clothing_outfit , back_populates="outfits", lazy=True)
+     collections = db.relationship('Collection', secondary= collection_outfit , back_populates="outfits", lazy=True)
 
 
      def __repr__(self):
@@ -93,7 +105,7 @@ class Collection(db.Model):
      name = db.Column(db.String(120))
 
      #RELACIONES
-     #collection_items= db.relationship('Collection', secondary= collection_outfit , back_populates="", lazy=True)
+     outfits= db.relationship('Outfit', secondary= collection_outfit , back_populates="collections", lazy=True)
 
 
      def __repr__(self):
@@ -102,22 +114,14 @@ class Collection(db.Model):
      def serialize(self):
         return {
               "id": self.id,
-             "user_id": self.user_id,
+            #  "user_id": self.user_id,
               "image": self.image,
               "name": self.name,
          }     
 
-# clothing_outfit = db.Table(db.Table('clothing_outfit',
-#     db.Column('clothing_id', db.Integer, db.ForeignKey('clothing.id'), primary_key=True),
-#     db.Column('outfit_id', db.Integer, db.ForeignKey('outfit.id'), primary_key=True)
-# )
-#     )
 
-# collection_outfit = db.Table(db.Table('collection_outfit',
-#     db.Column('outfit_id', db.Integer, db.ForeignKey('outfit.id'), primary_key=True),
-#     db.Column('collection_id', db.Integer, db.ForeignKey('collection.id'), primary_key=True)
-# )
-#     )
+
+
 
 
     

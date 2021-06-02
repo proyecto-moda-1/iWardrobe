@@ -43,20 +43,16 @@ def get_all_outfits():
 
 @api.route('/collection', methods=['GET', 'POST', 'PUT'])
 def get_all_collections():
-    # all_collections = Collection.query.all
+    all_collections = Collection.query.all()
 
-    # serialized_collections = []
-    # for collection in all_collections:
-    #     serialized_collections.append(collection.serialize())
-    # print(all_collections)
+    serialized_collections = []
+    for collection in all_collections:
+        serialized_collections.append(collection.serialize())
+    print(all_collections)
 
-    # return jsonify(serialized_collections), 200   
+    return jsonify(serialized_collections), 200   
 
 
-    response_body = {
-        "msg": "Me da este error y no sé como solucioanrlo:TypeError: 'method' object is not iterable  "
-    }
-
-    return jsonify(response_body), 200   
+    
 
         
