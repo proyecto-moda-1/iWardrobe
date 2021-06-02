@@ -59,7 +59,7 @@ class Clothing(db.Model):
      def serialize(self):
          return {
              "id": self.id,
-            #  "user_id": self.user_id,
+             "user_id": self.user_id,
              "image": self.image,
              "name": self.name,
              "categories": self.category.name,
@@ -82,7 +82,7 @@ class Outfit(db.Model):
      def serialize(self):
           return {
               "id": self.id,
-            #   "outfit_user_id": self.outfit_user_id,
+              "outfit_user_id": self.outfit_user_id,
               "name": self.name,
          } 
 
@@ -102,7 +102,7 @@ class Collection(db.Model):
      def serialize(self):
         return {
               "id": self.id,
-            #   "user_id": self.user_id,
+             "user_id": self.user_id,
               "image": self.image,
               "name": self.name,
          }     
