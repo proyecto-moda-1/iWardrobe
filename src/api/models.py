@@ -21,7 +21,7 @@ class User(db.Model):
     clothes = db.relationship('Clothing', backref="user", lazy=True)
     outfits = db.relationship('Outfit', backref="user", lazy=True)
     collections = db.relationship('Collection', backref="user", lazy=True)
-    # outfits = db.relationship('Outfits', secondary=business_ownership, back_populates="owners", lazy=True)
+    
 
     def __repr__(self):
         return '<User %r>' % self.nickname
@@ -51,7 +51,7 @@ class Clothing(db.Model):
      clean= db.Column(db.Boolean, unique=True, nullable=False)
 
      #RELACIONES
-     # outfits = db.relationship('....', secondary=clothing_outfit , back_populates="....", lazy=True)
+    #  clothing_id = db.relationship('Clothing', secondary= clothing_outfit , back_populates="outfit_id", lazy=True)
      
      def __repr__(self):
          return '<Clothing %r>' % self.name
@@ -71,6 +71,11 @@ class Outfit(db.Model):
      outfit_user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
      name = db.Column(db.String(120))
 
+    #RELACIONES
+    #   outfit_id = db.relationship('Outfit', secondary= clothing_outfit , back_populates="", lazy=True)
+    #   outfit_id2 = db.relationship('Outfit', secondary= collection_outfit , back_populates="", lazy=True)
+
+
      def __repr__(self):
               return '<Outfit %r>' % self.name
 
@@ -87,6 +92,10 @@ class Collection(db.Model):
      collection_user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
      name = db.Column(db.String(120))
 
+     #RELACIONES
+     #collection_items= db.relationship('Collection', secondary= collection_outfit , back_populates="", lazy=True)
+
+
      def __repr__(self):
         return '<Collection %r>' % self.image
 
@@ -100,12 +109,12 @@ class Collection(db.Model):
 
 # clothing_outfit = db.Table(db.Table('clothing_outfit',
 #     db.Column('clothing_id', db.Integer, db.ForeignKey('clothing.id'), primary_key=True),
-#     db.Column('outfits_id', db.Integer, db.ForeignKey('outfits.id'), primary_key=True)
+#     db.Column('outfit_id', db.Integer, db.ForeignKey('outfit.id'), primary_key=True)
 # )
 #     )
 
 # collection_outfit = db.Table(db.Table('collection_outfit',
-#     db.Column('outfits_id', db.Integer, db.ForeignKey('outfits.id'), primary_key=True),
+#     db.Column('outfit_id', db.Integer, db.ForeignKey('outfit.id'), primary_key=True),
 #     db.Column('collection_id', db.Integer, db.ForeignKey('collection.id'), primary_key=True)
 # )
 #     )

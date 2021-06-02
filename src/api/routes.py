@@ -8,7 +8,7 @@ from api.utils import generate_sitemap, APIException
 api = Blueprint('api', __name__)
 
 
-@api.route('/user', methods=['POST', 'GET'])
+@api.route('/user', methods=['POST', 'GET', 'PUT'])
 def get_all_users():
     all_users = User.query.all()
 
@@ -19,7 +19,7 @@ def get_all_users():
 
     return jsonify(serialized_users), 200
     
-@api.route('/clothing', methods=['GET', 'POST'])
+@api.route('/clothing', methods=['GET', 'POST', 'PUT'])
 def get_all_clothings():
     all_clothings = Clothing.query.all()
 
@@ -30,7 +30,7 @@ def get_all_clothings():
 
     return jsonify(serialized_clothings), 200
 
-@api.route('/outfit', methods=['GET', 'POST'])
+@api.route('/outfit', methods=['GET', 'POST', 'PUT'])
 def get_all_outfits():
     all_outfits = Outfit.query.all()
 
@@ -41,7 +41,7 @@ def get_all_outfits():
 
     return jsonify(serialized_outfits), 200
 
-@api.route('/collection', methods=['GET', 'POST'])
+@api.route('/collection', methods=['GET', 'POST', 'PUT'])
 def get_all_collections():
     # all_collections = Collection.query.all
 
