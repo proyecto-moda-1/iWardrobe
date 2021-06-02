@@ -54,7 +54,7 @@ def get_all_collections():
 
 
     response_body = {
-        "msg": "Hello, this is your GET /user response "
+        "msg": "Me da este error y no sé como solucioanrlo:TypeError: 'method' object is not iterable  "
     }
 
     return jsonify(response_body), 200   
