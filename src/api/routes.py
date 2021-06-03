@@ -53,7 +53,21 @@ def get_clothing(id):
 
     clothing = Clothing.query.get(id)
     serialized_clothing = clothing.serialize()
-    return jsonify(serialized_clothing), 200    
+
+    return jsonify(serialized_clothing), 200 
+
+@api.route('/clothing', methods=['POST'])
+def create_clothing():
+
+    payload = request.get_json()
+    
+
+    new_clothing = Clothing(category=payload['category'])
+
+    db.session.add(new_clothing)
+    db.session.commit()
+
+    return jsonify(new_clothing.serialize()), 200   
 
 
 
