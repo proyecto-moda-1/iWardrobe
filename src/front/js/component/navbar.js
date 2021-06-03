@@ -12,17 +12,17 @@ export const Navbar = () => {
 	const span = document.getElementsByClassName("close")[0];
 
 	// When the user clicks the button, open the modal
-	btn.onclick = function() {
+	btn.onClick = function() {
 		modal.style.display = "block";
 	};
 
 	// When the user clicks on <span> (x), close the modal
-	span.onclick = function() {
+	span.onClick = function() {
 		modal.style.display = "none";
 	};
 
 	// When the user clicks anywhere outside of the modal, close it
-	window.onclick = function(event) {
+	window.onClick = function(event) {
 		if (event.target == modal) {
 			modal.style.display = "none";
 		}
@@ -45,7 +45,7 @@ export const Navbar = () => {
 				</button>
 				<div className="collapse navbar-collapse" id="navbarNavAltMarkup">
 					<div className="navbar-nav">
-						<button id="myBtn">Open Modal</button>
+						<button id="myBtn">Añadir tu ropa</button>
 						<div id="myModal" className="modal">
 							<div className="modal-content">
 								<span className="close">&times;</span>
