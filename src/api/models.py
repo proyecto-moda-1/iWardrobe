@@ -51,10 +51,10 @@ class Category(enum.Enum):
 class Clothing(db.Model):
      id = db.Column(db.Integer, primary_key=True)
      user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-     image = db.Column(db.String)
-     name = db.Column(db.String(120))
+     image = db.Column(db.String, unique=False, nullable=False)
+     name = db.Column(db.String(120), unique=False, nullable=False)
      category = db.Column(db.Enum(Category), unique=False, nullable=False)
-     clean= db.Column(db.Boolean, unique=True, nullable=False)
+     clean= db.Column(db.Boolean, unique=False, nullable=False)
 
      #RELACIONES
      outfits = db.relationship('Outfit', secondary= clothing_outfit , back_populates="clothing_items", lazy=True)
