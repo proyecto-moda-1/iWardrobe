@@ -62,7 +62,7 @@ def create_clothing():
     payload = request.get_json()
     
 
-    new_clothing = Clothing(category=payload['category'])
+    new_clothing = Clothing(user_id=payload['user_id'], name=payload['name'], category=payload['category'], clean=payload['clean'])
 
     db.session.add(new_clothing)
     db.session.commit()
