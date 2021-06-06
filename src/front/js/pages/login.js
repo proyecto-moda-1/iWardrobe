@@ -8,6 +8,10 @@ import { Context } from "../store/appContext";
 export const Login = function(props) {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
+	const [login, setLogin] = useState(true);
+	const [repeatPassword, setRepeatPassword] = useState("");
+	const [gender, setGender] = useState("");
+	const [image, setImage] = useState("");
 
 	const history = useHistory();
 
@@ -16,10 +20,16 @@ export const Login = function(props) {
 	const handleSubmit = () => {
 		const data = {
 			email: email,
-			password: password,
+			password: password
+		};
+	};
+	const handleRegister = () => {
+		const data = {
 			nickname: nickname,
+			email: email,
+			password: password,
 			gender: gender,
-			image: image
+			imagen: imagen
 		};
 
 		actions.createUser(data, () => {
@@ -34,132 +44,120 @@ export const Login = function(props) {
 					<div className="login-box">
 						<div className="login-snip">
 							{" "}
-							<input id="tab-1" type="radio" name="tab" className="sign-in" checked />
-							<label className="tab-1 tab">Login</label>{" "}
-							<div className="login-space">
+							<button className="tab-1 tab btn btn-light" onClick={() => setLogin(true)}>
+								Login
+							</button>
+							<button className="tab-1 tab btn btn-light" onClick={() => setLogin(false)}>
+								Sign Up
+							</button>
+							{login && (
 								<div className="login">
 									<div className="group">
-										{" "}
-										<label className="user label">NickName</label>{" "}
+										<label className="user label">Email</label>
 										<input
 											type="email"
-											className="input"
+											className="input btn btn-light"
 											id="exampleFormControlInput1"
 											placeholder="tucorreo@ejemplo.com"
 											value={email}
 											onChange={event => setEmail(event.target.value)}
-										/>{" "}
+										/>
 									</div>
 									<div className="group">
-										{" "}
-										<label className="pass label">Password</label>{" "}
+										<label className="pass label">Password</label>
 										<input
 											type="password"
-											className="input"
+											className="input btn btn-light"
 											id="exampleFormControlInput1"
 											placeholder="introduce tu contraseña"
 											value={password}
 											onChange={event => setPassword(event.target.value)}
-										/>{" "}
+										/>
 									</div>
+
 									<div className="group">
-										{" "}
-										<input id="check" type="checkbox" className="check" checked />{" "}
-										<label className="check">
-											<span className="icon" /> Keep me Signed in
-										</label>{" "}
-									</div>
-									<div className="group">
-										{" "}
-										<input type="submit" className="button" value="Sign In" />{" "}
-									</div>
-									<div className="hr" />
-									<div className="foot">
-										{" "}
-										<a href="#">Forgot Password?</a>{" "}
-										<div className="sign-up-form">
-											<div className="group">
-												{" "}
-												<input id="tab-2" type="radio" name="tab" className="sign-up" />
-												<div className="singup">
-													<label className="tab-2tab">Sign Up</label>
-													<label className="user label">NickName</label>{" "}
-													<input
-														type="email"
-														className="input"
-														id="exampleFormControlInput1"
-														placeholder="NickName"
-														value={email}
-														onChange={event => setEmail(event.target.value)}
-													/>{" "}
-												</div>
-												<div className="group">
-													{" "}
-													<label className="pass label">Password</label>{" "}
-													<input
-														type="password"
-														className="input"
-														id="exampleFormControlInput1"
-														placeholder="introduce tu contraseña"
-														value={password}
-														onChange={event => setPassword(event.target.value)}
-													/>{" "}
-												</div>
-												<div className="group">
-													{" "}
-													<label className="pass label">Repeat Password</label>{" "}
-													<input
-														id="pass"
-														type="password"
-														className="input"
-														data-type="password"
-														placeholder="Repeat your password"
-													/>{" "}
-												</div>
-												<div className="group">
-													{" "}
-													<label className="pass label">Email Address</label>{" "}
-													<input
-														id="pass"
-														type="text"
-														className="input"
-														placeholder="Enter your email address"
-													/>{" "}
-												</div>
-												<div className="group">
-													{" "}
-													<label className="pass label">Gender</label>{" "}
-													<input
-														id="pass"
-														type="text"
-														className="input"
-														placeholder="Gender"
-													/>{" "}
-												</div>
-												<div className="group">
-													{" "}
-													<label className="pass label">Imagen</label>{" "}
-													<input
-														id="pass"
-														type="text"
-														className="input"
-														placeholder="Imagen"
-													/>{" "}
-												</div>
-												<div className="group">
-													{" "}
-													<input type="submit" className="button" value="Sign Up" />{" "}
-												</div>
-												<div className="hr" />
-												<div className="foot">
-													{" "}
-													<label className="tab-1">Already Member?</label>{" "}
-												</div>
-											</div>
-										</div>
+										<button type="submit" className="button btn btn-outline-secondary btn-block">
+											Sing In
+										</button>
 									</div>
 								</div>
-							</div>
+							)}
+							{!login && (
+								<div className="signup">
+									<div className="group">
+										<label className="user label">NickName</label>
+										<input
+											type="email"
+											className="input btn btn-light"
+											id="exampleFormControlInput1"
+											placeholder="nickname"
+											value={email}
+											onChange={event => setNickname(event.target.value)}
+										/>
+									</div>
+									<div className="group">
+										<label className="pass label">Password</label>
+										<input
+											type="password"
+											className="input btn btn-light"
+											id="exampleFormControlInput1"
+											placeholder="introduce tu contraseña"
+											value={password}
+											onChange={event => setPassword(event.target.value)}
+										/>
+									</div>
+									<div className="group">
+										<label className="pass label">Repeat Password</label>
+										<input
+											id="pass"
+											type="password"
+											className="input btn btn-light"
+											data-type="password"
+											placeholder="Repeat your password"
+											// value={password}
+											// onChange={event => setPassword(event.target.value)}
+										/>
+									</div>
+									<div className="group">
+										<label className="pass label">Email Address</label>
+										<input
+											id="pass"
+											type="text"
+											className="input btn btn-light"
+											placeholder="Enter your email address"
+											value={email}
+											onChange={event => setEmail(event.target.value)}
+										/>
+									</div>
+									<div className="group">
+										<label className="pass label">Gender</label>
+										<input
+											id="pass"
+											type="text"
+											className="input btn btn-light"
+											placeholder="Gender"
+											value={gender}
+											onChange={event => setGender(event.target.value)}
+										/>
+									</div>
+									<div className="group">
+										<label className="pass label">Imagen</label>
+										<input
+											id="pass"
+											type="text"
+											className="input btn btn-light"
+											placeholder="Imagen"
+											value={password}
+											onChange={event => setImagen(event.target.value)}
+										/>
+									</div>
+									<div className="group">
+										<button type="submit" className="button btn btn-outline-secondary btn-block">
+											Sign Up
+										</button>
+									</div>
+								</div>
+							)}
 						</div>
 					</div>
 				</div>
