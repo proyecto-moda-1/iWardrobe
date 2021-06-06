@@ -12,6 +12,7 @@ export const Login = function(props) {
 	const [repeatPassword, setRepeatPassword] = useState("");
 	const [gender, setGender] = useState("");
 	const [image, setImage] = useState("");
+	const [nickname, setNickname] = useState("");
 
 	const history = useHistory();
 
@@ -29,7 +30,7 @@ export const Login = function(props) {
 			email: email,
 			password: password,
 			gender: gender,
-			imagen: imagen
+			image: image
 		};
 
 		actions.createUser(data, () => {
@@ -76,7 +77,10 @@ export const Login = function(props) {
 									</div>
 
 									<div className="group">
-										<button type="submit" className="button btn btn-outline-secondary btn-block">
+										<button
+											type="submit"
+											className="button btn btn-outline-secondary btn-block"
+											onClick={handleSubmit}>
 											Sing In
 										</button>
 									</div>
@@ -87,11 +91,11 @@ export const Login = function(props) {
 									<div className="group">
 										<label className="user label">NickName</label>
 										<input
-											type="email"
+											type="text"
 											className="input btn btn-light"
 											id="exampleFormControlInput1"
 											placeholder="nickname"
-											value={email}
+											value={nickname}
 											onChange={event => setNickname(event.target.value)}
 										/>
 									</div>
@@ -114,15 +118,15 @@ export const Login = function(props) {
 											className="input btn btn-light"
 											data-type="password"
 											placeholder="Repeat your password"
-											// value={password}
-											// onChange={event => setPassword(event.target.value)}
+											value={repeatPassword}
+											onChange={event => setRepeatPassword(event.target.value)}
 										/>
 									</div>
 									<div className="group">
 										<label className="pass label">Email Address</label>
 										<input
 											id="pass"
-											type="text"
+											type="email"
 											className="input btn btn-light"
 											placeholder="Enter your email address"
 											value={email}
@@ -147,12 +151,15 @@ export const Login = function(props) {
 											type="text"
 											className="input btn btn-light"
 											placeholder="Imagen"
-											value={password}
-											onChange={event => setImagen(event.target.value)}
+											value={image}
+											onChange={event => setImage(event.target.value)}
 										/>
 									</div>
 									<div className="group">
-										<button type="submit" className="button btn btn-outline-secondary btn-block">
+										<button
+											type="submit"
+											className="button btn btn-outline-secondary btn-block"
+											onClick={handleRegister}>
 											Sign Up
 										</button>
 									</div>

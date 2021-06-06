@@ -1,4 +1,4 @@
-const getState = ({ getStore, getActions, setStore }) => {
+const getState = ({ getStore, getActions, setState }) => {
 	return {
 		store: {
 			message: null,
@@ -6,7 +6,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 		},
 		actions: {
 			createUser: (data, callback) => {
-				const store = getState();
+				// const store = getStore();
 				const endpoint = process.env.BACKEND_URL + "/api/user";
 				const config = {
 					method: "POST",
@@ -40,8 +40,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 				// fetching data from the backend
 				fetch(process.env.BACKEND_URL + "/api/hello")
 					.then(resp => resp.json())
-					.then(data => setStore({ message: data.message }))
-					.catch(error => console.log("Error loading message from backend", error));
+					.then(data => setStore({ message: data.message }));
+				// .catch(error => console.log("Error loading message from backend", error));
 			},
 			changeColor: (index, color) => {
 				//get the store
