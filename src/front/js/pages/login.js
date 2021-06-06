@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import PropTypes from "prop-types";
 
 import "../../styles/login.scss";
+import { Context } from "../store/appContext";
 
 export const Login = function(props) {
 	const [email, setEmail] = useState("");
@@ -10,11 +11,20 @@ export const Login = function(props) {
 
 	const history = useHistory();
 
+	const { store, actions } = useContext(Context);
+
 	const handleSubmit = () => {
 		const data = {
 			email: email,
-			password: password
+			password: password,
+			nickname: nickname,
+			gender: gender,
+			image: image
 		};
+
+		actions.createUser(data, () => {
+			history.push("/");
+		});
 	};
 
 	return (

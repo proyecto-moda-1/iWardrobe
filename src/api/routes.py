@@ -8,7 +8,7 @@ from api.utils import generate_sitemap, APIException
 api = Blueprint('api', __name__)
 
 
-@api.route('/user', methods=['POST', 'GET'])
+@api.route('/user', methods=[ 'GET'])
 def get_all_users():
     all_users = User.query.all()
 
@@ -18,6 +18,24 @@ def get_all_users():
     print(all_users)
 
     return jsonify(serialized_users), 200
+    
+
+@api.route('/user', methods=['POST'])
+def create_users():
+
+    payload = request.get_json()
+    user_create = User(nickname=payload['nickname'],
+    gender=payload['gender'], 
+    email=payload['email'], 
+    image=payload['image'],
+    password=payload['password'])
+    print("aqui")
+    db.session.add(user_create)
+    db.session.commit()
+
+    return jsonify(user_create.serialize()), 200
+
+
     
 @api.route('/clothing', methods=['GET', 'POST'])
 def get_all_clothings():
