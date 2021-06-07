@@ -22,12 +22,12 @@ export const Home = () => {
 					</p>
 				</div>
 				<div className="col btn-group-vertical">
-					<button type="button" className="btn-secondary btn-lg btn-block">
-						Sing Up
-					</button>
-					<button type="button" className="btn-secondary btn-lg btn-block">
+					<a href="/register" className="btn-secondary btn-lg btn-block">
+						Register
+					</a>
+					<a href="/login" className="btn-secondary btn-lg btn-block">
 						Login
-					</button>
+					</a>
 				</div>
 			</div>
 			<div className="row">
