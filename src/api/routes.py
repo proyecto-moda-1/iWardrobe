@@ -24,18 +24,8 @@ def get_all_users():
 
 #     user = User.query.get(id)
 #     serialized_user = user.serialize()
+
 #     return jsonify(serialized_user), 200
-    
-# @api.route('/user', methods=['GET'])
-# def get_all_users():
-#     all_users = User.query.all()
-
-#     serialized_users = []
-#     for user in all_users:
-#         serialized_users.append(user.serialize())
-#     print(all_users)
-
-#     return jsonify(serialized_users), 200
 
 @api.route('/clothing', methods=['GET'])
 def get_all_clothings():
