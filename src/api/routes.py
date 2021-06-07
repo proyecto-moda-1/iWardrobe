@@ -8,7 +8,7 @@ from api.utils import generate_sitemap, APIException
 api = Blueprint('api', __name__)
 
 
-@api.route('/user', methods=[ 'GET'])
+@api.route('/user', methods=['GET'])
 def get_all_users():
     all_users = User.query.all()
 
@@ -18,6 +18,13 @@ def get_all_users():
     print(all_users)
 
     return jsonify(serialized_users), 200
+
+# @app.route('/user/<int:id>', methods=['GET'])
+# def get_user(id):
+
+#     user = User.query.get(id)
+#     serialized_user = user.serialize()
+#     return jsonify(serialized_user), 200
     
 
 @api.route('/user', methods=['POST'])
@@ -37,7 +44,7 @@ def create_users():
 
 
     
-@api.route('/clothing', methods=['GET', 'POST'])
+@api.route('/clothing', methods=['GET'])
 def get_all_clothings():
     all_clothings = Clothing.query.all()
 
@@ -48,7 +55,30 @@ def get_all_clothings():
 
     return jsonify(serialized_clothings), 200
 
-@api.route('/outfit', methods=['GET', 'POST'])
+@api.route('/clothing/<int:id>', methods=['GET'])
+def get_clothing(id):
+
+    clothing = Clothing.query.get(id)
+    serialized_clothing = clothing.serialize()
+
+    return jsonify(serialized_clothing), 200 
+
+@api.route('/clothing', methods=['POST'])
+def create_clothing():
+
+    payload = request.get_json()
+    
+
+    new_clothing = Clothing(user_id=payload['user_id'], name=payload['name'], category=payload['category'], clean=payload['clean'])
+
+    db.session.add(new_clothing)
+    db.session.commit()
+
+    return jsonify(new_clothing.serialize()), 200   
+
+
+
+@api.route('/outfit', methods=['GET'])
 def get_all_outfits():
     all_outfits = Outfit.query.all()
 
@@ -59,22 +89,18 @@ def get_all_outfits():
 
     return jsonify(serialized_outfits), 200
 
-@api.route('/collection', methods=['GET', 'POST'])
+@api.route('/collection', methods=['GET'])
 def get_all_collections():
-    # all_collections = Collection.query.all
+    all_collections = Collection.query.all()
 
-    # serialized_collections = []
-    # for collection in all_collections:
-    #     serialized_collections.append(collection.serialize())
-    # print(all_collections)
+    serialized_collections = []
+    for collection in all_collections:
+        serialized_collections.append(collection.serialize())
+    print(all_collections)
 
-    # return jsonify(serialized_collections), 200   
+    return jsonify(serialized_collections), 200   
 
 
-    response_body = {
-        "msg": "Hello, this is your GET /user response "
-    }
-
-    return jsonify(response_body), 200   
+    
 
         
