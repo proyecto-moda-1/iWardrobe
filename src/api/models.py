@@ -4,9 +4,9 @@ import enum
 db = SQLAlchemy()
 
 class Gender(enum.Enum):
-    mujer = 1
-    hombre = 2
-    nobinario = 3
+    female = 1
+    male = 2
+    nonbinary = 3
 
 
 class User(db.Model):
@@ -45,7 +45,7 @@ clothing_outfit = db.Table('clothing_outfit',
 class Category(enum.Enum):
     top = 1
     bottom = 2
-    shoes = 3
+    footwear = 3
 
 
 class Clothing(db.Model):
