@@ -8,7 +8,7 @@ from api.utils import generate_sitemap, APIException
 api = Blueprint('api', __name__)
 
 
-@api.route('/user', methods=['POST', 'GET', 'PUT'])
+@api.route('/user', methods=['GET'])
 def get_all_users():
     all_users = User.query.all()
 
@@ -18,8 +18,26 @@ def get_all_users():
     print(all_users)
 
     return jsonify(serialized_users), 200
+
+# @app.route('/user/<int:id>', methods=['GET'])
+# def get_user(id):
+
+#     user = User.query.get(id)
+#     serialized_user = user.serialize()
+#     return jsonify(serialized_user), 200
     
-@api.route('/clothing', methods=['GET', 'POST', 'PUT'])
+# @api.route('/user', methods=['GET'])
+# def get_all_users():
+#     all_users = User.query.all()
+
+#     serialized_users = []
+#     for user in all_users:
+#         serialized_users.append(user.serialize())
+#     print(all_users)
+
+#     return jsonify(serialized_users), 200
+
+@api.route('/clothing', methods=['GET'])
 def get_all_clothings():
     all_clothings = Clothing.query.all()
 
@@ -30,7 +48,30 @@ def get_all_clothings():
 
     return jsonify(serialized_clothings), 200
 
-@api.route('/outfit', methods=['GET', 'POST', 'PUT'])
+@api.route('/clothing/<int:id>', methods=['GET'])
+def get_clothing(id):
+
+    clothing = Clothing.query.get(id)
+    serialized_clothing = clothing.serialize()
+
+    return jsonify(serialized_clothing), 200 
+
+@api.route('/clothing', methods=['POST'])
+def create_clothing():
+
+    payload = request.get_json()
+    
+
+    new_clothing = Clothing(user_id=payload['user_id'], name=payload['name'], category=payload['category'], clean=payload['clean'])
+
+    db.session.add(new_clothing)
+    db.session.commit()
+
+    return jsonify(new_clothing.serialize()), 200   
+
+
+
+@api.route('/outfit', methods=['GET'])
 def get_all_outfits():
     all_outfits = Outfit.query.all()
 
@@ -41,7 +82,7 @@ def get_all_outfits():
 
     return jsonify(serialized_outfits), 200
 
-@api.route('/collection', methods=['GET', 'POST', 'PUT'])
+@api.route('/collection', methods=['GET'])
 def get_all_collections():
     all_collections = Collection.query.all()
 
