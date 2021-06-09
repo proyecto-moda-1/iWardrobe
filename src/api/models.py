@@ -58,6 +58,10 @@ class Clothing(db.Model):
 
      #RELACIONES
      outfits = db.relationship('Outfit', secondary= clothing_outfit , back_populates="clothing_items", lazy=True)
+
+     def create_clothing(self):
+         db.session.add(self)
+         db.session.commit()
      
      def __repr__(self):
          return '<Clothing %r>' % self.name
