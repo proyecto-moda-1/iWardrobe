@@ -16,12 +16,23 @@ class User(db.Model):
     email = db.Column(db.String(120), unique=True, nullable=False)
     image = db.Column(db.String(120), unique=False, nullable=True)
     password = db.Column(db.String(120), unique=False, nullable=False)
+    token = db.Column(db.String(120), unique=True, nullable=True)
+
    
      # RELATIONSHIPS
     clothes = db.relationship('Clothing', backref="user", lazy=True)
     outfits = db.relationship('Outfit', backref="user", lazy=True)
     collections = db.relationship('Collection', backref="user", lazy=True)
     
+    
+    @staticmethod
+    def get_login_credentials(email, password):
+        return User.query.filter_by(email=email).filter_by(password=password).first()
+    
+    def assign_token(self, token):
+        self.token= token
+        db.session.add(self)
+        db.session.commit()
 
     def __repr__(self):
         return '<User %r>' % self.nickname
@@ -33,6 +44,7 @@ class User(db.Model):
             "gender": self.gender.name,
             "email": self.email,
             "image": self.image,
+            "token": self.token
             # do not serialize the password, its a security breach
         }
 

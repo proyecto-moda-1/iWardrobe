@@ -35,7 +35,7 @@ export const Register = function(props) {
 	return (
 		<div className="row">
 			<div className="col-md-6 mx-auto p-0">
-				<div className="card">
+				<div className="d-flex justify-content-center">
 					<div className="login-box">
 						<div className="login-snip">
 							{" "}

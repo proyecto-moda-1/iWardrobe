@@ -36,11 +36,36 @@ def create_users():
     email=payload['email'], 
     image=payload['image'],
     password=payload['password'])
-    print("aqui")
     db.session.add(user_create)
     db.session.commit()
 
     return jsonify(user_create.serialize()), 200
+
+@api.route('/login', methods=['POST'])
+def handle_login():
+    json = request.get_json()
+
+    if json is None:
+        raise APIException("json body")
+
+    if "email" not in json or "password" not in json:
+        raise APIException("Email&Pasword")
+
+    email = json["email"]
+    password= json["password"]
+
+    user= User.get_login_credentials(email, password)
+
+    if user is None:
+        raise APIException("user does not exist")
+    
+    # token = ""
+    # user.assign_token(token)
+
+    return jsonify(user.serialize()), 200
+
+
+
 
 
     

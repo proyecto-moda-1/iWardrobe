@@ -8,7 +8,6 @@ import { Context } from "../store/appContext";
 export const Login = function(props) {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
-	const [login, setLogin] = useState(true);
 
 	const history = useHistory();
 
@@ -21,6 +20,10 @@ export const Login = function(props) {
 		};
 	};
 
+	// .then(response => response.json())
+	// .then(responseJson =>{
+	//     console.log(responseJson);
+	// });
 	// actions.createUser(data, () => {
 	// 	history.push("/");
 	// });
@@ -28,7 +31,7 @@ export const Login = function(props) {
 	return (
 		<div className="row">
 			<div className="col-md-6 mx-auto p-0">
-				<div className="card">
+				<div className="d-flex justify-content-center">
 					<div className="login-box">
 						<div className="login-snip">
 							{" "}
@@ -59,6 +62,7 @@ export const Login = function(props) {
 								<div className="group">
 									<button
 										type="submit"
+										value="Login"
 										className="button btn btn-outline-secondary btn-block"
 										onClick={handleSubmit}>
 										Sing In
