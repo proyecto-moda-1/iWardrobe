@@ -17,7 +17,6 @@ class User(db.Model):
     image = db.Column(db.String(120), unique=False, nullable=True)
     password = db.Column(db.String(120), unique=False, nullable=False)
     token = db.Column(db.String(120), unique=True, nullable=True)
-
    
      # RELATIONSHIPS
     clothes = db.relationship('Clothing', backref="user", lazy=True)
@@ -29,6 +28,11 @@ class User(db.Model):
     def get_login_credentials(email, password):
         return User.query.filter_by(email=email).filter_by(password=password).first()
     
+    @staticmethod
+    def get_user_by_email(email):
+        return User.query.filter_by(email=email).first()
+    
+
     def assign_token(self, token):
         self.token= token
         db.session.add(self)
@@ -36,6 +40,7 @@ class User(db.Model):
 
     def __repr__(self):
         return '<User %r>' % self.nickname
+
 
     def serialize(self):
         return {
@@ -67,6 +72,7 @@ class Clothing(db.Model):
      name = db.Column(db.String(120), nullable=False)
      category = db.Column(db.Enum(Category), unique=False, nullable=False)
      clean= db.Column(db.Boolean, unique=False, nullable=False)
+
 
      #RELACIONES
      outfits = db.relationship('Outfit', secondary= clothing_outfit , back_populates="clothing_items", lazy=True)

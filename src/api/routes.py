@@ -2,6 +2,9 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
+from flask_jwt_extended import create_access_token
+from flask_jwt_extended import get_jwt_identity
+from flask_jwt_extended import jwt_required
 from api.models import db, User, Clothing, Outfit, Collection
 from api.utils import generate_sitemap, APIException
 
@@ -35,7 +38,8 @@ def create_users():
     gender=payload['gender'], 
     email=payload['email'], 
     image=payload['image'],
-    password=payload['password'])
+    password=payload['password'],
+    token=payload['token'])
     db.session.add(user_create)
     db.session.commit()
 
@@ -45,26 +49,33 @@ def create_users():
 def handle_login():
     json = request.get_json()
 
-    if json is None:
-        raise APIException("json body")
+    # if json is None:
+    #     raise APIException("json body")
 
-    if "email" not in json or "password" not in json:
-        raise APIException("Email&Pasword")
+    # if "email" not in json or "password" not in json:
+    #     raise APIException("Email&Pasword")
 
     email = json["email"]
     password= json["password"]
 
     user= User.get_login_credentials(email, password)
 
-    if user is None:
-        raise APIException("user does not exist")
-    
-    # token = ""
-    # user.assign_token(token)
+    # if user is None:
+    #     raise APIException("user does not exist")
 
+    access_token = create_access_token(identity=user.email)
+
+    return jsonify({'token':access_token}), 200
+
+
+@api.route('/profile', methods=['GET'])
+@jwt_required()
+def handle_profile():
+
+  
+    user_email = get_jwt_identity()
+    user= User.get_user_by_email(user_email)
     return jsonify(user.serialize()), 200
-
-
 
 
 
