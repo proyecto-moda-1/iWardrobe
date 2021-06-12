@@ -19,24 +19,6 @@ def get_all_users():
 
     return jsonify(serialized_users), 200
 
-# @app.route('/user/<int:id>', methods=['GET'])
-# def get_user(id):
-
-#     user = User.query.get(id)
-#     serialized_user = user.serialize()
-#     return jsonify(serialized_user), 200
-    
-# @api.route('/user', methods=['GET'])
-# def get_all_users():
-#     all_users = User.query.all()
-
-#     serialized_users = []
-#     for user in all_users:
-#         serialized_users.append(user.serialize())
-#     print(all_users)
-
-#     return jsonify(serialized_users), 200
-
 @api.route('/clothing', methods=['GET'])
 def get_all_clothings():
     all_clothings = Clothing.query.all()
@@ -55,6 +37,8 @@ def get_clothing(id):
     serialized_clothing = clothing.serialize()
 
     return jsonify(serialized_clothing), 200 
+
+
 
 @api.route('/clothing', methods=['POST'])
 def create_clothing():
@@ -81,6 +65,16 @@ def get_all_outfits():
     print(all_outfits)
 
     return jsonify(serialized_outfits), 200
+
+@api.route('/outfit/<int:id>', methods=['GET'])
+def get_outfit(id):
+
+    outfit = Outfit.query.get(id)
+    serialized_outfit = outfit.serialize()
+
+    return jsonify(serialized_outfit), 200 
+
+
 
 @api.route('/collection', methods=['GET'])
 def get_all_collections():
