@@ -1,7 +1,6 @@
 import React, { useContext, useState } from "react";
 import { useHistory } from "react-router-dom";
 import PropTypes from "prop-types";
-
 import "../../styles/register.scss";
 import { Context } from "../store/appContext";
 
@@ -28,7 +27,7 @@ export const Register = function(props) {
 		};
 
 		actions.createUser(data, () => {
-			history.push("/");
+			history.push("/profile");
 		});
 	};
 

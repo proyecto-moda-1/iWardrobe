@@ -30,7 +30,7 @@ def get_all_users():
 #     return jsonify(serialized_user), 200
     
 
-@api.route('/user', methods=['POST'])
+@api.route('/register', methods=['POST'])
 def create_users():
 
     payload = request.get_json()
@@ -38,8 +38,7 @@ def create_users():
     gender=payload['gender'], 
     email=payload['email'], 
     image=payload['image'],
-    password=payload['password'],
-    token=payload['token'])
+    password=payload['password'])
     db.session.add(user_create)
     db.session.commit()
 

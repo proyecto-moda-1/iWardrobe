@@ -1,13 +1,15 @@
 const getState = ({ getStore, getActions, setState }) => {
+	const token = localStorage.getItem("token");
 	return {
 		store: {
 			message: null,
-			user: []
+			user: [],
+			token: token
 		},
 		actions: {
 			createUser: (data, callback) => {
 				// const store = getStore();
-				const endpoint = process.env.BACKEND_URL + "/api/user";
+				const endpoint = process.env.BACKEND_URL + "/api/register";
 				const config = {
 					method: "POST",
 					body: JSON.stringify({
@@ -29,6 +31,35 @@ const getState = ({ getStore, getActions, setState }) => {
 						callback();
 					})
 					.catch(error => {});
+			},
+
+			logIn: (data, callback) => {
+				// const store = getStore();
+				const endpoint = process.env.BACKEND_URL + "/api/login";
+				const config = {
+					method: "POST",
+					body: JSON.stringify({
+						email: data.email,
+						password: data.password
+					}),
+					headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*" }
+				};
+
+				fetch(endpoint, config)
+					.then(response => {
+						return response.json();
+					})
+					.then(json => {
+						setStore({ token: json.token });
+						// localStorage.setItem("token", json.token);
+						// callback();
+					})
+					.catch(error => {});
+			},
+
+			logOut() {
+				localStorage.removeItem("token");
+				setStore({ token: null });
 			},
 
 			// Use getActions to call a function within a fuction

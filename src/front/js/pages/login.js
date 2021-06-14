@@ -1,7 +1,6 @@
 import React, { useContext, useState } from "react";
 import { useHistory } from "react-router-dom";
 import PropTypes from "prop-types";
-
 import "../../styles/login.scss";
 import { Context } from "../store/appContext";
 
@@ -18,14 +17,16 @@ export const Login = function(props) {
 			email: email,
 			password: password
 		};
+		actions.logIn(data, () => {
+			if (store.error == null) {
+				history.push("/home");
+			}
+		});
 	};
 
 	// .then(response => response.json())
 	// .then(responseJson =>{
 	//     console.log(responseJson);
-	// });
-	// actions.createUser(data, () => {
-	// 	history.push("/");
 	// });
 
 	return (
