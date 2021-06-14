@@ -1,8 +1,8 @@
 """empty message
 
-Revision ID: 0d9254b608ec
+Revision ID: ef34fa9f468a
 Revises: 
-Create Date: 2021-06-03 10:04:52.358108
+Create Date: 2021-06-07 19:03:51.663300
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '0d9254b608ec'
+revision = 'ef34fa9f468a'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -21,7 +21,7 @@ def upgrade():
     op.create_table('user',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('nickname', sa.String(length=120), nullable=False),
-    sa.Column('gender', sa.Enum('mujer', 'hombre', 'nobinario', name='gender'), nullable=False),
+    sa.Column('gender', sa.Enum('female', 'male', 'nonbinary', name='gender'), nullable=False),
     sa.Column('email', sa.String(length=120), nullable=False),
     sa.Column('image', sa.String(length=120), nullable=True),
     sa.Column('password', sa.String(length=120), nullable=False),
@@ -31,13 +31,12 @@ def upgrade():
     op.create_table('clothing',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('user_id', sa.Integer(), nullable=False),
-    sa.Column('image', sa.String(), nullable=True),
-    sa.Column('name', sa.String(length=120), nullable=True),
-    sa.Column('category', sa.Enum('top', 'bottom', 'shoes', name='category'), nullable=False),
+    sa.Column('image', sa.String(), nullable=False),
+    sa.Column('name', sa.String(length=120), nullable=False),
+    sa.Column('category', sa.Enum('top', 'bottom', 'footwear', name='category'), nullable=False),
     sa.Column('clean', sa.Boolean(), nullable=False),
     sa.ForeignKeyConstraint(['user_id'], ['user.id'], ),
-    sa.PrimaryKeyConstraint('id'),
-    sa.UniqueConstraint('clean')
+    sa.PrimaryKeyConstraint('id')
     )
     op.create_table('collection',
     sa.Column('id', sa.Integer(), nullable=False),

@@ -19,24 +19,6 @@ def get_all_users():
 
     return jsonify(serialized_users), 200
 
-# @app.route('/user/<int:id>', methods=['GET'])
-# def get_user(id):
-
-#     user = User.query.get(id)
-#     serialized_user = user.serialize()
-#     return jsonify(serialized_user), 200
-    
-# @api.route('/user', methods=['GET'])
-# def get_all_users():
-#     all_users = User.query.all()
-
-#     serialized_users = []
-#     for user in all_users:
-#         serialized_users.append(user.serialize())
-#     print(all_users)
-
-#     return jsonify(serialized_users), 200
-
 @api.route('/clothing', methods=['GET'])
 def get_all_clothings():
     all_clothings = Clothing.query.all()
@@ -59,17 +41,31 @@ def get_clothing(id):
 @api.route('/clothing', methods=['POST'])
 def create_clothing():
 
-    payload = request.get_json()
+    body = request.get_json()
+    if body is None:
+        return "The request body is null", 400
     
+    user_id = body.get('user_id')
+    if user_id is None or user_id == 0:
+        return "Please, provide a valid user_id", 400
 
-    new_clothing = Clothing(user_id=payload['user_id'], name=payload['name'], category=payload['category'], clean=payload['clean'])
+   name = body.get('name')
+    if name is None or name == 0:
+        return "Provide a valid name", 400
 
-    db.session.add(new_clothing)
-    db.session.commit()
+    category = body.get('category')
+    if category is None or category == 0:
+        return "Provide a valid category", 400
 
-    return jsonify(new_clothing.serialize()), 200   
+    image = body.get('image')
+    if image is None or image == 0:
+        return "Provide a valid image", 400
 
+    clothing = Clothing(user_id=user_id, name=name, category=category, image=image, clean=True)
+    clothing.create_clothing()
 
+    return "Created", 201
+  
 
 @api.route('/outfit', methods=['GET'])
 def get_all_outfits():

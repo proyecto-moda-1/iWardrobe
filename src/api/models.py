@@ -4,9 +4,9 @@ import enum
 db = SQLAlchemy()
 
 class Gender(enum.Enum):
-    mujer = 1
-    hombre = 2
-    nobinario = 3
+    female = 1
+    male = 2
+    nonbinary = 3
 
 
 class User(db.Model):
@@ -45,19 +45,23 @@ clothing_outfit = db.Table('clothing_outfit',
 class Category(enum.Enum):
     top = 1
     bottom = 2
-    shoes = 3
+    footwear = 3
 
 
 class Clothing(db.Model):
      id = db.Column(db.Integer, primary_key=True)
      user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-     image = db.Column(db.String)
-     name = db.Column(db.String(120), nullable=False)
+     image = db.Column(db.String, unique=False, nullable=False)
+     name = db.Column(db.String(120), unique=False, nullable=False)
      category = db.Column(db.Enum(Category), unique=False, nullable=False)
      clean= db.Column(db.Boolean, unique=False, nullable=False)
 
      #RELACIONES
      outfits = db.relationship('Outfit', secondary= clothing_outfit , back_populates="clothing_items", lazy=True)
+
+     def create_clothing(self):
+         db.session.add(self)
+         db.session.commit()
      
      def __repr__(self):
          return '<Clothing %r>' % self.name
