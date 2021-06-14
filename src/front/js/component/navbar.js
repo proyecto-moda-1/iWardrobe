@@ -30,13 +30,16 @@ export const Navbar = () => {
 							Launch demo modal
 						</Button>
 						<LoadClothing show={show} handleClose={handleClose} />
-
-						<button className="d-flex input-group w-auto" href="#">
-							Crea tu Outfit
-						</button>
-						<button className="d-flex input-group w-auto" href="#">
-							Tu Closet
-						</button>
+						<Link to="/">
+							<button className="d-flex input-group w-auto" href="#">
+								Crea tu Outfit
+							</button>
+						</Link>
+						<Link to="/">
+							<button className="d-flex input-group w-auto" href="#">
+								Tu Closet
+							</button>
+						</Link>
 					</div>
 				</div>
 			</div>
