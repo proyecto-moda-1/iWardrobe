@@ -38,8 +38,6 @@ def get_clothing(id):
 
     return jsonify(serialized_clothing), 200 
 
-
-
 @api.route('/clothing', methods=['POST'])
 def create_clothing():
 
@@ -51,7 +49,7 @@ def create_clothing():
     if user_id is None or user_id == 0:
         return "Please, provide a valid user_id", 400
 
-   name = body.get('name')
+    name = body.get('name')
     if name is None or name == 0:
         return "Provide a valid name", 400
 
@@ -68,7 +66,6 @@ def create_clothing():
 
     return "Created", 201
   
-
 @api.route('/outfit', methods=['GET'])
 def get_all_outfits():
     all_outfits = Outfit.query.all()
