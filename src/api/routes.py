@@ -49,7 +49,7 @@ def create_clothing():
     if user_id is None or user_id == 0:
         return "Please, provide a valid user_id", 400
 
-    name = body.get('name')
+   name = body.get('name')
     if name is None or name == 0:
         return "Provide a valid name", 400
 
