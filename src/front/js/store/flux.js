@@ -17,7 +17,10 @@ const getState = ({ getStore, setState, getActions }) => {
 						image:
 							"https://th.bing.com/th/id/R9e6e1694bdbb9d0148c1d5d451b7169b?rik=A70S6pmmXpjrGA&pid=ImgRaw"
 					}),
-					headers: { "Content-Type": "application/json" }
+					headers: {
+						"Content-Type": "application/json",
+						"Access-Control-Allow-Origin": "*"
+					}
 				};
 
 				fetch(endpoint, config)

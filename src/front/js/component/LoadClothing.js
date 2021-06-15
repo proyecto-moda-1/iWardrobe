@@ -23,6 +23,7 @@ const LoadClothing = props => {
 			image: image,
 			category: category
 		};
+		actions.createClothing(data);
 	};
 
 	return (
@@ -69,7 +70,7 @@ const LoadClothing = props => {
 				<Button variant="outline-secondary" onClick={handleClose}>
 					Close
 				</Button>
-				<Button variant="outline-secondary" onClick={() => actions.handleSubmit(data)}>
+				<Button variant="outline-secondary" onClick={handleSubmit}>
 					Save Changes
 				</Button>
 			</Modal.Footer>

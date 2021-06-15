@@ -2,42 +2,25 @@ import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import rigoImageUrl from "../../img/rigo-baby.jpg";
 import "../../styles/home.scss";
-import DropdownButton from "react-bootstrap/DropdownButton";
-import SplitButton from "react-bootstrap/SplitButton";
-import Dropdown from "react-bootstrap/Dropdown";
-import Carousel from "react-bootstrap/Carousel";
-// import Card from "react-bootstrap/Card";
+import Form from "react-bootstrap/Form";
 
 export const Home = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
 		<>
-			<Dropdown>
-				<Dropdown.Toggle id="dropdown-basic">Dropdown Button</Dropdown.Toggle>
-
-				<Dropdown.Menu>
-					<Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-					<Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-					<Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-				</Dropdown.Menu>
-			</Dropdown>
-			<Dropdown>
-				<Dropdown.Toggle id="dropdown-basic">Dropdown Button</Dropdown.Toggle>
-
-				<Dropdown.Menu>
-					<Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-					<Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-					<Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-				</Dropdown.Menu>
-			</Dropdown>
-			{/* <Card style={{ width: "18rem" }}>
-				<Card.Img variant="top" src="" />
-				<Card.Body>
-					<Card.Title>Card Title</Card.Title>
-					<Card.Text />
-				</Card.Body>
-			</Card>{" "} */}
+			<Form.Control size="sm" as="select" className="select-clothing" value="">
+				<option value="0">Avalaible Clothing</option>
+				<option value="top">Top</option>
+				<option value="bottom">Bottom</option>
+				<option value="footwear"> Footwear</option>
+			</Form.Control>
+			<Form.Control size="sm" as="select" className="select-clothing" value="">
+				<option value="0">Add Collection</option>
+				<option value="top">Favourites</option>
+				<option value="bottom">Work</option>
+				<option value="footwear"> Weekends</option>
+			</Form.Control>
 		</>
 	);
 };
