@@ -50,6 +50,7 @@ const LoadClothing = props => {
 				className="select-clothing"
 				value={category}
 				onChange={event => setCategory(event.target.value)}>
+				<option value="0">Category</option>
 				<option value="top">Top</option>
 				<option value="bottom">Bottom</option>
 				<option value="footwear"> Footwear</option>
