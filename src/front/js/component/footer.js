@@ -23,9 +23,8 @@ export const Footer = () => (
 		</div>
 
 		<div className="text-center p-3">
-			© 2020 Copyright:
-			<a className="text-white" href="https://mdbootstrap.com/">
-				MDBootstrap.com
+			<a className="text-white" href="https://4geeksacademy.com/es/inicio">
+				4geeks academy
 			</a>
 		</div>
 	</footer>
