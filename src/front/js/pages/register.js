@@ -32,14 +32,14 @@ export const Register = function(props) {
 	};
 
 	return (
-		<div className="row">
-			<div className="col-md-6 mx-auto p-0">
+		<div className="container">
+			<div className="col-md-8 mx-auto p-0">
 				<div className="d-flex justify-content-center">
 					<div className="login-box">
 						<div className="login-snip">
 							{" "}
-							<a className="tab-1 tab btn btn-light">Register</a>
-							<div className="signup">
+							<a className="tittle">REGISTER</a>
+							<div className="loginContainer">
 								<div className="group">
 									<label className="user label">NickName</label>
 									<input
@@ -108,10 +108,7 @@ export const Register = function(props) {
 									/>
 								</div>
 								<div className="group">
-									<button
-										type="submit"
-										className="button btn btn-outline-secondary btn-block"
-										onClick={handleRegister}>
+									<button type="submit" value="boton" className="button" onClick={handleRegister}>
 										Sign Up
 									</button>
 								</div>
