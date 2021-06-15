@@ -28,43 +28,48 @@ const LoadClothing = props => {
 	return (
 		<Modal show={show} onHide={handleClose}>
 			<Modal.Header closeButton>
-				<Modal.Title>Add clothing</Modal.Title>
+				<Modal.Title>Add Clothing</Modal.Title>
 			</Modal.Header>
-			<Modal.Body />
-			<div className="group">
+			{/* <Modal.Body className="modal-body" /> */}
+			<div className="group-clothing">
 				{" "}
-				<label className="pass label">Clothing&apos;s name</label>{" "}
+				<label className="pass label" />{" "}
 				<input
 					type="text"
-					className="input"
+					className="input-clothing"
 					id="clothing-name"
-					placeholder="Clothing's name"
+					placeholder="Clothing's Name"
 					value={name}
 					onChange={event => setName(event.target.value)}
 				/>{" "}
 			</div>
-			<Form.Control size="sm" as="select" value={category} onChange={event => setCategory(event.target.value)}>
-				<option value="top">top</option>
-				<option value="bottom">bottom</option>
-				<option value="footwear"> footwear</option>
+			<Form.Control
+				size="sm"
+				as="select"
+				className="select-clothing"
+				value={category}
+				onChange={event => setCategory(event.target.value)}>
+				<option value="top">Top</option>
+				<option value="bottom">Bottom</option>
+				<option value="footwear"> Footwear</option>
 			</Form.Control>
-			<div className="group">
+			<div className="group-image">
 				{" "}
-				<label className="pass label">Image url</label>{" "}
+				<label className="pass label" />{" "}
 				<input
 					type="text"
-					className="input"
+					className="input-image"
 					id="clothing-image-url"
-					placeholder="Image url"
+					placeholder="Image URL"
 					value={image}
 					onChange={event => setImage(event.target.value)}
 				/>{" "}
 			</div>
 			<Modal.Footer>
-				<Button variant="secondary" onClick={handleClose}>
+				<Button variant="outline-secondary" onClick={handleClose}>
 					Close
 				</Button>
-				<Button variant="primary" onClick={() => actions.handleSubmit(data)}>
+				<Button variant="outline-secondary" onClick={() => actions.handleSubmit(data)}>
 					Save Changes
 				</Button>
 			</Modal.Footer>

@@ -1,24 +1,95 @@
-.body {
-    // margin: 0;
-    // color: #6a6f8c;
-    // background: #c8c8c8;
-    // font: 600 1rem/1.125 'Open Sans', sans-serif
+.div.modal-body {
+    padding: 1px;
+    flex: 0 0 auto;
+    
+}
+.modal-header {
+font-family: Abel;
+font-style: normal;
+font-weight: normal;
+font-size: 36px;
+line-height: 46px;
+text-transform: capitalize;
+
+color: #463F3A;
+    
+}
+.modal-title{
+font-family: Abel;
+font-style: normal;
+font-weight: normal;
+font-size: 36px;
+line-height: 46px;
+text-transform: capitalize;
+text-align: center;
+
+color: #463F3A;
+}
+.group-clothing,.group-image{
+    margin-top:25px ;
+    margin-bottom: 25px;
+    margin-left: 100px;
+    font-family: Abel;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 30px;
+    text-transform: capitalize;
+
+    
+}
+.input-image, .input-clothing{
+    font-size: 15px;
+    text-transform: capitalize;
     text-align: center;
+    width: 200px;
+}
+.form-control.select.select-clothing{
+    font-size: 15px;
+    text-transform: capitalize;
+    text-align: center;
+    width: 200px;
 }
 .modal-content{
     
     width: 100%;
     margin: auto;
-    max-width: 20rem;
-    // min-height: 0rem;
+    max-width: 25rem;
     position: relative;
     background: rgb(207, 174, 205);
     box-shadow: 0 0.75rem 0.938rem 0 rgba(27, 26, 26, 0.24), 0 17px 50px 0 rgba(0, 0, 0, .19)
 }
-// .modal-body {
-//     height: 3px;
-// }
-.group {
-      text-align: center;
-      font:  600 1rem/1.125 'Open Sans', sans-serif ;
+
+
+.modal-footer{
+left: 94px;
+top: 617px;
+box-sizing: border-box;
+border-radius: 6px;
+margin: 0.75rem; 
+font-family: Abel;
+font-style: normal;
+font-weight: normal;
+font-size: 20px;
+line-height: 30px;
+text-transform: capitalize;
+text-align: center;
+
+color: #463F3A;
+background-color:  rgb(207, 174, 205);
+border-color: rgba(138, 129, 124, 0.98), 5px solid; 
+
+}
+.button.btn.btn-primary{
+ margin: 0.75rem; 
+font-family: Abel;
+font-style: normal;
+font-weight: normal;
+font-size: 20px;
+line-height: 30px;
+text-transform: capitalize;
+text-align: center;
+
+background-color: #463F3A;
+border-color: rgba(138, 129, 124, 0.98), 5px solid; 
 }

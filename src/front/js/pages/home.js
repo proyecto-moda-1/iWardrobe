@@ -6,7 +6,7 @@ import DropdownButton from "react-bootstrap/DropdownButton";
 import SplitButton from "react-bootstrap/SplitButton";
 import Dropdown from "react-bootstrap/Dropdown";
 import Carousel from "react-bootstrap/Carousel";
-import Card from "react-bootstrap/Card";
+// import Card from "react-bootstrap/Card";
 
 export const Home = () => {
 	const { store, actions } = useContext(Context);
@@ -31,13 +31,13 @@ export const Home = () => {
 					<Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
 				</Dropdown.Menu>
 			</Dropdown>
-			<Card style={{ width: "18rem" }}>
+			{/* <Card style={{ width: "18rem" }}>
 				<Card.Img variant="top" src="" />
 				<Card.Body>
 					<Card.Title>Card Title</Card.Title>
 					<Card.Text />
 				</Card.Body>
-			</Card>{" "}
+			</Card>{" "} */}
 		</>
 	);
 };
