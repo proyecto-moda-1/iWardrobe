@@ -5,7 +5,7 @@ import "../../styles/card.scss";
 export function Card(props) {
 	useEffect(() => {
 		fetch(props.url).then(response => response.json());
-		// .then(data => console.log(data.result))
+		// .then(data => console.log(data.result));
 		// .catch(err => console.error(err));
 	}, []);
 	return (
