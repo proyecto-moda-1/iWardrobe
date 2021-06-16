@@ -1,4 +1,3 @@
-
 const getState = ({ getStore, setState, getActions }) => {
 	return {
 		store: {
@@ -38,4 +37,3 @@ const getState = ({ getStore, setState, getActions }) => {
 	};
 };
 export default getState;
-

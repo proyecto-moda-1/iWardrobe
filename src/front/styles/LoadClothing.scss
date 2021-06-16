@@ -3,33 +3,27 @@
     flex: 0 0 auto;
     
 }
-.modal-header {
-font-family: Abel;
+.modal-header, .modal-title {
 font-style: normal;
 font-weight: normal;
-font-size: 36px;
 line-height: 46px;
-text-transform: capitalize;
-
-color: #463F3A;
-    
+text-transform: uppercase;
+margin: 0;
+color: rgba(107, 101, 103, 0.781);
+// background:  rgba(245, 222, 230, 0.76);
+font-style: 600 1rem/1.125 'Open Sans', sans-serif;
 }
 .modal-title{
-font-family: Abel;
-font-style: normal;
-font-weight: normal;
-font-size: 36px;
-line-height: 46px;
-text-transform: capitalize;
-text-align: center;
-
-color: #463F3A;
+    margin-left: 100px;
 }
+
+
+
 .group-clothing,.group-image{
     margin-top:25px ;
     margin-bottom: 25px;
     margin-left: 100px;
-    font-family: Abel;
+    font-style: 'Open Sans', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 20px;
@@ -43,53 +37,51 @@ color: #463F3A;
     text-transform: capitalize;
     text-align: center;
     width: 200px;
+    border: 2px;
+    border-radius: 12px;
 }
-.form-control.select.select-clothing{
-    font-size: 15px;
-    text-transform: capitalize;
-    text-align: center;
+.select,.select-clothing,.form-control.form-control-sm{
     width: 200px;
+    margin-left: 105px;
+    border: 2px;
+    border-radius: 12px;
+    font-size: 0.90rem;
 }
+  
+
 .modal-content{
-    
     width: 100%;
     margin: auto;
     max-width: 25rem;
     position: relative;
-    background: rgb(207, 174, 205);
+    background:  rgba(245, 222, 230, 0.76);
     box-shadow: 0 0.75rem 0.938rem 0 rgba(27, 26, 26, 0.24), 0 17px 50px 0 rgba(0, 0, 0, .19)
 }
 
-
-.modal-footer{
-left: 94px;
-top: 617px;
-box-sizing: border-box;
-border-radius: 6px;
-margin: 0.75rem; 
-font-family: Abel;
-font-style: normal;
-font-weight: normal;
-font-size: 20px;
-line-height: 30px;
-text-transform: capitalize;
-text-align: center;
-
-color: #463F3A;
-background-color:  rgb(207, 174, 205);
-border-color: rgba(138, 129, 124, 0.98), 5px solid; 
-
-}
-.button.btn.btn-primary{
- margin: 0.75rem; 
-font-family: Abel;
-font-style: normal;
-font-weight: normal;
-font-size: 20px;
-line-height: 30px;
-text-transform: capitalize;
-text-align: center;
-
+.button,.btn.btn-outline-light,.close-button, .save-button {
 background-color: #463F3A;
-border-color: rgba(138, 129, 124, 0.98), 5px solid; 
 }
+.save-button{
+height:40px;
+width: 140px;
+border: 2px;
+border-radius: 12px;
+font-size: 15px;
+text-align: center;
+font-style: 'Open Sans', sans-serif;
+color:whitesmoke;
+}
+.close-button{
+height:40px;
+width: 70px;
+margin-right: 140px;
+border: 2px;
+border-radius: 12px;
+font-size: 15px;
+text-align: center;
+font-style: 'Open Sans', sans-serif;
+color:whitesmoke;
+}
+
+
+
