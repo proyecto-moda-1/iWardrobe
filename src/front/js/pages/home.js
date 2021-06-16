@@ -31,7 +31,7 @@ export const Home = () => {
 	// 		image: image,
 	// 		category: category
 	// 	};
-	// 	actions.createClothing(data);
+	// 	actions.getClothing(data);
 	// };
 
 	return (
