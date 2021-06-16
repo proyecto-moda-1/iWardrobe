@@ -1,8 +1,8 @@
 import React, { useContext, useState } from "react";
 import { useHistory } from "react-router-dom";
 import PropTypes from "prop-types";
-
 import "../../styles/login.scss";
+import { Context } from "../store/appContext";
 
 export const Login = function(props) {
 	const [email, setEmail] = useState("");
@@ -10,144 +10,64 @@ export const Login = function(props) {
 
 	const history = useHistory();
 
+	const { store, actions } = useContext(Context);
+
 	const handleSubmit = () => {
 		const data = {
 			email: email,
 			password: password
 		};
+		actions.logIn(data, () => {
+			if (store.error == null) {
+				history.push("/home");
+			}
+		});
 	};
+
+	// .then(response => response.json())
+	// .then(responseJson =>{
+	//     console.log(responseJson);
+	// });
 
 	return (
 		<div className="row">
 			<div className="col-md-6 mx-auto p-0">
-				<div className="card">
+				<div className="d-flex justify-content-center">
 					<div className="login-box">
 						<div className="login-snip">
 							{" "}
-							<input id="tab-1" type="radio" name="tab" className="sign-in" checked />
-							<label className="tab-1 tab">Login</label>{" "}
-							<div className="login-space">
-								<div className="login">
-									<div className="group">
-										{" "}
-										<label className="user label">NickName</label>{" "}
-										<input
-											type="email"
-											className="input"
-											id="exampleFormControlInput1"
-											placeholder="tucorreo@ejemplo.com"
-											value={email}
-											onChange={event => setEmail(event.target.value)}
-										/>{" "}
-									</div>
-									<div className="group">
-										{" "}
-										<label className="pass label">Password</label>{" "}
-										<input
-											type="password"
-											className="input"
-											id="exampleFormControlInput1"
-											placeholder="introduce tu contraseña"
-											value={password}
-											onChange={event => setPassword(event.target.value)}
-										/>{" "}
-									</div>
-									<div className="group">
-										{" "}
-										<input id="check" type="checkbox" className="check" checked />{" "}
-										<label className="check">
-											<span className="icon" /> Keep me Signed in
-										</label>{" "}
-									</div>
-									<div className="group">
-										{" "}
-										<input type="submit" className="button" value="Sign In" />{" "}
-									</div>
-									<div className="hr" />
-									<div className="foot">
-										{" "}
-										<a href="#">Forgot Password?</a>{" "}
-										<div className="sign-up-form">
-											<div className="group">
-												{" "}
-												<input id="tab-2" type="radio" name="tab" className="sign-up" />
-												<div className="singup">
-													<label className="tab-2tab">Sign Up</label>
-													<label className="user label">NickName</label>{" "}
-													<input
-														type="email"
-														className="input"
-														id="exampleFormControlInput1"
-														placeholder="NickName"
-														value={email}
-														onChange={event => setEmail(event.target.value)}
-													/>{" "}
-												</div>
-												<div className="group">
-													{" "}
-													<label className="pass label">Password</label>{" "}
-													<input
-														type="password"
-														className="input"
-														id="exampleFormControlInput1"
-														placeholder="introduce tu contraseña"
-														value={password}
-														onChange={event => setPassword(event.target.value)}
-													/>{" "}
-												</div>
-												<div className="group">
-													{" "}
-													<label className="pass label">Repeat Password</label>{" "}
-													<input
-														id="pass"
-														type="password"
-														className="input"
-														data-type="password"
-														placeholder="Repeat your password"
-													/>{" "}
-												</div>
-												<div className="group">
-													{" "}
-													<label className="pass label">Email Address</label>{" "}
-													<input
-														id="pass"
-														type="text"
-														className="input"
-														placeholder="Enter your email address"
-													/>{" "}
-												</div>
-												<div className="group">
-													{" "}
-													<label className="pass label">Gender</label>{" "}
-													<input
-														id="pass"
-														type="text"
-														className="input"
-														placeholder="Gender"
-													/>{" "}
-												</div>
-												<div className="group">
-													{" "}
-													<label className="pass label">Imagen</label>{" "}
-													<input
-														id="pass"
-														type="text"
-														className="input"
-														placeholder="Imagen"
-													/>{" "}
-												</div>
-												<div className="group">
-													{" "}
-													<input type="submit" className="button" value="Sign Up" />{" "}
-												</div>
-												<div className="hr" />
-												<div className="foot">
-													{" "}
-													<label className="tab-1">Already Member?</label>{" "}
-												</div>
-											</div>
-										</div>
-									</div>
+							<a className="tab-1 tab btn btn-light">Login</a>
+							<div className="login">
+								<div className="group">
+									<label className="user label">Email</label>
+									<input
+										type="email"
+										className="input btn btn-light"
+										id="exampleFormControlInput1"
+										placeholder="tucorreo@ejemplo.com"
+										value={email}
+										onChange={event => setEmail(event.target.value)}
+									/>
+								</div>
+								<div className="group">
+									<label className="pass label">Password</label>
+									<input
+										type="password"
+										className="input btn btn-light"
+										id="exampleFormControlInput1"
+										placeholder="introduce tu contraseña"
+										value={password}
+										onChange={event => setPassword(event.target.value)}
+									/>
+								</div>
+								<div className="group">
+									<button
+										type="submit"
+										value="Login"
+										className="button btn btn-outline-secondary btn-block"
+										onClick={handleSubmit}>
+										Sing In
+									</button>
 								</div>
 							</div>
 						</div>

@@ -16,13 +16,18 @@ export const Home = () => {
 						alt=""
 					/>
 				</div>
-				<div className="col signupLogin">
-					<button type="button" className="btn-login btn-lg btn-block">
-						Sing Up
-					</button>
-					<button type="button" className="btn-login btn-lg btn-block">
+				<div className="col">
+					<p className="col-md-auto">
+						MODA Es lo que compras. ESTILO es lo que haces con eso. No lo dejes para ultima hora.
+					</p>
+				</div>
+				<div className="col btn-group-vertical">
+					<a href="/register" className="btn-secondary btn-lg btn-block">
+						Register
+					</a>
+					<a href="/login" className="btn-secondary btn-lg btn-block">
 						Login
-					</button>
+					</a>
 				</div>
 			</div>
 			<div className="col">
