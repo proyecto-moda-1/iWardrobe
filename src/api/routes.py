@@ -83,8 +83,36 @@ def get_outfit(id):
     outfit = Outfit.query.get(id)
     serialized_outfit = outfit.serialize()
 
-    return jsonify(serialized_outfit), 200 
+    return jsonify(serialized_outfit), 200
 
+@api.route('/outfit', methods=['POST'])
+def create_outfit():
+
+    body = request.get_json()
+    if body is None:
+        return "The request body is null", 400
+    
+    outfit_user_id = body.get('outfit_user_id')
+    if outfit_user_id is None or outfit_user_id == 0:
+        return "Please, provide a valid outfit_user_id", 400
+
+    name = body.get('name')
+    if name is None or name == 0:
+        return "Provide a valid name", 400
+
+    collections = outfit.collections
+    for collections in collections:
+    #  # ... Get addresses
+    #     addresses = form.addresses.raw_data
+
+    #     # ... loop over and add to person
+    #     for address in addresses:
+    #         # Add or create an address
+    #         actual_address = db.session.query(Address).get(address.id)
+     outfit = Outfit(outfit_user_id=outfit_user_id, name=name)
+     outfit.create_outfit()
+
+    return "Created", 201
 
 
 @api.route('/collection', methods=['GET'])
@@ -96,7 +124,22 @@ def get_all_collections():
         serialized_collections.append(collection.serialize())
     print(all_collections)
 
-    return jsonify(serialized_collections), 200   
+    return jsonify(serialized_collections), 200  
+
+# @api.route('/collection', methods=['POST'])
+# def create_collection():
+#     payload = request.get_json()
+
+#     new_collection= Collection(name=payload['name'] )
+
+#     db.session.add(new_collection)
+#     db.session.commit()
+
+#     return jsonify(new_collection.serialize()), 200
+
+      
+
+      
 
 
     

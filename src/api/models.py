@@ -86,11 +86,14 @@ class Outfit(db.Model):
      id = db.Column(db.Integer, primary_key=True)
      outfit_user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
      name = db.Column(db.String(120))
-
     #RELACIONES
      clothing_items = db.relationship('Clothing', secondary= clothing_outfit , back_populates="outfits", lazy=True)
      collections = db.relationship('Collection', secondary= collection_outfit , back_populates="outfits", lazy=True)
 
+
+     def create_outfit(self):
+         db.session.add(self)
+         db.session.commit() 
 
      def __repr__(self):
               return '<Outfit %r>' % self.name
@@ -100,6 +103,7 @@ class Outfit(db.Model):
               "id": self.id,
               "outfit_user_id": self.outfit_user_id,
               "name": self.name,
+              
          } 
 
 class Collection(db.Model):

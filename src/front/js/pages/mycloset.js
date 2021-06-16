@@ -14,7 +14,7 @@ import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import Image from "react-bootstrap/Image";
 
-export const Home = () => {
+export const MyCloset = () => {
 	const { store, actions } = useContext(Context);
 	//aquí tenemos que poner las constantes y todo eso para que esto funcione (meterle la lógica)
 
