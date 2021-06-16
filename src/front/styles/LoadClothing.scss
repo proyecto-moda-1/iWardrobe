@@ -1,0 +1,76 @@
+
+.modal-header, .modal-title {
+    font-style: normal;
+    font-weight: normal;
+    line-height: 46px;
+    text-transform: uppercase;
+    margin: 0;
+    color: rgba(107, 101, 103, 0.781);
+    font-style: 600 1rem/1.125 'Open Sans', sans-serif;
+}
+.modal-title {
+    margin-left: 100px;
+}
+.group-clothing,.group-image{
+    margin-top:25px ;
+    margin-bottom: 25px;
+    margin-left: 100px;
+    font-style: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 30px;
+    text-transform: capitalize;
+}
+.input-image, .input-clothing{
+    font-size: 15px;
+    text-transform: capitalize;
+    text-align: center;
+    width: 200px;
+    border: 2px;
+    border-radius: 12px;
+}
+.select,.select-clothing,.form-control.form-control-sm{
+    width: 200px;
+    margin-left: 105px;
+    border: 2px;
+    border-radius: 12px;
+    font-size: 0.90rem;
+}
+
+.modal-content{
+    width: 100%;
+    margin: auto;
+    max-width: 25rem;
+    position: relative;
+    background:  rgba(245, 222, 230, 0.76);
+    box-shadow: 0 0.75rem 0.938rem 0 rgba(27, 26, 26, 0.24), 0 17px 50px 0 rgba(0, 0, 0, .19)
+}
+
+.button,.btn.btn-outline-light,.close-button, .save-button {
+    background-color: #463F3A;
+}
+.save-button{
+    height:40px;
+    width: 140px;
+    border: 2px;
+    border-radius: 12px;
+    font-size: 15px;
+    text-align: center;
+    font-style: 'Open Sans', sans-serif;
+    color:whitesmoke;
+}
+.close-button{
+    height:40px;
+    width: 70px;
+    margin-right: 140px;
+    border: 2px;
+    border-radius: 12px;
+    font-size: 15px;
+    text-align: center;
+    font-style: 'Open Sans', sans-serif;
+    color:whitesmoke;
+}
+
+
+
