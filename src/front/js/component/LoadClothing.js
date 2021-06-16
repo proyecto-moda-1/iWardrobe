@@ -1,17 +1,20 @@
-import React, { useState } from "react";
-import { useHistory, useContext } from "react-router-dom";
+import React, { useState, useContext } from "react";
+import { useHistory } from "react-router-dom";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import "../../styles/LoadClothing.scss";
+import { Context } from "../store/appContext";
+import { getActions } from "../store/flux.js";
 
 const LoadClothing = props => {
 	const { show, handleClose } = props;
 	const [name, setName] = useState("");
 	const [image, setImage] = useState("");
 	const [category, setCategory] = useState("");
+	const { store, actions } = useContext(Context);
 
 	const handleSubmit = () => {
 		const data = {
@@ -20,63 +23,55 @@ const LoadClothing = props => {
 			image: image,
 			category: category
 		};
-		const url = "https://3001-olive-wolf-fbwjw9o5.ws-eu08.gitpod.io/api/clothing";
-		const options = {
-			method: "POST",
-			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify(data)
-		};
-
-		fetch(url, options)
-			.then(response => {
-				setName("");
-				setImage("");
-				setCategory("");
-				return response.json();
-			})
-			.then(responseObject => console.log(responseObject))
-			.catch(err => console.error(err));
+		actions.createClothing(data);
 	};
+
 	return (
 		<Modal show={show} onHide={handleClose}>
 			<Modal.Header closeButton>
-				<Modal.Title>Add clothing</Modal.Title>
+				<Modal.Title>Add Clothing</Modal.Title>
 			</Modal.Header>
-			<Modal.Body />
-			<div className="group">
+			{/* <Modal.Body className="modal-body" /> */}
+			<div className="group-clothing">
 				{" "}
-				<label className="pass label">Clothing&apos;s name</label>{" "}
+				<label className="pass label" />{" "}
 				<input
 					type="text"
-					className="input"
+					className="input-clothing"
 					id="clothing-name"
-					placeholder="Clothing's name"
+					placeholder="Clothing's Name"
 					value={name}
 					onChange={event => setName(event.target.value)}
 				/>{" "}
 			</div>
-			<Form.Control size="sm" as="select" value={category} onChange={event => setCategory(event.target.value)}>
-				<option value="top">top</option>
-				<option value="bottom">bottom</option>
-				<option value="footwear"> footwear</option>
+			<Form.Control
+				size="sm"
+				as="select"
+				className="select-clothing"
+				value={category}
+				onChange={event => setCategory(event.target.value)}>
+				<option value="0">Category</option>
+				<option value="top">Top</option>
+				<option value="bottom">Bottom</option>
+				<option value="footwear"> Footwear</option>
 			</Form.Control>
-			<div className="group">
+			<div className="group-image">
 				{" "}
-				<label className="pass label">Image url</label>{" "}
+				<label className="pass label" />{" "}
 				<input
 					type="text"
-					className="input"
+					className="input-image"
 					id="clothing-image-url"
-					placeholder="Image url"
+					placeholder="Image URL"
 					value={image}
 					onChange={event => setImage(event.target.value)}
 				/>{" "}
 			</div>
 			<Modal.Footer>
-				<Button variant="secondary" onClick={handleClose}>
+				<Button variant="outline-light" className="close-button" onClick={handleClose}>
 					Close
 				</Button>
-				<Button variant="primary" onClick={handleSubmit}>
+				<Button variant="outline-light" className="save-button" onClick={handleSubmit}>
 					Save Changes
 				</Button>
 			</Modal.Footer>
