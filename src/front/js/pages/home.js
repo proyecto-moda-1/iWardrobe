@@ -1,8 +1,6 @@
 import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
-import rigoImageUrl from "../../img/rigo-baby.jpg";
 import "../../styles/home.scss";
-import Form from "react-bootstrap/Form";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import SplitButton from "react-bootstrap/SplitButton";
 import Dropdown from "react-bootstrap/Dropdown";
@@ -13,14 +11,9 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import Image from "react-bootstrap/Image";
-import AddCollection from "../component/addCollection.js";
+
 
 export const Home = () => {
-	const { store, actions } = useContext(Context);
-	const [show, setShow] = useState(false);
-
-	const handleClose = () => setShow(false);
-	const handleShow = () => setShow(true);
 
 	return (
 		<>
@@ -53,11 +46,6 @@ export const Home = () => {
 							<Dropdown.Item href="#/action-2">Weekends</Dropdown.Item>
 							<Dropdown.Item href="#/action-3">Work</Dropdown.Item>
 						</DropdownButton>
-						<br />
-						<Button variant="primary" onClick={handleShow}>
-							Launch demo modal
-						</Button>
-						<AddCollection show={show} handleClose={handleClose} />
 					</Col>
 					<Col sm={true}>
 						<h2>Carousel</h2>
