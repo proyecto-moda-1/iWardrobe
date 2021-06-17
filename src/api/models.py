@@ -115,6 +115,9 @@ class Collection(db.Model):
      #RELACIONES
      outfits= db.relationship('Outfit', secondary= collection_outfit , back_populates="collections", lazy=True)
 
+     def create_collection(self):
+         db.session.add(self)
+         db.session.commit() 
 
      def __repr__(self):
         return '<Collection %r>' % self.image
@@ -122,7 +125,7 @@ class Collection(db.Model):
      def serialize(self):
         return {
               "id": self.id,
-              "user_id": self.user_id,
+              "user_id": self.collection_user_id,
               "image": self.image,
               "name": self.name,
          }     

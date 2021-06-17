@@ -126,16 +126,29 @@ def get_all_collections():
 
     return jsonify(serialized_collections), 200  
 
-# @api.route('/collection', methods=['POST'])
-# def create_collection():
-#     payload = request.get_json()
+@api.route('/collection', methods=['POST'])
+def create_collection():
 
-#     new_collection= Collection(name=payload['name'] )
+    body = request.get_json()
+    if body is None:
+        return "The request body is null", 400
+    
+    collection_user_id = body.get('collection_user_id')
+    if collection_user_id is None or collection_user_id == 0:
+        return "Please, provide a valid collection_user_id", 400
 
-#     db.session.add(new_collection)
-#     db.session.commit()
+    name = body.get('name')
+    if name is None or name == 0:
+        return "Provide a valid name", 400
 
-#     return jsonify(new_collection.serialize()), 200
+    image = body.get('image')
+    if image is None or image == 0:
+        return "Provide a valid image", 400
+
+    collection = Collection(collection_user_id=collection_user_id, name=name, image=image)
+    collection.create_collection()
+
+    return "Created collection", 201
 
       
 

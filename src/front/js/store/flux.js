@@ -2,10 +2,9 @@ const getState = ({ getStore, setState, getActions }) => {
 	return {
 		store: {
 			message: null,
-            top: [],
-            bottom:[],
-            footwear:[],
-
+			top: [],
+			bottom: [],
+			footwear: []
 		},
 		actions: {
 			getClothing: data => {

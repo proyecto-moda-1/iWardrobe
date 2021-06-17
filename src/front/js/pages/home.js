@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
 import rigoImageUrl from "../../img/rigo-baby.jpg";
 import "../../styles/home.scss";
@@ -13,46 +13,54 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import Image from "react-bootstrap/Image";
+import AddCollection from "../component/addCollection.js";
 
 export const Home = () => {
 	const { store, actions } = useContext(Context);
-	//aquí tenemos que poner las constantes y todo eso para que esto funcione (meterle la lógica)
+	const [show, setShow] = useState(false);
 
-	// const { show, handleClose } = props;
-	// const [name, setName] = useState("");
-	// const [image, setImage] = useState("");
-	// const [category, setCategory] = useState("");
-	// const { store, actions } = useContext(Context);
-
-	// const handleSubmit = () => {
-	// 	const data = {
-	// 		user_id: 1,
-	// 		name: name,
-	// 		image: image,
-	// 		category: category
-	// 	};
-	// 	actions.getClothing(data);
-	// };
+	const handleClose = () => setShow(false);
+	const handleShow = () => setShow(true);
 
 	return (
 		<>
 			<Container>
 				<Row>
 					<Col sm={true}>
-						<DropdownButton id="dropdown-basic-button" title="Clothing Avalaible">
-							<Dropdown.Item href="#/action-1">Top</Dropdown.Item>
-							<Dropdown.Item href="#/action-2">Bottom</Dropdown.Item>
-							<Dropdown.Item href="#/action-3"> Footwear</Dropdown.Item>
+						<h2>Your Clothing</h2>
+						<DropdownButton id="dropdown-basic-button" title="Top">
+							<Dropdown.Item href="#/action-1"> Clothing item 1</Dropdown.Item>
+							<Dropdown.Item href="#/action-2">Clothingitem 2</Dropdown.Item>
+							<Dropdown.Item href="#/action-3"> Clothingitem 3</Dropdown.Item>
+						</DropdownButton>
+						<br />
+						<DropdownButton id="dropdown-basic-button" title=" Bottom">
+							<Dropdown.Item href="#/action-1">Clothingitem 1</Dropdown.Item>
+							<Dropdown.Item href="#/action-2">Clothing item 1</Dropdown.Item>
+							<Dropdown.Item href="#/action-3">Clothing item 1</Dropdown.Item>
+						</DropdownButton>
+						<br />
+						<DropdownButton id="dropdown-basic-button" title="Footwear">
+							<Dropdown.Item href="#/action-1">Clothing item 1</Dropdown.Item>
+							<Dropdown.Item href="#/action-2">Clothing item 1</Dropdown.Item>
+							<Dropdown.Item href="#/action-3">Clothing item 1</Dropdown.Item>
 						</DropdownButton>
 					</Col>
 					<Col sm={true}>
-						<DropdownButton id="dropdown-basic-button" title=" Add Collection">
+						<h2>Add Collection</h2>
+						<DropdownButton id="dropdown-basic-button" title=" Collections">
 							<Dropdown.Item href="#/action-1">Favorites</Dropdown.Item>
 							<Dropdown.Item href="#/action-2">Weekends</Dropdown.Item>
 							<Dropdown.Item href="#/action-3">Work</Dropdown.Item>
 						</DropdownButton>
+						<br />
+						<Button variant="primary" onClick={handleShow}>
+							Launch demo modal
+						</Button>
+						<AddCollection show={show} handleClose={handleClose} />
 					</Col>
 					<Col sm={true}>
+						<h2>Carousel</h2>
 						<Card border="dark" style={{ width: "18rem", height: "30rem" }}>
 							<Card.Body>
 								<Card.Title>Aquí va el carousel de ropa</Card.Title>
