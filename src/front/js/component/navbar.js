@@ -10,7 +10,7 @@ export const Navbar = () => {
 	const handleShow = () => setShow(true);
 	return (
 		<div className="header">
-			<a className="logo" src="" alt="logo">
+			<a className="logo" href="/ " src="" alt="logo">
 				OUTFIT PLANNER
 			</a>
 			<nav>

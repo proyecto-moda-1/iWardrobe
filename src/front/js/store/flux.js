@@ -5,7 +5,8 @@ const getState = ({ getStore, getActions, setState }) => {
 			message: null,
 			user: [],
 			clothing: [],
-			token: token
+			token: token,
+			outfit: []
 		},
 		actions: {
 			createUser: (data, callback) => {
@@ -107,6 +108,23 @@ const getState = ({ getStore, getActions, setState }) => {
 					})
 					.then(json => console.log(json))
 					.catch(err => console.error(err));
+			},
+
+			getAllOutfit: data => {
+				const endpoint = process.env.BACKEND_URL + "/api/outfit";
+				const config = {
+					method: "GET",
+					headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*" }
+				};
+				fetch(endpoint, config)
+					.then(response => {
+						return response.json();
+					})
+					.then(json => {
+						setStore({ outfit: json });
+						callback();
+					})
+					.catch(error => {});
 			}
 		}
 	};

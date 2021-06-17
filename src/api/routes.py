@@ -37,8 +37,8 @@ def create_users():
     user_create = User(nickname=payload['nickname'],
     gender=payload['gender'], 
     email=payload['email'], 
-    image=payload['image'],
-    password=payload['password'])
+    image=payload['image'])
+
     db.session.add(user_create)
     db.session.commit()
 
@@ -58,6 +58,20 @@ def handle_login():
     password= json["password"]
 
     user= User.get_login_credentials(email, password)
+
+    # if user is None:
+    #     raise APIException("user does not exist")
+
+    # token = ""
+    # user.assign_token(token)
+
+    return jsonify(user.serialize()), 200
+
+
+    # email = json["email"]
+    # password= json["password"]
+
+    # user= User.get_login_credentials(email, password)
 
     # if user is None:
     #     raise APIException("user does not exist")
@@ -137,6 +151,16 @@ def get_all_outfits():
     print(all_outfits)
 
     return jsonify(serialized_outfits), 200
+
+@api.route('/outfit/<int:id>', methods=['GET'])
+def get_all_outfit(id):
+
+    outfit = Outfit.query.get(id)
+    serialized_outfit = outfit.serialize()
+
+    return jsonify(serialized_clothing), 200 
+
+
 
 @api.route('/collection', methods=['GET'])
 def get_all_collections():
