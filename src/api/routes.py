@@ -38,6 +38,17 @@ def get_clothing(id):
 
     return jsonify(serialized_clothing), 200 
 
+# //////////////////////////////////////////////////////
+@api.route('/clothing/category', methods=['GET'])
+def get_category(category):
+
+    clothing = Clothing.query.get(category)
+    serialized_clothing = clothing.serialize()
+
+    return jsonify(serialized_clothing), 200
+
+# //////////////////////////////////////////////
+
 @api.route('/clothing', methods=['POST'])
 def create_clothing():
 
@@ -85,6 +96,8 @@ def get_outfit(id):
 
     return jsonify(serialized_outfit), 200
 
+# //////////////////////////////////////////////////////////////
+
 @api.route('/outfit', methods=['POST'])
 def create_outfit():
 
@@ -113,7 +126,7 @@ def create_outfit():
      outfit.create_outfit()
 
     return "Created", 201
-
+# //////////////////////////////////////////////////////////////
 
 @api.route('/collection', methods=['GET'])
 def get_all_collections():
