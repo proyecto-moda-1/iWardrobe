@@ -68,10 +68,17 @@ const LoadClothing = props => {
 				/>{" "}
 			</div>
 			<Modal.Footer>
+<<<<<<< HEAD
 				<Button variant="outline-secondary" onClick={handleClose}>
 					Close
 				</Button>
 				<Button variant="outline-secondary" onClick={handleSubmit}>
+=======
+				<Button variant="outline-light" className="close-button" onClick={handleClose}>
+					Close
+				</Button>
+				<Button variant="outline-light" className="save-button" onClick={handleSubmit}>
+>>>>>>> main
 					Save Changes
 				</Button>
 			</Modal.Footer>
