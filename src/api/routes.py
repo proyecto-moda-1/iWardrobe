@@ -152,13 +152,12 @@ def get_all_outfits():
 
     return jsonify(serialized_outfits), 200
 
+
 @api.route('/outfit/<int:id>', methods=['GET'])
 def get_all_outfit(id):
+    getOutfit = Outfit.query.get(id)
 
-    outfit = Outfit.query.get(id)
-    serialized_outfit = outfit.serialize()
-
-    return jsonify(serialized_clothing), 200 
+    return jsonify(getOutfit.serialize()), 200 
 
 
 
