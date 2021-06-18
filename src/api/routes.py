@@ -4,6 +4,7 @@ This module takes care of starting the API Server, Loading the DB and Adding the
 from flask import Flask, request, jsonify, url_for, Blueprint
 from api.models import db, User, Clothing, Outfit, Collection
 from api.utils import generate_sitemap, APIException
+from api.models import Category
 
 api = Blueprint('api', __name__)
 
@@ -38,19 +39,33 @@ def get_clothing(id):
 
     return jsonify(serialized_clothing), 200 
 
-# //////////////////////////////////////////////////////
+
 @api.route('/clothing/category', methods=['GET'])
 def get_clothing_by_category():
-   
-   clothing = Clothing.query.filter_by(top=top).get_or_404(description='There is no data with {}'.format(top))
-   return render_template('get_clothing_by_category.html', top=top)
- 
 
+    # clothing = Clothing.query.filter_by(category=Category.top,category=Category.bottom, category=Category.footwear).all()
 
-    # return jsonify(serialized_clothing), 200
+    args = request.args
     
+    top = request.args
+    if "top" in args:
+        top = args["top"]
 
-# //////////////////////////////////////////////
+    if "bottom" in args:
+        bottom = args["bottom"]
+
+    if "footwear" in args:
+        footwear = args["footwear"]
+
+    print(top, bottom, footwear)
+
+    return "No query string received", 200 
+
+#    serialized_clothings = ['top', 'bottom', 'footwear']
+#    for category  in serialized_clothings:
+#        serialized_clothings.append(clothing.serialize())
+#    print(clothing)
+
 
 @api.route('/clothing', methods=['POST'])
 def create_clothing():
@@ -91,13 +106,7 @@ def get_all_outfits():
 
     return jsonify(serialized_outfits), 200
 
-@api.route('/outfit/<int:id>', methods=['GET'])
-def get_outfit(id):
 
-    outfit = Outfit.query.get(id)
-    serialized_outfit = outfit.serialize()
-
-    return jsonify(serialized_outfit), 200
 
 # //////////////////////////////////////////////////////////////
 
