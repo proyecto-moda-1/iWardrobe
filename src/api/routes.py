@@ -40,12 +40,15 @@ def get_clothing(id):
 
 # //////////////////////////////////////////////////////
 @api.route('/clothing/category', methods=['GET'])
-def get_category(category):
+def get_clothing_by_category():
+   
+   clothing = Clothing.query.filter_by(top=top).get_or_404(description='There is no data with {}'.format(top))
+   return render_template('get_clothing_by_category.html', top=top)
+ 
 
-    clothing = Clothing.query.get(category)
-    serialized_clothing = clothing.serialize()
 
-    return jsonify(serialized_clothing), 200
+    # return jsonify(serialized_clothing), 200
+    
 
 # //////////////////////////////////////////////
 
