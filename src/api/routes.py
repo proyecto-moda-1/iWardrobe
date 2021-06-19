@@ -47,19 +47,18 @@ def get_clothing_by_category():
 
     args = request.args
     
-    top = request.args
-    if "top" in args:
-        top = args["top"]
+    # if "top" in args:
+    #     top = args["top"]
 
     if "bottom" in args:
-        bottom = args["bottom"]
+        bottom = args.get("bottom")
 
-    if "footwear" in args:
-        footwear = args["footwear"]
+    # if "footwear" in args:
+    #     footwear = args["footwear"]
 
-    print(top, bottom, footwear)
+    print(bottom)
 
-    return "No query string received", 200 
+    return "Query received", 200 
 
 #    serialized_clothings = ['top', 'bottom', 'footwear']
 #    for category  in serialized_clothings:
