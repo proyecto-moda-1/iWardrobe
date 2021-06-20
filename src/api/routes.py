@@ -42,28 +42,31 @@ def get_clothing(id):
 
 @api.route('/clothing/category', methods=['GET'])
 def get_clothing_by_category():
-
-    # clothing = Clothing.query.filter_by(category=Category.top,category=Category.bottom, category=Category.footwear).all()
-
     args = request.args
-    
-    # if "top" in args:
-    #     top = args["top"]
+
+    if request.args:
+        args = request.args
+
+    if "top" in args:
+        top = args["top"]
 
     if "bottom" in args:
-        bottom = args.get("bottom")
+        bottom = args.get["bottom"]
 
-    # if "footwear" in args:
-    #     footwear = args["footwear"]
+    if "footwear" in args:
+        footwear = args["footwear"]
 
-    print(bottom)
+    if "category" in request.args:
+        category = request.args.get("category")
 
-    return "Query received", 200 
+        serialized = ", ".join(f"{k}: {v}" for k, v in request.args.items())
+        # clothing = Clothing.query.filter_by(category=Category.top,category=Category.bottom category=Category.footwear).all()
 
-#    serialized_clothings = ['top', 'bottom', 'footwear']
-#    for category  in serialized_clothings:
-#        serialized_clothings.append(clothing.serialize())
-#    print(clothing)
+        return f"(Query) {serialized}", 200
+
+    else:
+
+        return "No query string received", 200 
 
 
 @api.route('/clothing', methods=['POST'])
