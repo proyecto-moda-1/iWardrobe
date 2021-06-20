@@ -22,6 +22,7 @@ export const Register = function(props) {
 			nickname: nickname,
 			email: email,
 			password: password,
+			repeatPassword: repeatPassword,
 			gender: gender,
 			image: image
 		};

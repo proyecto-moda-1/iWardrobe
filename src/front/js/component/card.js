@@ -10,14 +10,14 @@ export function Card(props) {
 	const { store, actions } = useContext(Context);
 
 	const history = useHistory();
-
+	const [outfit, setOutfit] = useState([""]);
 	useEffect(() => {
 		actions.getAllOutfit();
 	}, []);
 
 	return (
 		<div className="card">
-			<Link to={`/outfit/1${props.imagen}`} className="text-dark text-decoration-none" />
+			<Link to={`/outfit/${props.imagen}`} className="text-dark text-decoration-none" />
 			<div className="card-body">
 				<h5 className="card-title text-center">{props.collections}</h5>
 				{props.clothingItems}
@@ -35,6 +35,6 @@ export function Card(props) {
 Card.propTypes = {
 	collections: PropTypes.string,
 	name: PropTypes.string,
-	clothingItems: PropTypes.string,
+	clothingItems: PropTypes.array,
 	imagen: PropTypes.string
 };

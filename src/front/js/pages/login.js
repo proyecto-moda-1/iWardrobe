@@ -18,9 +18,7 @@ export const Login = function(props) {
 			password: password
 		};
 		actions.logIn(data, () => {
-			if (store.error == null) {
-				history.push("/home");
-			}
+			history.push("/profile");
 		});
 	};
 

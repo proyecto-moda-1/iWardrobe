@@ -36,13 +36,18 @@ def create_users():
     payload = request.get_json()
     user_create = User(nickname=payload['nickname'],
     gender=payload['gender'], 
-    email=payload['email'], 
+    email=payload['email'],
+    password=payload['password'],
     image=payload['image'])
 
     db.session.add(user_create)
     db.session.commit()
+    access_token = create_access_token(identity=user_create.email)
 
-    return jsonify(user_create.serialize()), 200
+    return jsonify({
+        'user':user_create.serialize(), 
+        'token': access_token
+        }), 200
 
 @api.route('/login', methods=['POST'])
 def handle_login():
@@ -59,33 +64,15 @@ def handle_login():
 
     user= User.get_login_credentials(email, password)
 
-    # if user is None:
-    #     raise APIException("user does not exist")
-
-    # token = ""
-    # user.assign_token(token)
-
-    return jsonify(user.serialize()), 200
-
-
-    # email = json["email"]
-    # password= json["password"]
-
-    # user= User.get_login_credentials(email, password)
-
-    # if user is None:
-    #     raise APIException("user does not exist")
-
+    if user is None:
+        raise APIException("user does not exist")
     access_token = create_access_token(identity=user.email)
 
     return jsonify({'token':access_token}), 200
 
-
 @api.route('/profile', methods=['GET'])
 @jwt_required()
 def handle_profile():
-
-  
     user_email = get_jwt_identity()
     user= User.get_user_by_email(user_email)
     return jsonify(user.serialize()), 200
@@ -153,13 +140,24 @@ def get_all_outfits():
     return jsonify(serialized_outfits), 200
 
 
-@api.route('/outfit/<int:id>', methods=['GET'])
-def get_all_outfit(id):
-    getOutfit = Outfit.query.get(id)
+@api.route('/users/outfits', methods=['GET'])
+@jwt_required()
+def get_user_outfits():
+        user_email = get_jwt_identity()
+        user= User.get_user_by_email(user_email)
+        get_all_outfits = Outfit.get_outfit_by_user_id(user.id)
+        serialized_outfit = []
+        for outfit in get_all_outfits:
+            serialized_outfit.append(outfit.serialize())
+        return jsonify(serialized_outfit), 200 
 
-    return jsonify(getOutfit.serialize()), 200 
+# @api.route('/clothing/<int:id>', methods=['GET'])
+# def get_clothing(id):
 
+#     clothing = Clothing.query.get(id)
+#     serialized_clothing = clothing.serialize()
 
+#     return jsonify(serialized_clothing), 200 
 
 @api.route('/collection', methods=['GET'])
 def get_all_collections():

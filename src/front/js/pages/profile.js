@@ -15,13 +15,17 @@ export const Profile = () => {
 	}, []);
 
 	let outfitCards = [];
-	if (store.profile.length == 0) {
-		outfitCards = store.allOutfit.map((allOutfits, index) => {
-			return (
-				<Card name={post.name} collections={post.collections} clothingItems={post.clothingItems} key={index} />
-			);
-		});
-	}
+	// if (store.profile.length == 0) {
+	outfitCards = store.profile.map((outfit, index) => {
+		return (
+			<Card
+				name={outfit.name}
+				collections={outfit.collections}
+				clothingItems={outfit.clothingItems}
+				key={index}
+			/>
+		);
+	});
 	return (
 		<div className="home">
 			<h1 className="text-warning"> Characters</h1>

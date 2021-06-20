@@ -108,7 +108,10 @@ class Outfit(db.Model):
     #RELACIONES
      clothing_items = db.relationship('Clothing', secondary= clothing_outfit , back_populates="outfits", lazy=True)
      collections = db.relationship('Collection', secondary= collection_outfit , back_populates="outfits", lazy=True)
-
+     
+     @staticmethod
+     def get_outfit_by_user_id(user_id):
+         return Outfit.query.filter_by(outfit_user_id=user_id).all()
 
      def __repr__(self):
               return '<Outfit %r>' % self.name
