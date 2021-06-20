@@ -1,19 +1,20 @@
 const getState = ({ getStore, setState, getActions }) => {
 	return {
 		store: {
-			message: null
+            top: [],
+            bottom: [],
+            footwear: []
 		},
 		actions: {
-			createClothing: data => {
+			getTop: data => {
 				const store = getStore();
 				const endpoint = process.env.BACKEND_URL + "/api/category";
 				const config = {
-					method: "POST",
+					method: "GET",
 					body: JSON.stringify({
-						collecttion_user_id: 1,
-						name: data.name,
-						image:
-							"https://th.bing.com/th/id/R9e6e1694bdbb9d0148c1d5d451b7169b?rik=A70S6pmmXpjrGA&pid=ImgRaw"
+                        top: data.top,
+                        bottom: data.bottom,
+                        footwear: data.footwear
 					}),
 					headers: {
 						"Content-Type": "application/json",
@@ -22,14 +23,8 @@ const getState = ({ getStore, setState, getActions }) => {
 				};
 
 				fetch(endpoint, config)
-					.then(response => {
-						setUser("");
-						setName("");
-						setImage("");
-
-						return response.json();
-					})
-					.then(json => console.log(json))
+					.then(response => response.json())
+					.then(data => console.log(json))
 					.catch(err => console.error(err));
 			}
 		}

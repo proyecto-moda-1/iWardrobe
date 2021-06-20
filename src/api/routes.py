@@ -48,13 +48,13 @@ def get_clothing_by_category():
         args = request.args
 
     if "top" in args:
-        top = args["top"]
+        top = args.get("top")
 
     if "bottom" in args:
-        bottom = args.get["bottom"]
+        bottom = args.get("bottom")
 
     if "footwear" in args:
-        footwear = args["footwear"]
+        footwear = args.get("footwear")
 
     if "category" in request.args:
         category = request.args.get("category")

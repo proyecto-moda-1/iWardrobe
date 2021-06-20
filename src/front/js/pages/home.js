@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
+import { getActions } from "../store/flux.js";
 import "../../styles/home.scss";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import SplitButton from "react-bootstrap/SplitButton";
@@ -13,25 +14,42 @@ import Card from "react-bootstrap/Card";
 import Image from "react-bootstrap/Image";
 
 export const Home = () => {
+	const [top, setTop] = useState(false);
+	const [bottom, setBottom] = useState(false);
+	const [footwear, setFootwear] = useState(false);
+
+	const handleShow = () => setTop(true);
+	const handleShow2 = () => setBottom(true);
+    const handleShow3 = () => setFootwear(true);
+    
+    const getClothing = () => {
+		const data = {
+            top: [""],
+            bottom: [""],
+            footwear: [""],   
+		};
+		actions.getClothing(data);
+	};
+
 	return (
 		<>
 			<Container>
 				<Row>
 					<Col sm={true}>
 						<h2>Your Clothing</h2>
-						<DropdownButton id="dropdown-basic-button" title="Top">
+						<DropdownButton onClick={handleShow} id="dropdown-basic-button" title="Top">
 							<Dropdown.Item href="#/action-1"> Clothing item 1</Dropdown.Item>
-							<Dropdown.Item href="#/action-2">Clothingitem 2</Dropdown.Item>
-							<Dropdown.Item href="#/action-3"> Clothingitem 3</Dropdown.Item>
+							<Dropdown.Item href="#/action-2">Clothing item 2</Dropdown.Item>
+							<Dropdown.Item href="#/action-3"> Clothing item 3</Dropdown.Item>
 						</DropdownButton>
 						<br />
-						<DropdownButton id="dropdown-basic-button" title=" Bottom">
-							<Dropdown.Item href="#/action-1">Clothingitem 1</Dropdown.Item>
+						<DropdownButton onClick={handleShow2} id="dropdown-basic-button" title=" Bottom">
+							<Dropdown.Item href="#/action-1">Clothing item 1</Dropdown.Item>
 							<Dropdown.Item href="#/action-2">Clothing item 1</Dropdown.Item>
 							<Dropdown.Item href="#/action-3">Clothing item 1</Dropdown.Item>
 						</DropdownButton>
 						<br />
-						<DropdownButton id="dropdown-basic-button" title="Footwear">
+						<DropdownButton onClick={handleShow3} id="dropdown-basic-button" title="Footwear">
 							<Dropdown.Item href="#/action-1">Clothing item 1</Dropdown.Item>
 							<Dropdown.Item href="#/action-2">Clothing item 1</Dropdown.Item>
 							<Dropdown.Item href="#/action-3">Clothing item 1</Dropdown.Item>
