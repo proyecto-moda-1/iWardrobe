@@ -38,21 +38,21 @@ export const Home = () => {
 					<Col sm={true}>
 						<h2>Your Clothing</h2>
 						<DropdownButton onClick={handleShow} id="dropdown-basic-button" title="Top">
-							<Dropdown.Item href="#/action-1"> Clothing item 1</Dropdown.Item>
-							<Dropdown.Item href="#/action-2">Clothing item 2</Dropdown.Item>
-							<Dropdown.Item href="#/action-3"> Clothing item 3</Dropdown.Item>
+							<Dropdown.Item href="#/action-1"> </Dropdown.Item>
+							<Dropdown.Item href="#/action-2"></Dropdown.Item>
+							<Dropdown.Item href="#/action-3"></Dropdown.Item>
 						</DropdownButton>
 						<br />
 						<DropdownButton onClick={handleShow2} id="dropdown-basic-button" title=" Bottom">
-							<Dropdown.Item href="#/action-1">Clothing item 1</Dropdown.Item>
-							<Dropdown.Item href="#/action-2">Clothing item 1</Dropdown.Item>
-							<Dropdown.Item href="#/action-3">Clothing item 1</Dropdown.Item>
+							<Dropdown.Item href="#/action-1"></Dropdown.Item>
+							<Dropdown.Item href="#/action-2"></Dropdown.Item>
+							<Dropdown.Item href="#/action-3"></Dropdown.Item>
 						</DropdownButton>
 						<br />
 						<DropdownButton onClick={handleShow3} id="dropdown-basic-button" title="Footwear">
-							<Dropdown.Item href="#/action-1">Clothing item 1</Dropdown.Item>
-							<Dropdown.Item href="#/action-2">Clothing item 1</Dropdown.Item>
-							<Dropdown.Item href="#/action-3">Clothing item 1</Dropdown.Item>
+							<Dropdown.Item href="#/action-1"></Dropdown.Item>
+							<Dropdown.Item href="#/action-2"></Dropdown.Item>
+							<Dropdown.Item href="#/action-3"></Dropdown.Item>
 						</DropdownButton>
 					</Col>
 					<Col sm={true}>
