@@ -6,17 +6,12 @@ import "../../styles/card.scss";
 
 export function Card(props) {
 	return (
-		<div className="card">
-			<Link to={`/outfit/${props.image}`} className="text-dark text-decoration-none" />
-			<div className="card-body">
-				<h5 className="card-title text-center">{props.collections}</h5>
-				{props.clothingItems}
-				<div className="btn-wrapper text-center d-flex justify-content-between">
-					<a className="btn btn-outline-primary  btn-sm text-primary d-flex align-items-center">
-						{props.name}
-					</a>
-					<a className="btn btn-outline-danger text-danger"> ♡</a>
-				</div>
+		<div className="card border-secondary mb-3">
+			<div className="card-header">{props.collections}</div>
+			<div className="card-body text-secondary">
+				<h5 className="card-title">{props.name}</h5>
+				<h5 className="card-title">{props.image}</h5>
+				<p className="card-text">{props.clothingItems}</p>
 			</div>
 		</div>
 	);

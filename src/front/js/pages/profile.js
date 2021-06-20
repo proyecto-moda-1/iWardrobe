@@ -31,9 +31,25 @@ export const Profile = () => {
 	}
 
 	return (
-		<div className="home">
-			<h1 className="text-warning"> Characters</h1>
-			<div className="planet d-flex flex-row">{outfitCards}</div>
+		<div className="container-fluid">
+			<div className="row justify-content-md-center">
+				<div className="col rounded float-star">
+					<img
+						src="https://image.freepik.com/vector-gratis/mujer-joven-ordenador-portatil-escritorio-trabajando-linea-ilustracion_24877-69119.jpg"
+						className="rounded float-start"
+						alt=""
+					/>
+				</div>
+				<div className="col">
+					<p className="col-md-auto">
+						MODA Es lo que compras. ESTILO es lo que haces con eso. No lo dejes para ultima hora.
+					</p>
+				</div>
+			</div>
+			<div className="text">
+				<h1 className="text"> OUTFITS DISPONIBLES</h1>
+				<div className="planet d-flex flex-row">{outfitCards}</div>
+			</div>
 		</div>
 	);
 };
