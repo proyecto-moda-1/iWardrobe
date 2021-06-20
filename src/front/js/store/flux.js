@@ -1,20 +1,22 @@
 const getState = ({ getStore, setState, getActions }) => {
 	return {
 		store: {
-            top: [],
-            bottom: [],
-            footwear: []
+			top: [],
+			bottom: [],
+			footwear: []
 		},
 		actions: {
 			getTop: data => {
 				const store = getStore();
-				const endpoint = process.env.BACKEND_URL + "/api/category";
+				const endpoint =
+					"https://3001-turquoise-constrictor-3gals9le.ws-eu09.gitpod.io/api/clothing/category" +
+					"/api/category";
 				const config = {
 					method: "GET",
 					body: JSON.stringify({
-                        top: data.top,
-                        bottom: data.bottom,
-                        footwear: data.footwear
+						top: data.top,
+						bottom: data.bottom,
+						footwear: data.footwear
 					}),
 					headers: {
 						"Content-Type": "application/json",

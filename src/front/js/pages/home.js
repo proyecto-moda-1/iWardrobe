@@ -14,19 +14,21 @@ import Card from "react-bootstrap/Card";
 import Image from "react-bootstrap/Image";
 
 export const Home = () => {
+	const { store, actions } = useContext(Context);
+
 	const [top, setTop] = useState(false);
 	const [bottom, setBottom] = useState(false);
 	const [footwear, setFootwear] = useState(false);
 
 	const handleShow = () => setTop(true);
 	const handleShow2 = () => setBottom(true);
-    const handleShow3 = () => setFootwear(true);
-    
-    const getClothing = () => {
+	const handleShow3 = () => setFootwear(true);
+
+	const getClothing = () => {
 		const data = {
-            top: [""],
-            bottom: [""],
-            footwear: [""],   
+			top: [""],
+			bottom: [""],
+			footwear: [""]
 		};
 		actions.getClothing(data);
 	};
