@@ -43,12 +43,6 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 						callback();
 					})
 					.catch(error => {});
-
-				// .catch(err => console.error(err));
-				// setStore({ user: json });
-				// callback();
-
-				// .catch(error => {});
 			},
 
 			logIn: (data, callback) => {
@@ -128,10 +122,6 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 			getAllOutfit: data => {
 				const store = getStore();
 				const endpoint = process.env.BACKEND_URL + "/api/users/outfits";
-				//  let headers = {
-				//      "Content-Type": "application/json",
-				//      "Authorization":  `Bearer ${store.token}`
-				//     };
 				const config = {
 					method: "GET",
 					headers: {

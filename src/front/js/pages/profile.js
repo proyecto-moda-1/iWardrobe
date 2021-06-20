@@ -15,17 +15,21 @@ export const Profile = () => {
 	}, []);
 
 	let outfitCards = [];
-	// if (store.profile.length == 0) {
-	outfitCards = store.profile.map((outfit, index) => {
-		return (
-			<Card
-				name={outfit.name}
-				collections={outfit.collections}
-				clothingItems={outfit.clothingItems}
-				key={index}
-			/>
-		);
-	});
+	if (store.outfits != undefined) {
+		console.log(store);
+		outfitCards = store.outfits.map((outfit, index) => {
+			return (
+				<Card
+					name={outfit.name}
+					collections={outfit.collections}
+					image={outfit.image}
+					clothingItems={outfit.clothingItems}
+					key={index}
+				/>
+			);
+		});
+	}
+
 	return (
 		<div className="home">
 			<h1 className="text-warning"> Characters</h1>
