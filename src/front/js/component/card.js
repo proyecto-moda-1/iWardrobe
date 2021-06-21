@@ -28,7 +28,6 @@ export function Card(props) {
 				<h5 className="card-title">{props.name}</h5>
 				<h5 className="card-title">{props.image}</h5>
 				<h5 className="card-title">{clothingCards}</h5>
-				{/* <p className="card-text">{props.clothing}</p> */}
 			</div>
 		</div>
 	);

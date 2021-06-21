@@ -165,6 +165,18 @@ def get_all_collections():
     return jsonify(serialized_collections), 200   
 
 
+#     @api.route('/closet', methods=['GET'])
+# def get_all_collections():
+#     all_collections = Collection.query.all()
+
+#     serialized_collections = []
+#     for collection in all_collections:
+#         serialized_collections.append(collection.serialize())
+#     print(all_collections)
+
+#     return jsonify(serialized_collections), 200   
+
+
     
 
         

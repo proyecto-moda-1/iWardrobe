@@ -105,6 +105,7 @@ class Outfit(db.Model):
      id = db.Column(db.Integer, primary_key=True)
      outfit_user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
      name = db.Column(db.String(120))
+     favorite = db.Column(db.Boolean, unique=False, nullable=False)
 
     #RELACIONES
      clothing_items = db.relationship('Clothing', secondary= clothing_outfit , back_populates="outfits", lazy=True)
@@ -125,7 +126,8 @@ class Outfit(db.Model):
               "id": self.id,
               "outfit_user_id": self.outfit_user_id,
               "name": self.name,
-              "clothing": serialize_clothing
+              "clothing": serialize_clothing,
+              "favorite": self.favorite
          } 
 
 class Collection(db.Model):

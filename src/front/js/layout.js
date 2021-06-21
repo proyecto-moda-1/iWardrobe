@@ -8,6 +8,7 @@ import { Login } from "./pages/login";
 import { Register } from "./pages/register";
 import { Profile } from "./pages/profile";
 import { Single } from "./pages/single";
+import { Closet } from "./pages/closet";
 
 import injectContext from "./store/appContext";
 
@@ -43,6 +44,9 @@ const Layout = () => {
 						</Route>
 						<Route exact path="/profile">
 							<Profile />
+						</Route>
+						<Route exact path="/closet">
+							<Closet />
 						</Route>
 						<Route>
 							<h1>Not found!</h1>

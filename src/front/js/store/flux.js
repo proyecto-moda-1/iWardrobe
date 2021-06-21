@@ -134,7 +134,6 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 				fetch(endpoint, config)
 					.then(response => {
 						if (!response.ok) {
-							//TODO mejorar la redireccion
 							window.location.href = "/";
 						}
 						return response.json();
@@ -143,6 +142,28 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 						setStore({ outfits: json });
 					});
 			}
+			// getFavorite: data => {
+			// 	const store = getStore();
+			// 	const endpoint = process.env.BACKEND_URL + "/api/users/favorite";
+			// 	const config = {
+			// 		method: "GET",
+			// 		headers: {
+			// 			"Content-Type": "application/json",
+			// 			Authorization: `Bearer ${store.token}`,
+			// 			cors: "no-cors"
+			// 		}
+			// 	};
+			// fetch(endpoint, config)
+			// 	.then(response => {
+			// 		if (!response.ok) {
+			// 			window.location.href = "/";
+			// 		}
+			// 		return response.json();
+			// 	})
+			// 	.then(json => {
+			// 		setStore({ outfits: json });
+			// 	});
+			// }
 		}
 	};
 };
