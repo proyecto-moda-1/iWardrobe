@@ -40,34 +40,30 @@ def get_clothing(id):
     return jsonify(serialized_clothing), 200 
 
 
-@api.route('/clothing/category', methods=['GET'])
+@api.route('/clothing', methods=['GET'])
 def get_clothing_by_category():
+
     args = request.args
-
-    if request.args:
-        args = request.args
-
-    if "top" in args:
-        top = args.get("top")
-
-    if "bottom" in args:
-        bottom = args.get("bottom")
-
-    if "footwear" in args:
-        footwear = args.get("footwear")
-
     if "category" in request.args:
-        category = request.args.get("category")
+        if request.args == "top":
+            clothing = Clothing.query.filter(category=Category.Top)
 
-        serialized = ", ".join(f"{k}: {v}" for k, v in request.args.items())
-        # clothing = Clothing.query.filter_by(category=Category.top,category=Category.bottom category=Category.footwear).all()
+        if request.args == "botttom":
+            clothing = Clothing.query.filter(category=Category.Bottom)
 
-        return f"(Query) {serialized}", 200
+        if  request.args == "botttom":
+            clothing = Clothing.query.filter(category=Category.Footwear)
 
-    else:
+    for category in clothing_by_category:
+        serealized_clothing = clothing.serialize("top")
 
-        return "No query string received", 200 
+    for category in clothing_by_category:
+        serealized_clothing = clothing.serialize("botttom")
 
+    for category in clothing_by_category:
+        serealized_clothing = clothing.serialize("footwear")
+
+    return jsonify(serealized_clothing), 200
 
 @api.route('/clothing', methods=['POST'])
 def create_clothing():
@@ -109,9 +105,6 @@ def get_all_outfits():
     return jsonify(serialized_outfits), 200
 
 
-
-# //////////////////////////////////////////////////////////////
-
 @api.route('/outfit', methods=['POST'])
 def create_outfit():
 
@@ -127,20 +120,11 @@ def create_outfit():
     if name is None or name == 0:
         return "Provide a valid name", 400
 
-    collections = outfit.collections
-    for collections in collections:
-    #  # ... Get addresses
-    #     addresses = form.addresses.raw_data
-
-    #     # ... loop over and add to person
-    #     for address in addresses:
-    #         # Add or create an address
-    #         actual_address = db.session.query(Address).get(address.id)
-     outfit = Outfit(outfit_user_id=outfit_user_id, name=name)
-     outfit.create_outfit()
+    outfit = Outfit(outfit_user_id=outfit_user_id, name=name)
+    outfit.create_outfit()
 
     return "Created", 201
-# //////////////////////////////////////////////////////////////
+
 
 @api.route('/collection', methods=['GET'])
 def get_all_collections():
