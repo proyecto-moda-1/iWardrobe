@@ -47,7 +47,6 @@ class Category(enum.Enum):
     bottom = 2
     footwear = 3
 
-
 class Clothing(db.Model):
      id = db.Column(db.Integer, primary_key=True)
      user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)

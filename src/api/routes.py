@@ -22,11 +22,23 @@ def get_all_users():
 
 @api.route('/clothing', methods=['GET'])
 def get_all_clothings():
-    all_clothings = Clothing.query.all()
+    args = request.args
 
+    if "category" in args:
+        # for element in Category:
+        #     if element.name == args.get("category"):
+        #         category_value = element.value
+        #         break
+        category_value = args.get("category")
+        all_clothings = Clothing.query.filter_by(category=category_value)
+
+    else:
+        all_clothings = Clothing.query.all()
     serialized_clothings = []
     for clothing in all_clothings:
         serialized_clothings.append(clothing.serialize())
+    
+
     print(all_clothings)
 
     return jsonify(serialized_clothings), 200
@@ -38,32 +50,6 @@ def get_clothing(id):
     serialized_clothing = clothing.serialize()
 
     return jsonify(serialized_clothing), 200 
-
-
-@api.route('/clothing', methods=['GET'])
-def get_clothing_by_category():
-
-    args = request.args
-    if "category" in request.args:
-        if request.args == "top":
-            clothing = Clothing.query.filter(category=Category.Top)
-
-        if request.args == "botttom":
-            clothing = Clothing.query.filter(category=Category.Bottom)
-
-        if  request.args == "botttom":
-            clothing = Clothing.query.filter(category=Category.Footwear)
-
-    for category in clothing_by_category:
-        serealized_clothing = clothing.serialize("top")
-
-    for category in clothing_by_category:
-        serealized_clothing = clothing.serialize("botttom")
-
-    for category in clothing_by_category:
-        serealized_clothing = clothing.serialize("footwear")
-
-    return jsonify(serealized_clothing), 200
 
 @api.route('/clothing', methods=['POST'])
 def create_clothing():
