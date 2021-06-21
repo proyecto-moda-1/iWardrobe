@@ -5,13 +5,29 @@ import "../../styles/card.scss";
 //create your first component
 
 export function Card(props) {
+	console.log({ props });
+	let outfitCards = [];
+	if (props.clothing != undefined) {
+		outfitCards = props.clothing.map((outfit, index) => {
+			return (
+				<div key={index} className="card border-secondary mb-3">
+					<div className="card-body text-secondary">
+						<h5 className="card-title">{outfit.name}</h5>
+						<h5 className="card-title">{outfit.image}</h5>
+					</div>
+				</div>
+			);
+		});
+	}
+
 	return (
 		<div className="card border-secondary mb-3">
 			<div className="card-header">{props.collections}</div>
 			<div className="card-body text-secondary">
 				<h5 className="card-title">{props.name}</h5>
 				<h5 className="card-title">{props.image}</h5>
-				<p className="card-text">{props.clothingItems}</p>
+				<h5 className="card-title">{outfitCards}</h5>
+				{/* <p className="card-text">{props.clothing}</p> */}
 			</div>
 		</div>
 	);
@@ -20,6 +36,6 @@ export function Card(props) {
 Card.propTypes = {
 	collections: PropTypes.string,
 	name: PropTypes.string,
-	clothingItems: PropTypes.array,
+	clothing: PropTypes.array,
 	image: PropTypes.string
 };

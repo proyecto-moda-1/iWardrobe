@@ -152,13 +152,6 @@ def get_user_outfits():
             serialized_outfit.append(outfit.serialize())
         return jsonify(serialized_outfit), 200 
 
-# @api.route('/clothing/<int:id>', methods=['GET'])
-# def get_clothing(id):
-
-#     clothing = Clothing.query.get(id)
-#     serialized_clothing = clothing.serialize()
-
-#     return jsonify(serialized_clothing), 200 
 
 @api.route('/collection', methods=['GET'])
 def get_all_collections():

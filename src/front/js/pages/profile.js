@@ -23,7 +23,7 @@ export const Profile = () => {
 					name={outfit.name}
 					collections={outfit.collections}
 					image={outfit.image}
-					clothingItems={outfit.clothingItems}
+					clothing={outfit.clothing}
 					key={index}
 				/>
 			);
