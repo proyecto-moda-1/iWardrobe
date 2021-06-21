@@ -120,7 +120,7 @@ class Outfit(db.Model):
      def serialize(self):
          serialize_clothing = []
          for clothing in self.clothing_items:
-             serialize_clothing.append(clothing.serialize())
+            serialize_clothing.append(clothing.serialize())
          return {
               "id": self.id,
               "outfit_user_id": self.outfit_user_id,

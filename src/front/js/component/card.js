@@ -6,14 +6,15 @@ import "../../styles/card.scss";
 
 export function Card(props) {
 	console.log({ props });
-	let outfitCards = [];
+	let clothingCards = [];
 	if (props.clothing != undefined) {
-		outfitCards = props.clothing.map((outfit, index) => {
+		clothingCards = props.clothing.map((clothing, index) => {
 			return (
 				<div key={index} className="card border-secondary mb-3">
 					<div className="card-body text-secondary">
-						<h5 className="card-title">{outfit.name}</h5>
-						<h5 className="card-title">{outfit.image}</h5>
+						<h5 className="card-title">{clothing.name}</h5>
+						<h5 className="card-title">{clothing.image}</h5>
+						<h5 className="card-title">{clothing.clean ? "limpio" : "sucio"}</h5>
 					</div>
 				</div>
 			);
@@ -26,7 +27,7 @@ export function Card(props) {
 			<div className="card-body text-secondary">
 				<h5 className="card-title">{props.name}</h5>
 				<h5 className="card-title">{props.image}</h5>
-				<h5 className="card-title">{outfitCards}</h5>
+				<h5 className="card-title">{clothingCards}</h5>
 				{/* <p className="card-text">{props.clothing}</p> */}
 			</div>
 		</div>

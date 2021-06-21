@@ -15,9 +15,20 @@ export const Profile = () => {
 	}, []);
 
 	let outfitCards = [];
+	let dirtyClothing = [];
 	if (store.outfits != undefined) {
-		console.log(store);
-		outfitCards = store.outfits.map((outfit, index) => {
+		dirtyClothing = store.outfits.filter(outfit => outfit.clothing.some(clo => !clo.clean)).map((outfit, index) => {
+			return (
+				<Card
+					name={outfit.name}
+					collections={outfit.collections}
+					image={outfit.image}
+					clothing={outfit.clothing}
+					key={index}
+				/>
+			);
+		});
+		outfitCards = store.outfits.filter(outfit => outfit.clothing.every(clo => clo.clean)).map((outfit, index) => {
 			return (
 				<Card
 					name={outfit.name}
@@ -49,6 +60,10 @@ export const Profile = () => {
 			<div className="text">
 				<h1 className="text"> OUTFITS DISPONIBLES</h1>
 				<div className="planet d-flex flex-row">{outfitCards}</div>
+			</div>
+			<div className="text">
+				<h1 className="text"> ROPA SUCIA</h1>
+				<div className="planet d-flex flex-row">{dirtyClothing}</div>
 			</div>
 		</div>
 	);
