@@ -17,22 +17,29 @@ import Image from "react-bootstrap/Image";
 export const MyCloset = () => {
 	const { store, actions } = useContext(Context);
 	//aquí tenemos que poner las constantes y todo eso para que esto funcione (meterle la lógica)
-
 	// const { show, handleClose } = props;
-	// const [name, setName] = useState("");
-	// const [image, setImage] = useState("");
-	// const [category, setCategory] = useState("");
-	// const { store, actions } = useContext(Context);
+	const [top, setTop] = useState("");
+	const [bottom, setBottom] = useState("");
+	const [footwear, setFootwear] = useState("");
 
-	// const handleSubmit = () => {
-	// 	const data = {
-	// 		user_id: 1,
-	// 		name: name,
-	// 		image: image,
-	// 		category: category
-	// 	};
-	// 	actions.createClothing(data);
-	// };
+	const handleTop = () => {
+		const data = {
+			top: top
+		};
+		actions.getTop(data);
+	};
+	const handleBottom = () => {
+		const data = {
+			bottom: bottom
+		};
+		actions.getBottom(data);
+	};
+	const handleFootwear = () => {
+		const data = {
+			footwear: footwear
+		};
+		actions.getFootwear(data);
+	};
 
 	return (
 		<>

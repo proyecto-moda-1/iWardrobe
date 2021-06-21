@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
 import { getActions } from "../store/flux.js";
+import PropTypes from "prop-types";
 import "../../styles/home.scss";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import SplitButton from "react-bootstrap/SplitButton";
@@ -13,45 +14,50 @@ import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import Image from "react-bootstrap/Image";
 
-export const Home = () => {
+export const Home = props => {
 	const { store, actions } = useContext(Context);
+	//aquí tenemos que poner las constantes y todo eso para que esto funcione (meterle la lógica)
+	// const { top, handleTop } = props;
+	// const { bottom, handleBottom } = props;
+	// const { footwear, handleFootwear } = props;
 
-	const [top, setTop] = useState(false);
-	const [bottom, setBottom] = useState(false);
-	const [footwear, setFootwear] = useState(false);
-
-	const handleShow = () => setTop(true);
-	const handleShow2 = () => setBottom(true);
-	const handleShow3 = () => setFootwear(true);
-
-	const getClothing = () => {
+	const handleTop = props => {
 		const data = {
-			top: [""],
-			bottom: [""],
-			footwear: [""]
+			top: data.top
 		};
-		actions.getClothing(data);
+		actions.getTop(data);
 	};
-
+	const handleBottom = props => {
+		const data = {
+			bottom: data.bottom
+		};
+		actions.getBottom(data);
+	};
+	const handleFootwear = props => {
+		const data = {
+			footwear: data.footwear
+		};
+		actions.getFootwear(data);
+	};
 	return (
 		<>
 			<Container>
 				<Row>
 					<Col sm={true}>
 						<h2>Your Clothing</h2>
-						<DropdownButton onClick={handleShow} id="dropdown-basic-button" title="Top">
+						<DropdownButton onClick={handleTop} id="dropdown-basic-button" title="Top">
 							<Dropdown.Item href="#/action-1"> </Dropdown.Item>
 							<Dropdown.Item href="#/action-2"></Dropdown.Item>
 							<Dropdown.Item href="#/action-3"></Dropdown.Item>
 						</DropdownButton>
 						<br />
-						<DropdownButton onClick={handleShow2} id="dropdown-basic-button" title=" Bottom">
+						<DropdownButton onClick={handleBottom} id="dropdown-basic-button" title=" Bottom">
 							<Dropdown.Item href="#/action-1"></Dropdown.Item>
 							<Dropdown.Item href="#/action-2"></Dropdown.Item>
 							<Dropdown.Item href="#/action-3"></Dropdown.Item>
 						</DropdownButton>
 						<br />
-						<DropdownButton onClick={handleShow3} id="dropdown-basic-button" title="Footwear">
+						<DropdownButton onClick={handleFootwear} id="dropdown-basic-button" title="Footwear">
 							<Dropdown.Item href="#/action-1"></Dropdown.Item>
 							<Dropdown.Item href="#/action-2"></Dropdown.Item>
 							<Dropdown.Item href="#/action-3"></Dropdown.Item>
@@ -83,4 +89,9 @@ export const Home = () => {
 			</Container>
 		</>
 	);
+};
+Home.propTypes = {
+	top: PropTypes.string,
+	botttom: PropTypes.string,
+	footwear: PropTypes.string
 };
