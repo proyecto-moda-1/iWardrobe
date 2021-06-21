@@ -22,7 +22,8 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 						gender: data.gender,
 						email: data.email,
 						password: data.password,
-						image: data.image
+						image: data.image,
+						repeat_password: data.repeatPassword
 					}),
 					headers: {
 						"Content-Type": "application/json",

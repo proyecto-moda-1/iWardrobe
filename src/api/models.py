@@ -16,6 +16,7 @@ class User(db.Model):
     email = db.Column(db.String(120), unique=True, nullable=False)
     image = db.Column(db.String(120), unique=False, nullable=True)
     password = db.Column(db.String(120), unique=False, nullable=False)
+    repeat_password = db.Column(db.String(120), unique=False, nullable=False)
    
      # RELATIONSHIPS
     clothes = db.relationship('Clothing', backref="user", lazy=True)
@@ -117,10 +118,14 @@ class Outfit(db.Model):
               return '<Outfit %r>' % self.name
 
      def serialize(self):
-          return {
+         serialize_clothing = []
+         for clothing in self.clothing_items:
+             serialize_clothing.append(clothing.serialize())
+         return {
               "id": self.id,
               "outfit_user_id": self.outfit_user_id,
               "name": self.name,
+              "clothing": serialize_clothing
          } 
 
 class Collection(db.Model):
