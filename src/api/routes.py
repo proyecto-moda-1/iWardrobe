@@ -54,12 +54,6 @@ def create_users():
 def handle_login():
     json = request.get_json()
 
-    # if json is None:
-    #     raise APIException("json body")
-
-    # if "email" not in json or "password" not in json:
-    #     raise APIException("Email&Pasword")
-
     email = json["email"]
     password= json["password"]
 
@@ -165,18 +159,48 @@ def get_all_collections():
     return jsonify(serialized_collections), 200   
 
 
-#     @api.route('/closet', methods=['GET'])
-# def get_all_collections():
-#     all_collections = Collection.query.all()
 
-#     serialized_collections = []
-#     for collection in all_collections:
-#         serialized_collections.append(collection.serialize())
-#     print(all_collections)
+@api.route('/users/outfits/<outfit_id>/favorite', methods=['PUT'])
+@jwt_required()
+def favorite_brand(outfit_id):
 
-#     return jsonify(serialized_collections), 200   
+    user_email = get_jwt_identity()
+    user= User.get_user_by_email(user_email)
+    outfit= Outfit.query.by(outfit_user_id=user.id, id=outfit_id).first()
+
+    payload= request.get_json()
+    favorite= ['favorite']
+
+    outfit.favorite= favorite
+
+    db.session.commit()
+    return jsonify(outfit.serialize ), 200 
 
 
-    
-
+@api.route('/users/outfits/favorite', methods=['GET'])
+@jwt_required()
+def get_user_favorite():
+        user_email = get_jwt_identity()
+        print(user_email)
+        user= User.get_user_by_email(user_email)
+        print(user.id)
+        favorite_outfit = Outfit.get_favorite_user_outfits(user.id)
         
+        serialized_favorites = []
+        for favorite in favorite_outfit:
+            serialized_favorites.append(favorite.serialize())
+        return jsonify(serialized_favorites), 200 
+
+
+
+
+
+
+
+
+
+
+
+
+
+

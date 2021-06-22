@@ -114,6 +114,9 @@ class Outfit(db.Model):
      @staticmethod
      def get_outfit_by_user_id(user_id):
          return Outfit.query.filter_by(outfit_user_id=user_id).all()
+     @staticmethod
+     def get_favorite_user_outfits(user_id):
+         return Outfit.query.filter_by(outfit_user_id=user_id, favorite = True).all()
 
      def __repr__(self):
               return '<Outfit %r>' % self.name

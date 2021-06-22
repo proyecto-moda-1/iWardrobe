@@ -141,29 +141,53 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 					.then(json => {
 						setStore({ outfits: json });
 					});
+			},
+
+			favoriteBrand: data => {
+				const store = getStore();
+				const endpoint = process.env.BACKEND_URL + "/api/users/outfits/<outfit_id>/favorite";
+				const config = {
+					method: "PUT",
+					body: JSON.stringify({
+						favorite: data.favorite
+					}),
+					headers: {
+						"Content-Type": "application/json",
+						Authorization: `Bearer ${store.token}`,
+						"Access-Control-Allow-Origin": "*"
+					}
+				};
+				fetch(endpoint, config)
+					.then(response => {
+						setFavorite("");
+						return response.json();
+					})
+					.then(json => setFavorite(json.favorite))
+					.catch(err => console.error(err));
+			},
+
+			getUserFavorite: data => {
+				const store = getStore();
+				const endpoint = process.env.BACKEND_URL + "/api/users/outfits/favorite";
+				const config = {
+					method: "GET",
+					headers: {
+						"Content-Type": "application/json",
+						Authorization: `Bearer ${store.token}`,
+						cors: "no-cors"
+					}
+				};
+				fetch(endpoint, config)
+					.then(response => {
+						if (!response.ok) {
+							window.location.href = "/";
+						}
+						return response.json();
+					})
+					.then(json => {
+						setStore({ favorites: json });
+					});
 			}
-			// getFavorite: data => {
-			// 	const store = getStore();
-			// 	const endpoint = process.env.BACKEND_URL + "/api/users/favorite";
-			// 	const config = {
-			// 		method: "GET",
-			// 		headers: {
-			// 			"Content-Type": "application/json",
-			// 			Authorization: `Bearer ${store.token}`,
-			// 			cors: "no-cors"
-			// 		}
-			// 	};
-			// fetch(endpoint, config)
-			// 	.then(response => {
-			// 		if (!response.ok) {
-			// 			window.location.href = "/";
-			// 		}
-			// 		return response.json();
-			// 	})
-			// 	.then(json => {
-			// 		setStore({ outfits: json });
-			// 	});
-			// }
 		}
 	};
 };

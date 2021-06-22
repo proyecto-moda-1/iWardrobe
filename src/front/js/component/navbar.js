@@ -19,7 +19,7 @@ export const Navbar = () => {
 						<a href="#">Crea tu Outfit</a>
 					</li>
 					<li>
-						<a href="#">Tu Closet</a>
+						<a href="/closet">Tu Closet</a>
 					</li>
 					<li>
 						<Button variant="primary" onClick={handleShow}>
