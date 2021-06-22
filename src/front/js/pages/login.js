@@ -18,7 +18,7 @@ export const Login = function(props) {
 			password: password
 		};
 		actions.logIn(data, () => {
-			history.push("/profile");
+			history.push("/closet");
 		});
 	};
 

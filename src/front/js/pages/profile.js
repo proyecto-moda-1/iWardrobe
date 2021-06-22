@@ -36,6 +36,7 @@ export const Profile = () => {
 					collections={outfit.collections}
 					image={outfit.image}
 					clothing={outfit.clothing}
+					favorite={outfit.favorite}
 					key={index}
 				/>
 			);

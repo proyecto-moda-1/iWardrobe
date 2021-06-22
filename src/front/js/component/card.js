@@ -28,6 +28,7 @@ export function Card(props) {
 				<h5 className="card-title">{props.name}</h5>
 				<h5 className="card-title">{props.image}</h5>
 				<h5 className="card-title">{clothingCards}</h5>
+				<a className="btn btn-outline-danger text-danger"> {props.favorite}♡</a>
 			</div>
 		</div>
 	);
@@ -37,5 +38,6 @@ Card.propTypes = {
 	collections: PropTypes.string,
 	name: PropTypes.string,
 	clothing: PropTypes.array,
-	image: PropTypes.string
+	image: PropTypes.string,
+	favorite: PropTypes.string
 };
