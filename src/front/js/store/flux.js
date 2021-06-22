@@ -8,8 +8,7 @@ const getState = ({ getStore, setState, getActions }) => {
 		actions: {
 			getTop: data => {
 				const store = getStore();
-				const endpoint =
-					"https://3001-turquoise-constrictor-3gals9le.ws-eu09.gitpod.io" + "/api/clothing?category=top";
+				const endpoint = process.env.BACKEND_URL + "/api/clothing?category=top";
 				const config = {
 					method: "GET",
 					headers: {
@@ -31,8 +30,7 @@ const getState = ({ getStore, setState, getActions }) => {
 
 			getBottom: data => {
 				const store = getStore();
-				const endpoint =
-					"https://3001-turquoise-constrictor-3gals9le.ws-eu09.gitpod.io" + "/api/clothing?category=bottom";
+				const endpoint = process.env.BACKEND_URL + "/api/clothing?category=bottom";
 				const config = {
 					method: "GET",
 					headers: {
@@ -55,8 +53,7 @@ const getState = ({ getStore, setState, getActions }) => {
 
 			getFootwear: data => {
 				const store = getStore();
-				const endpoint =
-					"https://3001-turquoise-constrictor-3gals9le.ws-eu09.gitpod.io" + "/api/clothing?category=footwear";
+				const endpoint = process.env.BACKEND_URL + "/api/clothing?category=footwear";
 				const config = {
 					method: "GET",
 					headers: {
