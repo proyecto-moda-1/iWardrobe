@@ -16,15 +16,32 @@ class User(db.Model):
     email = db.Column(db.String(120), unique=True, nullable=False)
     image = db.Column(db.String(120), unique=False, nullable=True)
     password = db.Column(db.String(120), unique=False, nullable=False)
+    repeat_password = db.Column(db.String(120), unique=False, nullable=False)
    
      # RELATIONSHIPS
     clothes = db.relationship('Clothing', backref="user", lazy=True)
     outfits = db.relationship('Outfit', backref="user", lazy=True)
     collections = db.relationship('Collection', backref="user", lazy=True)
     
+    
+    @staticmethod
+    def get_login_credentials(email, password):
+        return User.query.filter_by(email=email).filter_by(password=password).first()
+    
+    # def assign_token(self, token):
+    #     self.token= token
+    #     db.session.add(self)
+    #     db.session.commit()
+    
+    @staticmethod
+    def get_user_by_email(email):
+        return User.query.filter_by(email=email).first()
+    
+
 
     def __repr__(self):
         return '<User %r>' % self.nickname
+
 
     def serialize(self):
         return {
@@ -32,7 +49,8 @@ class User(db.Model):
             "nickname": self.nickname,
             "gender": self.gender.name,
             "email": self.email,
-            "image": self.image,
+            # "image": self.image,
+            # "token": self.token
             # do not serialize the password, its a security breach
         }
 
@@ -55,6 +73,7 @@ class Clothing(db.Model):
      name = db.Column(db.String(120), unique=False, nullable=False)
      category = db.Column(db.Enum(Category), unique=False, nullable=False)
      clean= db.Column(db.Boolean, unique=False, nullable=False)
+
 
      #RELACIONES
      outfits = db.relationship('Outfit', secondary= clothing_outfit , back_populates="clothing_items", lazy=True)
@@ -86,20 +105,29 @@ class Outfit(db.Model):
      id = db.Column(db.Integer, primary_key=True)
      outfit_user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
      name = db.Column(db.String(120))
+     favorite = db.Column(db.Boolean, unique=False, nullable=False)
 
     #RELACIONES
      clothing_items = db.relationship('Clothing', secondary= clothing_outfit , back_populates="outfits", lazy=True)
      collections = db.relationship('Collection', secondary= collection_outfit , back_populates="outfits", lazy=True)
-
+     
+     @staticmethod
+     def get_outfit_by_user_id(user_id):
+         return Outfit.query.filter_by(outfit_user_id=user_id).all()
 
      def __repr__(self):
               return '<Outfit %r>' % self.name
 
      def serialize(self):
-          return {
+         serialize_clothing = []
+         for clothing in self.clothing_items:
+            serialize_clothing.append(clothing.serialize())
+         return {
               "id": self.id,
               "outfit_user_id": self.outfit_user_id,
               "name": self.name,
+              "clothing": serialize_clothing,
+              "favorite": self.favorite
          } 
 
 class Collection(db.Model):

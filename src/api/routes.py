@@ -2,6 +2,9 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
+from flask_jwt_extended import create_access_token
+from flask_jwt_extended import get_jwt_identity
+from flask_jwt_extended import jwt_required
 from api.models import db, User, Clothing, Outfit, Collection
 from api.utils import generate_sitemap, APIException
 
@@ -19,6 +22,65 @@ def get_all_users():
 
     return jsonify(serialized_users), 200
 
+# @app.route('/user/<int:id>', methods=['GET'])
+# def get_user(id):
+
+#     user = User.query.get(id)
+#     serialized_user = user.serialize()
+#     return jsonify(serialized_user), 200
+    
+
+@api.route('/register', methods=['POST'])
+def create_users():
+
+    payload = request.get_json()
+    user_create = User(nickname=payload['nickname'],
+    gender=payload['gender'], 
+    email=payload['email'],
+    password=payload['password'],
+    image=payload['image'],
+    repeat_password=payload['repeat_password'])
+
+    db.session.add(user_create)
+    db.session.commit()
+    access_token = create_access_token(identity=user_create.email)
+
+    return jsonify({
+        'user':user_create.serialize(), 
+        'token': access_token
+        }), 200
+
+@api.route('/login', methods=['POST'])
+def handle_login():
+    json = request.get_json()
+
+    # if json is None:
+    #     raise APIException("json body")
+
+    # if "email" not in json or "password" not in json:
+    #     raise APIException("Email&Pasword")
+
+    email = json["email"]
+    password= json["password"]
+
+    user= User.get_login_credentials(email, password)
+
+    if user is None:
+        raise APIException("user does not exist")
+    access_token = create_access_token(identity=user.email)
+
+    return jsonify({'token':access_token}), 200
+
+@api.route('/profile', methods=['GET'])
+@jwt_required()
+def handle_profile():
+    user_email = get_jwt_identity()
+    user= User.get_user_by_email(user_email)
+    return jsonify(user.serialize()), 200
+
+
+
+    
 @api.route('/clothing', methods=['GET'])
 def get_all_clothings():
     all_clothings = Clothing.query.all()
@@ -49,7 +111,7 @@ def create_clothing():
     if user_id is None or user_id == 0:
         return "Please, provide a valid user_id", 400
 
-   name = body.get('name')
+    name = body.get('name')
     if name is None or name == 0:
         return "Provide a valid name", 400
 
@@ -78,6 +140,19 @@ def get_all_outfits():
 
     return jsonify(serialized_outfits), 200
 
+
+@api.route('/users/outfits', methods=['GET'])
+@jwt_required()
+def get_user_outfits():
+        user_email = get_jwt_identity()
+        user= User.get_user_by_email(user_email)
+        get_all_outfits = Outfit.get_outfit_by_user_id(user.id)
+        serialized_outfit = []
+        for outfit in get_all_outfits:
+            serialized_outfit.append(outfit.serialize())
+        return jsonify(serialized_outfit), 200 
+
+
 @api.route('/collection', methods=['GET'])
 def get_all_collections():
     all_collections = Collection.query.all()
@@ -88,6 +163,18 @@ def get_all_collections():
     print(all_collections)
 
     return jsonify(serialized_collections), 200   
+
+
+#     @api.route('/closet', methods=['GET'])
+# def get_all_collections():
+#     all_collections = Collection.query.all()
+
+#     serialized_collections = []
+#     for collection in all_collections:
+#         serialized_collections.append(collection.serialize())
+#     print(all_collections)
+
+#     return jsonify(serialized_collections), 200   
 
 
     
