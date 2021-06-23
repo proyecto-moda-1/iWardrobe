@@ -147,6 +147,31 @@ def get_user_outfits():
         return jsonify(serialized_outfit), 200 
 
 
+@api.route('/users/outfits', methods=['GET'])
+@jwt_required()
+def get_user_outfits():
+        user_email = get_jwt_identity()
+        user= User.get_user_by_email(user_email)
+        get_all_outfits = Outfit.get_outfit_by_user_id(user.id)
+        serialized_outfit = []
+        for outfit in get_all_outfits:
+            serialized_outfit.append(outfit.serialize())
+        return jsonify(serialized_outfit), 200 
+
+
+@api.route('/users/collection', methods=['GET'])
+@jwt_required()
+def get_user_collection():
+        user_email = get_jwt_identity()
+        user= User.get_user_by_email(user_email) 
+        get_all_collections = Collection.get_collection_by_user_id(user.id)                           
+        serialized_collection = []
+        for collection in get_all_collections:
+            serialized_collection.append(collection.serialize())
+        return jsonify(serialized_collection), 200 
+
+
+
 @api.route('/collection', methods=['GET'])
 def get_all_collections():
     all_collections = Collection.query.all()
