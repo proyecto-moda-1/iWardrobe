@@ -13,33 +13,36 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 export const Home = props => {
-	const { store, actions } = useContext(Context);
-	const [data, setData] = useState("");
-	useEffect(() => {
-		const fetchData = async () => {
-			const response = await fetch(
-				`https://3001-azure-cheetah-f4q63b50.ws-eu08.gitpod.io/api/clothing?category=top`
-			);
-			const newData = await response.json();
-			setData(newData);
-		};
-		fetchData();
-	}, []);
-	//   if (data) {
-	//     return <d</div>;
-	//   } else {
-	//     return null;
-	//   }
-	// }
+	// const { store, actions } = useContext(Context);
+	const [category, setCategory] = useState("");
+	const [clothing, setClothing] = useState([]);
+	const listItems = clothing.map(item => {
+		<Dropdown.Item key={item.id} onClick={changeClothing}>
+			{" "}
+			{item}
+		</Dropdown.Item>;
+	});
 
-	// fetch("https://3001-azure-cheetah-f4q63b50.ws-eu08.gitpod.io/api/clothing?category=top")
-	// 	.then(response => response.json())
-	// 	.then(data => console.log(data));
-	// const [top, setTop] = useState([]);
-	// //useEffect
-	// useEffect(() => {
-	// 	setTop({});
-	// }, []);
+	const changeClothing = e => {
+		e.preventDefault();
+	};
+
+	useEffect(() => {
+		const endpoint = process.env.BACKEND_URL + "/api/clothing?category=" + category;
+		const config = {
+			method: "GET",
+			headers: {
+				"Content-Type": "application/json",
+			}
+		};
+
+		fetch(endpoint, config)
+			.then(response => response.json())
+			.then(data => {
+				console.log(data);
+			})
+			.catch(err => console.error(err));
+	}, [category]);
 
 	return (
 		<>
@@ -47,18 +50,22 @@ export const Home = props => {
 				<Row>
 					<Col sm={true}>
 						<h2>Your Clothing</h2>
-						<DropdownButton id="dropdown-button" title="Top">
-							<Dropdown.Item href="#/action-1"> {data} </Dropdown.Item>
-							<Dropdown.Item href="#/action-1"> </Dropdown.Item>
-						</DropdownButton>
+						<DropdownButton
+							id="dropdown-button"
+							title="Top"
+							onClick={() => setCategory("top")}>
+                             <DropdownItem>{item}</DropdownItem>
+                            </DropdownButton>
 						<br />
-						<DropdownButton id="dropdown-basic-button" title=" Bottom">
-							<Dropdown.Item href="#/action-1"></Dropdown.Item>
-						</DropdownButton>
+						<DropdownButton
+							id="dropdown-basic-button"
+							title=" Bottom"
+							onClick={() => setCategory("bottom")}></DropdownButton>
 						<br />
-						<DropdownButton id="dropdown-button" title="Footwear">
-							<Dropdown.Item href="#/action-1"></Dropdown.Item>
-						</DropdownButton>
+						<DropdownButton
+							id="dropdown-button"
+							title="Footwear"
+							onClick={() => setCategory("footwear")}></DropdownButton>
 					</Col>
 					<Col sm={true}></Col>
 					<Col sm={true}></Col>
