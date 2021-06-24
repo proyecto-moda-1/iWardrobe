@@ -29,6 +29,8 @@ export const Home = props => {
 
 	useEffect(() => {
 		actions.getClothing();
+		store.top;
+
 		// const endpoint = process.env.BACKEND_URL + "/api/clothing?category=" + category;
 		// const config = {
 		// 	method: "GET",
@@ -42,12 +44,18 @@ export const Home = props => {
 		// 		console.log(data);
 		// 	})
 		// 	.catch(err => console.error(err));
-	}, [category]);
+	}, [top]);
+	// useEffect(() => {
+	// 	actions.getBottom();
+	// }, [category]);
+
+	// useEffect(() => {
+	// 	actions.getFootwear();
+	// }, [category]);
 
 	return (
 		<>
 			<Container>
-				<div className="text">Hola</div>
 				<Row>
 					<Col sm={true}>
 						<h2>Your Clothing</h2>
