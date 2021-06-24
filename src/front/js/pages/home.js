@@ -13,7 +13,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 export const Home = props => {
-	// const { store, actions } = useContext(Context);
+	const { store, actions } = useContext(Context);
 	const [category, setCategory] = useState("");
 	const [clothing, setClothing] = useState([]);
 	const listItems = clothing.map(item => {
@@ -28,34 +28,33 @@ export const Home = props => {
 	};
 
 	useEffect(() => {
-		const endpoint = process.env.BACKEND_URL + "/api/clothing?category=" + category;
-		const config = {
-			method: "GET",
-			headers: {
-				"Content-Type": "application/json",
-			}
-		};
-
-		fetch(endpoint, config)
-			.then(response => response.json())
-			.then(data => {
-				console.log(data);
-			})
-			.catch(err => console.error(err));
+		actions.getClothing();
+		// const endpoint = process.env.BACKEND_URL + "/api/clothing?category=" + category;
+		// const config = {
+		// 	method: "GET",
+		// 	headers: {
+		// 		"Content-Type": "application/json"
+		// 	}
+		// };
+		// fetch(endpoint, config)
+		// 	.then(response => response.json())
+		// 	.then(data => {
+		// 		console.log(data);
+		// 	})
+		// 	.catch(err => console.error(err));
 	}, [category]);
 
 	return (
 		<>
 			<Container>
+				<div className="text">Hola</div>
 				<Row>
 					<Col sm={true}>
 						<h2>Your Clothing</h2>
 						<DropdownButton
 							id="dropdown-button"
 							title="Top"
-							onClick={() => setCategory("top")}>
-                             <DropdownItem>{item}</DropdownItem>
-                            </DropdownButton>
+							onClick={() => setCategory("top")}></DropdownButton>
 						<br />
 						<DropdownButton
 							id="dropdown-basic-button"

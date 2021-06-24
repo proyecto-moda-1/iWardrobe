@@ -1,26 +1,24 @@
 const getState = ({ getStore, setState, getActions }) => {
 	return {
 		store: {
-			category: [],
-			top: [],
-			bottom: [],
-			footwear: []
+			category: []
 		},
 		actions: {
 			getClothing: data => {
 				const store = getStore();
-				const endpoint = process.env.BACKEND_URL + "/api/clothing?category=" + category;
+				const endpoint = process.env.BACKEND_URL + "/api/clothing?category=top";
 				const config = {
 					method: "GET",
 					headers: {
-						"Content-Type": "application/json"
+						"Content-Type": "application/json",
+						"Access-Control-Allow-Origin": "*"
 					}
 				};
 
 				fetch(endpoint, config)
 					.then(response => response.json())
 					.then(data => {
-						console.log(data)	
+						console.log(data);
 					})
 					.catch(err => console.error(err));
 			}
