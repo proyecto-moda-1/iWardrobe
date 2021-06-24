@@ -19,9 +19,7 @@ const getState = ({ getStore, setState, getActions }) => {
 				fetch(endpoint, config)
 					.then(response => response.json())
 					.then(data => {
-						setStore({
-							top:data
-						});
+						setStore({ top: data });
 					})
 					.catch(err => console.error(err));
 			},
@@ -44,7 +42,7 @@ const getState = ({ getStore, setState, getActions }) => {
 					// 	setStore({
 					// 		bottom: data.bottom
 					// 	});
-					// 	callback();
+					//
 					// })
 					.catch(err => console.error(err));
 			},

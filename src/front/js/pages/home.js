@@ -29,22 +29,7 @@ export const Home = props => {
 
 	useEffect(() => {
 		actions.getClothing();
-		store.top;
-
-		// const endpoint = process.env.BACKEND_URL + "/api/clothing?category=" + category;
-		// const config = {
-		// 	method: "GET",
-		// 	headers: {
-		// 		"Content-Type": "application/json"
-		// 	}
-		// };
-		// fetch(endpoint, config)
-		// 	.then(response => response.json())
-		// 	.then(data => {
-		// 		console.log(data);
-		// 	})
-		// 	.catch(err => console.error(err));
-	}, [top]);
+	}, [category]);
 	// useEffect(() => {
 	// 	actions.getBottom();
 	// }, [category]);
@@ -81,3 +66,16 @@ export const Home = props => {
 		</>
 	);
 };
+// const endpoint = process.env.BACKEND_URL + "/api/clothing?category=" + category;
+// const config = {
+// 	method: "GET",
+// 	headers: {
+// 		"Content-Type": "application/json"
+// 	}
+// };
+// fetch(endpoint, config)
+// 	.then(response => response.json())
+// 	.then(data => {
+// 		console.log(data);
+// 	})
+// 	.catch(err => console.error(err));
