@@ -6,13 +6,13 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 export const CollectionDropdown = () => {
 	const { store, actions } = useContext(Context);
-	let categories = [];
+	let collections = [];
 	useEffect(() => {
 		actions.getCollections();
 	}, []);
 
-	if (store.categories != undefined) {
-		categories = store.categories.map(category => {
+	if (store.collections != undefined) {
+		collections = store.collections.map(category => {
 			return {
 				label: category.name,
 				value: category.id
@@ -21,7 +21,7 @@ export const CollectionDropdown = () => {
 	}
 	return (
 		<div className="container">
-			<Select options={categories} />
+			<Select options={collections} />
 		</div>
 	);
 };

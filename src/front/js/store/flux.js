@@ -208,7 +208,7 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 						return response.json();
 					})
 					.then(json => {
-						setStore({ categories: json });
+						setStore({ collections: json });
 					});
 			}
 		}
