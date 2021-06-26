@@ -180,6 +180,7 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
                         .then(json => {
                             setStore({ favorites: json });
                         });
+                    },
 
                 getClothing(category){
                     const endpoint = `${process.env.BACKEND_URL}/api/clothing?category=${category}`;
@@ -201,6 +202,4 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
                 },
             }
         }
-    };
-
 export default getState;
