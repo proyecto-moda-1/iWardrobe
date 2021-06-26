@@ -65,7 +65,6 @@ class Category(enum.Enum):
     bottom = 2
     footwear = 3
 
-
 class Clothing(db.Model):
      id = db.Column(db.Integer, primary_key=True)
      user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
@@ -105,8 +104,11 @@ class Outfit(db.Model):
      id = db.Column(db.Integer, primary_key=True)
      outfit_user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
      name = db.Column(db.String(120))
+<<<<<<< HEAD
+=======
      favorite = db.Column(db.Boolean, unique=False, nullable=False)
 
+>>>>>>> main
     #RELACIONES
      clothing_items = db.relationship('Clothing', secondary= clothing_outfit , back_populates="outfits", lazy=True)
      collections = db.relationship('Collection', secondary= collection_outfit , back_populates="outfits", lazy=True)
@@ -117,6 +119,10 @@ class Outfit(db.Model):
      @staticmethod
      def get_favorite_user_outfits(user_id):
          return Outfit.query.filter_by(outfit_user_id=user_id, favorite = True).all()
+
+     def create_outfit(self):
+         db.session.add(self)
+         db.session.commit() 
 
      def __repr__(self):
               return '<Outfit %r>' % self.name
@@ -129,8 +135,12 @@ class Outfit(db.Model):
               "id": self.id,
               "outfit_user_id": self.outfit_user_id,
               "name": self.name,
+<<<<<<< HEAD
+              
+=======
               "clothing": serialize_clothing,
               "favorite": self.favorite
+>>>>>>> main
          } 
 
 class Collection(db.Model):
@@ -142,6 +152,9 @@ class Collection(db.Model):
      #RELACIONES
      outfits= db.relationship('Outfit', secondary= collection_outfit , back_populates="collections", lazy=True)
 
+     def create_collection(self):
+         db.session.add(self)
+         db.session.commit() 
 
      def __repr__(self):
         return '<Collection %r>' % self.image
@@ -149,7 +162,7 @@ class Collection(db.Model):
      def serialize(self):
         return {
               "id": self.id,
-              "user_id": self.user_id,
+              "user_id": self.collection_user_id,
               "image": self.image,
               "name": self.name,
          }     
