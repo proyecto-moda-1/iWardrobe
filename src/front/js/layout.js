@@ -29,7 +29,6 @@ const Layout = () => {
 					<Navbar />
 					<Switch>
 						<Route exact path="/">
-							<MyCloset />
 							<Home />
 						</Route>
 						<Route exact path="/single">
@@ -50,9 +49,10 @@ const Layout = () => {
 						<Route exact path="/closet">
 							<Closet />
 						</Route>
-						<Route>
-							<h1>Not found!</h1>
+						<Route exact path="/MyCloset">
+							<MyCloset />
 						</Route>
+						<Route></Route>
 					</Switch>
 					<Footer />
 				</ScrollToTop>
