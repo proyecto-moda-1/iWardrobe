@@ -47,4 +47,54 @@
 //     border-bottom: 0;
 //     border-left: 0.3em solid transparent;
 // }
+@import "~bootstrap/scss/bootstrap.scss";
+
+
+.container-fluid{
+    background: #f7f7f7;
+}
+
+
+.container-intro .row {
+    background-color: #E0AFA0;
+    width: 100rem;
+    height:20rem;
+}
+
+
+.rounded{
+    width: 30rem;
+    height:20rem;
+    margin: 2rem;
+}
+
+.tittleInit{
+    font-weight:inherit;
+    width: 100rem;
+    height:5rem;
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-align: center;
+    margin: 4rem;
+
+
+}
+
+.signupLogin button{
+    width: 30rem;
+    padding: 0.8rem 0.2rem;
+    background-color:#E0AFA0;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    align-items: center;
+    margin: 7rem;
+    font-style: initial;;
+    color: #463F3A;
+}
+
+.col .image{
+    margin: 10rem;
+    padding: 1rem 20rem;
+}
 

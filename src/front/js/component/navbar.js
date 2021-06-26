@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
-import { Link } from "react-router-dom";
 import LoadClothing from "./LoadClothing";
+import "../../styles/navbar.scss";
 
 export const Navbar = () => {
 	const [show, setShow] = useState(false);
@@ -9,23 +9,19 @@ export const Navbar = () => {
 	const handleClose = () => setShow(false);
 	const handleShow = () => setShow(true);
 	return (
-		<nav className="navbar navbar-expand-lg navbar-light bg-light">
-			<div className="container-fluid">
-				<a className="navbar-brand" href="#">
-					Navbar
-				</a>
-				<button
-					className="navbar-toggler"
-					type="button"
-					data-mdb-toggle="collapse"
-					data-mdb-target="#navbarNavAltMarkup"
-					aria-controls="navbarNavAltMarkup"
-					aria-expanded="false"
-					aria-label="Toggle navigation">
-					<i className="fas fa-bars" />
-				</button>
-				<div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-					<div className="navbar-nav">
+		<div className="header">
+			<a className="logo" href="/ " src="" alt="logo">
+				OUTFIT PLANNER
+			</a>
+			<nav>
+				<ul className="navLink">
+					<li>
+						<a href="#">Crea tu Outfit</a>
+					</li>
+					<li>
+						<a href="/closet">Tu Closet</a>
+					</li>
+					<li>
 						<Button variant="primary" onClick={handleShow}>
 							Launch demo modal
 						</Button>
@@ -40,9 +36,9 @@ export const Navbar = () => {
 								Tu Closet
 							</button>
 						</Link>
-					</div>
-				</div>
-			</div>
-		</nav>
+					</li>
+				</ul>
+			</nav>
+		</div>
 	);
 };
