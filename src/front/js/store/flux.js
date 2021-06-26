@@ -1,4 +1,4 @@
-const getState = ({ getStore, setState, getActions }) => {
+const getState = ({ getStore, setStore, getActions }) => {
 	return {
 		store: {
 			top: [],
@@ -6,9 +6,8 @@ const getState = ({ getStore, setState, getActions }) => {
 			footwear: []
 		},
 		actions: {
-			getClothing() {
-				const store = getStore();
-				const endpoint = process.env.BACKEND_URL + "/api/clothing?category=top";
+			getClothing(category) {
+				const endpoint = `${process.env.BACKEND_URL}/api/clothing?category=${category}`;
 				const config = {
 					method: "GET",
 					headers: {
@@ -19,53 +18,9 @@ const getState = ({ getStore, setState, getActions }) => {
 				fetch(endpoint, config)
 					.then(response => response.json())
 					.then(data => {
-						setStore({ top: data });
+						console.log(data);
+						setStore({ [category]: data });
 					})
-					.catch(err => console.error(err));
-			},
-
-			getBottom() {
-				const store = getStore();
-				const endpoint = process.env.BACKEND_URL + "/api/clothing?category=bottom";
-				const config = {
-					method: "GET",
-					headers: {
-						"Content-Type": "application/json",
-						"Access-Control-Allow-Origin": "*"
-					}
-				};
-
-				fetch(endpoint, config)
-					.then(response => response.json())
-					.then(data => console.log(data))
-					// .then(data => {
-					// 	setStore({
-					// 		bottom: data.bottom
-					// 	});
-					//
-					// })
-					.catch(err => console.error(err));
-			},
-
-			getFootwear() {
-				const store = getStore();
-				const endpoint = process.env.BACKEND_URL + "/api/clothing?category=footwear";
-				const config = {
-					method: "GET",
-					headers: {
-						"Content-Type": "application/json"
-					}
-				};
-
-				fetch(endpoint, config)
-					.then(response => response.json())
-					.then(data => console.log(data))
-					// .then(data => {
-					// 	// setStore({
-					// 	// 	footwear: footwear
-					// 	// });
-					// 	// callback();
-					// })
 					.catch(err => console.error(err));
 			}
 		}

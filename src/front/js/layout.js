@@ -5,7 +5,7 @@ import ScrollToTop from "./component/scrollToTop";
 import { Home } from "./pages/home";
 import { Demo } from "./pages/demo";
 import { Single } from "./pages/single";
-import { MyCloset } from "./pages/mycloset";
+// import { MyCloset } from "./pages/mycloset";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
@@ -32,9 +32,9 @@ const Layout = () => {
 						<Route exact path="/single/:theid">
 							<Single />
 						</Route>
-						<Route exact path="/mycloset">
+						{/* <Route exact path="/mycloset">
 							<MyCloset />
-						</Route>
+						</Route> */}
 					</Switch>
 					<Footer />
 				</ScrollToTop>

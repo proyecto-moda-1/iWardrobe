@@ -2,7 +2,9 @@ import React, { useContext, useState, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { getActions } from "../store/flux.js";
 import PropTypes from "prop-types";
+import CarouselClothing from "../component/CarouselClothing.js";
 import "../../styles/home.scss";
+import Form from "react-bootstrap/Form";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import SplitButton from "react-bootstrap/SplitButton";
 import Dropdown from "react-bootstrap/Dropdown";
@@ -14,29 +16,43 @@ import Col from "react-bootstrap/Col";
 
 export const Home = props => {
 	const { store, actions } = useContext(Context);
-	const [category, setCategory] = useState("");
-	const [clothing, setClothing] = useState([]);
-	const listItems = clothing.map(item => {
-		<Dropdown.Item key={item.id} onClick={changeClothing}>
-			{" "}
-			{item}
-		</Dropdown.Item>;
+	const [top, setTop] = useState({});
+	const [bottom, setBottom] = useState({});
+	const [footwear, setFootwear] = useState({});
+	const [selectedItems, setselectedItems] = useState({
+		top: {},
+		bottom: {},
+		footwear: {}
+	});
+	const topItems = store.top.map(item => {
+		return (
+			<option key={item.id} value={item.id}>
+				{item.name}
+			</option>
+		);
+	});
+	const bottomItems = store.bottom.map(item => {
+		return (
+			<option key={item.id} value={item.id}>
+				{" "}
+				{item.name}
+			</option>
+		);
+	});
+	const footwearItems = store.footwear.map(item => {
+		return (
+			<option key={item.id} value={item.id}>
+				{" "}
+				{item.name}
+			</option>
+		);
 	});
 
-	const changeClothing = e => {
-		e.preventDefault();
-	};
-
 	useEffect(() => {
-		actions.getClothing();
-	}, [category]);
-	// useEffect(() => {
-	// 	actions.getBottom();
-	// }, [category]);
-
-	// useEffect(() => {
-	// 	actions.getFootwear();
-	// }, [category]);
+		actions.getClothing("top");
+		actions.getClothing("bottom");
+		actions.getClothing("footwear");
+	}, []);
 
 	return (
 		<>
@@ -44,38 +60,61 @@ export const Home = props => {
 				<Row>
 					<Col sm={true}>
 						<h2>Your Clothing</h2>
-						<DropdownButton
-							id="dropdown-button"
-							title="Top"
-							onClick={() => setCategory("top")}></DropdownButton>
+						<Form.Control
+							size="sm"
+							as="select"
+							className="select-clothing"
+							defaultValue={top}
+							onChange={event => {
+								setTop(event.target.value);
+								setselectedItems({
+									...selectedItems,
+									top: store.top.find(item => item.id == event.target.value)
+								});
+							}}>
+							<option selected value="0">
+								Top
+							</option>
+							{topItems}
+						</Form.Control>
 						<br />
-						<DropdownButton
-							id="dropdown-basic-button"
-							title=" Bottom"
-							onClick={() => setCategory("bottom")}></DropdownButton>
+						<Form.Control
+							size="sm"
+							as="select"
+							className="select-clothing"
+							defaultValue={bottom}
+							onChange={event => {
+								setBottom(event.target.value);
+								setselectedItems({
+									...selectedItems,
+									bottom: store.bottom.find(item => item.id == event.target.value)
+								});
+							}}>
+							<option value="0">Bottom</option>
+							{bottomItems}
+						</Form.Control>
+
 						<br />
-						<DropdownButton
-							id="dropdown-button"
-							title="Footwear"
-							onClick={() => setCategory("footwear")}></DropdownButton>
+						<Form.Control
+							size="sm"
+							as="select"
+							className="select-clothing"
+							defaultValue={footwear}
+							onChange={event => setFootwear(event.target.value)}>
+							<option value="0">Footwear</option>
+							{footwearItems}
+						</Form.Control>
 					</Col>
-					<Col sm={true}></Col>
-					<Col sm={true}></Col>
+					<Col sm={true}> </Col>
+					<Col sm={true}>
+						<h2>Carousel</h2>
+						<br />
+						<div className="main-container">
+							<CarouselClothing selectedItems={selectedItems} />
+						</div>
+					</Col>
 				</Row>
 			</Container>
 		</>
 	);
 };
-// const endpoint = process.env.BACKEND_URL + "/api/clothing?category=" + category;
-// const config = {
-// 	method: "GET",
-// 	headers: {
-// 		"Content-Type": "application/json"
-// 	}
-// };
-// fetch(endpoint, config)
-// 	.then(response => response.json())
-// 	.then(data => {
-// 		console.log(data);
-// 	})
-// 	.catch(err => console.error(err));

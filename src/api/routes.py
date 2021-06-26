@@ -39,7 +39,7 @@ def get_all_clothings():
         serialized_clothings.append(clothing.serialize())
     
 
-    print(all_clothings)
+    print(serialized_clothings,"11111gbhjklpoiuytfdsxcvbn11111111")
 
     return jsonify(serialized_clothings), 200
 
