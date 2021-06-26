@@ -1,6 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { Card } from "../component/card.js";
+import { CollectionDropdown } from "../component/collectionDropdown.js";
 import { getActions } from "../store/flux.js";
 
 import PropTypes from "prop-types";
@@ -14,6 +15,7 @@ export const Closet = () => {
 		actions.getUserFavorite();
 	}, []);
 	let favoriteCards = [];
+	let outfitsByCategory = [];
 	if (store.favorites != undefined) {
 		favoriteCards = store.favorites.map((favorite, index) => {
 			return (
@@ -42,11 +44,17 @@ export const Closet = () => {
 						<a className="btn btn-primary btn-lg" href="#" role="button">
 							Ropa Sucia
 						</a>
-						<a className="btn btn-primary btn-lg" href="#" role="button">
-							Category
-						</a>
 					</p>
-					<div className="text">
+					<div className="row">
+						<div className="col-xs-3">
+							<h1 className="text"> Categories</h1>
+							<CollectionDropdown />
+						</div>
+						<div className="col-xs-9">
+							<div className="planet d-flex flex-row">{outfitsByCategory}</div>
+						</div>
+					</div>
+					<div className="row">
 						<h1 className="text"> favoriteS FAVORITOS</h1>
 						<div className="planet d-flex flex-row">{favoriteCards}</div>
 					</div>

@@ -187,6 +187,29 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 					.then(json => {
 						setStore({ favorites: json });
 					});
+			},
+
+			getCollections: () => {
+				const store = getStore();
+				const endpoint = process.env.BACKEND_URL + "/api/collections";
+				const config = {
+					method: "GET",
+					headers: {
+						"Content-Type": "application/json",
+						Authorization: `Bearer ${store.token}`,
+						cors: "no-cors"
+					}
+				};
+				fetch(endpoint, config)
+					.then(response => {
+						if (!response.ok) {
+							window.location.href = "/";
+						}
+						return response.json();
+					})
+					.then(json => {
+						setStore({ categories: json });
+					});
 			}
 		}
 	};

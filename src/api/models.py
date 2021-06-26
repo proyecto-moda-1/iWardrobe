@@ -154,7 +154,7 @@ class Collection(db.Model):
      def serialize(self):
         return {
             "id": self.id,
-            "user_id": self.user_id,
+            "user_id": self.collection_user_id,
             "image": self.image,
             "name": self.name,
         }     
