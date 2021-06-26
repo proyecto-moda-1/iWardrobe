@@ -65,7 +65,6 @@ class Category(enum.Enum):
     bottom = 2
     footwear = 3
 
-
 class Clothing(db.Model):
      id = db.Column(db.Integer, primary_key=True)
      user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
@@ -118,6 +117,10 @@ class Outfit(db.Model):
      def get_favorite_user_outfits(user_id):
          return Outfit.query.filter_by(outfit_user_id=user_id, favorite = True).all()
 
+     def create_outfit(self):
+         db.session.add(self)
+         db.session.commit() 
+
      def __repr__(self):
               return '<Outfit %r>' % self.name
 
@@ -147,6 +150,9 @@ class Collection(db.Model):
      def get_collection_by_user_id(user_id):
          return Collection.query.filter_by(collection_user_id=user_id).all()
      
+     def create_collection(self):
+         db.session.add(self)
+         db.session.commit() 
 
      def __repr__(self):
          return '<Collection %r>' % self.image

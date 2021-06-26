@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
+import { MyCloset } from "./pages/MyCloset";
 import { Home } from "./pages/home";
 import { Demo } from "./pages/demo";
 import { Login } from "./pages/login";
@@ -44,9 +45,10 @@ const Layout = () => {
 						<Route exact path="/closet">
 							<Closet />
 						</Route>
-						<Route>
-							<h1>Not found!</h1>
+						<Route exact path="/MyCloset">
+							<MyCloset />
 						</Route>
+						<Route></Route>
 					</Switch>
 					<Footer />
 				</ScrollToTop>

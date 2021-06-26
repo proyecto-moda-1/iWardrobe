@@ -9,7 +9,10 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 			profile: [],
 			clothing_items: [],
 			collection_outfit: [],
-			name: []
+			name: [],
+			top: [],
+			bottom: [],
+			footwear: []
 		},
 		actions: {
 			createUser: (data, callback) => {
@@ -90,9 +93,7 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 				"";
 			},
 			//get the store
-
 			createClothing: data => {
-				const store = getStore();
 				const endpoint = process.env.BACKEND_URL + "/api/clothing";
 				const config = {
 					method: "POST",
@@ -108,7 +109,6 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 						"Access-Control-Allow-Origin": "*"
 					}
 				};
-
 				fetch(endpoint, config)
 					.then(response => {
 						setName("");
@@ -210,6 +210,23 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 					.then(json => {
 						setStore({ collections: json });
 					});
+			},
+			getClothing(category) {
+				const endpoint = `${process.env.BACKEND_URL}/api/clothing?category=${category}`;
+				const config = {
+					method: "GET",
+					headers: {
+						"Content-Type": "application/json"
+					}
+				};
+
+				fetch(endpoint, config)
+					.then(response => response.json())
+					.then(data => {
+						console.log(data);
+						setStore({ [category]: data });
+					})
+					.catch(err => console.error(err));
 			}
 		}
 	};

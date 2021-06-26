@@ -17,30 +17,34 @@ export const Profile = () => {
 	let outfitCards = [];
 	let dirtyClothing = [];
 	if (store.outfits != undefined) {
-		dirtyClothing = store.outfits.filter(outfit => outfit.clothing.some(clo => !clo.clean)).map((outfit, index) => {
-			return (
-				<Card
-					name={outfit.name}
-					collections={outfit.collections}
-					image={outfit.image}
-					clothing={outfit.clothing}
-					favorite={outfit.favorite}
-					key={index}
-				/>
-			);
-		});
-		outfitCards = store.outfits.filter(outfit => outfit.clothing.every(clo => clo.clean)).map((outfit, index) => {
-			return (
-				<Card
-					name={outfit.name}
-					collections={outfit.collections}
-					image={outfit.image}
-					clothing={outfit.clothing}
-					favorite={outfit.favorite}
-					key={index}
-				/>
-			);
-		});
+		dirtyClothing = store.outfits
+			.filter(outfit => outfit.clothing.some(clo => !clo.clean))
+			.map((outfit, index) => {
+				return (
+					<Card
+						name={outfit.name}
+						collections={outfit.collections}
+						image={outfit.image}
+						clothing={outfit.clothing}
+						favorite={outfit.favorite}
+						key={index}
+					/>
+				);
+			});
+		outfitCards = store.outfits
+			.filter(outfit => outfit.clothing.every(clo => clo.clean))
+			.map((outfit, index) => {
+				return (
+					<Card
+						name={outfit.name}
+						collections={outfit.collections}
+						image={outfit.image}
+						clothing={outfit.clothing}
+						favorite={outfit.favorite}
+						key={index}
+					/>
+				);
+			});
 	}
 
 	return (
