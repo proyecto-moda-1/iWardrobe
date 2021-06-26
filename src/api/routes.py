@@ -147,7 +147,6 @@ def get_all_outfits():
     return jsonify(serialized_outfits), 200
 
 
-<<<<<<< HEAD
 @api.route('/outfit', methods=['POST'])
 def create_outfit():
 
@@ -167,7 +166,6 @@ def create_outfit():
     outfit.create_outfit()
 
     return "Created", 201
-=======
 @api.route('/users/outfits', methods=['GET'])
 @jwt_required()
 def get_user_outfits():
@@ -178,7 +176,6 @@ def get_user_outfits():
         for outfit in get_all_outfits:
             serialized_outfit.append(outfit.serialize())
         return jsonify(serialized_outfit), 200 
->>>>>>> main
 
 
 @api.route('/collection', methods=['GET'])
