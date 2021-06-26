@@ -14,7 +14,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-export const Home = props => {
+export const MyCloset = props => {
 	const { store, actions } = useContext(Context);
 	const [top, setTop] = useState({});
 	const [bottom, setBottom] = useState({});
@@ -100,7 +100,13 @@ export const Home = props => {
 							as="select"
 							className="select-clothing"
 							defaultValue={footwear}
-							onChange={event => setFootwear(event.target.value)}>
+							onChange={event => {
+								setFootwear(event.target.value);
+								setselectedItems({
+									...selectedItems,
+									footwear: store.footwear.find(item => item.id == event.target.value)
+								});
+							}}>
 							<option value="0">Footwear</option>
 							{footwearItems}
 						</Form.Control>

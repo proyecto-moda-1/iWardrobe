@@ -2,10 +2,7 @@ import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
-import { Home } from "./pages/home";
-import { Demo } from "./pages/demo";
-import { Single } from "./pages/single";
-// import { MyCloset } from "./pages/mycloset";
+import { MyCloset } from "./pages/MyCloset";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
@@ -24,17 +21,8 @@ const Layout = () => {
 					<Navbar />
 					<Switch>
 						<Route exact path="/">
-							<Home />
-						</Route>
-						<Route exact path="/demo">
-							<Demo />
-						</Route>
-						<Route exact path="/single/:theid">
-							<Single />
-						</Route>
-						{/* <Route exact path="/mycloset">
 							<MyCloset />
-						</Route> */}
+						</Route>
 					</Switch>
 					<Footer />
 				</ScrollToTop>

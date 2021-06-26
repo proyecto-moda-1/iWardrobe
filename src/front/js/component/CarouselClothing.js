@@ -27,7 +27,10 @@ export const CarouselClothing = props => {
 								<img src={props.selectedItems.bottom.image} />
 							</div>
 							<br />
-							<div className="footwear-container">footwear</div>
+							<div className="footwear-container">
+								footwear
+								<img src={props.selectedItems.footwear.image} />
+							</div>
 						</div>
 					</Col>
 				</Row>
