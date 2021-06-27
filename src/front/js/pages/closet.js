@@ -10,9 +10,9 @@ import "../../styles/profile.scss";
 export const Closet = () => {
 	const { store, actions } = useContext(Context);
 
-	useEffect(() => {
-		actions.getUserFavorite();
-	}, []);
+	// useEffect(() => {
+	// 	actions.getUserFavorite();
+	// }, []);
 	let favoriteCards = [];
 	if (store.favorites != undefined) {
 		favoriteCards = store.favorites.map((favorite, index) => {
