@@ -105,13 +105,16 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 				};
 
 				fetch(endpoint, config)
-					.then(response => response.json())
-					.then(data => {
-						console.log(data);
-						setStore({ [category]: data });
+					.then(response => {
+						setName("");
+						setImage("");
+						setCategory("");
+						return response.json();
 					})
+					.then(json => console.log(json))
 					.catch(err => console.error(err));
-			},
+			}
+		},
 
 			getAllOutfit: data => {
 				const store = getStore();
@@ -201,5 +204,4 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 			}
 		}
 	};
-};
 export default getState;
