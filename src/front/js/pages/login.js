@@ -37,7 +37,7 @@ export const Login = function(props) {
 							<h1 className="tittle">LOGIN</h1>
 							<div className="loginContainer">
 								<div className="group">
-									<label className="user label">Email</label>
+									<label className="user label">E-mail</label>
 									<input
 										type="email"
 										className="input btn btn-light"

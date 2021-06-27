@@ -116,92 +116,92 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 			}
 		},
 
-			getAllOutfit: data => {
-				const store = getStore();
-				const endpoint = process.env.BACKEND_URL + "/api/users/outfits";
-				const config = {
-					method: "GET",
-					headers: {
-						"Content-Type": "application/json",
-						Authorization: `Bearer ${store.token}`,
-						cors: "no-cors"
+		getAllOutfit: data => {
+			const store = getStore();
+			const endpoint = process.env.BACKEND_URL + "/api/users/outfits";
+			const config = {
+				method: "GET",
+				headers: {
+					"Content-Type": "application/json",
+					Authorization: `Bearer ${store.token}`,
+					cors: "no-cors"
+				}
+			};
+			fetch(endpoint, config)
+				.then(response => {
+					if (!response.ok) {
+						window.location.href = "/";
 					}
-				};
-				fetch(endpoint, config)
-					.then(response => {
-						if (!response.ok) {
-							window.location.href = "/";
-						}
-						return response.json();
-					})
-					.then(json => {
-						setStore({ outfits: json });
-					});
-			},
+					return response.json();
+				})
+				.then(json => {
+					setStore({ outfits: json });
+				});
+		},
 
-			favoriteBrand: data => {
-				const store = getStore();
-				const endpoint = process.env.BACKEND_URL + "/api/users/outfits/<outfit_id>/favorite";
-				const config = {
-					method: "PUT",
-					body: JSON.stringify({
-						favorite: data.favorite
-					}),
-					headers: {
-						"Content-Type": "application/json",
-						Authorization: `Bearer ${store.token}`,
-						"Access-Control-Allow-Origin": "*"
+		favoriteBrand: data => {
+			const store = getStore();
+			const endpoint = process.env.BACKEND_URL + "/api/users/outfits/<outfit_id>/favorite";
+			const config = {
+				method: "PUT",
+				body: JSON.stringify({
+					favorite: data.favorite
+				}),
+				headers: {
+					"Content-Type": "application/json",
+					Authorization: `Bearer ${store.token}`,
+					"Access-Control-Allow-Origin": "*"
+				}
+			};
+			fetch(endpoint, config)
+				.then(response => {
+					setFavorite("");
+					return response.json();
+				})
+				.then(json => setFavorite(json.favorite))
+				.catch(err => console.error(err));
+		},
+
+		getUserFavorite: data => {
+			const store = getStore();
+			const endpoint = process.env.BACKEND_URL + "/api/users/outfits/favorite";
+			const config = {
+				method: "GET",
+				headers: {
+					"Content-Type": "application/json",
+					Authorization: `Bearer ${store.token}`,
+					cors: "no-cors"
+				}
+			};
+			fetch(endpoint, config)
+				.then(response => {
+					if (!response.ok) {
+						window.location.href = "/";
 					}
-				};
-				fetch(endpoint, config)
-					.then(response => {
-						setFavorite("");
-						return response.json();
-					})
-					.then(json => setFavorite(json.favorite))
-					.catch(err => console.error(err));
-			},
+					return response.json();
+				})
+				.then(json => {
+					setStore({ favorites: json });
+				});
+		},
 
-			getUserFavorite: data => {
-				const store = getStore();
-				const endpoint = process.env.BACKEND_URL + "/api/users/outfits/favorite";
-				const config = {
-					method: "GET",
-					headers: {
-						"Content-Type": "application/json",
-						Authorization: `Bearer ${store.token}`,
-						cors: "no-cors"
-					}
-				};
-				fetch(endpoint, config)
-					.then(response => {
-						if (!response.ok) {
-							window.location.href = "/";
-						}
-						return response.json();
-					})
-					.then(json => {
-						setStore({ favorites: json });
-					});
-			},
+		getClothing(category) {
+			const endpoint = `${process.env.BACKEND_URL}/api/clothing?category=${category}`;
+			const config = {
+				method: "GET",
+				headers: {
+					"Content-Type": "application/json"
+				}
+			};
 
-			getClothing(category) {
-				const endpoint = `${process.env.BACKEND_URL}/api/clothing?category=${category}`;
-				const config = {
-					method: "GET",
-					headers: {
-						"Content-Type": "application/json"
-					}
-				};
-
-				fetch(endpoint, config)
-					.then(response => response.json())
-					.then(data => {
-						console.log(data);
-						setStore({ [category]: data });
-					})
-					.catch(err => console.error(err));
-			}
+			fetch(endpoint, config)
+				.then(response => response.json())
+				.then(data => {
+					console.log(data);
+					setStore({ [category]: data });
+				})
+				.catch(err => console.error(err));
 		}
 	};
+};
 export default getState;

@@ -32,22 +32,22 @@ export const Closet = () => {
 	return (
 		<div className="container">
 			<div className="jumbotron">
-				<h1 className="display-4">Mi Closet!</h1>
-				<p className="lead">Escoge tu favorite según tu día y tu evento…</p>
+				<h1 className="display-4">My wardrobe!</h1>
+				<p className="lead">Choose your favourite</p>
 				<div className="my-4">
 					<p className="lead">
 						<a className="btn btn-primary btn-lg" href="#" role="button">
-							Favorites
+							Favourites
 						</a>
 						<a className="btn btn-primary btn-lg" href="#" role="button">
-							Ropa Sucia
+							Dirty
 						</a>
 						<a className="btn btn-primary btn-lg" href="#" role="button">
 							Category
 						</a>
 					</p>
 					<div className="text">
-						<h1 className="text"> favoriteS FAVORITOS</h1>
+						<h1 className="text"> Favourites</h1>
 						<div className="planet d-flex flex-row">{favoriteCards}</div>
 					</div>
 				</div>

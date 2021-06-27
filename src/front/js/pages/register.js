@@ -42,7 +42,7 @@ export const Register = function(props) {
 							<a className="tittle">REGISTER</a>
 							<div className="loginContainer">
 								<div className="group">
-									<label className="user label">NickName</label>
+									<label className="user label">Nickname</label>
 									<input
 										type="text"
 										className="input btn btn-light"
@@ -76,7 +76,7 @@ export const Register = function(props) {
 									/>
 								</div>
 								<div className="group">
-									<label className="pass label">Email Address</label>
+									<label className="pass label">E-mail</label>
 									<input
 										id="pass"
 										type="email"
@@ -98,7 +98,7 @@ export const Register = function(props) {
 									/>
 								</div>
 								<div className="group">
-									<label className="pass label">Imagen</label>
+									<label className="pass label">Image</label>
 									<input
 										id="pass"
 										type="text"

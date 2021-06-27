@@ -12,21 +12,21 @@ export const Navbar = () => {
 	return (
 		<div className="header">
 			<a className="logo" href="/ " src="" alt="logo">
-				OUTFIT PLANNER
+				iWardrobe
 			</a>
 			<nav>
 				<ul className="navLink">
 					<li>
 						<Link to="/MyCloset">
-							<a href="#">Crea tu Outfit</a>
+							<a href="#">Create your outfit</a>
 						</Link>
 					</li>
 					<li>
-						<a href="/closet">Tu Closet</a>
+						<a href="/closet">Your closet</a>
 					</li>
 					<li>
 						<Button variant="primary" onClick={handleShow}>
-							Add Clothing
+							Add clothes
 						</Button>
 						<LoadClothing show={show} handleClose={handleClose} />
 					</li>

@@ -64,11 +64,11 @@ export const Profile = () => {
 				</div>
 			</div>
 			<div className="text">
-				<h1 className="text"> OUTFITS DISPONIBLES</h1>
+				<h1 className="text"> Available outfits</h1>
 				<div className="planet d-flex flex-row">{outfitCards}</div>
 			</div>
 			<div className="text">
-				<h1 className="text"> ROPA SUCIA</h1>
+				<h1 className="text"> Used clothes</h1>
 				<div className="planet d-flex flex-row">{dirtyClothing}</div>
 			</div>
 		</div>

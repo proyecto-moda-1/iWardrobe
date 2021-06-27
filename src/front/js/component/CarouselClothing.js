@@ -18,17 +18,14 @@ export const CarouselClothing = props => {
 						<div className="main-container">
 							<div className="top-container">
 								{" "}
-								top
 								<img src={props.selectedItems.top.image} />
 							</div>
 							<br />
 							<div className="bottom-container">
-								bottom
 								<img src={props.selectedItems.bottom.image} />
 							</div>
 							<br />
 							<div className="footwear-container">
-								footwear
 								<img src={props.selectedItems.footwear.image} />
 							</div>
 						</div>

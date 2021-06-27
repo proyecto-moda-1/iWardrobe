@@ -31,45 +31,40 @@ export const Home = () => {
 				</div>
 			</div>
 			<div className="col">
-				<p className="tittleInit">
-					MODA Es lo que compras. ESTILO es lo que haces con eso. No lo dejes para ultima hora.
-				</p>
+				<p className="tittleInit"></p>
 			</div>
 			<div className="container-intro">
 				<div className="row">
 					<div className="col">
 						<h2>
-							<i className="far fa-check-square" />
-							Dé rienda suelta a su creatividad
+							<i className="far fa-check-square" /> Be creative
 						</h2>
-						<p>Queremos ayudarte a explorar tu creatividad a la hora de vestir</p>
+						<p>
+							Inspire others with your fearless fashion sense: do something that Rihanna could be proud
+							of.
+						</p>
 						<h2>
 							<i className="far fa-check-square" />
-							Organiza tu armario
+							Vini vidi vinci
 						</h2>
-						<p>Saques el mayor provecho de tu ropa, incluso de la que tienes olvidada en tu closet</p>
+						<p>
+							Take out your best Monicas organization skills with separating and putting everything in
+							collections, outfits for that party with your friends.
+						</p>
 						<h2>
 							<i className="far fa-check-square" />
-							Rapidez en tu dia
+							Random noria
 						</h2>
-						<p>A la hora de vestir selecciona lo que quieres en un click</p>
+						<p>
+							Our random noria feauture will give you a look going from Desigual to the last Versace look.
+							You will never know but that&apos;s the fun of it!
+						</p>
 					</div>
 					<div className="col">
 						<h2>
 							<i className="far fa-check-square" />
-							Divide y venceras{" "}
 						</h2>
-						<p>Puedas programar cual es tu estilo según la ocasión. Separa por carpetas tus outfit</p>
-						<h2>
-							<i className="far fa-check-square" />
-							Adaptado a ti{" "}
-						</h2>
-						<p>Tendrás tu cesta de ropa sucia en tiempo real.</p>
-						<h2>
-							<i className="far fa-check-square" />
-							Atrévete a jugar{" "}
-						</h2>
-						<p>Queremos retarte a pisar la Noria y que nos dejes escoger tu combinación</p>
+						<p></p>
 					</div>
 				</div>
 
