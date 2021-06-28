@@ -1,6 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
 import { Context } from "../store/appContext";
-import { getActions } from "../store/flux.js";
 import PropTypes from "prop-types";
 import CarouselClothing from "../component/CarouselClothing.js";
 import "../../styles/home.scss";
