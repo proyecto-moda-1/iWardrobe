@@ -34,19 +34,19 @@ export const Closet = () => {
 	return (
 		<div className="container">
 			<h1 className="display-4">Mi Closet!</h1>
-			<p className="lead">Escoge tu favorite según tu día y tu evento…</p>
+			<p className="lead">La VIDA es una FIESTA vistete para eso…</p>
 			<div className="my-4">
-				<p className="lead">
+				{/* <p className="lead">
 					<a className="btn btn-primary btn-lg" href="#" role="button">
 						Favorites
 					</a>
 					<a className="btn btn-primary btn-lg" href="#" role="button">
 						Ropa Sucia
 					</a>
-				</p>
+				</p> */}
 				<div className="row">
 					<div className="col-xs-3">
-						<h1 className="text"> CATEGORIES</h1>
+						<h1 className="text"> COLLECTIONS</h1>
 						<CollectionDropdown />
 					</div>
 					<div className="col-xs-9">
