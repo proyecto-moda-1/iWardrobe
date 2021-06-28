@@ -33,31 +33,29 @@ export const Closet = () => {
 
 	return (
 		<div className="container">
-			<div className="jumbotron">
-				<h1 className="display-4">Mi Closet!</h1>
-				<p className="lead">Escoge tu favorite según tu día y tu evento…</p>
-				<div className="my-4">
-					<p className="lead">
-						<a className="btn btn-primary btn-lg" href="#" role="button">
-							Favorites
-						</a>
-						<a className="btn btn-primary btn-lg" href="#" role="button">
-							Ropa Sucia
-						</a>
-					</p>
-					<div className="row">
-						<div className="col-xs-3">
-							<h1 className="text"> Categories</h1>
-							<CollectionDropdown />
-						</div>
-						<div className="col-xs-9">
-							<div className="planet d-flex flex-row">{outfitsByCategory}</div>
-						</div>
+			<h1 className="display-4">Mi Closet!</h1>
+			<p className="lead">Escoge tu favorite según tu día y tu evento…</p>
+			<div className="my-4">
+				<p className="lead">
+					<a className="btn btn-primary btn-lg" href="#" role="button">
+						Favorites
+					</a>
+					<a className="btn btn-primary btn-lg" href="#" role="button">
+						Ropa Sucia
+					</a>
+				</p>
+				<div className="row">
+					<div className="col-xs-3">
+						<h1 className="text"> CATEGORIES</h1>
+						<CollectionDropdown />
 					</div>
-					<div className="row">
-						<h1 className="text"> favoriteS FAVORITOS</h1>
-						<div className="planet d-flex flex-row">{favoriteCards}</div>
+					<div className="col-xs-9">
+						<div className="planet d-flex flex-row">{outfitsByCategory}</div>
 					</div>
+				</div>
+				<div className="row">
+					<h1 className="text">FAVORITOS</h1>
+					<div className="planet d-flex flex-row">{favoriteCards}</div>
 				</div>
 			</div>
 		</div>
