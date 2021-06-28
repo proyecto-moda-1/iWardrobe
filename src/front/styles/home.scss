@@ -8,14 +8,17 @@ h1{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    color: #5e5c5c;
 }
 
 h2{
    font-size: xx-large;
    text-decoration: underline;
+   color: #5e5c5c;;
 }
 p{
     font-size: x-large;
+    color: #5e5c5c;
 }
 
 img{
@@ -29,7 +32,7 @@ opacity: 70%;
 }
  
 .btn1 {
-  position: absolute;
+    position: absolute;
     top: 70%;
     left: 60%;
     transform: translate(-50%, -50%);
@@ -37,6 +40,7 @@ opacity: 70%;
     color: #9b9999;
     border: 2px solid #9b9999;
     padding: 15px 32px;
+    border-radius: 0.5rem;
 }
 
 .btn2 {
@@ -44,11 +48,12 @@ opacity: 70%;
     top: 70%;
     left: 40%;
     transform: translate(-50%, -50%);
-        background-color:blac;
-        background-color: white;
+    background-color:blac;
+    background-color: white;
     color:  #9b9999;
     border: 2px solid #9b9999;
-        padding: 15px 32px;
+    padding: 15px 32px;
+    border-radius: 0.5rem;
 
 }
 .btn1:hover{
