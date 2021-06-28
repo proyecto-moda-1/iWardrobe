@@ -1,4 +1,6 @@
+.container-fluid{
 
+}
 h1{
   margin: auto;
   display: flex;
@@ -57,10 +59,14 @@ opacity: 70%;
 
 }
 .btn1:hover{
-    background-color: #9b9999;
+    background-color: rgb(155, 153, 153);
     color:white;
 }
 .btn2:hover{
     background-color: #9b9999;
     color:white;
+}
+
+.row{
+   text-align:left;
 }

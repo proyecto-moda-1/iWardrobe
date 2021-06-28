@@ -38,11 +38,11 @@ export const Register = function(props) {
 				<div className="d-flex justify-content-center">
 					<div className="login-box">
 						<div className="login-snip">
-							{" "}
-							<a className="tittle">REGISTER</a>
+							{/* {" "}
+							<a className="tittle">REGISTER</a> */}
 							<div className="loginContainer">
 								<div className="group">
-									<label className="user label">NickName</label>
+									<label className="user label">Nickname</label>
 									<input
 										type="text"
 										className="input btn btn-light"
@@ -97,7 +97,7 @@ export const Register = function(props) {
 										onChange={event => setGender(event.target.value)}
 									/>
 								</div>
-								<div className="group">
+								{/* <div className="group">
 									<label className="pass label">Imagen</label>
 									<input
 										id="pass"
@@ -107,7 +107,7 @@ export const Register = function(props) {
 										value={image}
 										onChange={event => setImage(event.target.value)}
 									/>
-								</div>
+								</div> */}
 								<div className="group">
 									<button type="submit" value="boton" className="button" onClick={handleRegister}>
 										Sign Up
