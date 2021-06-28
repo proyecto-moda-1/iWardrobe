@@ -24,7 +24,7 @@ export const Footer = () => (
 
 		<div className="text-center p-3">
 			<a className="text-white" href="https://4geeksacademy.com/es/inicio">
-				4geeks academy
+				4Geeks Academy
 			</a>
 		</div>
 	</footer>

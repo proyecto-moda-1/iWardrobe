@@ -75,6 +75,7 @@ export const Register = function(props) {
 									/>
 								</div>
 								<div className="group">
+									<label className="pass label">E-mail</label>
 									<input
 										id="pass"
 										type="email"

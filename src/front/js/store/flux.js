@@ -72,7 +72,7 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 					.catch(error => {});
 			},
 
-			logOut() {
+			logOut: () => {
 				localStorage.removeItem("token");
 				setStore({ token: null });
 			},
@@ -211,7 +211,8 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 						setStore({ collections: json });
 					});
 			},
-			getClothing(category) {
+
+			getClothing: category => {
 				const endpoint = `${process.env.BACKEND_URL}/api/clothing?category=${category}`;
 				const config = {
 					method: "GET",

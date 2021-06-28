@@ -11,21 +11,23 @@ export const Navbar = () => {
 	const handleShow = () => setShow(true);
 	return (
 		<div className="header">
-			<a className="logo" href="/ " src="file:///Users/mariatablante/Desktop/logo%20iWardrobe1.jpeg" alt="logo">
+			<a className="logo" href="/home" src="" alt="logo">
 				iWardrobe
 			</a>
 			<nav>
 				<ul className="navLink">
 					<li>
 						<Link to="/MyCloset">
-							<a href="#">Crea tu Outfit</a>
+							<a href="#">Create your outfit</a>
 						</Link>
 					</li>
 					<li>
-						<a href="/closet">Tu Closet</a>
+						<a href="/closet">Your closet</a>
 					</li>
 					<li>
-						<Button onClick={handleShow}>Add Clothing</Button>
+						<Button variant="primary" onClick={handleShow}>
+							Add clothes
+						</Button>
 						<LoadClothing show={show} handleClose={handleClose} />
 					</li>
 				</ul>
