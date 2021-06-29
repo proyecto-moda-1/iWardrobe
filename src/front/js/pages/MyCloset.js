@@ -46,11 +46,11 @@ export const MyCloset = props => {
 		);
 	});
 
-	// useEffect(() => {
-	// 	actions.getClothing("top");
-	// 	actions.getClothing("bottom");
-	// 	actions.getClothing("footwear");
-	// }, []);
+	useEffect(() => {
+		actions.getClothing("top");
+		actions.getClothing("bottom");
+		actions.getClothing("footwear");
+	}, []);
 
 	return (
 		<>

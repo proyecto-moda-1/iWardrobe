@@ -10,18 +10,21 @@ import "../../styles/home.scss";
 
 export const CollectionSelect = props => {
 	const { store, actions } = useContext(Context);
-	let collections = [];
-	// useEffect(() => {
-	// 	actions.getCollections();
-	// }, []);
-	if (store.collections != undefined) {
-		collections = store.collections.map(category => {
-			return {
-				label: category.name,
-				value: category.id
-			};
-		});
-	}
+	const [collections, setCollections] = useState({});
+	const [selectedCollections, setselectedCollections] = useState({
+		collections: {}
+	});
+	const allCollections = store.collections.map(item => {
+		return (
+			<option key={item.id} value={item.id}>
+				{item.name}
+			</option>
+		);
+	});
+
+	useEffect(() => {
+		actions.getCollections();
+	}, []);
 
 	return (
 		<>
@@ -29,11 +32,22 @@ export const CollectionSelect = props => {
 				<Row>
 					<Col sm={true}>
 						<h2> Add to my collections</h2>
-						<Form.Control size="sm" as="select" className="select-clothing" defaultValue={top}>
+						<Form.Control
+							size="sm"
+							as="select"
+							className="select-collection"
+							defaultValue={collection}
+							onChange={event => {
+								setCollections(event.target.value);
+								setselectedCollections({
+									...selectedCollections,
+									collections: store.collections.find(item => item.id == event.target.value)
+								});
+							}}>
 							<option selected value="0">
 								My collections
 							</option>
-							{collections}
+							{allCollections}
 						</Form.Control>
 					</Col>
 				</Row>

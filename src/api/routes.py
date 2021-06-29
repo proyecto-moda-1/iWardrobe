@@ -166,6 +166,7 @@ def create_outfit():
     outfit.create_outfit()
 
     return "Created", 201
+    
 @api.route('/users/outfits', methods=['GET'])
 @jwt_required()
 def get_user_outfits():
@@ -177,17 +178,16 @@ def get_user_outfits():
             serialized_outfit.append(outfit.serialize())
         return jsonify(serialized_outfit), 200 
 
-
-@api.route('/collection', methods=['GET'])
-def get_all_collections():
-    all_collections = Collection.query.all()
-
-    serialized_collections = []
-    for collection in all_collections:
-        serialized_collections.append(collection.serialize())
-    print(all_collections)
-
-    return jsonify(serialized_collections), 200  
+@api.route('/collections', methods=['GET'])
+# @jwt_required()
+def get_user_collection():
+        # user_email = get_jwt_identity()
+        # user = User.get_user_by_email(user_email) 
+        get_all_collections = Collection.get_collection_by_user_id(user.id)                           
+        serialized_collection = []
+        for collection in get_all_collections:
+            serialized_collection.append(collection.serialize())
+        return jsonify(serialized_collection), 200  
 
 @api.route('/collection', methods=['POST'])
 def create_collection():
