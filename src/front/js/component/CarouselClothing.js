@@ -12,26 +12,20 @@ export const CarouselClothing = props => {
 
 	return (
 		<>
-			<Container>
-				<Row>
-					<Col sm={true}>
-						<div className="main-container">
-							<div className="top-container">
-								{" "}
-								<img src={props.selectedItems.top.image} />
-							</div>
-							<br />
-							<div className="bottom-container">
-								<img src={props.selectedItems.bottom.image} />
-							</div>
-							<br />
-							<div className="footwear-container">
-								<img src={props.selectedItems.footwear.image} />
-							</div>
-						</div>
-					</Col>
-				</Row>
-			</Container>
+			<div className="main-container">
+				<div className="top-container">
+					{" "}
+					<img src={props.selectedItems.top.image} />
+				</div>
+				<br />
+				<div className="bottom-container">
+					<img src={props.selectedItems.bottom.image} />
+				</div>
+				<br />
+				<div className="footwear-container">
+					<img src={props.selectedItems.footwear.image} />
+				</div>
+			</div>
 		</>
 	);
 };
