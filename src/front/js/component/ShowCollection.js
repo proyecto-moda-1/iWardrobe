@@ -10,7 +10,7 @@ import "../../styles/home.scss";
 
 export const CollectionSelect = props => {
 	const { store, actions } = useContext(Context);
-	const [collections, setCollections] = useState({});
+	const [collection, setCollection] = useState({});
 	const [selectedCollections, setselectedCollections] = useState({
 		collections: {}
 	});
@@ -38,7 +38,7 @@ export const CollectionSelect = props => {
 							className="select-collection"
 							defaultValue={collection}
 							onChange={event => {
-								setCollections(event.target.value);
+								setCollection(event.target.value);
 								setselectedCollections({
 									...selectedCollections,
 									collections: store.collections.find(item => item.id == event.target.value)
