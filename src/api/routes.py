@@ -179,11 +179,11 @@ def get_user_outfits():
         return jsonify(serialized_outfit), 200 
 
 @api.route('/collections', methods=['GET'])
-@jwt_required()
+# @jwt_required()
 def get_user_collection():
-        user_email = get_jwt_identity()
-        user = User.get_user_by_email(user_email) 
-        get_all_collections = Collection.get_collection_by_user_id(user.id)                           
+        # user_email = get_jwt_identity()
+        # user = User.get_user_by_email(user_email) 
+        get_all_collections = Collection.get_collection_by_user_id(1)                           
         serialized_collection = []
         for collection in get_all_collections:
             serialized_collection.append(collection.serialize())

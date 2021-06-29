@@ -1,10 +1,8 @@
 import React, { useContext, useState, useEffect } from "react";
 import { Context } from "../store/appContext";
-import { getActions } from "../store/flux.js";
 import PropTypes from "prop-types";
 import CarouselClothing from "../component/CarouselClothing.js";
 import CollectionSelect from "../component/ShowCollection.js";
-import RandomWheel from "../component/RandomWheel.js";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
@@ -115,7 +113,6 @@ export const MyCloset = props => {
 					<Col sm={true}>
 						<div className="main-container">
 							<CarouselClothing selectedItems={selectedItems} />
-							<RandomWheel />
 						</div>
 					</Col>
 				</Row>

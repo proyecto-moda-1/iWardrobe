@@ -73,7 +73,7 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 					.catch(error => {});
 			},
 
-			logOut() {
+			logOut: () => {
 				localStorage.removeItem("token");
 				setStore({ token: null });
 			},
@@ -83,18 +83,15 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 				const endpoint = process.env.BACKEND_URL + "/api/clothing";
 				const config = {
 					method: "POST",
-					body,
+					body: JSON.stringify(data),
 					headers: {
 						"Content-Type": "application/json"
 					}
 				};
 
 				fetch(endpoint, config)
-					.then(response => {
-						callback();
-						return response.json();
-					})
-					.then(json => console.log(json))
+					.then(response => response.json())
+					// .then(json => console.log(json))
 					.catch(err => console.error(err));
 			},
 
@@ -105,8 +102,7 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 					method: "GET",
 					headers: {
 						"Content-Type": "application/json",
-						Authorization: `Bearer ${store.token}`,
-						cors: "no-cors"
+						Authorization: `Bearer ${store.token}`
 					}
 				};
 				fetch(endpoint, config)
@@ -151,8 +147,7 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 					method: "GET",
 					headers: {
 						"Content-Type": "application/json",
-						Authorization: `Bearer ${store.token}`,
-						cors: "no-cors"
+						Authorization: `Bearer ${store.token}`
 					}
 				};
 				fetch(endpoint, config)
@@ -190,9 +185,8 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 				const config = {
 					method: "GET",
 					headers: {
-						"Content-Type": "application/json",
-						Authorization: `Bearer ${store.token}`,
-						cors: "no-cors"
+						"Content-Type": "application/json"
+						// Authorization: `Bearer ${store.token}`
 					}
 				};
 				fetch(endpoint, config)
