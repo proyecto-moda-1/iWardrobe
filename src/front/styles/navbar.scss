@@ -1,10 +1,7 @@
-@import "~bootstrap/scss/bootstrap.scss";
+
 
 .header{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    background-color: #E5E5E5 ;
+    background-color:transparent ;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -13,39 +10,37 @@
 
 li, a {
     font-weight: 500;
-    font-size: 1.2rem;
-    color: #E0AFA0;
-    text-decoration: none;
+    font-size: 1.8rem;
+    color: #5e5c5c;
 }
  
-.logo{
-    cursor: pointer;
-}
-.navLink{
-    list-style: none;
-    
-
-}
 .navLink li{
     display: inline-block;
     padding: 0.4rem 2rem;
-        align-items: center;
 }
-.navLink li a {
-    transition: all 0.3s ease 0s;
 
-}
 .navLink li a:hover{
+    color: rgb(114, 114, 114);
+}
+.logo:hover{
     color: rgb(114, 114, 114);
 }
 .btn{
     padding: 0.5rem 1rem;
-    background-color:#E0AFA0;
     border: none;
-    border-radius: 3rem;
-    cursor: pointer;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    font-size: 1.8rem;
+    background-color:black;
+    background-color: white;
+    color:  #9b9999;
+    border: 2px solid #9b9999;
+    padding: 0.5rem 1rem;
+
 }
 
 .btn:hover{
-    background-color: #E0AFA0;
+  background-color: #9b9999;
+    color:white;
+    border-color: white;
 }

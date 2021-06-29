@@ -2,8 +2,8 @@ import React, { Component } from "react";
 
 export const Footer = () => (
 	<footer className="bg-dark text-center text-white">
-		<div className="container p-4 pb-0">
-			<section className="mb-4">
+		<div className="container">
+			{/* <section className="mb-4">
 				<a className="btn btn-outline-light btn-floating m-1" href="#!" role="button">
 					<i className="fab fa-facebook-f" />
 				</a>
@@ -19,7 +19,7 @@ export const Footer = () => (
 				<a className="btn btn-outline-light btn-floating m-1" href="#!" role="button">
 					<i className="fab fa-github" />
 				</a>
-			</section>
+			</section> */}
 		</div>
 
 		<div className="text-center p-3">

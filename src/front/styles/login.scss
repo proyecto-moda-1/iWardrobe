@@ -1,22 +1,16 @@
-@import "~bootstrap/scss/bootstrap.scss";
-
 .login-snip {
-    margin: 0;
-    color: rgba(107, 101, 103, 0.781);
-    background:  rgba(245, 222, 230, 0.76);
-    font: 600 1rem/1.125 'Open Sans', sans-serif;
+    margin: 1rem;
 }
 
-.container {
-  width: 70%;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+.container {  padding-top: 2rem;
+  padding-bottom: 0.5rem;
+  text-align: center;
+
 }
 .tittle{
-    position: relative;
+    position: initial;
     font-size: 3rem;
     color: #463F3A;
-    text-align: center;
 
 }
 
@@ -36,16 +30,24 @@
   margin: 1rem 0;
   display: inline-block;
   border: 1px solid #ccc;
-  border-radius: 10rem;
+    border: 2px solid #9b9999;
   box-sizing: border-box;
 }
 .button{
   width: 100%;
-  background-color: #463F3A;
+  background-color:#9b9999;
   color: white;
   padding: 14px 20px;
   margin: 80px 0;
   border: none;
-  border-radius: 40px;
+  border-radius: 0.5rem;
   cursor: pointer;
 }
+
+
+.btn:hover{
+  background-color: #9b9999;
+    color:white;
+    border-color: white;
+}
+

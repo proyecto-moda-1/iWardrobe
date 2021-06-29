@@ -78,6 +78,22 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 				setStore({ token: null });
 			},
 
+			// Use getActions to call a function within a fuction
+			exampleFunction: () => {
+				getActions().changeColor(0, "green");
+			},
+
+			getMessage: () => {
+				// fetching data from the backend
+				fetch(process.env.BACKEND_URL + "/api/hello")
+					.then(resp => resp.json())
+					.then(data => setStore({ message: data.message }));
+				// .catch(error => console.log("Error loading message from backend", error));
+			},
+			changeColor: (index, color) => {
+				"";
+			},
+			//get the store
 			createClothing: data => {
 				const store = getStore();
 				const endpoint = process.env.BACKEND_URL + "/api/clothing";
@@ -85,10 +101,11 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 					method: "POST",
 					body: JSON.stringify(data),
 					headers: {
-						"Content-Type": "application/json"
+						"Content-Type": "application/json",
+						"Access-Control-Allow-Origin": "*",
+						Authorization: `Bearer ${store.token}`
 					}
 				};
-
 				fetch(endpoint, config)
 					.then(response => response.json())
 					// .then(json => console.log(json))
@@ -162,31 +179,15 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 					});
 			},
 
-			getClothing: category => {
-				const endpoint = `${process.env.BACKEND_URL}/api/clothing?category=${category}`;
-				const config = {
-					method: "GET",
-					headers: {
-						"Content-Type": "application/json"
-					}
-				};
-
-				fetch(endpoint, config)
-					.then(response => response.json())
-					.then(data => {
-						console.log(data);
-						setStore({ [category]: data });
-					})
-					.catch(err => console.error(err));
-			},
 			getCollections: () => {
 				const store = getStore();
 				const endpoint = process.env.BACKEND_URL + "/api/collections";
 				const config = {
 					method: "GET",
 					headers: {
-						"Content-Type": "application/json"
-						// Authorization: `Bearer ${store.token}`
+						"Content-Type": "application/json",
+						Authorization: `Bearer ${store.token}`,
+						cors: "no-cors"
 					}
 				};
 				fetch(endpoint, config)
@@ -199,7 +200,48 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 					.then(json => {
 						setStore({ collections: json });
 					});
+			},
+
+			getClothing: category => {
+				const store = getStore();
+				const endpoint = `${process.env.BACKEND_URL}/api/clothing?category=${category}`;
+				const config = {
+					method: "GET",
+					headers: {
+						"Content-Type": "application/json",
+						Authorization: `Bearer ${store.token}`
+					}
+				};
+
+				fetch(endpoint, config)
+					.then(response => response.json())
+					.then(data => {
+						console.log(data);
+						setStore({ [category]: data });
+					})
+					.catch(err => console.error(err));
 			}
+			// getCollections: () => {
+			// 	const store = getStore();
+			// 	const endpoint = process.env.BACKEND_URL + "/api/collections";
+			// 	const config = {
+			// 		method: "GET",
+			// 		headers: {
+			// 			"Content-Type": "application/json"
+			// 			// Authorization: `Bearer ${store.token}`
+			// 		}
+			// 	};
+			// 	fetch(endpoint, config)
+			// 		.then(response => {
+			// 			if (!response.ok) {
+			// 				window.location.href = "/";
+			// 			}
+			// 			return response.json();
+			// 		})
+			// 		.then(json => {
+			// 			setStore({ collections: json });
+			// 		});
+			// }
 		}
 	};
 };

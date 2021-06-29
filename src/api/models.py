@@ -154,19 +154,12 @@ class Collection(db.Model):
          db.session.commit() 
 
      def __repr__(self):
-        return '<Collection %r>' % self.image
-
+         return '<Collection %r>' % self.image
+    
      def serialize(self):
         return {
-              "id": self.id,
-              "user_id": self.collection_user_id,
-              "image": self.image,
-              "name": self.name,
-         }     
-
-
-
-
-
-
-    
+            "id": self.id,
+            "user_id": self.collection_user_id,
+            "image": self.image,
+            "name": self.name,
+        }     

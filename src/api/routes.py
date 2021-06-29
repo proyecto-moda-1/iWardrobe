@@ -77,7 +77,10 @@ def handle_profile():
 
     
 @api.route('/clothing', methods=['GET'])
+@jwt_required()
 def get_all_clothings():
+    user_email = get_jwt_identity()
+    user= User.get_user_by_email(user_email)
     args = request.args
 
     if "category" in args:
@@ -95,7 +98,7 @@ def get_all_clothings():
         serialized_clothings.append(clothing.serialize())
     
 
-    print(serialized_clothings,"11111gbhjklpoiuytfdsxcvbn11111111")
+    print(serialized_clothings)
 
     return jsonify(serialized_clothings), 200
 
@@ -108,7 +111,10 @@ def get_clothing(id):
     return jsonify(serialized_clothing), 200 
 
 @api.route('/clothing', methods=['POST'])
+@jwt_required()
 def create_clothing():
+    user_email = get_jwt_identity()
+    user= User.get_user_by_email(user_email)
 
     body = request.get_json()
     if body is None:
@@ -148,6 +154,7 @@ def get_all_outfits():
 
 
 @api.route('/outfit', methods=['POST'])
+
 def create_outfit():
 
     body = request.get_json()
@@ -178,16 +185,30 @@ def get_user_outfits():
             serialized_outfit.append(outfit.serialize())
         return jsonify(serialized_outfit), 200 
 
+
 @api.route('/collections', methods=['GET'])
-# @jwt_required()
+@jwt_required()
 def get_user_collection():
-        # user_email = get_jwt_identity()
-        # user = User.get_user_by_email(user_email) 
-        get_all_collections = Collection.get_collection_by_user_id(1)                           
+        user_email = get_jwt_identity()
+        user = User.get_user_by_email(user_email) 
+        get_all_collections = Collection.get_collection_by_user_id(user.id)                           
         serialized_collection = []
         for collection in get_all_collections:
             serialized_collection.append(collection.serialize())
-        return jsonify(serialized_collection), 200  
+        return jsonify(serialized_collection), 200 
+
+
+
+@api.route('/collection', methods=['GET'])
+def get_all_collections():
+    all_collections = Collection.query.all()
+
+    serialized_collections = []
+    for collection in all_collections:
+        serialized_collections.append(collection.serialize())
+    print(all_collections)
+
+    return jsonify(serialized_collections), 200  
 
 @api.route('/collection', methods=['POST'])
 def create_collection():
@@ -234,19 +255,13 @@ def favorite_brand(outfit_id):
 @jwt_required()
 def get_user_favorite():
         user_email = get_jwt_identity()
-        print(user_email)
         user= User.get_user_by_email(user_email)
-        print(user.id)
         favorite_outfit = Outfit.get_favorite_user_outfits(user.id)
         
         serialized_favorites = []
         for favorite in favorite_outfit:
             serialized_favorites.append(favorite.serialize())
         return jsonify(serialized_favorites), 200 
-
-
-
-
 
 
 

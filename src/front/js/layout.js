@@ -8,7 +8,6 @@ import { Demo } from "./pages/demo";
 import { Login } from "./pages/login";
 import { Register } from "./pages/register";
 import { Profile } from "./pages/profile";
-import { Single } from "./pages/single";
 import { Closet } from "./pages/closet";
 
 import injectContext from "./store/appContext";
@@ -30,9 +29,6 @@ const Layout = () => {
 					<Switch>
 						<Route exact path="/">
 							<Home />
-						</Route>
-						<Route exact path="/single">
-							<Single />
 						</Route>
 						<Route exact path="/demo">
 							<Demo />
