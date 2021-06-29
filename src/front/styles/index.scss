@@ -1,3 +1,35 @@
 /* 
     General Styles
 */
+@import "~bootstrap/scss/bootstrap.scss";
+@import url('https://fonts.googleapis.com/css2?family=Bellota+Text:wght@300&display=swap');
+
+// body{
+// background: rgb(244,243,238);
+// background: linear-gradient(175deg, rgba(244,243,238,0.2455357142857143) 26%, rgba(138,129,124,0.2987570028011205) 43%, rgba(224,175,160,1) 81%); }
+div{
+font-family: 'Bellota Text', cursive;
+}
+p{
+font-family: 'Bellota Text', cursive;
+}
+h2{
+font-family: 'Bellota Text', cursive;}
+h1{
+font-family: 'Bellota Text', cursive;color:rgba(138,129,124,0.2987570028011205) 43%}
+li{
+font-family: 'Bellota Text', cursive;
+}
+ul{
+font-family: 'Bellota Text', cursive;
+}
+.btn{
+font-family: 'Bellota Text', cursive;background-color: white;
+
+}
+.logo{
+font-family: 'Bellota Text', cursive;   font-size: 4rem;
+}
+
+
+

@@ -14,7 +14,7 @@ export function Card(props) {
 					<div className="card-body text-secondary">
 						<h5 className="card-title">{clothing.name}</h5>
 						<h5 className="card-title">{clothing.image}</h5>
-						<h5 className="card-title">{clothing.clean ? "limpio" : "sucio"}</h5>
+						<h4 className="card-title1">{clothing.clean ? "limpio" : "sucio"}</h4>
 					</div>
 				</div>
 			);

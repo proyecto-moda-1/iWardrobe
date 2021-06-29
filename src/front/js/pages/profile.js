@@ -49,27 +49,27 @@ export const Profile = () => {
 
 	return (
 		<div className="container-fluid">
-			<div className="row justify-content-md-center">
-				<div className="col rounded float-star">
-					<img
-						src="https://image.freepik.com/vector-gratis/mujer-joven-ordenador-portatil-escritorio-trabajando-linea-ilustracion_24877-69119.jpg"
-						className="rounded float-start"
-						alt=""
-					/>
-				</div>
-				<div className="col">
-					<p className="col-md-auto">
-						MODA Es lo que compras. ESTILO es lo que haces con eso. No lo dejes para ultima hora.
-					</p>
+			<div className="jumbotron text-justify bg-cover">
+				{/* <img
+					className="imgProf"
+					src="https://image.freepik.com/foto-gratis/concepto-negocio-tecnologia-comunicacion-espacio-trabajo-minimalista-computadora-portatil-moderna-pantalla-blanca-blanco_273609-1702.jpg"
+					alt=""
+				/> */}
+				<div className="container">
+					<h1 className="text2">Ten la libertad de usar lo que te haga sentir UNICA.</h1>
 				</div>
 			</div>
-			<div className="text">
-				<h1 className="text"> Available outfits</h1>
-				<div className="planet d-flex flex-row">{outfitCards}</div>
+			<div className="row">
+				<div className="containerDisponible">
+					<h1 className="textOufit"> OUTFITS DISPONIBLES</h1>
+					<div className="planet d-flex flex-row">{outfitCards}</div>
+				</div>
 			</div>
-			<div className="text">
-				<h1 className="text"> Used clothes</h1>
-				<div className="planet d-flex flex-row">{dirtyClothing}</div>
+			<div className="row">
+				<div className="containerDirty">
+					<h1 className="textDirty"> ROPA SUCIA</h1>
+					<div className="planet d-flex flex-row">{dirtyClothing}</div>
+				</div>
 			</div>
 		</div>
 	);

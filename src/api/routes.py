@@ -178,6 +178,19 @@ def get_user_outfits():
         return jsonify(serialized_outfit), 200 
 
 
+@api.route('/collections', methods=['GET'])
+@jwt_required()
+def get_user_collection():
+        user_email = get_jwt_identity()
+        user = User.get_user_by_email(user_email) 
+        get_all_collections = Collection.get_collection_by_user_id(user.id)                           
+        serialized_collection = []
+        for collection in get_all_collections:
+            serialized_collection.append(collection.serialize())
+        return jsonify(serialized_collection), 200 
+
+
+
 @api.route('/collection', methods=['GET'])
 def get_all_collections():
     all_collections = Collection.query.all()
@@ -240,19 +253,13 @@ def favorite_brand(outfit_id):
 @jwt_required()
 def get_user_favorite():
         user_email = get_jwt_identity()
-        print(user_email)
         user= User.get_user_by_email(user_email)
-        print(user.id)
         favorite_outfit = Outfit.get_favorite_user_outfits(user.id)
         
         serialized_favorites = []
         for favorite in favorite_outfit:
             serialized_favorites.append(favorite.serialize())
         return jsonify(serialized_favorites), 200 
-
-
-
-
 
 
 

@@ -145,24 +145,22 @@ class Collection(db.Model):
      #RELACIONES
      outfits= db.relationship('Outfit', secondary= collection_outfit , back_populates="collections", lazy=True)
 
+      
+     @staticmethod
+     def get_collection_by_user_id(user_id):
+         return Collection.query.filter_by(collection_user_id=user_id).all()
+     
      def create_collection(self):
          db.session.add(self)
          db.session.commit() 
 
      def __repr__(self):
-        return '<Collection %r>' % self.image
-
+         return '<Collection %r>' % self.image
+    
      def serialize(self):
         return {
-              "id": self.id,
-              "user_id": self.collection_user_id,
-              "image": self.image,
-              "name": self.name,
-         }     
-
-
-
-
-
-
-    
+            "id": self.id,
+            "user_id": self.collection_user_id,
+            "image": self.image,
+            "name": self.name,
+        }     

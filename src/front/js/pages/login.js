@@ -18,7 +18,7 @@ export const Login = function(props) {
 			password: password
 		};
 		actions.logIn(data, () => {
-			history.push("/closet");
+			history.push("/profile");
 		});
 	};
 
@@ -34,10 +34,10 @@ export const Login = function(props) {
 					<div className="login-box">
 						<div className="login-snip">
 							{" "}
-							<h1 className="tittle">LOGIN</h1>
 							<div className="loginContainer">
 								<div className="group">
-									<label className="user label">E-mail</label>
+									{/* <h1 className="tittleLogin">LOGIN</h1> */}
+									<label className="user label">LOGIN</label>
 									<input
 										type="email"
 										className="input btn btn-light"
@@ -48,7 +48,7 @@ export const Login = function(props) {
 									/>
 								</div>
 								<div className="group">
-									<label className="pass label">Password</label>
+									{/* <label className="pass label">Password</label> */}
 									<input
 										type="password"
 										className="input btn btn-light"
@@ -60,7 +60,7 @@ export const Login = function(props) {
 								</div>
 								<div className="group">
 									<button type="submit" value="boton" className="button" onClick={handleSubmit}>
-										Sing In
+										Sign In
 									</button>
 								</div>
 							</div>

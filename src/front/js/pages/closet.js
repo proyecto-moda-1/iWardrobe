@@ -1,6 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { Card } from "../component/card.js";
+import { CollectionDropdown } from "../component/collectionDropdown.js";
 import { getActions } from "../store/flux.js";
 
 import PropTypes from "prop-types";
@@ -14,6 +15,7 @@ export const Closet = () => {
 		actions.getUserFavorite();
 	}, []);
 	let favoriteCards = [];
+	let outfitsByCategory = [];
 	if (store.favorites != undefined) {
 		favoriteCards = store.favorites.map((favorite, index) => {
 			return (
@@ -31,25 +33,29 @@ export const Closet = () => {
 
 	return (
 		<div className="container">
-			<div className="jumbotron">
-				<h1 className="display-4">My wardrobe!</h1>
-				<p className="lead">Choose your favourite</p>
-				<div className="my-4">
-					<p className="lead">
-						<a className="btn btn-primary btn-lg" href="#" role="button">
-							Favourites
-						</a>
-						<a className="btn btn-primary btn-lg" href="#" role="button">
-							Dirty
-						</a>
-						<a className="btn btn-primary btn-lg" href="#" role="button">
-							Category
-						</a>
-					</p>
-					<div className="text">
-						<h1 className="text"> Favourites</h1>
-						<div className="planet d-flex flex-row">{favoriteCards}</div>
+			<h1 className="display-4">Mi Closet!</h1>
+			<p className="lead">La VIDA es una FIESTA vistete para eso…</p>
+			<div className="my-4">
+				{/* <p className="lead">
+					<a className="btn btn-primary btn-lg" href="#" role="button">
+						Favorites
+					</a>
+					<a className="btn btn-primary btn-lg" href="#" role="button">
+						Ropa Sucia
+					</a>
+				</p> */}
+				<div className="row">
+					<div className="col-xs-3">
+						<h1 className="text"> COLLECTIONS</h1>
+						<CollectionDropdown />
 					</div>
+					<div className="col-xs-9">
+						<div className="planet d-flex flex-row">{outfitsByCategory}</div>
+					</div>
+				</div>
+				<div className="row">
+					<h1 className="text">FAVORITOS</h1>
+					<div className="planet d-flex flex-row">{favoriteCards}</div>
 				</div>
 			</div>
 		</div>

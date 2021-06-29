@@ -1,100 +1,70 @@
-.dropdown{
-    padding: 60px;    
-}
-.btn-primary {
-    color: #fff;
-    background-color:  #463F3A;
-    border-color:  #463F3A;
-    font-style: 'Open Sans', sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 18px;
-    line-height: 30px;
-    width: 110px;
-    height: 50px;
-    border: 2px;
-    border-radius: 15px;
-}
-.top-container{
-    background-color: pink;
-    height: 150px;
-    width: 350px;    
-}
-.bottom-container{
-    background-color:grey;
-    height: 150px;
-    width: 350px;
+
+.slogan{
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  width: 50rem;
+  position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #5e5c5c;
 }
 
-.footwear-container{
-    background-color:pink;
-    height: 150px;
-    width: 350px;
+.tittle1{
+   font-size: xx-large;
+   text-decoration: underline;
+   color: #5e5c5c;;
+}
+.textBody{
+    font-size: x-large;
+    color: #5e5c5c;
 }
 
+.princ{
+width:100%; height:100%;
+opacity: 70%;
 
-
-
-
-
-// .dropdown-toggle::after {
-//     display: inline-block;
-//     margin-left: 0.255em;
-//     vertical-align: 0.255em;
-//     content: "";
-//     border-top: 0.3em solid;
-//     border-right: 0.3em solid transparent;
-//     border-bottom: 0;
-//     border-left: 0.3em solid transparent;
-// }
-@import "~bootstrap/scss/bootstrap.scss";
-
-
-.container-fluid{
-    background: #f7f7f7;
-}
-
-
-.container-intro .row {
-    background-color: #E0AFA0;
-    width: 100rem;
-    height:20rem;
-}
-
-
-.rounded{
-    width: 30rem;
-    height:20rem;
-    margin: 2rem;
-}
-
-.tittleInit{
-    font-weight:inherit;
-    width: 100rem;
-    height:5rem;
-    font-size: 1.8rem;
-    font-weight: 400;
-    text-align: center;
-    margin: 4rem;
-
+  }
+.jumbotron {
+    background-color:transparent !important; 
 
 }
-
-.signupLogin button{
-    width: 30rem;
-    padding: 0.8rem 0.2rem;
-    background-color:#E0AFA0;
-    border: none;
-    border-radius: 1rem;
-    cursor: pointer;
-    align-items: center;
-    margin: 7rem;
-    font-style: initial;;
-    color: #463F3A;
+ 
+.btn1 {
+    position: absolute;
+    top: 70%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    color: #9b9999;
+    border: 2px solid #9b9999;
+    padding: 15px 32px;
+    border-radius: 0.5rem;
 }
 
-.col .image{
-    margin: 10rem;
-    padding: 1rem 20rem;
+.btn2 {
+  position: absolute;
+    top: 70%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    background-color:blac;
+    background-color: white;
+    color:  #9b9999;
+    border: 2px solid #9b9999;
+    padding: 15px 32px;
+    border-radius: 0.5rem;
+
+}
+.btn1:hover{
+    background-color: rgb(155, 153, 153);
+    color:white;
+}
+.btn2:hover{
+    background-color: #9b9999;
+    color:white;
 }
 
+.row{
+   text-align:left;
+}
