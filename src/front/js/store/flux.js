@@ -9,6 +9,7 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 			profile: [],
 			clothing_items: [],
 			collection_outfit: [],
+			collections: [],
 			name: [],
 			top: [],
 			bottom: [],
@@ -95,13 +96,15 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 			//get the store
 
 			createClothing: data => {
+				const store = getStore();
 				const endpoint = process.env.BACKEND_URL + "/api/clothing";
 				const config = {
 					method: "POST",
 					body: JSON.stringify(data),
 					headers: {
 						"Content-Type": "application/json",
-						"Access-Control-Allow-Origin": "*"
+						"Access-Control-Allow-Origin": "*",
+						Authorization: `Bearer ${store.token}`
 					}
 				};
 				fetch(endpoint, config)
@@ -117,8 +120,7 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 					method: "GET",
 					headers: {
 						"Content-Type": "application/json",
-						Authorization: `Bearer ${store.token}`,
-						cors: "no-cors"
+						Authorization: `Bearer ${store.token}`
 					}
 				};
 				fetch(endpoint, config)
@@ -163,8 +165,7 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 					method: "GET",
 					headers: {
 						"Content-Type": "application/json",
-						Authorization: `Bearer ${store.token}`,
-						cors: "no-cors"
+						Authorization: `Bearer ${store.token}`
 					}
 				};
 				fetch(endpoint, config)
@@ -220,11 +221,13 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 			},
 
 			getClothing: category => {
+				const store = getStore();
 				const endpoint = `${process.env.BACKEND_URL}/api/clothing?category=${category}`;
 				const config = {
 					method: "GET",
 					headers: {
-						"Content-Type": "application/json"
+						"Content-Type": "application/json",
+						Authorization: `Bearer ${store.token}`
 					}
 				};
 
@@ -236,6 +239,27 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 					})
 					.catch(err => console.error(err));
 			}
+			// getCollections: () => {
+			// 	const store = getStore();
+			// 	const endpoint = process.env.BACKEND_URL + "/api/collections";
+			// 	const config = {
+			// 		method: "GET",
+			// 		headers: {
+			// 			"Content-Type": "application/json"
+			// 			// Authorization: `Bearer ${store.token}`
+			// 		}
+			// 	};
+			// 	fetch(endpoint, config)
+			// 		.then(response => {
+			// 			if (!response.ok) {
+			// 				window.location.href = "/";
+			// 			}
+			// 			return response.json();
+			// 		})
+			// 		.then(json => {
+			// 			setStore({ collections: json });
+			// 		});
+			// }
 		}
 	};
 };
