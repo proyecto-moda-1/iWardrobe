@@ -2,20 +2,11 @@ import React, { Component } from "react";
 
 export const Footer = () => (
 	<footer className="bg-dark text-center text-white">
-		<div className="container">
+		<div className="post-footer">
 			{/* <section className="mb-4">
 				<a className="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-					<i className="fab fa-facebook-f" />
+					<i className="fab fa-github" />
 				</a>
-
-				<a className="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-					<i className="fab fa-twitter" />
-				</a>
-
-				<a className="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-					<i className="fab fa-instagram" />
-				</a>
-
 				<a className="btn btn-outline-light btn-floating m-1" href="#!" role="button">
 					<i className="fab fa-github" />
 				</a>
