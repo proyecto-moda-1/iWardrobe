@@ -77,7 +77,10 @@ def handle_profile():
 
     
 @api.route('/clothing', methods=['GET'])
+@jwt_required()
 def get_all_clothings():
+    user_email = get_jwt_identity()
+    user= User.get_user_by_email(user_email)
     args = request.args
 
     if "category" in args:
@@ -95,7 +98,7 @@ def get_all_clothings():
         serialized_clothings.append(clothing.serialize())
     
 
-    print(serialized_clothings,"11111gbhjklpoiuytfdsxcvbn11111111")
+    print(serialized_clothings)
 
     return jsonify(serialized_clothings), 200
 
@@ -108,7 +111,10 @@ def get_clothing(id):
     return jsonify(serialized_clothing), 200 
 
 @api.route('/clothing', methods=['POST'])
+@jwt_required()
 def create_clothing():
+    user_email = get_jwt_identity()
+    user= User.get_user_by_email(user_email)
 
     body = request.get_json()
     if body is None:
@@ -148,6 +154,7 @@ def get_all_outfits():
 
 
 @api.route('/outfit', methods=['POST'])
+
 def create_outfit():
 
     body = request.get_json()
@@ -166,6 +173,7 @@ def create_outfit():
     outfit.create_outfit()
 
     return "Created", 201
+    
 @api.route('/users/outfits', methods=['GET'])
 @jwt_required()
 def get_user_outfits():
@@ -225,12 +233,6 @@ def create_collection():
     collection.create_collection()
 
     return "Created collection", 201
-
-      
-
-      
-
-
 
 @api.route('/users/outfits/<outfit_id>/favorite', methods=['PUT'])
 @jwt_required()

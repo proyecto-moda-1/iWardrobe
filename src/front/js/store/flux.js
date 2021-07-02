@@ -9,6 +9,7 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 			profile: [],
 			clothing_items: [],
 			collection_outfit: [],
+			collections: [],
 			name: [],
 			top: [],
 			bottom: [],
@@ -95,29 +96,20 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 			},
 			//get the store
 			createClothing: data => {
+				const store = getStore();
 				const endpoint = process.env.BACKEND_URL + "/api/clothing";
 				const config = {
 					method: "POST",
-					body: JSON.stringify({
-						user_id: 1,
-						name: data.name,
-						category: data.category,
-						image:
-							"https://th.bing.com/th/id/R9e6e1694bdbb9d0148c1d5d451b7169b?rik=A70S6pmmXpjrGA&pid=ImgRaw"
-					}),
+					body: JSON.stringify(data),
 					headers: {
 						"Content-Type": "application/json",
-						"Access-Control-Allow-Origin": "*"
+						"Access-Control-Allow-Origin": "*",
+						Authorization: `Bearer ${store.token}`
 					}
 				};
 				fetch(endpoint, config)
-					.then(response => {
-						setName("");
-						setImage("");
-						setCategory("");
-						return response.json();
-					})
-					.then(json => console.log(json))
+					.then(response => response.json())
+					// .then(json => console.log(json))
 					.catch(err => console.error(err));
 			},
 
@@ -128,8 +120,7 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 					method: "GET",
 					headers: {
 						"Content-Type": "application/json",
-						Authorization: `Bearer ${store.token}`,
-						cors: "no-cors"
+						Authorization: `Bearer ${store.token}`
 					}
 				};
 				fetch(endpoint, config)
@@ -174,8 +165,7 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 					method: "GET",
 					headers: {
 						"Content-Type": "application/json",
-						Authorization: `Bearer ${store.token}`,
-						cors: "no-cors"
+						Authorization: `Bearer ${store.token}`
 					}
 				};
 				fetch(endpoint, config)
@@ -214,11 +204,13 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 			},
 
 			getClothing: category => {
+				const store = getStore();
 				const endpoint = `${process.env.BACKEND_URL}/api/clothing?category=${category}`;
 				const config = {
 					method: "GET",
 					headers: {
-						"Content-Type": "application/json"
+						"Content-Type": "application/json",
+						Authorization: `Bearer ${store.token}`
 					}
 				};
 
@@ -230,6 +222,27 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 					})
 					.catch(err => console.error(err));
 			}
+			// getCollections: () => {
+			// 	const store = getStore();
+			// 	const endpoint = process.env.BACKEND_URL + "/api/collections";
+			// 	const config = {
+			// 		method: "GET",
+			// 		headers: {
+			// 			"Content-Type": "application/json"
+			// 			// Authorization: `Bearer ${store.token}`
+			// 		}
+			// 	};
+			// 	fetch(endpoint, config)
+			// 		.then(response => {
+			// 			if (!response.ok) {
+			// 				window.location.href = "/";
+			// 			}
+			// 			return response.json();
+			// 		})
+			// 		.then(json => {
+			// 			setStore({ collections: json });
+			// 		});
+			// }
 		}
 	};
 };

@@ -2,16 +2,13 @@ import React, { useContext, useState, useEffect } from "react";
 import { Context } from "../store/appContext";
 import PropTypes from "prop-types";
 import CarouselClothing from "../component/CarouselClothing.js";
-import "../../styles/home.scss";
+import CollectionSelect from "../component/ShowCollection.js";
 import Form from "react-bootstrap/Form";
-import DropdownButton from "react-bootstrap/DropdownButton";
-import SplitButton from "react-bootstrap/SplitButton";
-import Dropdown from "react-bootstrap/Dropdown";
-import ButtonGroup from "react-bootstrap/ButtonGroup";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import "../../styles/home.scss";
 
 export const MyCloset = props => {
 	const { store, actions } = useContext(Context);
@@ -58,7 +55,7 @@ export const MyCloset = props => {
 			<Container>
 				<Row>
 					<Col sm={true}>
-						<h2>Your Clothing</h2>
+						<h2>Your clothing</h2>
 						<Form.Control
 							size="sm"
 							as="select"
@@ -110,10 +107,10 @@ export const MyCloset = props => {
 							{footwearItems}
 						</Form.Control>
 					</Col>
-					<Col sm={true}> </Col>
 					<Col sm={true}>
-						<h2>Carousel</h2>
-						<br />
+						<CollectionSelect />
+					</Col>
+					<Col sm={true}>
 						<div className="main-container">
 							<CarouselClothing selectedItems={selectedItems} />
 						</div>
