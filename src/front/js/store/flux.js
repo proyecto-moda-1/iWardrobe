@@ -44,7 +44,6 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 							user: json.user,
 							token: json.token
 						});
-						localStorage.setItem("token", json.token);
 						callback();
 					})
 					.catch(error => {});

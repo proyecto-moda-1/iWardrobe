@@ -11,9 +11,12 @@ export const Navbar = () => {
 	const handleShow = () => setShow(true);
 	return (
 		<div className="header">
-			<a className="logo" href="/" src="" alt="logo">
-				iWardrobe
-			</a>
+			<div className="logo" type="submit">
+				<Link to="/" className="text-decoration-none">
+					iWardrobe
+				</Link>
+			</div>
+
 			<nav>
 				<ul className="navLink">
 					<li>
