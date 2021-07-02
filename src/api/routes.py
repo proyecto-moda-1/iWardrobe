@@ -211,7 +211,10 @@ def get_all_collections():
     return jsonify(serialized_collections), 200  
 
 @api.route('/collection', methods=['POST'])
+@jwt_required()
 def create_collection():
+    user_email = get_jwt_identity()
+    user = User.get_user_by_email(user_email)
 
     body = request.get_json()
     if body is None:
@@ -225,11 +228,7 @@ def create_collection():
     if name is None or name == 0:
         return "Provide a valid name", 400
 
-    image = body.get('image')
-    if image is None or image == 0:
-        return "Provide a valid image", 400
-
-    collection = Collection(collection_user_id=collection_user_id, name=name, image=image)
+    collection = Collection(collection_user_id=collection_user_id, name=name)
     collection.create_collection()
 
     return "Created collection", 201
