@@ -11,9 +11,9 @@ export const Navbar = () => {
 	const handleShow = () => setShow(true);
 	return (
 		<div className="header">
-			<a className="logo" href="/home" src="" alt="logo">
-				iWardrobe
-			</a>
+			<Link to="/">
+				<a href="#">iWardrobe</a>
+			</Link>
 			<nav>
 				<ul className="navLink">
 					<li>

@@ -11,9 +11,10 @@ import "../../styles/profile.scss";
 export const Closet = () => {
 	const { store, actions } = useContext(Context);
 
-	// useEffect(() => {
-	// 	actions.getUserFavorite();
-	// }, []);
+	useEffect(() => {
+		actions.getUserFavorite();
+	}, []);
+
 	let favoriteCards = [];
 	let outfitsByCategory = [];
 	if (store.favorites != undefined) {

@@ -227,8 +227,8 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 			// 	const config = {
 			// 		method: "GET",
 			// 		headers: {
-			// 			"Content-Type": "application/json"
-			// 			// Authorization: `Bearer ${store.token}`
+			// 			"Content-Type": "application/json",
+			// 			Authorization: `Bearer ${store.token}`
 			// 		}
 			// 	};
 			// 	fetch(endpoint, config)
