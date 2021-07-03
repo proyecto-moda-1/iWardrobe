@@ -50,11 +50,6 @@ export const Profile = () => {
 	return (
 		<div className="container-fluid">
 			<div className="jumbotron text-justify bg-cover">
-				{/* <img
-					className="imgProf"
-					src="https://image.freepik.com/foto-gratis/concepto-negocio-tecnologia-comunicacion-espacio-trabajo-minimalista-computadora-portatil-moderna-pantalla-blanca-blanco_273609-1702.jpg"
-					alt=""
-				/> */}
 				<div className="container">
 					<h1 className="text2">Ten la libertad de usar lo que te haga sentir UNICA.</h1>
 				</div>

@@ -4,9 +4,9 @@ import { Card } from "../component/card.js";
 import { CollectionDropdown } from "../component/collectionDropdown.js";
 import { getActions } from "../store/flux.js";
 
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 
-import "../../styles/profile.scss";
+import "../../styles/closet.scss";
 
 export const Closet = () => {
 	const { store, actions } = useContext(Context);
@@ -14,7 +14,6 @@ export const Closet = () => {
 	useEffect(() => {
 		actions.getUserFavorite();
 	}, []);
-
 	let favoriteCards = [];
 	let outfitsByCategory = [];
 	if (store.favorites != undefined) {
@@ -37,14 +36,14 @@ export const Closet = () => {
 			<h1 className="display-4">Mi Closet!</h1>
 			<p className="lead">La VIDA es una FIESTA vistete para eso…</p>
 			<div className="my-4">
-				{/* <p className="lead">
+				<p className="lead">
 					<a className="btn btn-primary btn-lg" href="#" role="button">
 						Favorites
 					</a>
 					<a className="btn btn-primary btn-lg" href="#" role="button">
 						Ropa Sucia
 					</a>
-				</p> */}
+				</p>
 				<div className="row">
 					<div className="col-xs-3">
 						<h1 className="text"> COLLECTIONS</h1>
