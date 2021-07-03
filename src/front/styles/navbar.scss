@@ -22,9 +22,6 @@ li, a {
 .navLink li a:hover{
     color: rgb(114, 114, 114);
 }
-.logo:hover{
-    color: rgb(114, 114, 114);
-}
 .btn{
     padding: 0.5rem 1rem;
     border: none;
@@ -41,6 +38,12 @@ li, a {
 
 .btn:hover{
   background-color: #9b9999;
-    color:white;
-    border-color: white;
+  color:white;
+border-color: white;
 }
+.logo{
+    font-size: 3.8rem;}
+
+.logo:hover{
+    color:#9b9999;
+    border-color: white;}

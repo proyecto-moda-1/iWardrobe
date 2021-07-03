@@ -48,22 +48,29 @@ export const Profile = () => {
 	}
 
 	return (
-		<div className="container-fluid">
-			<div className="jumbotron text-justify bg-cover">
+		<div className="Body">
+			<div className="Jumbotrom">
 				<div className="container">
-					<h1 className="text2">Ten la libertad de usar lo que te haga sentir UNICA.</h1>
+					<img
+						className="ProfileImg"
+						src="https://i.pinimg.com/originals/e1/2c/9a/e12c9a6fae995ea792910a8dff4689e7.png"
+						alt="imgFond"
+					/>
+					<h1 className="Tittle1">Welcome!</h1>
+					<h3 className="text2">
+						El estilo es una manera de decir quien eres sin tener que hablar. Por eso toma el tiempo
+						necesario de crear el tuyo, con el que te sientas mejor.
+					</h3>
 				</div>
-			</div>
-			<div className="row">
-				<div className="containerDisponible">
-					<h1 className="textOufit"> OUTFITS DISPONIBLES</h1>
-					<div className="planet d-flex flex-row">{outfitCards}</div>
-				</div>
-			</div>
-			<div className="row">
-				<div className="containerDirty">
-					<h1 className="textDirty"> ROPA SUCIA</h1>
-					<div className="planet d-flex flex-row">{dirtyClothing}</div>
+				<div className="container">
+					<div className="row">
+						<h1 className="textOufit"> OUTFITS DISPONIBLES</h1>
+						<div className="favorite d-flex flex-row">{outfitCards}</div>
+					</div>
+					<div className="row">
+						<h1 className="textDirty"> ROPA SUCIA</h1>
+						<div className="dirty d-flex flex-row">{dirtyClothing}</div>
+					</div>
 				</div>
 			</div>
 		</div>

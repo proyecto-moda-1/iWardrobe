@@ -12,7 +12,9 @@ export const Navbar = () => {
 	return (
 		<div className="header">
 			<Link to="/">
-				<a href="#">iWardrobe</a>
+				<a className="logo" href="#">
+					iWardrobe
+				</a>
 			</Link>
 			<nav>
 				<ul className="navLink">
