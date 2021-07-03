@@ -3,6 +3,8 @@ import { Context } from "../store/appContext";
 import PropTypes from "prop-types";
 import CarouselClothing from "../component/CarouselClothing.js";
 import CollectionSelect from "../component/ShowCollection.js";
+import BtnCleanOutfit from "../component/btnCleanOutfit.js";
+import SelectOutfitBtn from "../component/btnSelectOutfit.js";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
@@ -113,6 +115,8 @@ export const MyCloset = props => {
 					<Col sm={true}>
 						<div className="main-container">
 							<CarouselClothing selectedItems={selectedItems} />
+							<BtnCleanOutfit />
+							<SelectOutfitBtn />
 						</div>
 					</Col>
 				</Row>
