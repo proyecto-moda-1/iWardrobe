@@ -1,29 +1,31 @@
-import React, { useState, useContext } from "react";
-import { useHistory } from "react-router-dom";
+import React, { useState, useContext, useCallback } from "react";
+import { getActions } from "../store/flux.js";
+import { Context } from "../store/appContext";
+import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
-import { Link } from "react-router-dom";
-import PropTypes from "prop-types";
 import "../../styles/LoadClothing.scss";
-import { Context } from "../store/appContext";
-import { getActions } from "../store/flux.js";
+import PropTypes from "prop-types";
 
 const LoadClothing = props => {
 	const { show, handleClose } = props;
 	const [name, setName] = useState("");
-	const [image, setImage] = useState("");
+	const [image, setImage] = useState(null);
 	const [category, setCategory] = useState("");
 	const { store, actions } = useContext(Context);
 
 	const handleSubmit = () => {
-		const data = {
-			user_id: 1,
-			name: name,
-			image: image,
-			category: category
+		const data = new FormData();
+		data.append("user_id", 1);
+		data.append("name", name);
+		data.append("image", image[0]);
+		data.append("category", category);
+		const callback = () => {
+			setName("");
+			setImage(null);
+			setCategory("");
 		};
-		actions.createClothing(data);
+		actions.createClothing(data, callback);
 	};
 
 	return (
@@ -31,7 +33,6 @@ const LoadClothing = props => {
 			<Modal.Header closeButton>
 				<Modal.Title>Add Clothing</Modal.Title>
 			</Modal.Header>
-			{/* <Modal.Body className="modal-body" /> */}
 			<div className="group-clothing">
 				{" "}
 				<label className="pass label" />{" "}
@@ -55,18 +56,7 @@ const LoadClothing = props => {
 				<option value="bottom">Bottom</option>
 				<option value="footwear"> Footwear</option>
 			</Form.Control>
-			<div className="group-image">
-				{" "}
-				<label className="pass label" />{" "}
-				<input
-					type="text"
-					className="input-image"
-					id="clothing-image-url"
-					placeholder="Image URL"
-					value={image}
-					onChange={event => setImage(event.target.value)}
-				/>{" "}
-			</div>
+			<input type="file" onChange={e => setImage(e.target.files)} />
 			<Modal.Footer>
 				<Button variant="outline-light" className="close-button" onClick={handleClose}>
 					Close
