@@ -25,7 +25,6 @@ export const Navbar = () => {
 						<Link to="/closet">
 							<a href="#">Your closet</a>
 						</Link>
-						
 					</li>
 					<li>
 						<Button variant="primary" onClick={handleShow}>
