@@ -12,11 +12,9 @@ export const SelectOutfitBtn = props => {
 		setChecked(event.target.checked);
 	};
 
-	// useEffect(() => {
-	// 	actions.getClothing("top");
-	// 	actions.getClothing("bottom");
-	// 	actions.getClothing("footwear");
-	// }, []);
+	useEffect(() => {
+		actions.getUserFavorite(data);
+	}, []);
 
 	return (
 		<>

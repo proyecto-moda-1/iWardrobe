@@ -178,6 +178,22 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 						setStore({ favorites: json });
 					});
 			},
+			getUserClean:data => {
+				const store = getStore();
+				const endpoint = process.env.BACKEND_URL + "/api/users/clothing/clean";
+				const config = {
+					method: "GET",
+					headers: {
+						"Content-Type": "application/json",
+						Authorization: `Bearer ${store.token}`
+					}
+				};
+				// fetch(endpoint, config)
+				// 	.then(response => response.json())
+				// 	.then(json => {
+				// 		setStore({ clean: json });
+				// 	});
+			},
 
 			getCollections: () => {
 				const store = getStore();
@@ -221,27 +237,7 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 					})
 					.catch(err => console.error(err));
 			}
-			// getCollections: () => {
-			// 	const store = getStore();
-			// 	const endpoint = process.env.BACKEND_URL + "/api/collections";
-			// 	const config = {
-			// 		method: "GET",
-			// 		headers: {
-			// 			"Content-Type": "application/json"
-			// 			// Authorization: `Bearer ${store.token}`
-			// 		}
-			// 	};
-			// 	fetch(endpoint, config)
-			// 		.then(response => {
-			// 			if (!response.ok) {
-			// 				window.location.href = "/";
-			// 			}
-			// 			return response.json();
-			// 		})
-			// 		.then(json => {
-			// 			setStore({ collections: json });
-			// 		});
-			// }
+			
 		}
 	};
 };
