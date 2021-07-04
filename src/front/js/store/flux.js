@@ -254,7 +254,7 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 					.then(response => response.json())
 					.catch(err => console.error(err));
 			},
-			getClean:data => {
+			getClean: data => {
 				const store = getStore();
 				const endpoint = process.env.BACKEND_URL + "/api/clothing";
 				const config = {
@@ -270,7 +270,7 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 					.then(json => data)
 					.catch(err => console.error(err));
 			},
-			 selectOutfit: data => {
+			selectOutfit: data => {
 				const store = getStore();
 				const endpoint = process.env.BACKEND_URL + "/api/outfit";
 				const config = {
@@ -285,7 +285,7 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 					.then(response => response.json())
 					.then(json => data)
 					.catch(err => console.error(err));
-			 },
+			}
 		}
 	};
 };
