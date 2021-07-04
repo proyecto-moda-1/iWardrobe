@@ -39,7 +39,7 @@ def create_users():
     gender=payload['gender'], 
     email=payload['email'],
     password=payload['password'],
-    image=payload['image'],
+    # image=payload['image'],
     repeat_password=payload['repeat_password'])
 
     db.session.add(user_create)

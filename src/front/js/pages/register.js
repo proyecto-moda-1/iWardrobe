@@ -23,8 +23,7 @@ export const Register = function(props) {
 			email: email,
 			password: password,
 			repeatPassword: repeatPassword,
-			gender: gender,
-			image: image
+			gender: gender
 		};
 
 		actions.createUser(data, () => {
@@ -95,17 +94,6 @@ export const Register = function(props) {
 										onChange={event => setGender(event.target.value)}
 									/>
 								</div>
-								{/* <div className="group">
-									<label className="pass label">Imagen</label>
-									<input
-										id="pass"
-										type="text"
-										className="input btn btn-light"
-										placeholder="Imagen"
-										value={image}
-										onChange={event => setImage(event.target.value)}
-									/>
-								</div> */}
 								<div className="group">
 									<button type="submit" value="boton" className="button" onClick={handleRegister}>
 										Sign Up
