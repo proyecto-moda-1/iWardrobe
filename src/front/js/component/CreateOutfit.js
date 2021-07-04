@@ -6,6 +6,7 @@ import PropTypes from "prop-types";
 import { Context } from "../store/appContext";
 import { getActions } from "../store/flux.js";
 import CreateOutfitBtn from "./BtnCreate";
+import "../../styles/randomwheel.scss";
 
 const CreateOutfit = props => {
 	const { show, handleClose } = props;
