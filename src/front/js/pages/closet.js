@@ -32,7 +32,7 @@ export const Closet = () => {
 	}
 	return (
 		<div className="container">
-			<h1 className="display-4">Mi Closet!</h1>
+			<h1 className="display-4">Your Closet!</h1>
 			<p className="lead">La VIDA es una FIESTA vistete para eso…</p>
 			<div className="my-4">
 				<div className="row">

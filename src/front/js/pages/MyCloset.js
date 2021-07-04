@@ -3,6 +3,8 @@ import { Context } from "../store/appContext";
 import PropTypes from "prop-types";
 import CarouselClothing from "../component/CarouselClothing.js";
 import CollectionSelect from "../component/ShowCollection.js";
+import AddCollection from "../component/addCollection.js";
+import CreateOutfitBtn from "../component/BtnCreate.js";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
@@ -12,6 +14,9 @@ import "../../styles/home.scss";
 
 export const MyCloset = props => {
 	const { store, actions } = useContext(Context);
+	const [show, setShow] = useState(false);
+	const handleClose = () => setShow(false);
+	const handleShow = () => setShow(true);
 	const [top, setTop] = useState({});
 	const [bottom, setBottom] = useState({});
 	const [footwear, setFootwear] = useState({});
@@ -109,10 +114,16 @@ export const MyCloset = props => {
 					</Col>
 					<Col sm={true}>
 						<CollectionSelect />
+						<br />
+						<Button variant="primary" onClick={handleShow}>
+							Add new collection
+						</Button>
+						<AddCollection show={show} handleClose={handleClose} />
 					</Col>
 					<Col sm={true}>
 						<div className="main-container">
 							<CarouselClothing selectedItems={selectedItems} />
+							<CreateOutfitBtn />
 						</div>
 					</Col>
 				</Row>

@@ -68,6 +68,7 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 					})
 					.then(json => {
 						setStore({ token: json.token });
+						localStorage.setItem("token", json.token);
 						callback();
 					})
 					.catch(error => {});
@@ -99,9 +100,8 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 				const endpoint = process.env.BACKEND_URL + "/api/clothing";
 				const config = {
 					method: "POST",
-					body: JSON.stringify(data),
+					body: data,
 					headers: {
-						"Content-Type": "application/json",
 						"Access-Control-Allow-Origin": "*",
 						Authorization: `Bearer ${store.token}`
 					}
@@ -220,6 +220,39 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 						console.log(data);
 						setStore({ [category]: data });
 					})
+					.catch(err => console.error(err));
+			},
+			createOutfit: data => {
+				const store = getStore();
+				const endpoint = process.env.BACKEND_URL + "/api/outfit";
+				const config = {
+					method: "POST",
+					body: JSON.stringify(data),
+					headers: {
+						"Content-Type": "application/json",
+						Authorization: `Bearer ${store.token}`
+					}
+				};
+				fetch(endpoint, config)
+					.then(response => response.json())
+					// .then(json => console.log(json))
+					.catch(err => console.error(err));
+			},
+			createCollection: data => {
+				const store = getStore();
+				const endpoint = process.env.BACKEND_URL + "/api/collection";
+				const config = {
+					method: "POST",
+					body: JSON.stringify(data),
+					headers: {
+						"Content-Type": "application/json",
+						Authorization: `Bearer ${store.token}`,
+						"Access-Control-Allow-Origin": "*"
+					}
+				};
+
+				fetch(endpoint, config)
+					.then(response => response.json())
 					.catch(err => console.error(err));
 			}
 		}
