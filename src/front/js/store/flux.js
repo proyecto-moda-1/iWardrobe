@@ -99,9 +99,8 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 				const endpoint = process.env.BACKEND_URL + "/api/clothing";
 				const config = {
 					method: "POST",
-					body: JSON.stringify(data),
+					body:data,
 					headers: {
-						"Content-Type": "application/json",
 						"Access-Control-Allow-Origin": "*",
 						Authorization: `Bearer ${store.token}`
 					}

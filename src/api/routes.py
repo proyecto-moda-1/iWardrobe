@@ -8,6 +8,11 @@ from flask_jwt_extended import jwt_required
 from api.models import db, User, Clothing, Outfit, Collection
 from api.utils import generate_sitemap, APIException
 from api.models import Category
+import os
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
 
 api = Blueprint('api', __name__)
 
@@ -116,27 +121,28 @@ def create_clothing():
     user_email = get_jwt_identity()
     user= User.get_user_by_email(user_email)
 
-    body = request.get_json()
-    if body is None:
-        return "The request body is null", 400
-    
-    user_id = body.get('user_id')
+    user_id = request.form['user_id']
     if user_id is None or user_id == 0:
         return "Please, provide a valid user_id", 400
 
-    name = body.get('name')
+    name = request.form['name']
     if name is None or name == 0:
         return "Provide a valid name", 400
 
-    category = body.get('category')
+    category = request.form['category']
     if category is None or category == 0:
         return "Provide a valid category", 400
 
-    image = body.get('image')
+    print(request.files)
+    image = request.files['image']
     if image is None or image == 0:
         return "Provide a valid image", 400
+    
+    
+    cloudinary.config(cloud_name = os.getenv('CLOUD_NAME'), api_key=os.getenv('API_KEY'), api_secret=os.getenv('API_SECRET'))
+    result = cloudinary.uploader.upload(image)
 
-    clothing = Clothing(user_id=user_id, name=name, category=category, image=image, clean=True)
+    clothing = Clothing(user_id=user_id, name=name, category=category, image=result['secure_url'], clean=True)
     clothing.create_clothing()
 
     return "Created", 201
