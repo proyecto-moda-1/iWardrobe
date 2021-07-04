@@ -9,14 +9,17 @@ import Col from "react-bootstrap/Col";
 export const BtnCleanOutfit = props => {
 	const { store, actions } = useContext(Context);
 	const [checked, setChecked] = useState(false);
+	const [clean, setClean] = useState({
+		clean:{},
+	});
 
 	const handleChange = event => {
 		setChecked(event.target.checked);
 	};
 
-	// useEffect(() => {
-	// 	actions.getClothing("top");
-	// }, []);
+	useEffect(() => {
+		actions.(data);
+	}, []);
 
 	return (
 		<>

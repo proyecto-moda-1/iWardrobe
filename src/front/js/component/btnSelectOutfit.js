@@ -5,15 +5,26 @@ import { Form } from "react-bootstrap";
 
 export const SelectOutfitBtn = props => {
 	const { store, actions } = useContext(Context);
-
 	const [checked, setChecked] = useState(false);
+	const [clean, setClean] = useState({
+		clean:{},
+	});
 
 	const handleChange = event => {
 		setChecked(event.target.checked);
 	};
 
 	useEffect(() => {
-		actions.getUserFavorite(data);
+		actions.selectOutfit(data);
+	}, []);
+
+
+	const handleChange = event => {
+		setChecked(event.target.checked);
+	};
+
+	useEffect(() => {
+		
 	}, []);
 
 	return (
