@@ -253,7 +253,39 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 				fetch(endpoint, config)
 					.then(response => response.json())
 					.catch(err => console.error(err));
-			}
+			},
+			getClean:data => {
+				const store = getStore();
+				const endpoint = process.env.BACKEND_URL + "/api/clothing";
+				const config = {
+					method: "POST",
+					body: JSON.stringify(data),
+					headers: {
+						"Content-Type": "application/json",
+						Authorization: `Bearer ${store.token}`
+					}
+				};
+				fetch(endpoint, config)
+					.then(response => response.json())
+					.then(json => data)
+					.catch(err => console.error(err));
+			},
+			 selectOutfit: data => {
+				const store = getStore();
+				const endpoint = process.env.BACKEND_URL + "/api/outfit";
+				const config = {
+					method: "PUT",
+					body: JSON.stringify(data),
+					headers: {
+						"Content-Type": "application/json",
+						Authorization: `Bearer ${store.token}`
+					}
+				};
+				fetch(endpoint, config)
+					.then(response => response.json())
+					.then(json => data)
+					.catch(err => console.error(err));
+			 },
 		}
 	};
 };
