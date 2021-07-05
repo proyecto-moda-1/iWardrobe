@@ -15,7 +15,9 @@ export const Closet = () => {
 		actions.getUserFavorite();
 	}, []);
 	let favoriteCards = [];
-	let outfitsByCategory = [];
+	const collectionOutfits =
+		store.selectedCollection.outfits &&
+		store.selectedCollection.outfits.map(outfit => <div key={outfit.id}>{outfit.name}</div>);
 	if (store.favorites != undefined) {
 		favoriteCards = store.favorites.map((favorite, index) => {
 			return (
@@ -40,13 +42,14 @@ export const Closet = () => {
 						<h1 className="text"> COLLECTIONS</h1>
 						<CollectionDropdown />
 					</div>
-					<div className="col-xs-9">
-						<div className="planet d-flex flex-row">{outfitsByCategory}</div>
-					</div>
 				</div>
 				<div className="row">
 					<h1 className="text">FAVOURITES</h1>
 					<div className="planet d-flex flex-row">{favoriteCards}</div>
+				</div>
+				<div className="row">
+					<h1 className="text">{store.selectedCollection.name}</h1>
+					<div className="planet d-flex flex-row">{collectionOutfits}</div>
 				</div>
 			</div>
 		</div>

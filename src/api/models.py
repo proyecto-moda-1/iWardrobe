@@ -157,9 +157,13 @@ class Collection(db.Model):
          return '<Collection %r>' % self.image
     
      def serialize(self):
+        serialized_outfits = [] 
+        for outfit in self.outfits:
+            serialized_outfits.append(outfit.serialize())
         return {
             "id": self.id,
             "user_id": self.collection_user_id,
             "image": self.image,
             "name": self.name,
+            "outfits": serialized_outfits
         }     

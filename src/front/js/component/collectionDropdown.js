@@ -13,25 +13,19 @@ export const CollectionDropdown = () => {
 	}, []);
 
 	if (store.collections != undefined) {
-		collections = store.collections.map(category => {
+		collections = store.collections.map(collection => {
 			return {
-				label: category.name,
-				value: category.id
+				label: collection.name,
+				value: collection
 			};
 		});
 	}
-
+	const handleChange = option => {
+		actions.selectCollection(option.value);
+	};
 	return (
 		<div className="container">
-			<Select options={collections} />
-			{/* <Card
-				name={collections.name}
-				collections={collections.collections}
-				image={collections.image}
-				clothing={collections.clothing}
-				favorite={collections.favorite}
-				key={index}
-			/> */}
+			<Select onChange={handleChange} options={collections} />
 		</div>
 	);
 };
