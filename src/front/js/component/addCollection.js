@@ -25,10 +25,10 @@ const AddCollection = props => {
 			</Modal.Header>
 			<div className="group-clothing">
 				{" "}
-				<label className="pass label" />{" "}
+				<label className="passlabel" />{" "}
 				<input
 					type="text"
-					className="input-name"
+					className="inputName"
 					id="collection-name"
 					placeholder="Name"
 					value={name}
