@@ -57,18 +57,15 @@ export const Profile = () => {
 						alt="imgFond"
 					/>
 					<h1 className="Tittle1">Welcome!</h1>
-					<h3 className="text2">
-						El estilo es una manera de decir quien eres sin tener que hablar. Por eso toma el tiempo
-						necesario de crear el tuyo, con el que te sientas mejor.
-					</h3>
+					<h3 className="text2"></h3>
 				</div>
 				<div className="container">
 					<div className="row">
-						<h1 className="textOufit"> OUTFITS DISPONIBLES</h1>
+						<h1 className="textOufit"> OUTFITS AVAILABLES</h1>
 						<div className="favorite d-flex flex-row">{outfitCards}</div>
 					</div>
 					<div className="row">
-						<h1 className="textDirty"> ROPA SUCIA</h1>
+						<h1 className="textDirty"> ALREADY USED </h1>
 						<div className="dirty d-flex flex-row">{dirtyClothing}</div>
 					</div>
 				</div>
