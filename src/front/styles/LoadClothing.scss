@@ -1,7 +1,7 @@
-.modal-header, .modal-title {
+.modal-header, .modal-title,.h4 {
     line-height: 4rem;
     text-transform: uppercase;
-    margin: 0;
+   
 }
 
 .group-clothing,.group-image{
@@ -12,16 +12,19 @@
 }
 .input-image, .input-clothing{
     font-size: 15px;
-    width: 200px;
+    width: 300px;
     border: 2px;
     border-radius: 12px;
+    border-style: solid;
+    color: #5e5c5c;
+    
 }
 .select-clothing{
-    width: 11rem;
-    margin-left: 3rem;
-    margin-bottom: 3rem;
-    border: 2px;
+    width: 300px;
+    border-radius: 12px;
     font-size: 0.90rem;
+    border-style: solid;
+    border: 2px solid #9b9999;
 }
 
 .modal-content{

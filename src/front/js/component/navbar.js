@@ -20,7 +20,7 @@ export const Navbar = () => {
 			<nav>
 				<ul className="navLink">
 					<li>
-						<Link to="/MyCloset">
+						<Link to="/MyOutfit">
 							<a href="#">Create your outfit</a>
 						</Link>
 					</li>

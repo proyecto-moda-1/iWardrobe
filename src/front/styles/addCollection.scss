@@ -1,8 +1,24 @@
+.modal-header, .modal-title {}
 
-.passlabel{
-    width: 200px;
-    margin-left: 105px;
-    border: 2px;
+.input-name{
+    font-size: 15px;
+    width: 300px;
+    border: 2px solid #9b9999;
     border-radius: 12px;
-    font-size: 0.90rem;
 }
+
+//Hay que empequeñecer los botones
+
+// .button,.btn.btn-outline-light, .save-button,.close-button { 
+//     border: 2px;
+//     border-radius: 12px;
+//     font-size: 14px;
+//     background-color: white;
+//     color: #9b9999;
+//     border: 2px solid #9b9999;
+// }
+
+
+
+
+
