@@ -10,9 +10,9 @@ import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import "../../styles/home.scss";
+import "../../styles/SelectCategory.scss";
 
-export const MyCloset = props => {
+export const MyOutfit = props => {
 	const { store, actions } = useContext(Context);
 	const [show, setShow] = useState(false);
 	const handleClose = () => setShow(false);
@@ -61,10 +61,12 @@ export const MyCloset = props => {
 				<Row>
 					<Col sm={true}>
 						<h2>Your clothing</h2>
+						<br />
+						<br />
 						<Form.Control
 							size="sm"
 							as="select"
-							className="select-clothing"
+							className="select-category"
 							defaultValue={top}
 							onChange={event => {
 								setTop(event.target.value);
@@ -79,10 +81,13 @@ export const MyCloset = props => {
 							{topItems}
 						</Form.Control>
 						<br />
+						<br />
+						<br />
+						<br />
 						<Form.Control
 							size="sm"
 							as="select"
-							className="select-clothing"
+							className="select-select-category"
 							defaultValue={bottom}
 							onChange={event => {
 								setBottom(event.target.value);
@@ -94,12 +99,14 @@ export const MyCloset = props => {
 							<option value="0">Bottom</option>
 							{bottomItems}
 						</Form.Control>
-
+						<br />
+						<br />
+						<br />
 						<br />
 						<Form.Control
 							size="sm"
 							as="select"
-							className="select-clothing"
+							className="select-category"
 							defaultValue={footwear}
 							onChange={event => {
 								setFootwear(event.target.value);
@@ -115,15 +122,24 @@ export const MyCloset = props => {
 					<Col sm={true}>
 						<CollectionSelect />
 						<br />
+						<br />
+						<br />
+						<br />
+						<br />
 						<Button variant="primary" onClick={handleShow}>
 							Add new collection
 						</Button>
 						<AddCollection show={show} handleClose={handleClose} />
+						<br />
+						<br />
+						<br />
+						<br />
+						<br />
+						<CreateOutfitBtn />
 					</Col>
 					<Col sm={true}>
 						<div className="main-container">
 							<CarouselClothing selectedItems={selectedItems} />
-							<CreateOutfitBtn />
 						</div>
 					</Col>
 				</Row>

@@ -16,7 +16,7 @@ export const Home = () => {
 				/>
 				<div className="container-fluid">
 					<h1 className="slogan">
-						MODA es lo que compras, ESTILO es lo que haces con eso. NO lo dejes para ultima hora.
+						{/* MODA es lo que compras, ESTILO es lo que haces con eso. NO lo dejes para ultima hora. */}
 					</h1>
 
 					<a href="/register" className="btn1">

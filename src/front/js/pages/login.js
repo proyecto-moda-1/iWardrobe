@@ -60,7 +60,7 @@ export const Login = function(props) {
 								</div>
 								<div className="group">
 									<button type="submit" value="boton" className="button" onClick={handleSubmit}>
-										Sign In
+										Sign in
 									</button>
 								</div>
 							</div>
