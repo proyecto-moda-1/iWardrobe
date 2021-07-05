@@ -12,7 +12,7 @@ export const Navbar = () => {
 	return (
 		<div className="header">
 			<div className="logo" type="submit">
-				<Link to="/" className="text-decoration-none">
+				<Link to="/profile" className="text-decoration-none">
 					iWardrobe
 				</Link>
 			</div>
@@ -20,7 +20,7 @@ export const Navbar = () => {
 			<nav>
 				<ul className="navLink">
 					<li>
-						<Link to="/MyCloset">
+						<Link to="/MyOutfit">
 							<a href="#">Create your outfit</a>
 						</Link>
 					</li>

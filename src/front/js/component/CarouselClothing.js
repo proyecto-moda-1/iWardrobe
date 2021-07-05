@@ -8,19 +8,18 @@ export const CarouselClothing = props => {
 
 	return (
 		<>
-
 			<div className="main-container">
-				<div className="top-container">
+				<div className="top-container mx-auto d-block">
 					{" "}
-					<img src={props.selectedItems.top.image} />
+					<img src={props.selectedItems.top.image} className=" mx-auto d-block" />
 				</div>
 
 				<div className="bottom-container">
-					<img src={props.selectedItems.bottom.image} />
+					<img src={props.selectedItems.bottom.image} className=" mx-auto d-block" />
 				</div>
 
 				<div className="footwear-container">
-					<img src={props.selectedItems.footwear.image} />
+					<img src={props.selectedItems.footwear.image} className=" mx-auto d-block " />
 				</div>
 			</div>
 		</>
