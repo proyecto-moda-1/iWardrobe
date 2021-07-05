@@ -41,7 +41,7 @@ export const Closet = () => {
 						<CollectionDropdown />
 					</div>
 					<div className="col-xs-9">
-						<div className="planet d-flex flex-row">{outfitsByCategory}</div>
+						<div className="collectionOutfit d-flex flex-row">{outfitsByCategory}</div>
 					</div>
 				</div>
 				<div className="row">
