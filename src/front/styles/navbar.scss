@@ -8,6 +8,10 @@
     padding: 0.4rem 5%;
 }
 
+.text-decoration-none{
+    font-size: 3rem;
+    font-weight: 500;
+}
 li, a {
     font-weight: 500;
     font-size: 1.8rem;
@@ -20,9 +24,6 @@ li, a {
 }
 
 .navLink li a:hover{
-    color: rgb(114, 114, 114);
-}
-.logo:hover{
     color: rgb(114, 114, 114);
 }
 .btn{
@@ -41,6 +42,12 @@ li, a {
 
 .btn:hover{
   background-color: #9b9999;
-    color:white;
-    border-color: white;
+  color:white;
+border-color: white;
 }
+.logo{
+    font-size: 3.8rem;}
+
+.logo:hover{
+    color:#9b9999;
+    border-color: white;}

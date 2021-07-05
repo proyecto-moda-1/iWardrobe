@@ -101,10 +101,6 @@ def get_all_clothings():
     serialized_clothings = []
     for clothing in all_clothings:
         serialized_clothings.append(clothing.serialize())
-    
-
-    print(serialized_clothings)
-
     return jsonify(serialized_clothings), 200
 
 @api.route('/clothing/<int:id>', methods=['GET'])
