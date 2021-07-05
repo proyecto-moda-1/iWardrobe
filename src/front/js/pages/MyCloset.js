@@ -119,11 +119,11 @@ export const MyCloset = props => {
 							Add new collection
 						</Button>
 						<AddCollection show={show} handleClose={handleClose} />
+						<CreateOutfitBtn />
 					</Col>
 					<Col sm={true}>
 						<div className="main-container">
 							<CarouselClothing selectedItems={selectedItems} />
-							<CreateOutfitBtn />
 						</div>
 					</Col>
 				</Row>

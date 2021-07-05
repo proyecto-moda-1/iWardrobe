@@ -23,8 +23,7 @@ const CreateOutfit = props => {
 
 	return (
 		<Modal show={show} onHide={handleClose}>
-			<Modal.Header closeButton>
-			</Modal.Header>
+			<Modal.Header closeButton></Modal.Header>
 			<div className="outfit">
 				{" "}
 				<label className="pass label" />{" "}

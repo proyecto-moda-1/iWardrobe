@@ -40,7 +40,7 @@ const AddCollection = props => {
 					Close
 				</Button>
 				<Button variant="outline-secondary" onClick={handleSubmit}>
-					Save 
+					Save
 				</Button>
 			</Modal.Footer>
 		</Modal>

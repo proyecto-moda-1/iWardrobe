@@ -62,7 +62,7 @@ const LoadClothing = props => {
 					Close
 				</Button>
 				<Button variant="outline-light" className="save-button" onClick={handleSubmit}>
-					Save 
+					Save
 				</Button>
 			</Modal.Footer>
 		</Modal>

@@ -20,11 +20,11 @@ export const CarouselClothing = props => {
 								{" "}
 								<img src={props.selectedItems.top.image} />
 							</div>
-							<br />
+
 							<div className="bottom-container">
 								<img src={props.selectedItems.bottom.image} />
 							</div>
-							<br />
+
 							<div className="footwear-container">
 								<img src={props.selectedItems.footwear.image} />
 							</div>
