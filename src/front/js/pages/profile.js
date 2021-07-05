@@ -56,7 +56,7 @@ export const Profile = () => {
 					alt=""
 				/> */}
 				<div className="container">
-					<h1 className="text2">Ten la libertad de usar lo que te haga sentir UNICA.</h1>
+					{/* <h1 className="text2">Ten la libertad de usar lo que te haga sentir UNICA.</h1> */}
 				</div>
 			</div>
 			<div className="row">

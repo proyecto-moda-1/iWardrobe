@@ -21,7 +21,7 @@ export const CreateOutfitBtn = props => {
 				<Row>
 					<Col sm={true}>
 						<Button variant="outline-light" className="save-button" onClick={handleShow}>
-							Save changes
+							Create
 						</Button>
 						<CreateOutfit show={show} handleClose={handleClose} />
 					</Col>

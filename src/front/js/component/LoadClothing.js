@@ -31,7 +31,7 @@ const LoadClothing = props => {
 	return (
 		<Modal show={show} onHide={handleClose}>
 			<Modal.Header closeButton>
-				<Modal.Title>Add Clothing</Modal.Title>
+				<Modal.Title>Add clothing</Modal.Title>
 			</Modal.Header>
 			<div className="group-clothing">
 				{" "}
@@ -62,7 +62,7 @@ const LoadClothing = props => {
 					Close
 				</Button>
 				<Button variant="outline-light" className="save-button" onClick={handleSubmit}>
-					Save changes
+					Save 
 				</Button>
 			</Modal.Footer>
 		</Modal>

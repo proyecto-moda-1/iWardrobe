@@ -33,8 +33,8 @@ export const Closet = () => {
 
 	return (
 		<div className="container">
-			<h1 className="display-4">Your Closet!</h1>
-			<p className="lead">La VIDA es una FIESTA vistete para eso…</p>
+			<h1 className="display-4">Your closet</h1>
+			<p className="lead">Dress for every ocassion</p>
 			<div className="my-4">
 				{/* <p className="lead">
 					<a className="btn btn-primary btn-lg" href="#" role="button">
@@ -54,7 +54,7 @@ export const Closet = () => {
 					</div>
 				</div>
 				<div className="row">
-					<h1 className="text">FAVORITOS</h1>
+					<h1 className="text">FAVOURITES</h1>
 					<div className="planet d-flex flex-row">{favoriteCards}</div>
 				</div>
 			</div>

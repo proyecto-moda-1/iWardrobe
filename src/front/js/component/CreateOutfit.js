@@ -24,7 +24,6 @@ const CreateOutfit = props => {
 	return (
 		<Modal show={show} onHide={handleClose}>
 			<Modal.Header closeButton>
-				<Modal.Title></Modal.Title>
 			</Modal.Header>
 			<div className="outfit">
 				{" "}
@@ -43,7 +42,7 @@ const CreateOutfit = props => {
 					Close
 				</Button>
 				<Button variant="outline-light" className="save-button" onClick={handleSubmit}>
-					Save changes
+					Save creation
 				</Button>
 			</Modal.Footer>
 		</Modal>
