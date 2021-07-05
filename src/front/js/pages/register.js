@@ -27,7 +27,7 @@ export const Register = function(props) {
 		};
 
 		actions.createUser(data, () => {
-			history.push("/closet");
+			history.push("/profile");
 		});
 	};
 
