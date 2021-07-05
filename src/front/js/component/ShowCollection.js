@@ -6,7 +6,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
-import "../../styles/home.scss";
+import "../../styles/showCollection.scss";
 
 export const CollectionSelect = props => {
 	const { store, actions } = useContext(Context);
@@ -28,30 +28,26 @@ export const CollectionSelect = props => {
 
 	return (
 		<>
-			<Container>
-				<Row>
-					<Col sm={true}>
-						<h2> Add to my collections</h2>
-						<Form.Control
-							size="sm"
-							as="select"
-							className="select-collection"
-							defaultValue={collection}
-							onChange={event => {
-								setCollection(event.target.value);
-								setselectedCollections({
-									...selectedCollections,
-									collections: store.collections.find(item => item.id == event.target.value)
-								});
-							}}>
-							<option selected value="0">
-								My collections
-							</option>
-							{allCollections}
-						</Form.Control>
-					</Col>
-				</Row>
-			</Container>
+			<h2> Add to my collections</h2>
+			<br />
+			<br />
+			<Form.Control
+				size="sm"
+				as="select"
+				className_="select-collection"
+				defaultValue={collection}
+				onChange={event => {
+					setCollection(event.target.value);
+					setselectedCollections({
+						...selectedCollections,
+						collections: store.collections.find(item => item.id == event.target.value)
+					});
+				}}>
+				<option selected value="0">
+					My collections
+				</option>
+				{allCollections}
+			</Form.Control>
 		</>
 	);
 };

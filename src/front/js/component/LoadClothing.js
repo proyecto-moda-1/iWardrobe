@@ -56,9 +56,9 @@ const LoadClothing = props => {
 				<option value="bottom">Bottom</option>
 				<option value="footwear"> Footwear</option>
 			</Form.Control>
-			<input type="file" onChange={e => setImage(e.target.files)} />
+			<input className="selectArch" type="file" onChange={e => setImage(e.target.files)} />
 			<Modal.Footer>
-				<Button variant="outline-light" className="close-button" onClick={handleClose}>
+				<Button className="close-button" onClick={handleClose}>
 					Close
 				</Button>
 				<Button variant="outline-light" className="save-button" onClick={handleSubmit}>

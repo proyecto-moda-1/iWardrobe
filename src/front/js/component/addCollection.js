@@ -4,6 +4,7 @@ import Button from "react-bootstrap/Button";
 import PropTypes from "prop-types";
 import { Context } from "../store/appContext";
 import { getActions } from "../store/flux.js";
+import "../../styles/addCollection.scss";
 
 const AddCollection = props => {
 	const { show, handleClose } = props;

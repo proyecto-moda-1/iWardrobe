@@ -52,6 +52,17 @@ export const Register = function(props) {
 									/>
 								</div>
 								<div className="group">
+									{/* <label className="pass label">E-mail</label> */}
+									<input
+										id="pass"
+										type="email"
+										className="input btn btn-light"
+										placeholder="Enter your email address"
+										value={email}
+										onChange={event => setEmail(event.target.value)}
+									/>
+								</div>
+								<div className="group">
 									{/* <label className="pass label">Password</label> */}
 									<input
 										type="password"
@@ -71,17 +82,6 @@ export const Register = function(props) {
 										placeholder="Repeat your password"
 										value={repeatPassword}
 										onChange={event => setRepeatPassword(event.target.value)}
-									/>
-								</div>
-								<div className="group">
-									<label className="pass label">E-mail</label>
-									<input
-										id="pass"
-										type="email"
-										className="input btn btn-light"
-										placeholder="Enter your email address"
-										value={email}
-										onChange={event => setEmail(event.target.value)}
 									/>
 								</div>
 								<div className="group">
