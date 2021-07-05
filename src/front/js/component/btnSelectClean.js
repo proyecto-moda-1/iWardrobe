@@ -17,10 +17,6 @@ export const BtnCleanOutfit = props => {
 		setChecked(event.target.checked);
 	};
 
-	// useEffect(() => {
-	// 	actions.(data);
-	// }, []);
-
 	return (
 		<>
 			<Form.Check

@@ -35,7 +35,7 @@ export function Card(props) {
 				<h5 className="card-title">{props.name}</h5>
 				<h5 className="card-title">{props.image}</h5>
 				<h5 className="card-title">{clothingCards}</h5>
-				<button className="btn-fav btn-outline-danger" onClick={props.favorite}>
+				<button className="btn-fav btn-outline-danger" onClick={clothingCards}>
 					♡
 				</button>
 				<button className="btn-out btn-outline-success" onClick={SelectOutfitBtn}>

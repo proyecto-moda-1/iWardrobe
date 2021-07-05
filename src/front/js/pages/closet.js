@@ -41,12 +41,12 @@ export const Closet = () => {
 						<CollectionDropdown />
 					</div>
 					<div className="col-xs-9">
-						<div className="planet d-flex flex-row">{outfitsByCategory}</div>
+						<div className="collectionOutfit d-flex flex-row">{outfitsByCategory}</div>
 					</div>
 				</div>
 				<div className="row">
 					<h1 className="text">FAVORITOS</h1>
-					<div className="planet d-flex flex-row">{favoriteCards}</div>
+					<div className="CardFavorite d-flex flex-row">{favoriteCards}</div>
 				</div>
 			</div>
 		</div>
