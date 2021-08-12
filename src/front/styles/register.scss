@@ -1,52 +1,58 @@
-.login-snip {   
-    margin: 1rem;
-}
+// .login-snip {   
+//     margin: 1rem;
+// }
 
-.container {  padding-top: 2rem;
+.container {  
+  padding-top: 2rem;
   padding-bottom: 0.5rem;   
   text-align: center;
-
+  color:rgba(223, 166, 216, 0.966);
+  
 }
-.tittle{
-    position: initial;
-    font-size: 3rem;
-    color: #463F3A;
 
-}
+
 
 .loginContainer{
-    font-size: 1.5rem;
-    width: 90%;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    font-size: 2.5rem;
+    width: 50%;
+    margin-top: -2%; 
+    border: rgb(128, 127, 129) solid;
+    border-radius: 0.5rem;
+
+    background-color: rgba(255, 192, 203, 0.329) ;
+
 }
 
 .group{
-   padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    margin-top: 1px;
+
 }
 .input {
-  width: 100%;
+  font-size: 1rem;
+  width: 20rem;
+  height: 2.5rem;
   margin: 1rem 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-    border: 2px solid #9b9999;
-  box-sizing: border-box;
+  background: #FFFFFF;
+  
 }
-.button{
-  width: 100%;
+.button  {
+  width: 25rem;
+  height: 3rem;
   background-color:#9b9999;
-  color: white;
-  padding: 14px 20px;
-  margin: 80px 0;
+  color: rgb(15, 15, 15);
+  margin: 1.4rem 0;
   border: none;
   border-radius: 0.5rem;
   cursor: pointer;
+  font-size: 1.5rem;
+  text-align:center;
+
 }
 
-
-.btn:hover{
-  background-color: #9b9999;
+.button:hover{
+  background-color: rgb(19, 158, 19);
     color:white;
     border-color: white;
 }
