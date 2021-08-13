@@ -1,6 +1,4 @@
-// .login-snip {   
-//     margin: 1rem;
-// }
+
 
 .container {  
   padding-top: 2rem;
@@ -10,15 +8,12 @@
   
 }
 
-
-
 .loginContainer{
     font-size: 2.5rem;
     width: 50%;
     margin-top: -2%; 
     border: rgb(128, 127, 129) solid;
     border-radius: 0.5rem;
-
     background-color: rgba(255, 192, 203, 0.329) ;
 
 }
@@ -40,8 +35,8 @@
 .button  {
   width: 25rem;
   height: 3rem;
-  background-color:#9b9999;
-  color: rgb(15, 15, 15);
+  background-color:#0981e4b4;
+  color:  rgba(10, 11, 14, 0.644);
   margin: 1.4rem 0;
   border: none;
   border-radius: 0.5rem;
@@ -52,8 +47,8 @@
 }
 
 .button:hover{
-  background-color: rgb(19, 158, 19);
-    color:white;
-    border-color: white;
+  background-color: #0981e4fb;
+    color: black;
+    border-color: black;
 }
 

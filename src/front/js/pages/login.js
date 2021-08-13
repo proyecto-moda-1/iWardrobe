@@ -22,11 +22,6 @@ export const Login = function(props) {
 		});
 	};
 
-	// .then(response => response.json())
-	// .then(responseJson =>{
-	//     console.log(responseJson);
-	// });
-
 	return (
 		<div className="container">
 			<div className="d-flex justify-content-center">
@@ -37,13 +32,12 @@ export const Login = function(props) {
 							type="text"
 							className="input btn btn-light"
 							id="exampleFormControlInput1"
-							placeholder="tucorreo@ejemplo.com"
+							placeholder="email@example.com"
 							value={email}
 							onChange={event => setEmail(event.target.value)}
 						/>
 					</div>
 					<div className="group">
-						{/* <label className="pass label">Password</label> */}
 						<input
 							type="text"
 							className="input btn btn-light"
