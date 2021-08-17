@@ -266,8 +266,17 @@ def get_user_favorite():
         return jsonify(serialized_favorites), 200 
 
 
-
-
+# @api.route('/collection/collection_id/outfit', methods=['GET'])
+# @jwt_required()
+# def get_user_favorite():
+#         user_email = get_jwt_identity()
+#         user= User.get_user_by_email(user_email)
+#         outfit_collection = Clothing.get_outfit_user_outfits(user.id)
+        
+#         serialized_collection = []
+#         for favorite in favorite_outfit:
+#             serialized_favorites.append(favorite.serialize())
+#         return jsonify(serialized_favorites), 200 
 
 
 

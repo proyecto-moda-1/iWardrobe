@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 import { Context } from "../store/appContext";
 import { getActions } from "../store/flux.js";
 import CreateOutfitBtn from "./BtnCreate";
-import "../../styles/randomwheel.scss";
+import "../../styles/createOutfit.scss";
 
 const CreateOutfit = props => {
 	const { show, handleClose } = props;
@@ -23,10 +23,12 @@ const CreateOutfit = props => {
 
 	return (
 		<Modal show={show} onHide={handleClose}>
-			<Modal.Header closeButton></Modal.Header>
+			<Modal.Header closeButton>
+				<Modal.Title>Check Outfit</Modal.Title>
+			</Modal.Header>
 			<div className="outfit">
 				{" "}
-				<label className="pass label" />{" "}
+				<label className="pass-label" />{" "}
 				<input
 					type="text"
 					className="input-outfit"
@@ -37,11 +39,11 @@ const CreateOutfit = props => {
 				/>{" "}
 			</div>
 			<Modal.Footer>
-				<Button variant="outline-light" className="close-button" onClick={handleClose}>
-					Close
-				</Button>
-				<Button variant="outline-light" className="save-button" onClick={handleSubmit}>
+				<Button variant="outline-light" className="save-name" onClick={handleSubmit}>
 					Save creation
+				</Button>
+				<Button variant="outline-light" className="close-name" onClick={handleClose}>
+					Close
 				</Button>
 			</Modal.Footer>
 		</Modal>

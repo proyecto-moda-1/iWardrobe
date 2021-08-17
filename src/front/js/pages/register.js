@@ -10,7 +10,6 @@ export const Register = function(props) {
 	const [login, setLogin] = useState(true);
 	const [repeatPassword, setRepeatPassword] = useState("");
 	const [gender, setGender] = useState("");
-	const [image, setImage] = useState("");
 	const [nickname, setNickname] = useState("");
 
 	const history = useHistory();
@@ -33,74 +32,65 @@ export const Register = function(props) {
 
 	return (
 		<div className="container">
-			<div className="col-md-8 mx-auto p-0">
-				<div className="d-flex justify-content-center">
-					<div className="login-box">
-						<div className="login-snip">
-							{/* {" "}
-							<a className="tittle">REGISTER</a> */}
-							<div className="loginContainer">
-								<div className="group">
-									<label className="user label">REGISTER</label>
-									<input
-										type="text"
-										className="input btn btn-light"
-										id="exampleFormControlInput1"
-										placeholder="nickname"
-										value={nickname}
-										onChange={event => setNickname(event.target.value)}
-									/>
-								</div>
-								<div className="group">
-									{/* <label className="pass label">E-mail</label> */}
-									<input
-										id="pass"
-										type="email"
-										className="input btn btn-light"
-										placeholder="Enter your email address"
-										value={email}
-										onChange={event => setEmail(event.target.value)}
-									/>
-								</div>
-								<div className="group">
-									{/* <label className="pass label">Password</label> */}
-									<input
-										type="password"
-										className="input btn btn-light"
-										id="exampleFormControlInput1"
-										placeholder="introduce tu contraseña"
-										value={password}
-										onChange={event => setPassword(event.target.value)}
-									/>
-								</div>
-								<div className="group">
-									<input
-										id="pass"
-										type="password"
-										className="input btn btn-light"
-										data-type="password"
-										placeholder="Repeat your password"
-										value={repeatPassword}
-										onChange={event => setRepeatPassword(event.target.value)}
-									/>
-								</div>
-								<div className="group">
-									<input
-										id="pass"
-										type="text"
-										className="input btn btn-light"
-										placeholder="Gender"
-										value={gender}
-										onChange={event => setGender(event.target.value)}
-									/>
-								</div>
-								<div className="group">
-									<button type="submit" value="boton" className="button" onClick={handleRegister}>
-										Sign Up
-									</button>
-								</div>
-							</div>
-						</div>
+			<div className="d-flex justify-content-center">
+				<div className="loginContainer">
+					<label className="userLabel">REGISTER</label>
+					<div className="group">
+						<input
+							type="text"
+							className="input btn btn-light"
+							id="exampleFormControlInput1"
+							placeholder="NickName"
+							value={nickname}
+							onChange={event => setNickname(event.target.value)}
+						/>
+					</div>
+					<div className="group">
+						{" "}
+						<input
+							id="pass"
+							type="text"
+							className="input btn btn-light"
+							placeholder=" your email address"
+							value={email}
+							onChange={event => setEmail(event.target.value)}
+						/>
+					</div>
+					<div className="group">
+						<input
+							type="text"
+							className="input btn btn-light"
+							id="exampleFormControlInput1"
+							placeholder="your password"
+							value={password}
+							onChange={event => setPassword(event.target.value)}
+						/>
+					</div>
+					<div className="group">
+						<input
+							id="pass"
+							type="text"
+							className="input btn btn-light"
+							data-type="password"
+							placeholder="Repeat your password"
+							value={repeatPassword}
+							onChange={event => setRepeatPassword(event.target.value)}
+						/>
+					</div>
+					<div className="group">
+						<input
+							id="pass"
+							type="text"
+							className="input btn btn-light"
+							placeholder="Gender"
+							value={gender}
+							onChange={event => setGender(event.target.value)}
+						/>
+					</div>
+					<div className="group">
+						<button type="submit" value="button" className="button" onClick={handleRegister}>
+							Sign Up
+						</button>
 					</div>
 				</div>
 			</div>

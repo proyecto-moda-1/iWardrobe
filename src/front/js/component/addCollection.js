@@ -26,22 +26,22 @@ const AddCollection = props => {
 			</Modal.Header>
 			<div className="group-clothing">
 				{" "}
-				<label className="passlabel" />{" "}
+				<label className="pass-label" />{" "}
 				<input
 					type="text"
 					className="inputName"
 					id="collection-name"
-					placeholder="Name"
+					placeholder="Collection Name"
 					value={name}
 					onChange={event => setName(event.target.value)}
 				/>{" "}
 			</div>
 			<Modal.Footer>
-				<Button variant="outline-secondary" onClick={handleClose}>
-					Close
-				</Button>
-				<Button variant="outline-secondary" onClick={handleSubmit}>
+				<Button type="submit" className="save-name" value="button" onClick={handleSubmit}>
 					Save
+				</Button>
+				<Button type="submit" className="close-name" value="button" onClick={handleClose}>
+					Close
 				</Button>
 			</Modal.Footer>
 		</Modal>

@@ -10,6 +10,7 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 			clothing_items: [],
 			collection_outfit: [],
 			collections: [],
+			selectedCollection: {},
 			name: [],
 			top: [],
 			bottom: [],
@@ -286,6 +287,9 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 					.then(response => response.json())
 					.then(json => data)
 					.catch(err => console.error(err));
+			},
+			selectCollection: collection => {
+				setStore({ selectedCollection: collection });
 			}
 		}
 	};
