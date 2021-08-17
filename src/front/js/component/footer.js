@@ -17,6 +17,9 @@ export const Footer = () => (
 		<div className="text-center">
 			<a className="text-white" href="https://4geeksacademy.com/es/inicio">
 				4Geeks Academy
+				<a>iWardrobe Proyect by</a>
+				<a href="https://github.com/mgtablante">Gabriela Tablante </a> &
+				<a href="https://github.com/yolandagb">Yolanda García</a>
 			</a>
 		</div>
 	</footer>

@@ -26,6 +26,7 @@ export const CollectionDropdown = () => {
 	return (
 		<div className="container">
 			<Select onChange={handleChange} options={collections} />
+			{/* <Select options={collections} /> */}
 		</div>
 	);
 };

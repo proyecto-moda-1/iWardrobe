@@ -1,11 +1,18 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { Link, useHistory, useParams } from "react-router-dom";
 import PropTypes from "prop-types";
+import { BtnCreate } from "./BtnCreate";
+import { Button } from "react-bootstrap";
 import "../../styles/card.scss";
 //create your first component
 
 export function Card(props) {
 	console.log({ props });
+
+	// useEffect(() => {
+	// 	actions.getUserFavorite(data);
+	// }, []);
+	let SelectOutfitBtn = [];
 	let clothingCards = [];
 	if (props.clothing != undefined) {
 		clothingCards = props.clothing.map((clothing, index) => {
@@ -28,7 +35,12 @@ export function Card(props) {
 				<h5 className="card-title">{props.name}</h5>
 				<h5 className="card-title">{props.image}</h5>
 				<h5 className="card-title">{clothingCards}</h5>
-				<a className="btn btn-outline-danger text-danger"> {props.favorite}♡</a>
+				<button className="btn-fav btn-outline-danger" onClick={clothingCards}>
+					♡
+				</button>
+				<button className="btn-out btn-outline-success" onClick={SelectOutfitBtn}>
+					Usado
+				</button>
 			</div>
 		</div>
 	);

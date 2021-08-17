@@ -243,9 +243,10 @@ def favorite_brand(outfit_id):
     user= User.get_user_by_email(user_email)
     outfit= Outfit.query.by(outfit_user_id=user.id, id=outfit_id).first()
 
+
     payload= request.get_json()
     favorite= ['favorite']
-
+    print(favorite)
     outfit.favorite= favorite
 
     db.session.commit()

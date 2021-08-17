@@ -29,7 +29,7 @@ const AddCollection = props => {
 				<label className="pass-label" />{" "}
 				<input
 					type="text"
-					className="input-name"
+					className="inputName"
 					id="collection-name"
 					placeholder="Collection Name"
 					value={name}
