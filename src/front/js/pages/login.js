@@ -1,6 +1,8 @@
 import React, { useContext, useState } from "react";
 import { useHistory } from "react-router-dom";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
+
 import "../../styles/login.scss";
 import { Context } from "../store/appContext";
 
@@ -46,6 +48,11 @@ export const Login = function(props) {
 							value={password}
 							onChange={event => setPassword(event.target.value)}
 						/>
+					</div>
+					<div>
+						<Link to="/register">
+							<a href="#">Crear cuenta nueva</a>
+						</Link>
 					</div>
 					<div className="group">
 						<button type="submit" value="boton" className="button" onClick={handleSubmit}>
