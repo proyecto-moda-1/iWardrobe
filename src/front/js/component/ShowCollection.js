@@ -28,9 +28,9 @@ export const CollectionSelect = props => {
 
 	return (
 		<>
-			<h2> Add to my collections</h2>
+			{/* <h2> Add to my collections</h2>
 			<br />
-			<br />
+			<br /> */}
 			<Form.Control
 				size="sm"
 				as="select"

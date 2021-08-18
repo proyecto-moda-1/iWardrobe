@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import CollectionSelect from "../component/ShowCollection.js";
 import AddCollection from "../component/addCollection.js";
 import { Context } from "../store/appContext";
 import { getActions } from "../store/flux.js";
@@ -56,6 +57,7 @@ const CreateOutfit = props => {
 			</Button>
 			<AddCollection show={showCollection} handleClose={handleCloseCollection} />
 			{/* Aquí le tenemos que poner el props que le vamos a pasar para que se guarde en favoritos */}
+			<CollectionSelect />
 			<HeartButton id="heartBtn" />
 			<Modal.Footer>
 				<Button variant="outline-light" id="btnCreate" onClick={resetInputField}>
