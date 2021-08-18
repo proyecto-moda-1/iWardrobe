@@ -1,8 +1,9 @@
 import React, { useContext, useState } from "react";
 import { useHistory } from "react-router-dom";
+import { Context } from "../store/appContext";
+import Form from "react-bootstrap/Form";
 import PropTypes from "prop-types";
 import "../../styles/register.scss";
-import { Context } from "../store/appContext";
 
 export const Register = function(props) {
 	const [email, setEmail] = useState("");
@@ -77,6 +78,17 @@ export const Register = function(props) {
 							onChange={event => setRepeatPassword(event.target.value)}
 						/>
 					</div>
+					{/* <Form.Control
+						id="genderSelect"
+						as="select"
+						size="sm"
+						value={gender}
+						onChange={event => setGender(event.target.value)}>
+						<option value="0">Gender</option>
+						<option value="top">Female</option>
+						<option value="bottom">Male</option>
+						<option value="footwear"> Non binary</option>
+					</Form.Control> */}
 					<div className="group">
 						<input
 							id="pass"

@@ -3,7 +3,7 @@ import { Context } from "../store/appContext";
 import { getActions } from "../store/flux.js";
 import Select from "react-select";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Card } from "../component/card.js";
+import { Card } from "./card.js";
 
 export const CollectionDropdown = () => {
 	const { store, actions } = useContext(Context);

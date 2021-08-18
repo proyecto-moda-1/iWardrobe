@@ -18,6 +18,13 @@ const AddCollection = props => {
 		};
 		actions.createCollection(data);
 	};
+	const handleUserInput = e => {
+		setInputValue(e.target.value);
+	};
+	//for reset the inputs
+	const resetInputField = () => {
+		setName("");
+	};
 
 	return (
 		<Modal show={show} onHide={handleClose}>
@@ -29,18 +36,20 @@ const AddCollection = props => {
 				<label className="pass-label" />{" "}
 				<input
 					type="text"
-					className="inputName"
-					id="collection-name"
+					id="collectionName"
 					placeholder="Collection Name"
 					value={name}
 					onChange={event => setName(event.target.value)}
 				/>{" "}
 			</div>
 			<Modal.Footer>
-				<Button type="submit" className="save-name" value="button" onClick={handleSubmit}>
+				<Button variant="outline-light" id="btnCollection" onClick={resetInputField}>
+					Clear
+				</Button>
+				<Button type="submit" id="btnCollection" value="button" onClick={handleSubmit}>
 					Save
 				</Button>
-				<Button type="submit" className="close-name" value="button" onClick={handleClose}>
+				<Button type="submit" id="btnCollection" value="button" onClick={handleClose}>
 					Close
 				</Button>
 			</Modal.Footer>

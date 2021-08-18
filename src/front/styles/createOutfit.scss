@@ -1,32 +1,36 @@
-.input-outfit{
-    font-size: 1.5rem;
-    width: 15rem;
+
+#outfitName{
+    width: 300px;
+    border-radius: 12px;
+    font-size: 0.90rem;
+    border-style: solid;
     border: 2px solid #9b9999;
-    border-radius: 0.5rem;
-    margin: 0 auto;
 }
-
-
-.outfit{
-    width: 20rem;
-    height: 6rem;
-    margin-top: 2%;
-    margin-bottom: 20%;
-    margin-left: 20%;
+#btnAddCollection{
+    margin:10px 10px 10px 10px;
+    width: 300px;
+    border-radius: 12px;
+    font-size: 0.90rem;
+    border-style: solid;
+    border: 2px;
+    background-color: rgb(29, 138, 211);
 }
-
-
-.close-name {
-    width: 6.5rem;
-    height: 3.2rem;
-    font-size: 1rem;
-    border-radius: 2%;
-
+#heartBtn{
+    margin:10px 10px 10px 10px;
+    width: 300px;
+    border-radius: 12px;
+    font-size: 0.90rem;
+    border-style: solid;
+    border: 2px ;
+    background-color:rgba(167, 6, 6, 0.932);
 }
-  
-.save-name {
-    width: 6.5rem;
-    height: 3.2rem;
-    font-size: 1rem;
-    border-radius: 2%;
+//Los btns de add y fav se les tiene que dar un css que quede como los botones de bootsrap, había que ver si se les esta suporpeniendo css.
+
+#btnCreate{
+    border: 2px;
+    border-radius: 12px;
+    font-size: 14px;
+    background-color: white;
+    color: #9b9999;
+    border: 2px solid #9b9999;   
 }

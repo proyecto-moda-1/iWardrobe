@@ -27,6 +27,14 @@ const LoadClothing = props => {
 		};
 		actions.createClothing(data, callback);
 	};
+	const handleUserInput = e => {
+		setInputValue(e.target.value);
+	};
+	//for reset the inputs
+	const resetInputField = () => {
+		setName("");
+		setCategory("0");
+	};
 
 	return (
 		<Modal show={show} onHide={handleClose}>
@@ -39,7 +47,7 @@ const LoadClothing = props => {
 				<input
 					type="text"
 					className="input-clothing"
-					id="clothing-name"
+					id="clothingName"
 					placeholder="Clothing's Name"
 					value={name}
 					onChange={event => setName(event.target.value)}
@@ -48,6 +56,7 @@ const LoadClothing = props => {
 			<Form.Control
 				size="sm"
 				as="select"
+				id="selectClothing"
 				className="select-clothing"
 				value={category}
 				onChange={event => setCategory(event.target.value)}>
@@ -58,11 +67,14 @@ const LoadClothing = props => {
 			</Form.Control>
 			<input className="selectArch" type="file" onChange={e => setImage(e.target.files)} />
 			<Modal.Footer>
-				{/* <Button className="close-button" onClick={handleClose}>
-					Close
-				</Button> */}
-				<Button variant="outline-light" className="save-button" onClick={handleSubmit}>
+				<Button variant="outline-light" id="btnClothing" onClick={handleSubmit}>
 					Save
+				</Button>
+				<Button className="close-button" id="btnClothing" onClick={resetInputField}>
+					Clear
+				</Button>
+				<Button type="submit" id="btnClothing" value="button" onClick={handleClose}>
+					Close
 				</Button>
 			</Modal.Footer>
 		</Modal>

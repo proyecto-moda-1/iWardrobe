@@ -120,27 +120,26 @@ export const MyOutfit = props => {
 						</Form.Control>
 					</Col>
 					<Col sm={true}>
+						<div className="main-container">
+							<CarouselClothing selectedItems={selectedItems} />
+						</div>
+					</Col>
+					<Col sm={true}>
 						<CollectionSelect />
 						<br />
 						<br />
 						<br />
 						<br />
 						<br />
-						<Button variant="primary" onClick={handleShow}>
-							Add new collection
-						</Button>
-						<AddCollection show={show} handleClose={handleClose} />
+						<br />
+						<br />
+						<br />
 						<br />
 						<br />
 						<br />
 						<br />
 						<br />
 						<CreateOutfitBtn />
-					</Col>
-					<Col sm={true}>
-						<div className="main-container">
-							<CarouselClothing selectedItems={selectedItems} />
-						</div>
 					</Col>
 				</Row>
 			</Container>
