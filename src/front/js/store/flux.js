@@ -14,7 +14,8 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 			name: [],
 			top: [],
 			bottom: [],
-			footwear: []
+			footwear: [],
+			favorite: {}
 		},
 		actions: {
 			createUser: (data, callback) => {

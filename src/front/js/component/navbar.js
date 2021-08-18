@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import Button from "react-bootstrap/Button";
+import Button from "react-bootstrap/Button";
 import LoadClothing from "./LoadClothing";
 import { Link } from "react-router-dom";
 import "../../styles/navbar.scss";
@@ -21,17 +21,23 @@ export const Navbar = () => {
 				<ul className="navLink">
 					<li>
 						<Link to="/MyOutfit">
-							<a href="#">Outfit</a>
+							<button className="btnOutfit" href="#">
+								Outfit
+							</button>
 						</Link>
 					</li>
 					<li>
 						<Link to="/closet">
-							<a href="#">Closet</a>
+							<button className="btnCloset" href="#">
+								Closet
+							</button>
 						</Link>
 					</li>
 					<li>
 						<Link to="/login">
-							<a href="#">Login</a>
+							<button className="btnLogin" href="#">
+								Login
+							</button>
 						</Link>
 					</li>
 					{/* <li>

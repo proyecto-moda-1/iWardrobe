@@ -9,9 +9,9 @@ import "../../styles/card.scss";
 export function Card(props) {
 	console.log({ props });
 
-	// useEffect(() => {
-	// 	actions.getUserFavorite(data);
-	// }, []);
+	useEffect(() => {
+		actions.getUserFavorite(data);
+	}, []);
 	let SelectOutfitBtn = [];
 	let clothingCards = [];
 	if (props.clothing != undefined) {
