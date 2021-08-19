@@ -3,27 +3,42 @@
     text-transform: uppercase;
    
 }
-
 .group-clothing,.group-image{
     width: 11rem;
     margin-left: 3rem;
     margin-bottom: 3rem;
     font-size: 0.90rem;
 }
-.input-image, .input-clothing{
+.input-image{
     font-size: 15px;
     width: 300px;
     border: 2px;
     border-radius: 12px;
     border-style: solid;
-    color: #5e5c5c;
-    
+    color: #5e5c5c;   
 }
-.select-clothing{
+#clothingName{
     width: 300px;
     border-radius: 12px;
     font-size: 0.90rem;
     border-style: solid;
+    border: 2px solid #9b9999;
+
+}
+
+#selectClothing{
+    width: 300px;
+    border-radius: 12px;
+    font-size: 0.90rem;
+    border-style: solid;
+    border: 2px solid #9b9999;
+}
+#btnClothing{
+    border: 2px;
+    border-radius: 12px;
+    font-size: 14px;
+    background-color: white;
+    color: #9b9999;
     border: 2px solid #9b9999;
 }
 

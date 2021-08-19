@@ -1,18 +1,15 @@
 import React, { useContext, useState, useEffect } from "react";
-import { Context } from "../store/appContext";
-import PropTypes from "prop-types";
 import CarouselClothing from "../component/CarouselClothing.js";
-import CollectionSelect from "../component/ShowCollection.js";
-import AddCollection from "../component/addCollection.js";
-import CreateOutfitBtn from "../component/BtnCreate.js";
-// import { CollectionDropdown } from "../component/collectionDropdown.js";
-
+import CreateOutfitBtn from "../component/btnCreate.js";
+import LoadClothing from "../component/loadClothing.js";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
+import { Context } from "../store/appContext";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import "../../styles/SelectCategory.scss";
+import "../../styles/myOutfit.scss";
+import PropTypes from "prop-types";
 
 export const MyOutfit = props => {
 	const { store, actions } = useContext(Context);
@@ -122,27 +119,30 @@ export const MyOutfit = props => {
 						</Form.Control>
 					</Col>
 					<Col sm={true}>
-						<CollectionSelect />
-						<br />
-						<br />
-						<br />
-						<br />
-						<br />
-						<Button variant="primary" onClick={handleShow}>
-							Add new collection
-						</Button>
-						<AddCollection show={show} handleClose={handleClose} />
-						<br />
-						<br />
-						<br />
-						<br />
-						<br />
-						<CreateOutfitBtn />
-					</Col>
-					<Col sm={true}>
 						<div className="main-container">
 							<CarouselClothing selectedItems={selectedItems} />
 						</div>
+					</Col>
+					<Col sm={true}>
+						<Button variant="primary" onClick={handleShow}>
+							Add clothes
+						</Button>
+						<LoadClothing show={show} handleClose={handleClose} />
+						<br />
+						<br />
+						<br />
+						<br />
+						<br />
+						<br />
+						<br />
+						<br />
+						<br />
+						<br />
+						<br />
+						<br />
+						<br />
+						<br />
+						<CreateOutfitBtn id="btnCreateOutfit" />
 					</Col>
 				</Row>
 			</Container>
