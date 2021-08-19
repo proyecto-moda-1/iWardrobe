@@ -4,12 +4,13 @@ import Button from "react-bootstrap/Button";
 import PropTypes from "prop-types";
 import { Context } from "../store/appContext";
 import { getActions } from "../store/flux.js";
-import "../../styles/addCollection.scss";
+import "../../styles/createOutfit.scss";
 
 const AddCollection = props => {
+	const { store, actions } = useContext(Context);
+	const notify = () => toast("Wow so easy !");
 	const { show, handleClose } = props;
 	const [name, setName] = useState("");
-	const { store, actions } = useContext(Context);
 
 	const handleSubmit = () => {
 		const data = {
@@ -57,9 +58,9 @@ const AddCollection = props => {
 	);
 };
 
+export default AddCollection;
+
 AddCollection.propTypes = {
 	show: PropTypes.bool,
 	handleClose: PropTypes.func
 };
-
-export default AddCollection;

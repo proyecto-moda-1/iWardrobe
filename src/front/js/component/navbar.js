@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
-import LoadClothing from "./LoadClothing";
+// import LoadClothing from "./loadClothing";
 import { Link } from "react-router-dom";
 import "../../styles/navbar.scss";
 
 export const Navbar = () => {
 	const [show, setShow] = useState(false);
-
 	const handleClose = () => setShow(false);
 	const handleShow = () => setShow(true);
 	return (
@@ -30,10 +29,10 @@ export const Navbar = () => {
 						</Link>
 					</li>
 					<li>
-						<Button variant="primary" onClick={handleShow}>
+						{/* <Button variant="primary" onClick={handleShow}>
 							Add clothes
 						</Button>
-						<LoadClothing show={show} handleClose={handleClose} />
+						<LoadClothing show={show} handleClose={handleClose} /> */}
 					</li>
 				</ul>
 			</nav>

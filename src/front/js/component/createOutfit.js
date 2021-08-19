@@ -1,13 +1,16 @@
 import React, { useState, useContext } from "react";
-import CollectionSelect from "../component/ShowCollection.js";
-import AddCollection from "../component/addCollection.js";
-import { Context } from "../store/appContext";
+// import { ToastContainer, toast } from "react-toastify";
+import CollectionSelect from "./collectionSelect ";
+import AddCollection from "./addCollection.js";
 import { getActions } from "../store/flux.js";
+import { Context } from "../store/appContext";
 import Button from "react-bootstrap/Button";
+import SelectOutfitBtn from "./outfitCheck";
 import Modal from "react-bootstrap/Modal";
-import CreateOutfitBtn from "./BtnCreate";
+import CreateOutfitBtn from "./btnCreate";
 import "../../styles/createOutfit.scss";
 import Form from "react-bootstrap/Form";
+// import "../../styles/myOutfit.scss";
 import HeartButton from "./heartBtn";
 import PropTypes from "prop-types";
 
@@ -39,9 +42,9 @@ const CreateOutfit = props => {
 
 	return (
 		<Modal show={show} onHide={handleClose}>
-			<Modal.Header closeButton id="headerCreate">
+			<Modal.Header closeButton>
 				{" "}
-				Create outfit
+				<h3 id="headerCreate">Create your outfit</h3>
 			</Modal.Header>
 			<label className="pass label" />{" "}
 			<input
@@ -57,8 +60,9 @@ const CreateOutfit = props => {
 			</Button>
 			<AddCollection show={showCollection} handleClose={handleCloseCollection} />
 			{/* Aquí le tenemos que poner el props que le vamos a pasar para que se guarde en favoritos */}
-			<CollectionSelect />
+			<CollectionSelect id="selectCollection" />
 			<HeartButton id="heartBtn" />
+			<SelectOutfitBtn id="outfitCheck" />
 			<Modal.Footer>
 				<Button variant="outline-light" id="btnCreate" onClick={resetInputField}>
 					Clear

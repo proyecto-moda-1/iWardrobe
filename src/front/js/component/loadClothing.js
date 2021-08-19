@@ -4,6 +4,7 @@ import { Context } from "../store/appContext";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
+// import "../../styles/myOutfit.scss";
 import "../../styles/LoadClothing.scss";
 import PropTypes from "prop-types";
 
@@ -46,7 +47,6 @@ const LoadClothing = props => {
 				<label className="pass label" />{" "}
 				<input
 					type="text"
-					className="input-clothing"
 					id="clothingName"
 					placeholder="Clothing's Name"
 					value={name}
@@ -57,7 +57,6 @@ const LoadClothing = props => {
 				size="sm"
 				as="select"
 				id="selectClothing"
-				className="select-clothing"
 				value={category}
 				onChange={event => setCategory(event.target.value)}>
 				<option value="0">Category</option>
@@ -81,9 +80,9 @@ const LoadClothing = props => {
 	);
 };
 
+export default LoadClothing;
+
 LoadClothing.propTypes = {
 	show: PropTypes.bool,
 	handleClose: PropTypes.func
 };
-
-export default LoadClothing;

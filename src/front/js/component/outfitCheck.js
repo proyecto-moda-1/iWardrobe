@@ -2,34 +2,26 @@ import React, { Component, useState, useEffect, useContext } from "react";
 import { getActions } from "../store/flux.js";
 import { Context } from "../store/appContext";
 import { Form } from "react-bootstrap";
+import "../../styles/createOutfit.scss";
 
-export const SelectOutfitBtn = props => {
+const SelectOutfitBtn = props => {
 	const { store, actions } = useContext(Context);
 	const [checked, setChecked] = useState(false);
 	const [clean, setClean] = useState({
-		clean:{},
+		clean: {}
 	});
 
 	const handleChange = event => {
 		setChecked(event.target.checked);
 	};
 
-	useEffect(() => {
-		actions.selectOutfit(data);
-	}, []);
-
-
-	const handleChange = event => {
-		setChecked(event.target.checked);
-	};
-
-	useEffect(() => {
-		
-	}, []);
+	// useEffect(() => {
+	// 	actions.selectOutfit(data);
+	// }, []);
 
 	return (
 		<>
-			<Form.Group className="mb-3" controlId="formBasicCheckbox">
+			<Form.Group id="outfitCheck">
 				<Form.Check type="checkbox" label="This outfit" checked={checked} onChange={handleChange} />
 			</Form.Group>
 		</>

@@ -1,16 +1,15 @@
 import React, { useContext, useState, useEffect } from "react";
-import { Context } from "../store/appContext";
-import PropTypes from "prop-types";
 import CarouselClothing from "../component/CarouselClothing.js";
-import CollectionSelect from "../component/ShowCollection.js";
-import AddCollection from "../component/addCollection.js";
-import CreateOutfitBtn from "../component/BtnCreate.js";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
+import CreateOutfitBtn from "../component/btnCreate.js";
+import LoadClothing from "../component/loadClothing.js";
 import Container from "react-bootstrap/Container";
+import { Context } from "../store/appContext";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import "../../styles/SelectCategory.scss";
+import "../../styles/myOutfit.scss";
+import PropTypes from "prop-types";
 
 export const MyOutfit = props => {
 	const { store, actions } = useContext(Context);
@@ -125,7 +124,10 @@ export const MyOutfit = props => {
 						</div>
 					</Col>
 					<Col sm={true}>
-						<CollectionSelect />
+						<Button variant="primary" onClick={handleShow}>
+							Add clothes
+						</Button>
+						<LoadClothing show={show} handleClose={handleClose} />
 						<br />
 						<br />
 						<br />
@@ -139,7 +141,8 @@ export const MyOutfit = props => {
 						<br />
 						<br />
 						<br />
-						<CreateOutfitBtn />
+						<br />
+						<CreateOutfitBtn id="btnCreateOutfit" />
 					</Col>
 				</Row>
 			</Container>

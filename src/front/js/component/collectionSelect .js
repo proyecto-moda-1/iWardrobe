@@ -6,7 +6,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
-import "../../styles/showCollection.scss";
+import "../../styles/createOutfit.scss";
 
 export const CollectionSelect = props => {
 	const { store, actions } = useContext(Context);
@@ -34,7 +34,7 @@ export const CollectionSelect = props => {
 			<Form.Control
 				size="sm"
 				as="select"
-				className_="select-collection"
+				id="selectCollection"
 				defaultValue={collection}
 				onChange={event => {
 					setCollection(event.target.value);
