@@ -1,33 +1,31 @@
 import React, { Component, useState, useEffect, useContext } from "react";
 import { getActions } from "../store/flux.js";
 import { Context } from "../store/appContext";
-import Form from "react-bootstrap/Form";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+import { Form } from "react-bootstrap";
+import "../../styles/createOutfit.scss";
 
-
-export const BtnCleanOutfit = props => {
+const SelectOutfitBtn = props => {
 	const { store, actions } = useContext(Context);
 	const [checked, setChecked] = useState(false);
 	const [clean, setClean] = useState({
-		clean:{},
+		clean: {}
 	});
 
 	const handleChange = event => {
 		setChecked(event.target.checked);
 	};
 
+	// useEffect(() => {
+	// 	actions.selectOutfit(data);
+	// }, []);
+
 	return (
 		<>
-			<Form.Check
-				type="switch"
-				id="custom-switch"
-				label="Switch to clean"
-				checked={checked}
-				onChange={handleChange}
-			/>
+			<Form.Group id="outfitCheck">
+				<Form.Check type="checkbox" label="This outfit" checked={checked} onChange={handleChange} />
+			</Form.Group>
 		</>
 	);
 };
 
-export default BtnCleanOutfit;
+export default SelectOutfitBtn;

@@ -1,32 +1,88 @@
-.input-outfit{
-    font-size: 1.5rem;
-    width: 15rem;
+#headerCreate{
+    margin-left: 30px;
+}
+#outfitName{
+    margin:10px 50px 10px ;
+    width: 300px;
+    border-radius: 12px;
+    font-size: 0.90rem;
+    border-style: solid;
     border: 2px solid #9b9999;
-    border-radius: 0.5rem;
-    margin: 0 auto;
+}
+#btnAddCollection{
+    margin:10px 50px 10px ;
+    width: 300px;
+    border-radius: 12px;
+    font-size: 0.90rem;
+    color:white;
+    border: 2px solid white; 
+    background-color: rgb(29, 138, 211);
+}
+#heartBtn{
+    margin:10px 50px 10px ;
+    width: 300px;
+    border-radius: 12px;
+    font-size: 0.90rem;
+    color:white;
+    border: 2px solid white; 
+    background-color:rgba(167, 6, 6, 0.932);
+}
+//Los btns de add y fav se les tiene que dar un css que quede como los botones de bootsrap, había que ver si se les esta suporpeniendo css.
+
+#btnCreate{
+    border: 2px;
+    border-radius: 12px;
+    font-size: 14px;
+    background-color: white;
+    color: #9b9999;
+    border: 2px solid #9b9999;   
+}
+#selectCollection{
+    margin:10px 50px 10px ;
+    width: 300px;
+    border-radius: 12px;
+    font-size: 0.90rem;
+    border-style: solid;
+    border: 2px solid #9b9999;
 }
 
-
-.outfit{
-    width: 20rem;
-    height: 6rem;
-    margin-top: 2%;
-    margin-bottom: 20%;
-    margin-left: 20%;
+#collectionName{
+    width: 300px;
+    border-radius: 12px;
+    font-size: 0.90rem;
+    border-style: solid;
+    border: 2px solid #9b9999;
 }
-
-
-.close-name {
-    width: 6.5rem;
-    height: 3.2rem;
-    font-size: 1rem;
-    border-radius: 2%;
-
+.pass-label{
+    width: 15rem;
+    height: 3rem;
+}
+.group-clothing{
+    width: 15rem;
+    height: 8rem;
+}
+#btnCollection{
+    border: 2px;
+    border-radius: 12px;
+    font-size: 14px;
+    background-color: white;
+    color: #9b9999;
+    border: 2px solid #9b9999;   
+}
+#outfitCheck{
+    margin:10px 50px 10px ;
 }
   
-.save-name {
-    width: 6.5rem;
-    height: 3.2rem;
-    font-size: 1rem;
-    border-radius: 2%;
-}
+
+// //Hay que empequeñecer los botones
+
+// // .button,.btn.btn-outline-light, .save-button,.close-button { 
+// //     border: 2px;
+// //     border-radius: 12px;
+// //     font-size: 14px;
+// //     background-color: white;
+// //     color: #9b9999;
+// //     border: 2px solid #9b9999;
+// // }
+
+
