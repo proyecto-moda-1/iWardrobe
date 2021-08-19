@@ -4,6 +4,7 @@ import { Context } from "../store/appContext";
 import Form from "react-bootstrap/Form";
 import PropTypes from "prop-types";
 import "../../styles/register.scss";
+import { Link } from "react-router-dom";
 
 export const Register = function(props) {
 	const [email, setEmail] = useState("");
@@ -98,6 +99,11 @@ export const Register = function(props) {
 							value={gender}
 							onChange={event => setGender(event.target.value)}
 						/>
+					</div>
+					<div className="goToLogin">
+						<Link to="/login">
+							<a href="#">¿Ya tienes una cuenta?</a>
+						</Link>
 					</div>
 					<div className="group">
 						<button type="submit" value="button" className="button" onClick={handleRegister}>
