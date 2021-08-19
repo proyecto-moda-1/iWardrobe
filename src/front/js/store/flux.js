@@ -31,12 +31,9 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 						image: data.image,
 						repeat_password: data.repeatPassword
 					}),
-					// mode: "no-cors",
 					headers: {
 						"Content-Type": "application/json",
 						"Access-Control-Allow-Origin": "*"
-						// Authorization: `Bearer ${store.token}`,
-						// "Access-Control-Allow-Origin": "https://3001-blush-shrew-389lc8cj.ws-eu15.gitpod.io/"
 					}
 				};
 

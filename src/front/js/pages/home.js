@@ -26,7 +26,7 @@ export const Home = () => {
 					</a>
 				</div>
 			</div>
-			<div className="row">
+			{/* <div className="row">
 				<div className="col">
 					<h2 className="tittle1">Vini, vidi, vinci</h2>
 					<p className="textBody">
@@ -40,7 +40,7 @@ export const Home = () => {
 						Inspire others with your fearless fashion sense: do something that Rihanna could be proud of
 					</p>
 				</div>
-			</div>
+			</div> */}
 		</div>
 	);
 };
