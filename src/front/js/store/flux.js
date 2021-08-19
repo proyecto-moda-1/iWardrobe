@@ -14,7 +14,8 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 			name: [],
 			top: [],
 			bottom: [],
-			footwear: []
+			footwear: [],
+			favorites: []
 		},
 		actions: {
 			createUser: (data, callback) => {
@@ -273,6 +274,10 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 					.then(json => data)
 					.catch(err => console.error(err));
 			},
+			setFavorites: fav => {
+				const store = getStore();
+				setStore({ favorites: [...store.favorites, fav] });
+			},
 			selectOutfit: data => {
 				const store = getStore();
 				const endpoint = process.env.BACKEND_URL + "/api/outfit";
@@ -291,7 +296,8 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 			},
 			selectCollection: collection => {
 				setStore({ selectedCollection: collection });
-			}
+			},
+			
 		}
 	};
 };

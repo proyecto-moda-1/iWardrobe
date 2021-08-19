@@ -14,7 +14,7 @@ const HeartButton = props => {
 		<button
 			type="button"
 			className="btn-heart btn-outline-danger"
-			onClick={() => actions.setFavorites(props.name)}
+			onClick={() => actions.setFavorites(props.obj)}
 			id="heartBtn">
 			<i className="far fa-heart">
 				<p>FAVOURITES</p>
@@ -25,9 +25,5 @@ const HeartButton = props => {
 export default HeartButton;
 
 HeartButton.propTypes = {
-	url: PropTypes.string,
-	uid: PropTypes.string,
-	name: PropTypes.string,
-	next: PropTypes.string,
 	obj: PropTypes.object
 };
