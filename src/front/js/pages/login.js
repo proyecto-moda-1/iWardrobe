@@ -41,7 +41,7 @@ export const Login = function(props) {
 					</div>
 					<div className="group">
 						<input
-							type="text"
+							type="password"
 							className="input btn btn-light"
 							id="exampleFormControlInput1"
 							placeholder="password"

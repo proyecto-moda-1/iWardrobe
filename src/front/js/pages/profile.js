@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { Card } from "../component/card.js";
 import { getActions } from "../store/flux.js";
+import Button from "react-bootstrap/Button";
 
 import PropTypes from "prop-types";
 
@@ -50,7 +51,28 @@ export const Profile = () => {
 	return (
 		<div className="Body">
 			<div className="Jumbotrom">
-				<div className="container">
+				<div className="row">
+					<div className="col">
+						<Button className="btntittle">Add clothing</Button>
+						<p className="textBody">Take out your best Monicas organization skills with</p>
+					</div>
+					<div className="col">
+						<Button className="btntittle">Add Collection</Button>
+						<p className="textBody">Inspire others with your fearless fashion sense: do</p>
+					</div>
+				</div>
+				<div className="row">
+					<div className="col">
+						<Button className="btntittle">Create Outfit</Button>
+						<p className="textBody">Take out your best Monicas organization skills with</p>
+					</div>
+					<div className="col">
+						<Button className="btntittle">Closet</Button>
+						<p className="textBody">Inspire others with your fearless fashion sense: do</p>
+					</div>
+				</div>
+			</div>
+			{/* <div className="container">
 					<img
 						className="ProfileImg"
 						src="https://i.pinimg.com/originals/e1/2c/9a/e12c9a6fae995ea792910a8dff4689e7.png"
@@ -58,16 +80,15 @@ export const Profile = () => {
 					/>
 					<h1 className="Tittle1">Welcome!</h1>
 					<h3 className="text2"></h3>
+				</div> */}
+			<div className="container">
+				<div className="row">
+					<h1 className="textOufit"> OUTFITS AVAILABLES</h1>
+					<div className="favorite d-flex flex-row">{outfitCards}</div>
 				</div>
-				<div className="container">
-					<div className="row">
-						<h1 className="textOufit"> OUTFITS AVAILABLES</h1>
-						<div className="favorite d-flex flex-row">{outfitCards}</div>
-					</div>
-					<div className="row">
-						<h1 className="textDirty"> ALREADY USED </h1>
-						<div className="dirty d-flex flex-row">{dirtyClothing}</div>
-					</div>
+				<div className="row">
+					<h1 className="textDirty"> ALREADY USED </h1>
+					<div className="dirty d-flex flex-row">{dirtyClothing}</div>
 				</div>
 			</div>
 		</div>

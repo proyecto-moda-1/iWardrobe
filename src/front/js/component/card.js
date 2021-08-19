@@ -9,6 +9,11 @@ import "../../styles/card.scss";
 
 export function Card(props) {
 	console.log({ props });
+
+	// useEffect(() => {
+	// 	actions.getUserFavorite(data);
+	// }, []);
+	// let SelectOutfitBtn = [];
 	// useEffect(() => {
 	// 	actions.getUserFavorite(data);
 	// }, []);

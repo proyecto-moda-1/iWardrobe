@@ -60,7 +60,7 @@ export const Register = function(props) {
 					</div>
 					<div className="group">
 						<input
-							type="text"
+							type="password"
 							className="input btn btn-light"
 							id="exampleFormControlInput1"
 							placeholder="your password"
@@ -71,7 +71,7 @@ export const Register = function(props) {
 					<div className="group">
 						<input
 							id="pass"
-							type="text"
+							type="password"
 							className="input btn btn-light"
 							data-type="password"
 							placeholder="Repeat your password"
