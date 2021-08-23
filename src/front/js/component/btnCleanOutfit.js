@@ -14,11 +14,10 @@ export const BtnCleanOutfit = props => {
 		clean: {}
 	});
 	const handleClick = () => setChecked(!checked);
-	
+
 	// useEffect(() => {
 	// 	actions.switchClean(data, id)
 	// }, [checked])
-
 
 	return (
 		<>
@@ -41,4 +40,3 @@ BtnCleanOutfit.PropTypes = {
 	image: PropTypes.string
 };
 //Esa prop que estamos seteando, la seteamos con el valor checked, es decir, la recibimos en false y con la funcion handleclock la vamos a cambiar a true (clean) en un useEffect cada vez que cambien checked (mirar Slack) que le tenemos que pasar el data y el id. Hay que meter como prop id, desde el key={index}
- 
