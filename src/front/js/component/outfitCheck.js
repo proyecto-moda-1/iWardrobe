@@ -7,13 +7,10 @@ import "../../styles/createOutfit.scss";
 const SelectOutfitBtn = props => {
 	const { store, actions } = useContext(Context);
 	const [checked, setChecked] = useState(false);
-	const [clean, setClean] = useState({
-		clean: {}
-	});
+	const handleClick = () => setChecked(!checked);
 
-	const handleChange = event => {
-		setChecked(event.target.checked);
-	};
+
+	
 
 	// useEffect(() => {
 	// 	actions.selectOutfit(data);
@@ -22,7 +19,8 @@ const SelectOutfitBtn = props => {
 	return (
 		<>
 			<Form.Group id="outfitCheck">
-				<Form.Check type="checkbox" label="This outfit" checked={checked} onChange={handleChange} />
+				<Form.Check type="checkbox" label="This outfit" checked={checked} onClick={handleClick}
+ />
 			</Form.Group>
 		</>
 	);

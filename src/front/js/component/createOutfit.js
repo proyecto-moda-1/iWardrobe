@@ -57,7 +57,7 @@ const CreateOutfit = props => {
 			<Button id="btnAddCollection" onClick={handleShowCollection}>
 				Add new collection
 			</Button>
-			<AddCollection show={showCollection} handleClose={handleCloseCollection}/>
+			<AddCollection show={showCollection} handleClose={handleCloseCollection} />
 			{/* Aquí le tenemos que poner el props que le vamos a pasar para que se guarde en favoritos */}
 			<CollectionSelect id="selectCollection" />
 			<SelectOutfitBtn id="outfitCheck" />

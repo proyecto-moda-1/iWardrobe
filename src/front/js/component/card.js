@@ -21,6 +21,7 @@ export function Card(props) {
 						<h5 className="card-title">{clothing.name}</h5>
 						<h5 className="card-title">{clothing.image}</h5>
 						<h4 className="card-title1">{clothing.clean ? "limpio" : "sucio"}</h4>
+						<BtnCleanOutfit name={clothing.name} image={clothing.image} clothing={clothing.clean} />
 					</div>
 				</div>
 			);
@@ -37,8 +38,6 @@ export function Card(props) {
 				<button className="btn-fav btn-outline-danger" onClick={clothingCards}>
 					♡
 				</button>
-				<SelectOutfitBtn />
-				<BtnCleanOutfit />
 			</div>
 		</div>
 	);
