@@ -3,6 +3,8 @@ import { Context } from "../store/appContext";
 import { Card } from "../component/card.js";
 import { getActions } from "../store/flux.js";
 import Button from "react-bootstrap/Button";
+import { Link } from "react-router-dom";
+import LoadClothing from "../component/loadClothing";
 
 import PropTypes from "prop-types";
 
@@ -10,7 +12,9 @@ import "../../styles/profile.scss";
 
 export const Profile = () => {
 	const { store, actions } = useContext(Context);
-
+	const [show, setShow] = useState(false);
+	const handleClose = () => setShow(false);
+	const handleShow = () => setShow(true);
 	useEffect(() => {
 		actions.getAllOutfit();
 	}, []);
@@ -53,22 +57,40 @@ export const Profile = () => {
 			<div className="Jumbotrom">
 				<div className="row">
 					<div className="col">
-						<Button className="btntittle">Add clothing</Button>
-						<p className="textBody">Take out your best Monicas organization skills with</p>
+						<Button className="btnProfile" onClick={handleShow}>
+							Add clothes
+						</Button>
+						<LoadClothing show={show} handleClose={handleClose} />
+						<p className="textBody">Tomale una foto a tu ropa y subela a tu perfil </p>
 					</div>
 					<div className="col">
-						<Button className="btntittle">Add Collection</Button>
-						<p className="textBody">Inspire others with your fearless fashion sense: do</p>
+						<Link to="/closet">
+							<button className="btnProfile" href="#">
+								Add Collection
+							</button>
+						</Link>
+						<p className="textBody">Crea colecciones segun tus necesidades diarias y especiales</p>
 					</div>
 				</div>
 				<div className="row">
 					<div className="col">
-						<Button className="btntittle">Create Outfit</Button>
-						<p className="textBody">Take out your best Monicas organization skills with</p>
+						<Link to="/myOutfit">
+							<button className="btnProfile" href="#">
+								Create Outfit
+							</button>
+						</Link>
+
+						<p className="textBody">crea tus outfit diarios y guardalos para cuando necesites usarlo </p>
 					</div>
 					<div className="col">
-						<Button className="btntittle">Closet</Button>
-						<p className="textBody">Inspire others with your fearless fashion sense: do</p>
+						<Link to="/closet">
+							<button className="btnProfile" href="#">
+								Closet
+							</button>
+						</Link>
+						<p className="textBody">
+							Puedes marcar tus piezas sucias y solo mostraremos los outfits que esten limpios
+						</p>
 					</div>
 				</div>
 			</div>

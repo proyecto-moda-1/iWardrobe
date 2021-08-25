@@ -1,14 +1,30 @@
 import React, { useContext, useState, useEffect } from "react";
 import { Link, useHistory, useParams } from "react-router-dom";
+import { Context } from "../store/appContext";
 import SelectOutfitBtn from "./outfitCheck";
 import BtnCleanOutfit from "./btnCleanOutfit";
 import { Button } from "react-bootstrap";
 import PropTypes from "prop-types";
 import "../../styles/card.scss";
+import HeartBtn from "./heartBtn";
 //create your first component
+const Card = props => {
+	const [favorite, setFavorite] = useState("");
 
-export function Card(props) {
-	console.log({ props });
+	const { store, actions } = useContext(Context);
+
+	const handleFavorite = () => {
+		const data = new FormData();
+		data.append("user_id", 1);
+		data.append("favorite", favorite);
+		const callback = () => {
+			setFavorite("");
+		};
+
+		actions.favoriteBrand(data, callback);
+	};
+
+	// console.log({ props });
 
 	// useEffect(() => {
 	// 	actions.getUserFavorite(data);
@@ -42,16 +58,17 @@ export function Card(props) {
 				<a className="card-title">{props.image}</a>
 				<h5 className="card-title">{clothingCards}</h5>
 				<div className="cardInfo">
-					<button className="btn-fav btn-outline-danger" onClick={clothingCards}>
+					<button className="btn-fav btn-outline-danger" onClick={handleFavorite}>
 						♡
 					</button>
-					<SelectOutfitBtn />
-					{/* <BtnCleanOutfit /> */}
+					<BtnCleanOutfit />
 				</div>
 			</div>
 		</div>
 	);
-}
+};
+
+export default Card;
 
 Card.propTypes = {
 	collections: PropTypes.string,

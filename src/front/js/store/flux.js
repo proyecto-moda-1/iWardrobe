@@ -137,7 +137,7 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 
 			favoriteBrand: data => {
 				const store = getStore();
-				const endpoint = process.env.BACKEND_URL + "/api/users/outfits/<outfit_id>/favorite";
+				const endpoint = `${process.env.BACKEND_URL}/api/users/outfits/${category}/favorite`;
 				const config = {
 					method: "PUT",
 					body: JSON.stringify({
@@ -151,10 +151,12 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 				};
 				fetch(endpoint, config)
 					.then(response => {
-						setFavorite("");
-						return response.json();
+						setStore({
+							favorite: response.favorite
+						});
+						console.log(favorite);
+						callback();
 					})
-					.then(json => setFavorite(json.favorite))
 					.catch(err => console.error(err));
 			},
 
