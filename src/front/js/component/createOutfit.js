@@ -61,7 +61,6 @@ const CreateOutfit = props => {
 			<AddCollection show={showCollection} handleClose={handleCloseCollection} />
 			{/* Aquí le tenemos que poner el props que le vamos a pasar para que se guarde en favoritos */}
 			<CollectionSelect id="selectCollection" />
-			<HeartButton id="heartBtn" />
 			<SelectOutfitBtn id="outfitCheck" />
 			<Modal.Footer>
 				<Button variant="outline-light" id="btnCreate" onClick={resetInputField}>

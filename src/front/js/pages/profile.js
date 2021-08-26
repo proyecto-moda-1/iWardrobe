@@ -94,15 +94,6 @@ export const Profile = () => {
 					</div>
 				</div>
 			</div>
-			{/* <div className="container">
-					<img
-						className="ProfileImg"
-						src="https://i.pinimg.com/originals/e1/2c/9a/e12c9a6fae995ea792910a8dff4689e7.png"
-						alt="imgFond"
-					/>
-					<h1 className="Tittle1">Welcome!</h1>
-					<h3 className="text2"></h3>
-				</div> */}
 			<div className="container">
 				<div className="row">
 					<h1 className="textOufit"> OUTFITS AVAILABLES</h1>

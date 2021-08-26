@@ -40,6 +40,7 @@
       margin-left: 15%;
       margin-right: 4%;
       margin-top: 8%;
+
 }
 
 .textOufit{
@@ -52,3 +53,21 @@
       margin-top: 2%;
       margin-bottom: 25%;
 }
+.btnProfile{
+      font-size: 1.5rem;
+      width: 25%;
+      left: 5%;
+      padding-top: 0.5rem;
+      padding-bottom: 0.4rem;
+      background-color:rgba(223, 166, 216, 0.966);
+    color:  rgba(10, 11, 14, 0.644);
+    border-radius: 0.5rem;
+    cursor: pointer;
+  }
+  .btnProfile:hover{
+      background-color: #0981e452;
+        color: black;
+        border-color: black;
+    }
+
+   
