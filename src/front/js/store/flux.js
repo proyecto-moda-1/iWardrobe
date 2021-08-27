@@ -12,6 +12,7 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 			outfit: {},
 			collections: [],
 			selectedCollection: {},
+			selectedOutfits: [],
 			name: [],
 			top: [],
 			bottom: [],

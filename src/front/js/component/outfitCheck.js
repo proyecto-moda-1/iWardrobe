@@ -8,13 +8,13 @@ const SelectOutfitBtn = props => {
 	const { store, actions } = useContext(Context);
 	const [checked, setChecked] = useState(false);
 	const [outfit, setOutfit] = useState({
-		outfit: {}
+		selectedOutfits: {}
 	});
 	const handleClick = () => setChecked(!checked);
 
 	// useEffect(() => {
-	// 	actions.selectOutfit(data);
-	// }, []);
+	// 	actions.selectOutfit(data, id);
+	// }, [checked]);
 
 	return (
 		<>
