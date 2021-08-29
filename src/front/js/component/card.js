@@ -1,14 +1,23 @@
 import React, { useContext, useState, useEffect } from "react";
 import { Link, useHistory, useParams } from "react-router-dom";
+import { Context } from "../store/appContext";
 import SelectOutfitBtn from "./outfitCheck";
 import BtnCleanOutfit from "./btnCleanOutfit";
 import { Button } from "react-bootstrap";
 import PropTypes from "prop-types";
 import "../../styles/card.scss";
+import HeartBtn from "./heartBtn";
 //create your first component
+const Card = props => {
+	const [favorite, setFavorite] = useState("");
 
-export function Card(props) {
-	console.log({ props });
+	const { store, actions } = useContext(Context);
+
+	function handleFavorite(id) {
+		actions.favoriteBrand(id);
+	}
+
+	// console.log({ props });
 
 	// useEffect(() => {
 	// 	actions.getUserFavorite(data);
@@ -21,17 +30,18 @@ export function Card(props) {
 	if (props.clothing != undefined) {
 		clothingCards = props.clothing.map((clothing, index) => {
 			return (
-				<div key={index} className="card border-secondary mb-3">
-					<div className="card-body text-secondary">
-						<h5 className="card-title">{clothing.name}</h5>
-						<h5 className="card-title">{clothing.image}</h5>
-						<h4 className="card-title1">{clothing.clean ? "limpio" : "sucio"}</h4>
-						<BtnCleanOutfit
+				<div key={index} className="cardClothing">
+					<div className="cardBody">
+						<h5 className="cardName">{clothing.name}</h5>
+						<img className="cardImg">{clothing.image}</img>
+						<h4 className="cardClean">
+							{clothing.clean ? "limpio" : "sucio"} <BtnCleanOutfit
 							name={clothing.name}
 							image={clothing.image}
 							clothing={clothing.clean}
 							key={index}
 						/>
+						</h4>
 					</div>
 				</div>
 			);
@@ -39,27 +49,33 @@ export function Card(props) {
 	}
 
 	return (
-		<div className="card border-secondary mb-3">
-			<div className="card-header">{props.collections}</div>
+		<div className="cardOutfit">
+			<div className="cardCollections">{props.collections}</div>
 			<div className="card-body text-secondary">
 				<h5 className="card-title">{props.name}</h5>
-				<h5 className="card-title">{props.image}</h5>
+				<img className="card-title">{props.image}</img>
 				<h5 className="card-title">{clothingCards}</h5>
-				<button className="btn-fav btn-outline-danger" onClick={clothingCards}>
-					♡
-				</button>
+				<div className="cardInfo">
+					<button className="btn-fav btn-outline-danger" onClick={handleFavorite(props.id)}>
+						♡
+					</button>
+					<BtnCleanOutfit />
+				</div>
 			</div>
 			<BtnCleanOutfit />
 			<SelectOutfitBtn id="outfitCheck" name={props.name} />
 		</div>
 	);
-}
+};
+
+export default Card;
 
 Card.propTypes = {
+	id: PropTypes.int,
 	collections: PropTypes.string,
 	name: PropTypes.string,
 	clothing: PropTypes.array,
 	outfit: PropTypes.array,
 	image: PropTypes.string,
-	favorite: PropTypes.string
+	favorite: PropTypes.bool
 };

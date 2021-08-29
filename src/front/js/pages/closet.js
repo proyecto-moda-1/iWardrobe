@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import { Context } from "../store/appContext";
-import { Card } from "../component/card.js";
+import Card from "../component/card.js";
 import { CollectionDropdown } from "../component/collectionDropdown.js";
 import { getActions } from "../store/flux.js";
 
@@ -23,6 +23,7 @@ export const Closet = () => {
 			return (
 				<Card
 					name={favorite.name}
+					id={favorite.id}
 					collections={favorite.collections}
 					image={favorite.image}
 					clothing={favorite.clothing}
@@ -34,21 +35,23 @@ export const Closet = () => {
 	}
 	return (
 		<div className="container">
-			<h1 className="display-4">Your closet</h1>
+			<h1 className="tittleCloset">Your Closet</h1>
 			<p className="lead">Dress for every ocassion</p>
 			<div className="my-4">
 				<div className="row">
+					<h1 className="favouritesText">- FAVOURITES</h1>
+					<div className="planet d-flex flex-row">{favoriteCards}</div>
+				</div>
+				<div className="row">
 					<div className="col-xs-3">
-						<h1 className="text"> COLLECTIONS</h1>
-						<CollectionDropdown />
+						<h1 className="collectionsText">- COLLECTIONS</h1>
+						<div className="collectionDropdown">
+							<CollectionDropdown />
+						</div>
 					</div>
 					{/* <div className="col-xs-9">
 						<div className="collectionOutfit d-flex flex-row">{outfitsByCategory}</div>
 					</div> */}
-				</div>
-				<div className="row">
-					<h1 className="text">FAVOURITES</h1>
-					<div className="planet d-flex flex-row">{favoriteCards}</div>
 				</div>
 				<div className="row">
 					<h1 className="text">{store.selectedCollection.name}</h1>

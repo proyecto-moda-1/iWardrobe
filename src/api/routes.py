@@ -241,16 +241,18 @@ def favorite_brand(outfit_id):
 
     user_email = get_jwt_identity()
     user= User.get_user_by_email(user_email)
-    outfit= Outfit.query.by(outfit_user_id=user.id, id=outfit_id).first()
+    outfit= Outfit.query.filter_by(outfit_user_id=user.id, id=outfit_id).first()
 
 
-    payload= request.get_json()
-    favorite= ['favorite']
-    print(favorite)
-    outfit.favorite= favorite
+    # payload= request.get_json()
+    print("aqui empezamos")
+    print(outfit.favorite)
+
+    outfit.favorite= not outfit.favorite
+    print(outfit.favorite)
 
     db.session.commit()
-    return jsonify(outfit.serialize ), 200 
+    return "fav updated", 200 
 
 
 @api.route('/users/outfits/favorite', methods=['GET'])

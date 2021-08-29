@@ -36,9 +36,7 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 					}),
 					headers: {
 						"Content-Type": "application/json",
-						// "Access-Control-Allow-Origin": "*"
-						Authorization: `Bearer ${store.token}`,
-						"Access-Control-Allow-Origin": "https://3001-blush-shrew-389lc8cj.ws-eu15.gitpod.io/"
+						"Access-Control-Allow-Origin": "*"
 					}
 				};
 
@@ -156,14 +154,11 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 					.then(json => data)
 					.catch(err => console.error(err));
 			},
-			favoriteBrand: data => {
+			favoriteBrand: id => {
 				const store = getStore();
-				const endpoint = process.env.BACKEND_URL + "/api/users/outfits/<outfit_id>/favorite";
+				const endpoint = `${process.env.BACKEND_URL}/api/users/outfits/${id}/favorite`;
 				const config = {
 					method: "PUT",
-					body: JSON.stringify({
-						favorite: data.favorite
-					}),
 					headers: {
 						"Content-Type": "application/json",
 						Authorization: `Bearer ${store.token}`,
@@ -172,10 +167,12 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 				};
 				fetch(endpoint, config)
 					.then(response => {
-						setFavorite("");
-						return response.json();
+						setStore({
+							favorite: response.favorite
+						});
+						console.log(favorite);
+						callback();
 					})
-					.then(json => setFavorite(json.favorite))
 					.catch(err => console.error(err));
 			},
 

@@ -79,27 +79,21 @@ export const Register = function(props) {
 							onChange={event => setRepeatPassword(event.target.value)}
 						/>
 					</div>
-					<Form.Control
-						id="genderSelect"
-						as="select"
-						size="sm"
-						value={gender}
-						onChange={event => setGender(event.target.value)}>
-						<option value="0">Gender</option>
-						<option value="female">Female</option>
-						<option value="male">Male</option>
-						<option value="nonbinary"> Non binary</option>
-					</Form.Control>
-					{/* <div className="group">
-						<input
-							id="pass"
-							type="text"
-							className="input btn btn-light"
-							placeholder="Gender"
+					<div className="group">
+						<Form.Control
+							className="genderDrop"
+							id="genderSelect"
+							as="select"
+							size="sm"
 							value={gender}
-							onChange={event => setGender(event.target.value)}
-						/>
-					</div> */}
+							onChange={event => setGender(event.target.value)}>
+							<option value="0">Gender</option>
+							<option value="female">Female</option>
+							<option value="male">Male</option>
+							<option value="nonbinary"> Non binary</option>
+						</Form.Control>
+					</div>
+
 					<div className="goToLogin">
 						<Link to="/login">
 							<a href="#">¿Ya tienes una cuenta?</a>
