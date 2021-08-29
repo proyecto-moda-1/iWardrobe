@@ -135,14 +135,11 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 					});
 			},
 
-			favoriteBrand: data => {
+			favoriteBrand: id => {
 				const store = getStore();
-				const endpoint = `${process.env.BACKEND_URL}/api/users/outfits/${category}/favorite`;
+				const endpoint = `${process.env.BACKEND_URL}/api/users/outfits/${id}/favorite`;
 				const config = {
 					method: "PUT",
-					body: JSON.stringify({
-						favorite: data.favorite
-					}),
 					headers: {
 						"Content-Type": "application/json",
 						Authorization: `Bearer ${store.token}`,

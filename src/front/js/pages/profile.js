@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import { Context } from "../store/appContext";
-import { Card } from "../component/card.js";
+import Card from "../component/card.js";
 import { getActions } from "../store/flux.js";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
@@ -28,6 +28,7 @@ export const Profile = () => {
 				return (
 					<Card
 						name={outfit.name}
+						id={outfit.id}
 						collections={outfit.collections}
 						image={outfit.image}
 						clothing={outfit.clothing}
@@ -42,6 +43,7 @@ export const Profile = () => {
 				return (
 					<Card
 						name={outfit.name}
+						id={outfit.id}
 						collections={outfit.collections}
 						image={outfit.image}
 						clothing={outfit.clothing}

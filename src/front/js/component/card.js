@@ -13,16 +13,9 @@ const Card = props => {
 
 	const { store, actions } = useContext(Context);
 
-	const handleFavorite = () => {
-		const data = new FormData();
-		data.append("user_id", 1);
-		data.append("favorite", favorite);
-		const callback = () => {
-			setFavorite("");
-		};
-
-		actions.favoriteBrand(data, callback);
-	};
+	function handleFavorite(id) {
+		actions.favoriteBrand(id);
+	}
 
 	// console.log({ props });
 
@@ -40,7 +33,7 @@ const Card = props => {
 				<div key={index} className="cardClothing">
 					<div className="cardBody">
 						<h5 className="cardName">{clothing.name}</h5>
-						<a className="cardImg">{clothing.image}</a>
+						<img className="cardImg">{clothing.image}</img>
 						<h4 className="cardClean">
 							{clothing.clean ? "limpio" : "sucio"} <BtnCleanOutfit />
 						</h4>
@@ -55,10 +48,10 @@ const Card = props => {
 			<div className="cardCollections">{props.collections}</div>
 			<div className="card-body text-secondary">
 				<h5 className="card-title">{props.name}</h5>
-				<a className="card-title">{props.image}</a>
+				<img className="card-title">{props.image}</img>
 				<h5 className="card-title">{clothingCards}</h5>
 				<div className="cardInfo">
-					<button className="btn-fav btn-outline-danger" onClick={handleFavorite}>
+					<button className="btn-fav btn-outline-danger" onClick={handleFavorite(props.id)}>
 						♡
 					</button>
 					<BtnCleanOutfit />
@@ -71,9 +64,10 @@ const Card = props => {
 export default Card;
 
 Card.propTypes = {
+	id: PropTypes.int,
 	collections: PropTypes.string,
 	name: PropTypes.string,
 	clothing: PropTypes.array,
 	image: PropTypes.string,
-	favorite: PropTypes.string
+	favorite: PropTypes.bool
 };

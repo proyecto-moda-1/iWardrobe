@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import { Context } from "../store/appContext";
-import { Card } from "../component/card.js";
+import Card from "../component/card.js";
 import { CollectionDropdown } from "../component/collectionDropdown.js";
 import { getActions } from "../store/flux.js";
 
@@ -23,6 +23,7 @@ export const Closet = () => {
 			return (
 				<Card
 					name={favorite.name}
+					id={favorite.id}
 					collections={favorite.collections}
 					image={favorite.image}
 					clothing={favorite.clothing}
