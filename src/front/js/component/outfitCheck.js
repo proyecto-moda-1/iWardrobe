@@ -11,6 +11,7 @@ const SelectOutfitBtn = props => {
 		selectedOutfits: {}
 	});
 	const handleClick = () => setChecked(!checked);
+	// if{nombre de la variable ==== true}
 
 	// useEffect(() => {
 	// 	actions.selectOutfit(data, id);

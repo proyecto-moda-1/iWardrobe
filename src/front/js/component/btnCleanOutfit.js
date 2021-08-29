@@ -15,9 +15,9 @@ export const BtnCleanOutfit = props => {
 	});
 	const handleClick = () => setChecked(!checked);
 
-	useEffect(() => {
-		actions.switchClean(data, id);
-	}, [checked]);
+	// useEffect(() => {
+	// 	actions.switchClean(data, id);
+	// }, [checked]);
 
 	return (
 		<>

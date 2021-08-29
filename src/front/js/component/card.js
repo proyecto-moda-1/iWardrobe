@@ -44,6 +44,8 @@ export function Card(props) {
 					♡
 				</button>
 			</div>
+			<BtnCleanOutfit />
+			<SelectOutfitBtn id="outfitCheck" name={props.name} />
 		</div>
 	);
 }
