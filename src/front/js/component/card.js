@@ -44,7 +44,6 @@ export function Card(props) {
 					♡
 				</button>
 			</div>
-			<SelectOutfitBtn name={props.name} />
 		</div>
 	);
 }
