@@ -11,7 +11,6 @@ import CreateOutfitBtn from "./btnCreate";
 import "../../styles/createOutfit.scss";
 import Form from "react-bootstrap/Form";
 // import "../../styles/myOutfit.scss";
-import HeartButton from "./heartBtn";
 import PropTypes from "prop-types";
 
 const CreateOutfit = props => {
@@ -59,9 +58,8 @@ const CreateOutfit = props => {
 				Add new collection
 			</Button>
 			<AddCollection show={showCollection} handleClose={handleCloseCollection} />
-			{/* Aquí le tenemos que poner el props que le vamos a pasar para que se guarde en favoritos */}
 			<CollectionSelect id="selectCollection" />
-			<SelectOutfitBtn id="outfitCheck" />
+			<SelectOutfitBtn id="outfitCheck" name={props.name} />
 			<Modal.Footer>
 				<Button variant="outline-light" id="btnCreate" onClick={resetInputField}>
 					Clear
@@ -81,5 +79,6 @@ export default CreateOutfit;
 
 CreateOutfit.propTypes = {
 	show: PropTypes.bool,
-	handleClose: PropTypes.func
+	handleClose: PropTypes.func,
+	name: PropTypes.string
 };

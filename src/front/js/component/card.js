@@ -35,7 +35,12 @@ const Card = props => {
 						<h5 className="cardName">{clothing.name}</h5>
 						<img className="cardImg">{clothing.image}</img>
 						<h4 className="cardClean">
-							{clothing.clean ? "limpio" : "sucio"} <BtnCleanOutfit />
+							{clothing.clean ? "limpio" : "sucio"} <BtnCleanOutfit
+							name={clothing.name}
+							image={clothing.image}
+							clothing={clothing.clean}
+							key={index}
+						/>
 						</h4>
 					</div>
 				</div>
@@ -57,6 +62,8 @@ const Card = props => {
 					<BtnCleanOutfit />
 				</div>
 			</div>
+			<BtnCleanOutfit />
+			<SelectOutfitBtn id="outfitCheck" name={props.name} />
 		</div>
 	);
 };
@@ -68,6 +75,7 @@ Card.propTypes = {
 	collections: PropTypes.string,
 	name: PropTypes.string,
 	clothing: PropTypes.array,
+	outfit: PropTypes.array,
 	image: PropTypes.string,
 	favorite: PropTypes.bool
 };

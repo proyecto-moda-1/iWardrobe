@@ -9,12 +9,15 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 			profile: [],
 			clothing_items: [],
 			collection_outfit: [],
+			outfit: {},
 			collections: [],
 			selectedCollection: {},
+			selectedOutfits: [],
 			name: [],
 			top: [],
 			bottom: [],
 			footwear: [],
+			clean: [],
 			favorite: {}
 		},
 		actions: {
@@ -134,7 +137,23 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 						setStore({ outfits: json });
 					});
 			},
+			swicthClean: (data, id) => {
+				const store = getStore();
+				const endpoint = process.env.BACKEND_URL + `/api/clothing?id=${id}`;
+				const config = {
+					method: "PUT",
+					body: JSON.stringify(data),
+					headers: {
+						"Content-Type": "application/json",
+						Authorization: `Bearer ${store.token}`
+					}
+				};
 
+				fetch(endpoint, config)
+					.then(response => response.json())
+					.then(json => data)
+					.catch(err => console.error(err));
+			},
 			favoriteBrand: id => {
 				const store = getStore();
 				const endpoint = `${process.env.BACKEND_URL}/api/users/outfits/${id}/favorite`;
@@ -255,38 +274,27 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 					.then(response => response.json())
 					.catch(err => console.error(err));
 			},
-			getClean: data => {
+
+			setFavorites: fav => {
 				const store = getStore();
-				const endpoint = process.env.BACKEND_URL + "/api/clothing";
-				const config = {
-					method: "POST",
-					body: JSON.stringify(data),
-					headers: {
-						"Content-Type": "application/json",
-						Authorization: `Bearer ${store.token}`
-					}
-				};
-				fetch(endpoint, config)
-					.then(response => response.json())
-					.then(json => data)
-					.catch(err => console.error(err));
+				setStore({ favorites: [...store.favorites, fav] });
 			},
-			selectOutfit: data => {
-				const store = getStore();
-				const endpoint = process.env.BACKEND_URL + "/api/outfit";
-				const config = {
-					method: "PUT",
-					body: JSON.stringify(data),
-					headers: {
-						"Content-Type": "application/json",
-						Authorization: `Bearer ${store.token}`
-					}
-				};
-				fetch(endpoint, config)
-					.then(response => response.json())
-					.then(json => data)
-					.catch(err => console.error(err));
-			},
+			// selectOutfit: data => {
+			// 	const store = getStore();
+			// 	const endpoint = process.env.BACKEND_URL + `/api/outfit?id=${id}`;
+			// 	const config = {
+			// 		method: "PUT",
+			// 		body: JSON.stringify(data),
+			// 		headers: {
+			// 			"Content-Type": "application/json",
+			// 			Authorization: `Bearer ${store.token}`
+			// 		}
+			// 	};
+			// 	fetch(endpoint, config)
+			// 		.then(response => response.json())
+			// 		.then(json => data)
+			// 		.catch(err => console.error(err));
+			// },
 			selectCollection: collection => {
 				setStore({ selectedCollection: collection });
 			}
