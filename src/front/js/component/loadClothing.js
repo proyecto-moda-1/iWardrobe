@@ -7,6 +7,9 @@ import Form from "react-bootstrap/Form";
 // import "../../styles/myOutfit.scss";
 import "../../styles/LoadClothing.scss";
 import PropTypes from "prop-types";
+import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
+toast.configure();
 
 const LoadClothing = props => {
 	const { show, handleClose } = props;
@@ -14,6 +17,7 @@ const LoadClothing = props => {
 	const [image, setImage] = useState(null);
 	const [category, setCategory] = useState("");
 	const { store, actions } = useContext(Context);
+	const notify = () => toast("Upload clothing!");
 
 	const handleSubmit = () => {
 		const data = new FormData();
@@ -31,7 +35,6 @@ const LoadClothing = props => {
 	const handleUserInput = e => {
 		setInputValue(e.target.value);
 	};
-	//for reset the inputs
 	const resetInputField = () => {
 		setName("");
 		setCategory("0");
@@ -66,11 +69,15 @@ const LoadClothing = props => {
 			</Form.Control>
 			<input className="selectArch" type="file" onChange={e => setImage(e.target.files)} />
 			<Modal.Footer>
-				<Button variant="outline-light" id="btnClothing" onClick={handleSubmit}>
+				<Button
+					variant="outline-light"
+					id="btnClothing"
+					onClick={() => {
+						handleSubmit();
+						resetInputField();
+						notify();
+					}}>
 					Save
-				</Button>
-				<Button className="close-button" id="btnClothing" onClick={resetInputField}>
-					Clear
 				</Button>
 				<Button type="submit" id="btnClothing" value="button" onClick={handleClose}>
 					Close
