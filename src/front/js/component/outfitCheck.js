@@ -20,7 +20,7 @@ const SelectOutfitBtn = props => {
 	return (
 		<>
 			<Form.Group id="outfitCheck">
-				<Form.Check type="checkbox" label="This outfit" checked={checked} onClick={handleClick} />
+				<Form.Check type="checkbox" label="Use today" checked={checked} onClick={handleClick} />
 			</Form.Group>
 		</>
 	);

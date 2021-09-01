@@ -11,10 +11,9 @@ toast.configure();
 
 const AddCollection = props => {
 	const { store, actions } = useContext(Context);
-	const notify = () => toast("Saved collection!");
 	const { show, handleClose } = props;
 	const [name, setName] = useState("");
-
+	const notify = () => toast("Saved collection!");
 	const handleSubmit = () => {
 		const data = {
 			collection_user_id: 1,
@@ -28,11 +27,6 @@ const AddCollection = props => {
 	const resetInputField = () => {
 		setName("");
 	};
-	function notifyMe() {
-		const notify = () => {
-			toast("Saved creation!", { position: toast.POSITION.TOP_CENTER });
-		};
-	}
 
 	return (
 		<Modal show={show} onHide={handleClose}>
@@ -51,15 +45,6 @@ const AddCollection = props => {
 				/>{" "}
 			</div>
 			<Modal.Footer>
-				{/* <Button
-					variant="outline-light"
-					id="btnCollection"
-					onClick={() => {
-						resetInputField();
-						notify();
-					}}>
-					Clear
-				</Button> */}
 				<Button
 					type="submit"
 					id="btnCollection"
