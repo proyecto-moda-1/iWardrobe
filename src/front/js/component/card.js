@@ -6,8 +6,7 @@ import BtnCleanOutfit from "./btnCleanOutfit";
 import { Button } from "react-bootstrap";
 import PropTypes from "prop-types";
 import "../../styles/card.scss";
-import HeartBtn from "./heartBtn";
-//create your first component
+
 const Card = props => {
 	const [favorite, setFavorite] = useState("");
 
@@ -17,15 +16,6 @@ const Card = props => {
 		actions.favoriteBrand(id);
 	}
 
-	// console.log({ props });
-
-	// useEffect(() => {
-	// 	actions.getUserFavorite(data);
-	// }, []);
-	// let SelectOutfitBtn = [];
-	// useEffect(() => {
-	// 	actions.getUserFavorite(data);
-	// }, []);
 	let clothingCards = [];
 	if (props.clothing != undefined) {
 		clothingCards = props.clothing.map((clothing, index) => {
@@ -35,12 +25,13 @@ const Card = props => {
 						<h5 className="cardName">{clothing.name}</h5>
 						<img className="cardImg">{clothing.image}</img>
 						<h4 className="cardClean">
-							{clothing.clean ? "limpio" : "sucio"} <BtnCleanOutfit
-							name={clothing.name}
-							image={clothing.image}
-							clothing={clothing.clean}
-							key={index}
-						/>
+							{clothing.clean ? "limpio" : "sucio"}{" "}
+							<BtnCleanOutfit
+								name={clothing.name}
+								image={clothing.image}
+								clothing={clothing.clean}
+								key={index}
+							/>
 						</h4>
 					</div>
 				</div>
@@ -59,11 +50,10 @@ const Card = props => {
 					<button className="btn-fav btn-outline-danger" onClick={handleFavorite(props.id)}>
 						♡
 					</button>
-					<BtnCleanOutfit />
 				</div>
 			</div>
 			<BtnCleanOutfit />
-			<SelectOutfitBtn id="outfitCheck" name={props.name} />
+			<SelectOutfitBtn id="outfitCheck" />
 		</div>
 	);
 };
