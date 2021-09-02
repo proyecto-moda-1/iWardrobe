@@ -14,6 +14,7 @@ export const Closet = () => {
 	useEffect(() => {
 		actions.getUserFavorite();
 	}, []);
+
 	let favoriteCards = [];
 	const collectionOutfits =
 		store.selectedCollection.outfits &&
@@ -49,17 +50,10 @@ export const Closet = () => {
 							<CollectionDropdown />
 						</div>
 					</div>
-					{/* <div className="col-xs-9">
-						<div className="collectionOutfit d-flex flex-row">{outfitsByCategory}</div>
-					</div> */}
 				</div>
 				<div className="row">
 					<h1 className="text">{store.selectedCollection.name}</h1>
 					<div className="planet d-flex flex-row">{collectionOutfits}</div>
-				</div>
-				<div className="row">
-					<h1 className="text">USADOS HOY</h1>
-					<div className="planet d-flex flex-row"></div>
 				</div>
 			</div>
 		</div>

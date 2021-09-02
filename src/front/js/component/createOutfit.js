@@ -1,16 +1,14 @@
 import React, { useState, useContext } from "react";
-// import { ToastContainer, toast } from "react-toastify";
 import CollectionSelect from "./collectionSelect ";
 import AddCollection from "./addCollection.js";
 import { getActions } from "../store/flux.js";
 import { Context } from "../store/appContext";
 import Button from "react-bootstrap/Button";
-import SelectOutfitBtn from "./outfitCheck";
+import SelectOutfitBtn from "./selectOutfitBtn";
 import Modal from "react-bootstrap/Modal";
 import CreateOutfitBtn from "./btnCreate";
 import "../../styles/createOutfit.scss";
 import Form from "react-bootstrap/Form";
-// import "../../styles/myOutfit.scss";
 import PropTypes from "prop-types";
 import "react-toastify/dist/ReactToastify.css";
 import { toast } from "react-toastify";
@@ -26,7 +24,6 @@ const CreateOutfit = props => {
 	const handleShowCollection = () => setShowCollection(true);
 
 	const { store, actions } = useContext(Context);
-
 	const handleSubmit = () => {
 		const data = {
 			outfit_user_id: 1,
@@ -40,7 +37,6 @@ const CreateOutfit = props => {
 	const resetInputField = () => {
 		setName("");
 	};
-
 	return (
 		<Modal show={show} onHide={handleClose}>
 			<Modal.Header closeButton>
@@ -70,12 +66,13 @@ const CreateOutfit = props => {
 						handleSubmit();
 						resetInputField();
 						notify();
+						handleClose();
 					}}>
-					Save creation
+					Save creation!
 				</Button>
-				<Button type="submit" id="btnCreate" value="button" onClick={handleClose}>
+				{/* <Button type="submit" id="btnCreate" value="button" onClick={handleClose}>
 					Close
-				</Button>
+				</Button> */}
 			</Modal.Footer>
 		</Modal>
 	);

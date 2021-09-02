@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import { Link, useHistory, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
-import SelectOutfitBtn from "./outfitCheck";
+import SelectOutfitBtn from "./selectOutfitBtn";
 import BtnCleanOutfit from "./btnCleanOutfit";
 import { Button } from "react-bootstrap";
 import PropTypes from "prop-types";
@@ -12,9 +12,9 @@ const Card = props => {
 
 	const { store, actions } = useContext(Context);
 
-	function handleFavorite(id) {
-		actions.favoriteBrand(id);
-	}
+	// function handleFavorite(id) {
+	// 	actions.favoriteBrand(id);
+	// }
 
 	let clothingCards = [];
 	if (props.clothing != undefined) {
@@ -26,12 +26,12 @@ const Card = props => {
 						<img className="cardImg">{clothing.image}</img>
 						<h4 className="cardClean">
 							{clothing.clean ? "limpio" : "sucio"}{" "}
-							<BtnCleanOutfit
+							{/* <BtnCleanOutfit
 								name={clothing.name}
 								image={clothing.image}
 								clothing={clothing.clean}
 								key={index}
-							/>
+							/> */}
 						</h4>
 					</div>
 				</div>
@@ -47,13 +47,13 @@ const Card = props => {
 				<img className="card-title">{props.image}</img>
 				<h5 className="card-title">{clothingCards}</h5>
 				<div className="cardInfo">
-					<button className="btn-fav btn-outline-danger" onClick={handleFavorite(props.id)}>
+					{/* <button className="btn-fav btn-outline-danger" onClick={handleFavorite(props.id)}>
 						♡
-					</button>
+					</button> */}
 				</div>
 			</div>
-			<BtnCleanOutfit />
-			<SelectOutfitBtn id="outfitCheck" />
+			{/* <BtnCleanOutfit />
+			<SelectOutfitBtn id="outfitCheck" /> */}
 		</div>
 	);
 };

@@ -170,7 +170,6 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 						setStore({
 							favorite: response.favorite
 						});
-						console.log(favorite);
 						callback();
 					})
 					.catch(err => console.error(err));
@@ -236,7 +235,6 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 				fetch(endpoint, config)
 					.then(response => response.json())
 					.then(data => {
-						console.log(data);
 						setStore({ [category]: data });
 					})
 					.catch(err => console.error(err));
