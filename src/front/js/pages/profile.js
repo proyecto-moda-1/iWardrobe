@@ -6,8 +6,6 @@ import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import LoadClothing from "../component/loadClothing";
 
-import PropTypes from "prop-types";
-
 import "../../styles/profile.scss";
 
 export const Profile = () => {
@@ -62,7 +60,7 @@ export const Profile = () => {
 						<Button className="btnProfile" onClick={handleShow}>
 							Add clothes
 						</Button>
-						<LoadClothing show={show} handleClose={handleClose} />
+						<LoadClothing id="btnClothes" show={show} handleClose={handleClose} />
 						<p className="textBody">Tomale una foto a tu ropa y subela a tu perfil </p>
 					</div>
 					<div className="col">
