@@ -52,7 +52,6 @@ const Card = props => {
 					</button>
 				</div>
 			</div>
-			<BtnCleanOutfit />
 			<SelectOutfitBtn id="outfitCheck" />
 		</div>
 	);

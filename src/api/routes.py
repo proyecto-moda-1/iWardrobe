@@ -242,14 +242,11 @@ def favorite_brand(outfit_id):
     user_email = get_jwt_identity()
     user= User.get_user_by_email(user_email)
     outfit= Outfit.query.filter_by(outfit_user_id=user.id, id=outfit_id).first()
-
-
     # payload= request.get_json()
-    print("aqui empezamos")
-    print(outfit.favorite)
-
+    # print("aqui empezamos")
+    # print(outfit.favorite)
     outfit.favorite= not outfit.favorite
-    print(outfit.favorite)
+    # print(outfit.favorite)
 
     db.session.commit()
     return "fav updated", 200 
