@@ -11,6 +11,10 @@ import "../../styles/closet.scss";
 export const Closet = () => {
 	const { store, actions } = useContext(Context);
 
+	function handleFavorite(id) {
+		actions.favoriteBrand(id);
+	}
+
 	useEffect(() => {
 		actions.getUserFavorite();
 	}, []);
@@ -29,37 +33,35 @@ export const Closet = () => {
 					clothing={favorite.clothing}
 					favorite={favorite.favorite}
 					key={index}
+					markAsFavorite={handleFavorite}
 				/>
 			);
 		});
 	}
 	return (
-		<div className="container">
+		<div className="containerCloset">
 			<h1 className="tittleCloset">Your Closet</h1>
-			<p className="lead">Dress for every ocassion</p>
-			<div className="my-4">
+			<p className="leadCloset">Dress for every ocassion</p>
+			<div className="clothingUsed">
+				<div className="row">
+					<h1 className="todayCloset">- USADOS HOY</h1>
+					<div className="planet d-flex flex-row"></div>
+				</div>
+			</div>
+			<div className="clothingFavs">
 				<div className="row">
 					<h1 className="favouritesText">- FAVOURITES</h1>
 					<div className="planet d-flex flex-row">{favoriteCards}</div>
 				</div>
+			</div>
+			<div className="clothingCollections">
 				<div className="row">
-					<div className="col-xs-3">
-						<h1 className="collectionsText">- COLLECTIONS</h1>
-						<div className="collectionDropdown">
-							<CollectionDropdown />
-						</div>
+					<h1 className="collectionsText">- COLLECTIONS</h1>
+					<div className="collectionDropdown">
+						<CollectionDropdown />
 					</div>
-					{/* <div className="col-xs-9">
-						<div className="collectionOutfit d-flex flex-row">{outfitsByCategory}</div>
-					</div> */}
-				</div>
-				<div className="row">
-					<h1 className="text">{store.selectedCollection.name}</h1>
-					<div className="planet d-flex flex-row">{collectionOutfits}</div>
-				</div>
-				<div className="row">
-					<h1 className="text">USADOS HOY</h1>
-					<div className="planet d-flex flex-row"></div>
+					<h1>{store.selectedCollection.name}</h1>
+					<div className="collectionDrop">{collectionOutfits}</div>
 				</div>
 			</div>
 		</div>

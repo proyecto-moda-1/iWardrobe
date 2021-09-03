@@ -1,23 +1,63 @@
+.containerCloset{
+    margin-top: 6rem;
+    color: rgb(80, 77, 77);
+ 
+    
+}
 .tittleCloset{
 font-size: 5rem;
-margin-top: -8%;
+text-align: center;
 color: rgb(80, 77, 77);
-
+}
+.leadCloset{
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 5rem;
+}
+.todayCloset{
+    margin-left: 5rem;
+    margin-top: 2rem;
+    
 }
 .favouritesText{
-    margin-left: -7%;
-    margin-top: 2%;
-    margin-bottom: 25%; 
-   
+    margin-left: 5rem;
+    margin-top: 2rem;
 }
 .collectionsText{
-    margin-left: -30%;
-    margin-top: 2%;
-    margin-bottom: 25%;
+    margin-left: 5rem;
+    margin-top: 2rem;
 }
 .collectionDropdown{
-    margin-left: -35%;
-    margin-right: 20%;
-    margin-top: -28%;
-    margin-bottom: 85%; 
+    margin-left: 7rem;
+    margin-bottom: 20rem;
+}
+
+.clothingUsed{
+    height: 30rem;
+    margin-left:3rem ;
+    margin-right:3rem ;
+    margin-top: 2rem;
+    border-radius: 1rem;
+    border: 0.2rem solid rgba(90, 77, 59, 0.37);
+}
+.clothingFavs{
+    height: 30rem;
+    margin-left:3rem ;
+    margin-right:3rem ;
+    margin-top: 2rem;
+    border-radius: 1rem;
+    border: 0.2rem solid rgba(90, 77, 59, 0.37);
+}
+.clothingCollections{
+    height: 30rem;
+    margin-left:3rem ;
+    margin-right:3rem ;
+    margin-top: 2rem;
+    border-radius: 1rem;
+    margin-bottom: 6rem;
+    border: 0.2rem solid rgba(90, 77, 59, 0.37);
+}
+.collectionDrop{
+    width: 20rem;
+    height: 20rem;
 }

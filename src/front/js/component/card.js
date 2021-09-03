@@ -8,7 +8,7 @@ import PropTypes from "prop-types";
 import "../../styles/card.scss";
 
 const Card = props => {
-	const [favorite, setFavorite] = useState("");
+	// const [favorite, setFavorite] = useState("");
 
 	const { store, actions } = useContext(Context);
 
@@ -23,7 +23,7 @@ const Card = props => {
 				<div key={index} className="cardClothing">
 					<div className="cardBody">
 						<h5 className="cardName">{clothing.name}</h5>
-						<img className="cardImg">{clothing.image}</img>
+						<img src={clothing.image} className="cardImg"></img>
 						<h4 className="cardClean">
 							{clothing.clean ? "limpio" : "sucio"}{" "}
 							<BtnCleanOutfit
@@ -44,15 +44,13 @@ const Card = props => {
 			<div className="cardCollections">{props.collections}</div>
 			<div className="card-body text-secondary">
 				<h5 className="card-title">{props.name}</h5>
-				<img className="card-title">{props.image}</img>
 				<h5 className="card-title">{clothingCards}</h5>
 				<div className="cardInfo">
-					<button className="btn-fav btn-outline-danger" onClick={handleFavorite(props.id)}>
+					<button className="btn-fav btn-outline-danger" onClick={handleFavorite.bind(this, props.id)}>
 						♡
 					</button>
 				</div>
 			</div>
-			<BtnCleanOutfit />
 			<SelectOutfitBtn id="outfitCheck" />
 		</div>
 	);

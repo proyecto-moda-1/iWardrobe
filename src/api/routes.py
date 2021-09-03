@@ -245,11 +245,11 @@ def favorite_brand(outfit_id):
 
 
     # payload= request.get_json()
-    print("aqui empezamos")
-    print(outfit.favorite)
+    # print("aqui empezamos")
+    # print(outfit.favorite)
 
     outfit.favorite= not outfit.favorite
-    print(outfit.favorite)
+    # print(outfit.favorite)
 
     db.session.commit()
     return "fav updated", 200 

@@ -10,9 +10,11 @@
 .Jumbotrom{
       background-color: rgba(222, 184, 135, 0.445);
       left: 180rem;
-      margin-left: -2%;
-      margin-right: 1%;
-      margin-bottom: 10%;
+      margin-left: 3rem;
+      margin-right: 3rem;
+      margin-bottom: 4rem;
+      margin-top: 4rem;
+      border-radius: 1rem;
 }
 .btntittle{
       margin-left: 15%;
@@ -24,62 +26,67 @@
       margin-right: 10%;
 
 }
-.Body{
-      margin-left: 5%;
-      margin-right: 2%;
-
-}
 .col{
       margin-left: -5%;
       margin-right: -1%;
       margin-bottom: 5%;
-      color: black;
-
-
-}
+      color:rgb(90, 77, 59)}
 
 .textOufit{
-      margin-left: -10%;
-      margin-top: -8%;
-      margin-bottom: 25%;
+      margin-left: 4.5rem;
+      margin-top: 2rem;
+      margin-bottom: 20rem;
+      color:rgb(90, 77, 59)
 }
 .textDirty{
-      margin-left: -10%;
-      margin-top: 2%;
-      margin-bottom: 25%;
+      margin-left: 4.5rem;
+      margin-top: 4rem;
+      margin-bottom: 20rem;
+      color:rgb(90, 77, 59)
 }
 .btnProfile{
       font-size: 1.5rem !important;
-      width: 25%!important;
-      left: 5%!important;
-      padding-top: 0.5rem!important;
-      padding-bottom: 0.4rem!important;
-      background-color:burlywood!important;
-     color:  rgba(10, 11, 14, 0.644)!important;
-    border-radius: 0.5rem!important;
-    border-color: black !important;
-    cursor: pointer!important;
-    margin-left: 15%!important;
-    margin-right: 4%!important;
-    margin-top: 8%!important;
+      width: 20rem!important;
+      left: 2rem!important;
+      border-radius:  0.5rem !important;
+      border:0.2rem solid rgba(222, 184, 135, 0.212)!important;
+      background-color: rgba(222, 184, 135, 0.534)!important;
+      margin-left: -10rem!important;
+      font-size: 2rem!important;
+      color:rgb(90, 77, 59)!important;
+      margin-left: 10rem!important;
+      margin-top: 4rem!important;
   }
   .btnProfile:hover{
-      background-color: #0981e452;
-        color: black;
-        border-color: black;
+      color:rgb(233, 228, 222)!important;
+      border-color: rgb(233, 228, 222)!important;
     }
+.containerFavo{
+      border-radius: 1rem;
+      border: 0.2rem solid rgba(90, 77, 59, 0.37);
+      margin-left: 3rem;
+      margin-right: 3rem;
+      margin-bottom: 4rem;
+      // margin-top: 5rem;
+}
+.containerDirtyS{
+      border-radius: 1rem;
+      border: 0.2rem solid rgba(90, 77, 59, 0.37);
+      margin-left: 3rem;
+      margin-right: 3rem;
+      margin-bottom: 4rem;
+      // margin-top: 5rem;
+}
 
-#btnClothes{
-      font-size: 1.5rem;
-      width: 25%;
-      left: 5%;
-      padding-top: 0.5rem;
-      padding-bottom: 0.4rem;
-      background-color:burlywood;
-    color:  rgba(10, 11, 14, 0.644);
-    border-radius: 0.5rem;
-    cursor: pointer;
-    margin-left: 15%;
-    margin-right: 4%;
-    margin-top: 8%;
-} 
+// .btnClothes{
+//       border-radius:0.5rem;
+//       background-color: rgba(222, 184, 135, 0.534);
+//       margin-left: -10rem;
+//       font-size: 2rem;
+//       color:rgb(90, 77, 59);
+
+// } 
+// .btnClothes:hover{
+//       color:rgb(233, 228, 222);
+//       border-color: rgba(222, 184, 135, 0.534);
+// }

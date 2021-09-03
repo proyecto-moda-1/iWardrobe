@@ -53,7 +53,7 @@ export const Profile = () => {
 	}
 
 	return (
-		<div className="Body">
+		<div className="bodyProfile">
 			<div className="Jumbotrom">
 				<div className="row">
 					<div className="col">
@@ -94,13 +94,15 @@ export const Profile = () => {
 					</div>
 				</div>
 			</div>
-			<div className="container">
+			<div className="containerFavo">
 				<div className="row">
-					<h1 className="textOufit"> OUTFITS AVAILABLES</h1>
+					<h1 className="textOufit">- OUTFITS AVAILABLES</h1>
 					<div className="favorite d-flex flex-row">{outfitCards}</div>
 				</div>
+			</div>
+			<div className="containerDirtyS">
 				<div className="row">
-					<h1 className="textDirty"> ALREADY USED </h1>
+					<h1 className="textDirty">- ALREADY USED </h1>
 					<div className="dirty d-flex flex-row">{dirtyClothing}</div>
 				</div>
 			</div>
