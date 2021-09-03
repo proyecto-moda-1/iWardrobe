@@ -57,6 +57,10 @@ export const Closet = () => {
 					<h1 className="text">{store.selectedCollection.name}</h1>
 					<div className="planet d-flex flex-row">{collectionOutfits}</div>
 				</div>
+				<div className="row">
+					<h1 className="text">USADOS HOY</h1>
+					<div className="planet d-flex flex-row"></div>
+				</div>
 			</div>
 		</div>
 	);

@@ -11,13 +11,15 @@ import CreateOutfitBtn from "./btnCreate";
 import "../../styles/createOutfit.scss";
 import Form from "react-bootstrap/Form";
 // import "../../styles/myOutfit.scss";
-import HeartButton from "./heartBtn";
 import PropTypes from "prop-types";
+import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
+toast.configure();
 
 const CreateOutfit = props => {
 	const { show, handleClose } = props;
 	const [name, setName] = useState("");
-
+	const notify = () => toast("Saved outfit!");
 	//STATES FOR INSIDE MODAL <ADDCOLLECTION/>
 	const [showCollection, setShowCollection] = useState(false);
 	const handleCloseCollection = () => setShowCollection(false);
@@ -35,7 +37,6 @@ const CreateOutfit = props => {
 	const handleUserInput = e => {
 		setInputValue(e.target.value);
 	};
-	//for reset the inputs
 	const resetInputField = () => {
 		setName("");
 	};
@@ -54,19 +55,22 @@ const CreateOutfit = props => {
 				value={name}
 				onChange={event => setName(event.target.value)}
 			/>{" "}
+			<CollectionSelect id="selectCollection" />
 			{/* AddCollection modal component*/}
 			<Button id="btnAddCollection" onClick={handleShowCollection}>
 				Add new collection
 			</Button>
 			<AddCollection show={showCollection} handleClose={handleCloseCollection} />
-			{/* Aquí le tenemos que poner el props que le vamos a pasar para que se guarde en favoritos */}
-			<CollectionSelect id="selectCollection" />
-			<SelectOutfitBtn id="outfitCheck" />
+			<SelectOutfitBtn id="outfitCheck" name={props.name} />
 			<Modal.Footer>
-				<Button variant="outline-light" id="btnCreate" onClick={resetInputField}>
-					Clear
-				</Button>
-				<Button variant="outline-light" id="btnCreate" onClick={handleSubmit}>
+				<Button
+					variant="outline-light"
+					id="btnCreate"
+					onClick={() => {
+						handleSubmit();
+						resetInputField();
+						notify();
+					}}>
 					Save creation
 				</Button>
 				<Button type="submit" id="btnCreate" value="button" onClick={handleClose}>
@@ -81,5 +85,6 @@ export default CreateOutfit;
 
 CreateOutfit.propTypes = {
 	show: PropTypes.bool,
-	handleClose: PropTypes.func
+	handleClose: PropTypes.func,
+	name: PropTypes.string
 };

@@ -6,15 +6,15 @@
     align-items: center;
     padding: 0.4rem 5%;
     margin-bottom: 5%;
+    background-color: burlywood;
 }
 
 
 .text-decoration-none{
     font-size: 3rem;
-    font-weight: 500;
 }
 .text-decoration-none:hover{
-    color:rgba(223, 166, 216, 0.966);
+    color:rgb(90, 77, 59);
   border-color: white;
   }
 li, a {
@@ -31,50 +31,34 @@ li, a {
 
 .navLink li a:hover{
     color: rgb(114, 114, 114);
+    
 }
 
 .btnOutfit{
     border: none;
-    background-color: white;
+    background-color: burlywood;
 }
 .btnOutfit:hover{
-  color:rgba(223, 166, 216, 0.966);
-border-color: white;
+    color:rgb(90, 77, 59);
+    border-color: white;
 }
 .btnCloset{
     border: none;
-    background-color: white;
+    background-color: burlywood;
 }
 .btnCloset:hover{
-    color:rgba(223, 166, 216, 0.966);
-  border-color: white;
+    color:rgb(90, 77, 59);
+    background-color: burlywood;
   }
 .btnLogin{
     border: none;
-    background-color: white;
+    background-color: burlywood;
 }
 .btnLogin:hover{
-    color:rgba(223, 166, 216, 0.966);
+    color:rgb(90, 77, 59);
   border-color: white;
   }
-// .button{
-//     padding: 0.5rem 1rem;
-//     border: none;
-//     border-radius: 0.5rem;
-//     font-weight: 500;
-//     font-size: 1.8rem;
-//     background-color:black;
-//     background-color: white;
-//     border: 2px solid #9b9999;
-//     padding: 0.5rem 1rem;
 
-// }
-
-// .btn:hover{
-//   background-color: #9b9999;
-//   color:white;
-// border-color: white;
-// }
 .logo{
     font-size: 4rem;}
 

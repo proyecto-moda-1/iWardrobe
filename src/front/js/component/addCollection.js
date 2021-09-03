@@ -5,13 +5,15 @@ import PropTypes from "prop-types";
 import { Context } from "../store/appContext";
 import { getActions } from "../store/flux.js";
 import "../../styles/createOutfit.scss";
+import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
+toast.configure();
 
 const AddCollection = props => {
 	const { store, actions } = useContext(Context);
-	const notify = () => toast("Wow so easy !");
 	const { show, handleClose } = props;
 	const [name, setName] = useState("");
-
+	const notify = () => toast("Saved collection!");
 	const handleSubmit = () => {
 		const data = {
 			collection_user_id: 1,
@@ -22,7 +24,6 @@ const AddCollection = props => {
 	const handleUserInput = e => {
 		setInputValue(e.target.value);
 	};
-	//for reset the inputs
 	const resetInputField = () => {
 		setName("");
 	};
@@ -44,10 +45,15 @@ const AddCollection = props => {
 				/>{" "}
 			</div>
 			<Modal.Footer>
-				<Button variant="outline-light" id="btnCollection" onClick={resetInputField}>
-					Clear
-				</Button>
-				<Button type="submit" id="btnCollection" value="button" onClick={handleSubmit}>
+				<Button
+					type="submit"
+					id="btnCollection"
+					value="button"
+					onClick={() => {
+						handleSubmit();
+						resetInputField();
+						notify();
+					}}>
 					Save
 				</Button>
 				<Button type="submit" id="btnCollection" value="button" onClick={handleClose}>

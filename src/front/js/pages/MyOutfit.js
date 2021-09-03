@@ -9,7 +9,6 @@ import { Context } from "../store/appContext";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "../../styles/myOutfit.scss";
-import PropTypes from "prop-types";
 
 export const MyOutfit = props => {
 	const { store, actions } = useContext(Context);
@@ -56,94 +55,74 @@ export const MyOutfit = props => {
 
 	return (
 		<>
-			<Container>
+			<Container className="myOutfitContainer">
 				<Row>
+					<div className="containerClothing">
+						<Col sm={true}>
+							<h1 className="tittlePage">YOUR CLOTHING</h1>
+							<Button className="btnLoad" onClick={handleShow}>
+								Add clothes
+							</Button>
+							<LoadClothing show={show} handleClose={handleClose} />
+							<Form.Control
+								size="sm"
+								as="select"
+								className="selectTop"
+								defaultValue={top}
+								onChange={event => {
+									setTop(event.target.value);
+									setselectedItems({
+										...selectedItems,
+										top: store.top.find(item => item.id == event.target.value)
+									});
+								}}>
+								<option selected value="0">
+									Top
+								</option>
+								{topItems}
+							</Form.Control>
+							<Form.Control
+								size="sm"
+								as="select"
+								className="selectBottom"
+								defaultValue={bottom}
+								onChange={event => {
+									setBottom(event.target.value);
+									setselectedItems({
+										...selectedItems,
+										bottom: store.bottom.find(item => item.id == event.target.value)
+									});
+								}}>
+								<option value="0">Bottom</option>
+								{bottomItems}
+							</Form.Control>
+							<Form.Control
+								size="sm"
+								as="select"
+								className="selectFootwear"
+								defaultValue={footwear}
+								onChange={event => {
+									setFootwear(event.target.value);
+									setselectedItems({
+										...selectedItems,
+										footwear: store.footwear.find(item => item.id == event.target.value)
+									});
+								}}>
+								<option value="0">Footwear</option>
+								{footwearItems}
+							</Form.Control>
+						</Col>
+					</div>
 					<Col sm={true}>
-						<h2>Your clothing</h2>
-						<br />
-						<br />
-						<Form.Control
-							size="sm"
-							as="select"
-							className="select-category"
-							defaultValue={top}
-							onChange={event => {
-								setTop(event.target.value);
-								setselectedItems({
-									...selectedItems,
-									top: store.top.find(item => item.id == event.target.value)
-								});
-							}}>
-							<option selected value="0">
-								Top
-							</option>
-							{topItems}
-						</Form.Control>
-						<br />
-						<br />
-						<br />
-						<br />
-						<Form.Control
-							size="sm"
-							as="select"
-							className="select-select-category"
-							defaultValue={bottom}
-							onChange={event => {
-								setBottom(event.target.value);
-								setselectedItems({
-									...selectedItems,
-									bottom: store.bottom.find(item => item.id == event.target.value)
-								});
-							}}>
-							<option value="0">Bottom</option>
-							{bottomItems}
-						</Form.Control>
-						<br />
-						<br />
-						<br />
-						<br />
-						<Form.Control
-							size="sm"
-							as="select"
-							className="select-category"
-							defaultValue={footwear}
-							onChange={event => {
-								setFootwear(event.target.value);
-								setselectedItems({
-									...selectedItems,
-									footwear: store.footwear.find(item => item.id == event.target.value)
-								});
-							}}>
-							<option value="0">Footwear</option>
-							{footwearItems}
-						</Form.Control>
-					</Col>
-					<Col sm={true}>
-						<div className="main-container">
+						<div className="carouselContainer">
 							<CarouselClothing selectedItems={selectedItems} />
 						</div>
 					</Col>
-					<Col sm={true}>
-						<Button variant="primary" onClick={handleShow}>
-							Add clothes
-						</Button>
-						<LoadClothing show={show} handleClose={handleClose} />
-						<br />
-						<br />
-						<br />
-						<br />
-						<br />
-						<br />
-						<br />
-						<br />
-						<br />
-						<br />
-						<br />
-						<br />
-						<br />
-						<br />
-						<CreateOutfitBtn id="btnCreateOutfit" />
-					</Col>
+					<div className="containerCreate">
+						<Col sm={true}>
+							<CreateOutfitBtn id="btnCreateOutfit" />
+						</Col>
+					</div>
 				</Row>
 			</Container>
 		</>
