@@ -160,7 +160,7 @@ def get_all_outfits():
 def create_outfit():
 
     body = request.get_json()
-    print(body, "aquii")
+    
     if body is None:
         return "The request body is null", 400
 
@@ -181,11 +181,8 @@ def create_outfit():
     else: 
         outfit = Outfit(outfit_user_id=outfit_user_id, name=name)
         outfit.create_outfit()
-        print("@@@@@@@")
         collection =Collection.query.filter_by(id=collectionId).first()
-        print("@@@@@@@")
         collection.outfits.append(outfit)
-        print("@@@@@@@")
         db.session.commit()
         return "Created", 201
     
