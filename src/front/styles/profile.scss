@@ -21,6 +21,7 @@
 .textBody{
       margin-left: 15%;
       margin-top: 5%;
+      margin-right: 10%;
 
 }
 .Body{
@@ -34,12 +35,6 @@
       margin-bottom: 5%;
       color: black;
 
-
-}
-.btnProfile{
-      margin-left: 15%;
-      margin-right: 4%;
-      margin-top: 8%;
 
 }
 
@@ -63,6 +58,9 @@
     color:  rgba(10, 11, 14, 0.644);
     border-radius: 0.5rem;
     cursor: pointer;
+    margin-left: 15%;
+    margin-right: 4%;
+    margin-top: 8%;
   }
   .btnProfile:hover{
       background-color: #0981e452;
@@ -70,4 +68,17 @@
         border-color: black;
     }
 
-   
+#btnClothes{
+      font-size: 1.5rem;
+      width: 25%;
+      left: 5%;
+      padding-top: 0.5rem;
+      padding-bottom: 0.4rem;
+      background-color:rgba(223, 166, 216, 0.966);
+    color:  rgba(10, 11, 14, 0.644);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    margin-left: 15%;
+    margin-right: 4%;
+    margin-top: 8%;
+} 

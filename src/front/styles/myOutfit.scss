@@ -1,17 +1,70 @@
-.select-category{
-    width: 300px;
-    border-radius: 12px;
-    font-size: 0.90rem;
-    border-style: solid;
-    border: 2px solid #9b9999;
+
+.containerClothing{
+    background-color: blueviolet;
+    width: 450px;
+    height: 550px;
+    margin-top: -4%;
+    margin-left: -8%;
+    margin-right: 5%;
+
 }
+.tittlePage{
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    text-align:center;
+    font-size: 3rem;
+}
+
+.btnLoad{
+    margin-top: 3rem;
+    width: 26rem;
+    height: 3rem;
+    background-color: chocolate !important;
+    border-color: chocolate !important;
+    font-size: 1.5rem !important;
+}
+
+.selectTop{
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+    font-size: 1.2rem !important;
+}
+.selectBottom{
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+    font-size: 1.2rem !important;
+}
+.selectFootwear{
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+    font-size: 1.2rem !important;
+}
+
 #btnCreateOutfit{
-    height: 50px;
+    height: 70px;
     width: 200px;
     border: 2px;
-    border-radius: 12px;
-    font-size: 14px;
+    border-radius: 0.2rem;
+    font-size: 1.3rem;
     background-color:rgb(29, 138, 211);
     color:white;
-    border: 2px solid white;   
+    margin-right: -7rem;
 }
+
+// #btnCreateOutfit{
+//     width: 12rem;
+//     height: 5rem;
+// }
+
+// .containerCreate{
+//     background-color: chocolate;
+//     width: 15rem;
+//     height: 10rem;
+//     margin-top: 10rem;
+//     margin-left: 6rem;
+//     margin-right: -5rem;
+
+// }
+
+
+
