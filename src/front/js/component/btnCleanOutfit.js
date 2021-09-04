@@ -7,7 +7,6 @@ import Col from "react-bootstrap/Col";
 import PropTypes from "prop-types";
 
 export const BtnCleanOutfit = props => {
-	console.log(props);
 	const { store, actions } = useContext(Context);
 	const [checked, setChecked] = useState(false);
 	const [clean, setClean] = useState({
