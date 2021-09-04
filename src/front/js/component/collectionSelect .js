@@ -28,9 +28,6 @@ export const CollectionSelect = props => {
 
 	return (
 		<>
-			{/* <h2> Add to my collections</h2>
-			<br />
-			<br /> */}
 			<Form.Control
 				size="sm"
 				as="select"
@@ -42,6 +39,7 @@ export const CollectionSelect = props => {
 						...selectedCollections,
 						collections: store.collections.find(item => item.id == event.target.value)
 					});
+					actions.collection_id(parseInt(event.target.value));
 				}}>
 				<option selected value="0">
 					My collections

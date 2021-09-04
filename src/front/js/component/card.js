@@ -12,9 +12,9 @@ const Card = props => {
 
 	const { store, actions } = useContext(Context);
 
-	function handleFavorite(id) {
+	const handleFavorite = id => {
 		actions.favoriteBrand(id);
-	}
+	};
 
 	let clothingCards = [];
 	if (props.clothing != undefined) {
@@ -47,7 +47,7 @@ const Card = props => {
 				<img className="card-title">{props.image}</img>
 				<h5 className="card-title">{clothingCards}</h5>
 				<div className="cardInfo">
-					<button className="btn-fav btn-outline-danger" onClick={handleFavorite(props.id)}>
+					<button className="btn-fav btn-outline-danger" onClick={() => handleFavorite(props.id)}>
 						♡
 					</button>
 				</div>

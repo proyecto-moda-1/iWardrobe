@@ -17,7 +17,17 @@ export const Closet = () => {
 	let favoriteCards = [];
 	const collectionOutfits =
 		store.selectedCollection.outfits &&
-		store.selectedCollection.outfits.map(outfit => <div key={outfit.id}>{outfit.name}</div>);
+		store.selectedCollection.outfits.map(outfit => (
+			<Card
+				name={outfit.name}
+				id={outfit.id}
+				collections={outfit.collections}
+				image={outfit.image}
+				clothing={outfit.clothing}
+				favorite={outfit.favorite}
+				key={outfit.id}
+			/>
+		));
 	if (store.favorites != undefined) {
 		favoriteCards = store.favorites.map((favorite, index) => {
 			return (
@@ -49,14 +59,13 @@ export const Closet = () => {
 							<CollectionDropdown />
 						</div>
 					</div>
-					{/* <div className="col-xs-9">
-						<div className="collectionOutfit d-flex flex-row">{outfitsByCategory}</div>
-					</div> */}
 				</div>
 				<div className="row">
 					<h1 className="text">{store.selectedCollection.name}</h1>
 					<div className="planet d-flex flex-row">{collectionOutfits}</div>
 				</div>
+				<br />
+
 				<div className="row">
 					<h1 className="text">USADOS HOY</h1>
 					<div className="planet d-flex flex-row"></div>

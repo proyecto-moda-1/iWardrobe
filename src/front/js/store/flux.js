@@ -18,7 +18,8 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 			bottom: [],
 			footwear: [],
 			clean: [],
-			favorite: {}
+			favorite: {},
+			collection_id: 0
 		},
 		actions: {
 			createUser: (data, callback) => {
@@ -219,7 +220,30 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 						setStore({ collections: json });
 					});
 			},
-
+			storeCollections: data => {
+				const store = getStore();
+				const endpoint = process.env.BACKEND_URL + "/api/collections";
+				const config = {
+					method: "POST",
+					body: JSON.stringify(data),
+					headers: {
+						"Content-Type": "application/json",
+						Authorization: `Bearer ${store.token}`,
+						cors: "no-cors"
+					}
+				};
+				fetch(endpoint, config)
+					.then(response => response.json())
+					.then(json => {
+						setStore({ collections: json });
+					})
+					.catch(err => console.error(err));
+			},
+			collection_id: id => {
+				setStore({
+					collection_id: id
+				});
+			},
 			getClothing: category => {
 				const store = getStore();
 				const endpoint = `${process.env.BACKEND_URL}/api/clothing?category=${category}`;
@@ -243,6 +267,7 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 			createOutfit: data => {
 				const store = getStore();
 				const endpoint = process.env.BACKEND_URL + "/api/outfit";
+				data["collectionId"] = store.collection_id;
 				const config = {
 					method: "POST",
 					body: JSON.stringify(data),
