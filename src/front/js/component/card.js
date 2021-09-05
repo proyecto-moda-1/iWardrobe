@@ -12,9 +12,9 @@ const Card = props => {
 
 	const { store, actions } = useContext(Context);
 
-	function handleFavorite(id) {
+	const handleFavorite = id => {
 		actions.favoriteBrand(id);
-	}
+	};
 
 	let clothingCards = [];
 	if (props.clothing != undefined) {

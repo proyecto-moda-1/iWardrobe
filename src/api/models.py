@@ -118,7 +118,7 @@ class Outfit(db.Model):
 
      def create_outfit(self):
          db.session.add(self)
-         db.session.commit() 
+         db.session.commit()
 
      def __repr__(self):
               return '<Outfit %r>' % self.name

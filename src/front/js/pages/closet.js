@@ -21,7 +21,17 @@ export const Closet = () => {
 	let favoriteCards = [];
 	const collectionOutfits =
 		store.selectedCollection.outfits &&
-		store.selectedCollection.outfits.map(outfit => <div key={outfit.id}>{outfit.name}</div>);
+		store.selectedCollection.outfits.map(outfit => (
+			<Card
+				name={outfit.name}
+				id={outfit.id}
+				collections={outfit.collections}
+				image={outfit.image}
+				clothing={outfit.clothing}
+				favorite={outfit.favorite}
+				key={outfit.id}
+			/>
+		));
 	if (store.favorites != undefined) {
 		favoriteCards = store.favorites.map((favorite, index) => {
 			return (

@@ -160,8 +160,10 @@ def get_all_outfits():
 def create_outfit():
 
     body = request.get_json()
+    
     if body is None:
         return "The request body is null", 400
+
     
     outfit_user_id = body.get('outfit_user_id')
     if outfit_user_id is None or outfit_user_id == 0:
@@ -171,10 +173,18 @@ def create_outfit():
     if name is None or name == 0:
         return "Provide a valid name", 400
 
-    outfit = Outfit(outfit_user_id=outfit_user_id, name=name)
-    outfit.create_outfit()
-
-    return "Created", 201
+    collectionId = body.get('collectionId')
+    if collectionId is None or collectionId == 0:
+        outfit = Outfit(outfit_user_id=outfit_user_id, name=name)
+        outfit.create_outfit()
+        return "Created", 201
+    else: 
+        outfit = Outfit(outfit_user_id=outfit_user_id, name=name)
+        outfit.create_outfit()
+        collection =Collection.query.filter_by(id=collectionId).first()
+        collection.outfits.append(outfit)
+        db.session.commit()
+        return "Created", 201
     
 @api.route('/users/outfits', methods=['GET'])
 @jwt_required()
@@ -242,8 +252,6 @@ def favorite_brand(outfit_id):
     user_email = get_jwt_identity()
     user= User.get_user_by_email(user_email)
     outfit= Outfit.query.filter_by(outfit_user_id=user.id, id=outfit_id).first()
-
-
     # payload= request.get_json()
     # print("aqui empezamos")
     # print(outfit.favorite)

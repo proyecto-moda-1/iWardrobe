@@ -51,13 +51,11 @@ const AddCollection = props => {
 					value="button"
 					onClick={() => {
 						handleSubmit();
+						handleClose();
 						resetInputField();
 						notify();
 					}}>
-					Save
-				</Button>
-				<Button type="submit" id="btnCollection" value="button" onClick={handleClose}>
-					Close
+					Save new collection
 				</Button>
 			</Modal.Footer>
 		</Modal>
