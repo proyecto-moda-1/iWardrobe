@@ -101,6 +101,7 @@ export const MyOutfit = props => {
 								as="select"
 								className="selectFootwear"
 								defaultValue={footwear}
+								placeholder="password"
 								onChange={event => {
 									setFootwear(event.target.value);
 									setselectedItems({

@@ -48,10 +48,10 @@ export const Closet = () => {
 					<div className="planet d-flex flex-row"></div>
 				</div>
 			</div>
-			<div className="clothingFavs">
+			<div className="containerClothingFavs">
 				<div className="row">
 					<h1 className="favouritesText">- FAVOURITES</h1>
-					<div className="planet d-flex flex-row">{favoriteCards}</div>
+					<div className="favClosetCard d-flex flex-row">{favoriteCards}</div>
 				</div>
 			</div>
 			<div className="clothingCollections">
