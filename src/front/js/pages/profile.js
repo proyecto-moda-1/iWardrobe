@@ -21,7 +21,7 @@ export const Profile = () => {
 	let dirtyClothing = [];
 	if (store.outfits != undefined) {
 		dirtyClothing = store.outfits
-			.filter(outfit => outfit.clothing.some(clo => !clo.clean))
+			.filter(outfit => outfit.clothing.some(clo => clo.dirty))
 			.map((outfit, index) => {
 				return (
 					<Card
@@ -36,7 +36,7 @@ export const Profile = () => {
 				);
 			});
 		outfitCards = store.outfits
-			.filter(outfit => outfit.clothing.every(clo => clo.clean))
+			.filter(outfit => outfit.clothing.every(clo => !clo.dirty))
 			.map((outfit, index) => {
 				return (
 					<Card

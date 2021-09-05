@@ -161,7 +161,7 @@ def get_all_outfits():
 def create_outfit():
 
     body = request.get_json()
-    
+    print(body, "ghjk")
     if body is None:
         return "The request body is null", 400
 
@@ -178,6 +178,7 @@ def create_outfit():
     if collectionId is None or collectionId == 0:
         outfit = Outfit(outfit_user_id=outfit_user_id, name=name)
         outfit.create_outfit()
+        # outfit.clothings
         return "Created", 201
     else: 
         outfit = Outfit(outfit_user_id=outfit_user_id, name=name)

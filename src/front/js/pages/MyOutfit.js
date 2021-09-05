@@ -76,9 +76,7 @@ export const MyOutfit = props => {
 										top: store.top.find(item => item.id == event.target.value)
 									});
 								}}>
-								<option selected value="0">
-									Top
-								</option>
+								<option value="0">Top</option>
 								{topItems}
 							</Form.Control>
 							<Form.Control
@@ -121,7 +119,7 @@ export const MyOutfit = props => {
 					</Col>
 					<div className="containerCreate">
 						<Col sm={true}>
-							<CreateOutfitBtn id="btnCreateOutfit" />
+							<CreateOutfitBtn id="btnCreateOutfit" clothing={selectedItems} />
 						</Col>
 					</div>
 				</Row>

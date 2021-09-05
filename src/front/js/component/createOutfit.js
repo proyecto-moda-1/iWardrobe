@@ -30,7 +30,8 @@ const CreateOutfit = props => {
 			outfit_user_id: 1,
 			name: name
 		};
-		actions.createOutfit(data);
+		console.log(props.clothing, "##################");
+		actions.createOutfit(data, props.clothing);
 	};
 	const handleUserInput = e => {
 		setInputValue(e.target.value);
@@ -83,5 +84,6 @@ export default CreateOutfit;
 CreateOutfit.propTypes = {
 	show: PropTypes.bool,
 	handleClose: PropTypes.func,
-	name: PropTypes.string
+	name: PropTypes.string,
+	clothing: PropTypes.object
 };
