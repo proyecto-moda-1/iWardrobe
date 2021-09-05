@@ -171,7 +171,6 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 						setStore({
 							favorite: response.favorite
 						});
-						callback();
 					})
 					.catch(err => console.error(err));
 			},

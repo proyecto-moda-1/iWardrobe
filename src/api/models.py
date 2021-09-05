@@ -99,7 +99,6 @@ collection_outfit = db.Table('collection_outfit',
     db.Column('collection_id', db.Integer, db.ForeignKey('collection.id'), primary_key=True)
 )
                   
-     
 class Outfit(db.Model):
      id = db.Column(db.Integer, primary_key=True)
      outfit_user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
@@ -158,6 +157,8 @@ class Collection(db.Model):
     
      def serialize(self):
         serialized_outfits = [] 
+        print(self.outfits)
+
         for outfit in self.outfits:
             serialized_outfits.append(outfit.serialize())
         return {

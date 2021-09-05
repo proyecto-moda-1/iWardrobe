@@ -255,6 +255,7 @@ def favorite_brand(outfit_id):
     # payload= request.get_json()
     # print("aqui empezamos")
     # print(outfit.favorite)
+
     outfit.favorite= not outfit.favorite
     # print(outfit.favorite)
 

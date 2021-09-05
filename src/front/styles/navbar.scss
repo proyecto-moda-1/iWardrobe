@@ -1,21 +1,20 @@
 
-.header{
+.headerNavbar{
     background-color:transparent ;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 0.4rem 5%;
-    margin-bottom: 5%;
+    margin-bottom: 5% solid;
+    border-bottom: 0.2rem solid rgba(0, 0, 0, 0.233);
+    background-color: burlywood;
 }
-
 
 .text-decoration-none{
-    font-size: 3rem;
-    font-weight: 500;
+    font-size: 3.5rem;
+    margin-left: 3rem;
 }
 .text-decoration-none:hover{
-    color:rgba(223, 166, 216, 0.966);
-  border-color: white;
+    color:rgb(233, 228, 222);
+    border-color: white;
   }
 li, a {
     font-weight: 500;
@@ -26,58 +25,61 @@ li, a {
 
 .navLink li{
     display: inline-block;
-    padding: 0.4rem 2rem;
+    // padding: 0.4rem 2rem;
 }
 
 .navLink li a:hover{
     color: rgb(114, 114, 114);
+    
 }
-
+.btnProfileS{
+    border: none;
+    background-color: burlywood;
+    margin-left: -40rem;
+    margin-top: 1.2rem;
+    text-align: center;
+    font-size: 2rem;
+    color:rgb(90, 77, 59);
+}
+.btnProfileS:hover{
+    color:rgb(233, 228, 222);
+    background-color: burlywood;
+  }
 .btnOutfit{
     border: none;
-    background-color: white;
+    background-color: burlywood;
+    margin-left: -30rem;
+    text-align: center;
+    font-size: 2rem;
+    color:rgb(90, 77, 59);
+
 }
 .btnOutfit:hover{
-  color:rgba(223, 166, 216, 0.966);
-border-color: white;
+    color:rgb(233, 228, 222);
+    border-color: white;
 }
 .btnCloset{
     border: none;
-    background-color: white;
+    background-color: burlywood;
+    margin-left: -20rem;
+    text-align: center;
+    font-size: 2rem;
+    color:rgb(90, 77, 59);
+
 }
 .btnCloset:hover{
-    color:rgba(223, 166, 216, 0.966);
-  border-color: white;
+    color:rgb(233, 228, 222);
+    background-color: burlywood;
   }
 .btnLogin{
-    border: none;
-    background-color: white;
+    border-radius:0.5rem;
+    background-color: rgba(222, 184, 135, 0.534);
+    margin-left: -10rem;
+    font-size: 2rem;
+    color:rgb(90, 77, 59);
 }
 .btnLogin:hover{
-    color:rgba(223, 166, 216, 0.966);
-  border-color: white;
+    color:rgb(233, 228, 222);
+    border-color: rgba(222, 184, 135, 0.534);
   }
-// .button{
-//     padding: 0.5rem 1rem;
-//     border: none;
-//     border-radius: 0.5rem;
-//     font-weight: 500;
-//     font-size: 1.8rem;
-//     background-color:black;
-//     background-color: white;
-//     border: 2px solid #9b9999;
-//     padding: 0.5rem 1rem;
 
-// }
-
-// .btn:hover{
-//   background-color: #9b9999;
-//   color:white;
-// border-color: white;
-// }
-.logo{
-    font-size: 4rem;}
-
-.logo:hover{
-    color:#9b9999;
-    border-color: white;}

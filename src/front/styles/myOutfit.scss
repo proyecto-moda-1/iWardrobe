@@ -1,42 +1,52 @@
-
+// html{
+//     position: rel6tive;
+//     background-color: burlywood;
+//     margin-top: 4%;
+// }
+.myOutfitContainer{
+    margin-top: 8rem;
+    margin-left: 2rem;
+}
 .containerClothing{
-    background-color: blueviolet;
+    background-color: rgba(137, 43, 226, 0.795);
     width: 450px;
-    height: 550px;
+    height: 580px;
     margin-top: -4%;
     margin-left: -8%;
     margin-right: 5%;
-
+    border: 2px solid black;
+    border-radius: 2rem;
 }
 .tittlePage{
     margin-top: 3rem;
     margin-bottom: 2rem;
-    text-align:center;
+    text-align: center;
     font-size: 3rem;
 }
 
 .btnLoad{
-    margin-top: 3rem;
+    margin-top: 2rem;
+    margin-bottom: 2.5rem;
     width: 26rem;
     height: 3rem;
-    background-color: chocolate !important;
-    border-color: chocolate !important;
+    background-color: rgb(78, 25, 87) !important;
+    border-color: rgb(78, 25, 87)!important;
     font-size: 1.5rem !important;
 }
 
 .selectTop{
-    margin-top: 4rem;
-    margin-bottom: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 1.3rem;
     font-size: 1.2rem !important;
 }
 .selectBottom{
-    margin-top: 4rem;
-    margin-bottom: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 1.3rem;
     font-size: 1.2rem !important;
 }
 .selectFootwear{
-    margin-top: 4rem;
-    margin-bottom: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
     font-size: 1.2rem !important;
 }
 
@@ -44,11 +54,12 @@
     height: 70px;
     width: 200px;
     border: 2px;
-    border-radius: 0.2rem;
+    border-radius: 0.4rem;
     font-size: 1.3rem;
-    background-color:rgb(29, 138, 211);
+    background-color:rgba(78, 25, 87, 0.829);
     color:white;
     margin-right: -7rem;
+    margin-top: 9rem;
 }
 
 // #btnCreateOutfit{
