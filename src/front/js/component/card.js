@@ -43,7 +43,7 @@ const Card = props => {
 		<div className="cardOutfit">
 			<div className="cardCollections">{props.collections}</div>
 			<div className="cardBodyOutfit text-secondary">
-				<h5 className="cardTittleOutfit">Collection: {props.name}</h5>
+				<h5 className="cardTittleOutfit">OUTFIT: {props.name}</h5>
 				<h5 className="cardClothingImg">{clothingCards}</h5>
 				<div className="cardFooter">
 					<button className="btnFav btn-outline-danger" onClick={handleFavorite.bind(this, props.id)}>
