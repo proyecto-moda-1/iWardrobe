@@ -88,7 +88,7 @@ def get_all_clothings():
     user= User.get_user_by_email(user_email)
     args = request.args
     
-
+    # is None or Category == 0
     if "category" in args:
         # for element in Category:
         #     if element.name == args.get("category"):
@@ -178,7 +178,7 @@ def create_outfit():
     if collectionId is None or collectionId == 0:
         outfit = Outfit(outfit_user_id=outfit_user_id, name=name)
         outfit.create_outfit()
-        # outfit.clothings
+        outfit.clothings = outfit.clothings.append(id=top.id,id=bottom.id, id=footwear.id)
         return "Created", 201
     else: 
         outfit = Outfit(outfit_user_id=outfit_user_id, name=name)
