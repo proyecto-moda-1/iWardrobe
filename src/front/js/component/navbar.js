@@ -9,7 +9,7 @@ export const Navbar = () => {
 	const handleClose = () => setShow(false);
 	const handleShow = () => setShow(true);
 	return (
-		<div className="header">
+		<div className="headerNavbar">
 			<div className="logo" type="submit">
 				<Link to="/profile" className="text-decoration-none">
 					iWardrobe
@@ -19,32 +19,34 @@ export const Navbar = () => {
 			<nav>
 				<ul className="navLink">
 					<li>
-						<Link to="/MyOutfit">
-							<button className="btnOutfit" href="#">
-								Outfit
+						<Link to="/profile">
+							<button className="btnProfileS" href="#">
+								PROFILE
 							</button>
 						</Link>
 					</li>
 					<li>
+						<Link to="/MyOutfit">
+							<button className="btnOutfit" href="#">
+								OUTFIT
+							</button>
+						</Link>
+					</li>
+
+					<li>
 						<Link to="/closet">
 							<button className="btnCloset" href="#">
-								Closet
+								CLOSET
 							</button>
 						</Link>
 					</li>
 					<li>
 						<Link to="/login">
 							<button className="btnLogin" href="#">
-								Login
+								LOGIN
 							</button>
 						</Link>
 					</li>
-					{/* <li>
-						<Button variant="primary" onClick={handleShow}>
-							Add clothes
-						</Button>
-						<LoadClothing show={show} handleClose={handleClose} />
-					</li> */}
 				</ul>
 			</nav>
 		</div>

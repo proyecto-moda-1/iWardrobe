@@ -66,6 +66,7 @@ const CreateOutfit = props => {
 					id="btnCreate"
 					onClick={() => {
 						handleSubmit();
+						handleClose();
 						resetInputField();
 						notify();
 						handleClose();

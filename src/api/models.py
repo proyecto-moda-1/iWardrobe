@@ -71,7 +71,7 @@ class Clothing(db.Model):
      image = db.Column(db.String, unique=False, nullable=False)
      name = db.Column(db.String(120), unique=False, nullable=False)
      category = db.Column(db.Enum(Category), unique=False, nullable=False)
-     clean= db.Column(db.Boolean, unique=False, nullable=False)
+     dirty= db.Column(db.Boolean, unique=False, nullable=False)
 
 
      #RELACIONES
@@ -91,7 +91,7 @@ class Clothing(db.Model):
              "image": self.image,
              "name": self.name,
              "categories": self.category.name,
-             "clean": self.clean,
+             "dirty": self.dirty,
          } 
 
 collection_outfit = db.Table('collection_outfit',
@@ -99,7 +99,6 @@ collection_outfit = db.Table('collection_outfit',
     db.Column('collection_id', db.Integer, db.ForeignKey('collection.id'), primary_key=True)
 )
                   
-     
 class Outfit(db.Model):
      id = db.Column(db.Integer, primary_key=True)
      outfit_user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
@@ -158,6 +157,8 @@ class Collection(db.Model):
     
      def serialize(self):
         serialized_outfits = [] 
+        print(self.outfits)
+
         for outfit in self.outfits:
             serialized_outfits.append(outfit.serialize())
         return {

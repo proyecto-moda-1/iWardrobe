@@ -87,8 +87,7 @@ def get_all_clothings():
     user_email = get_jwt_identity()
     user= User.get_user_by_email(user_email)
     args = request.args
-
-    # in args is None or category == 0:
+    
 
     if "category" in args:
         # for element in Category:
@@ -100,7 +99,7 @@ def get_all_clothings():
 
     else:
         all_clothings = Clothing.query.all()
-        serialized_clothings = []
+    serialized_clothings = []
     for clothing in all_clothings:
         serialized_clothings.append(clothing.serialize())
     return jsonify(serialized_clothings), 200
@@ -140,7 +139,7 @@ def create_clothing():
     cloudinary.config(cloud_name = os.getenv('CLOUD_NAME'), api_key=os.getenv('API_KEY'), api_secret=os.getenv('API_SECRET'))
     result = cloudinary.uploader.upload(image)
 
-    clothing = Clothing(user_id=user_id, name=name, category=category, image=result['secure_url'], clean=True)
+    clothing = Clothing(user_id=user_id, name=name, category=category, image=result['secure_url'], dirty=True)
     clothing.create_clothing()
 
     return "Created", 201
@@ -210,6 +209,8 @@ def get_user_collection():
         for collection in get_all_collections:
             serialized_collection.append(collection.serialize())
         return jsonify(serialized_collection), 200 
+
+
 
 @api.route('/collection', methods=['GET'])
 def get_all_collections():

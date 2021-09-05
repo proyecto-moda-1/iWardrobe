@@ -55,15 +55,15 @@ export const MyOutfit = props => {
 
 	return (
 		<>
-			<Container>
+			<Container className="myOutfitContainer">
 				<Row>
 					<div className="containerClothing">
 						<Col sm={true}>
+							<h1 className="tittlePage">YOUR CLOTHING</h1>
 							<Button className="btnLoad" onClick={handleShow}>
 								Add clothes
 							</Button>
 							<LoadClothing show={show} handleClose={handleClose} />
-							<h1 className="tittlePage">Your clothing</h1>
 							<Form.Control
 								size="sm"
 								as="select"
@@ -101,6 +101,7 @@ export const MyOutfit = props => {
 								as="select"
 								className="selectFootwear"
 								defaultValue={footwear}
+								placeholder="password"
 								onChange={event => {
 									setFootwear(event.target.value);
 									setselectedItems({

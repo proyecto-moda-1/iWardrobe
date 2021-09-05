@@ -51,6 +51,7 @@ const AddCollection = props => {
 					value="button"
 					onClick={() => {
 						handleSubmit();
+						handleClose();
 						resetInputField();
 						notify();
 						handleClose();
