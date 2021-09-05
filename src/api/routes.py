@@ -88,6 +88,8 @@ def get_all_clothings():
     user= User.get_user_by_email(user_email)
     args = request.args
 
+    # in args is None or category == 0:
+
     if "category" in args:
         # for element in Category:
         #     if element.name == args.get("category"):
@@ -98,7 +100,7 @@ def get_all_clothings():
 
     else:
         all_clothings = Clothing.query.all()
-    serialized_clothings = []
+        serialized_clothings = []
     for clothing in all_clothings:
         serialized_clothings.append(clothing.serialize())
     return jsonify(serialized_clothings), 200
@@ -209,8 +211,6 @@ def get_user_collection():
             serialized_collection.append(collection.serialize())
         return jsonify(serialized_collection), 200 
 
-
-
 @api.route('/collection', methods=['GET'])
 def get_all_collections():
     all_collections = Collection.query.all()
@@ -253,11 +253,7 @@ def favorite_brand(outfit_id):
     user= User.get_user_by_email(user_email)
     outfit= Outfit.query.filter_by(outfit_user_id=user.id, id=outfit_id).first()
     # payload= request.get_json()
-    # print("aqui empezamos")
-    # print(outfit.favorite)
     outfit.favorite= not outfit.favorite
-    # print(outfit.favorite)
-
     db.session.commit()
     return "fav updated", 200 
 

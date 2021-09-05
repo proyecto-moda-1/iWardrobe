@@ -1,5 +1,4 @@
 import React, { useState, useContext } from "react";
-// import { ToastContainer, toast } from "react-toastify";
 import CollectionSelect from "./collectionSelect ";
 import AddCollection from "./addCollection.js";
 import { getActions } from "../store/flux.js";
@@ -10,7 +9,6 @@ import Modal from "react-bootstrap/Modal";
 import CreateOutfitBtn from "./btnCreate";
 import "../../styles/createOutfit.scss";
 import Form from "react-bootstrap/Form";
-// import "../../styles/myOutfit.scss";
 import PropTypes from "prop-types";
 import "react-toastify/dist/ReactToastify.css";
 import { toast } from "react-toastify";
@@ -70,11 +68,9 @@ const CreateOutfit = props => {
 						handleSubmit();
 						resetInputField();
 						notify();
+						handleClose();
 					}}>
 					Save creation
-				</Button>
-				<Button type="submit" id="btnCreate" value="button" onClick={handleClose}>
-					Close
 				</Button>
 			</Modal.Footer>
 		</Modal>
