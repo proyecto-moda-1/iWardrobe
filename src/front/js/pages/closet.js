@@ -62,6 +62,7 @@ export const Closet = () => {
 					<div className="planet d-flex flex-row">
 						{store.todayOutfit
 							? store.todayOutfit.map((today, index) => {
+									console.log(today);
 									return (
 										<Card
 											name={today.name}

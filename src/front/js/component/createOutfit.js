@@ -15,7 +15,9 @@ import { toast } from "react-toastify";
 toast.configure();
 
 const CreateOutfit = props => {
+	console.log(props, "#########");
 	const { show, handleClose } = props;
+	const [todayOutfit, setTodayOutfit] = useState(false);
 	const [name, setName] = useState("");
 	const notify = () => toast("Saved outfit!");
 	//STATES FOR INSIDE MODAL <ADDCOLLECTION/>
@@ -24,13 +26,13 @@ const CreateOutfit = props => {
 	const handleShowCollection = () => setShowCollection(true);
 
 	const { store, actions } = useContext(Context);
-	const handleSubmit = () => {
+	const handleSubmit = id => {
 		const data = {
 			outfit_user_id: 1,
-			name: name
+			name: name,
+			today: todayOutfit
 		};
 		actions.createOutfit(data);
-		actions.getTodayOutfit();
 	};
 	const handleUserInput = e => {
 		setInputValue(e.target.value);
@@ -57,14 +59,13 @@ const CreateOutfit = props => {
 			<Button id="btnAddCollection" onClick={handleShowCollection}>
 				Add new collection
 			</Button>
-			<AddCollection show={showCollection} handleClose={handleCloseCollection} />
-			<SelectOutfitBtn id={props.id} today={props.today} />
+			<AddCollection show={showCollection} handleClose={handleCloseCollection} />(
+			<input type="checkbox" onChange={() => setTodayOutfit(!todayOutfit)} defaultValue={todayOutfit}></input>
 			<Modal.Footer>
 				<Button
 					variant="outline-light"
-					id="btnCreate"
 					onClick={() => {
-						handleSubmit();
+						handleSubmit(props.id);
 						handleClose();
 						resetInputField();
 						notify();

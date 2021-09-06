@@ -196,13 +196,14 @@ def create_outfit():
     if name is None or name == 0:
         return "Provide a valid name", 400
 
+
     collectionId = body.get('collectionId')
     if collectionId is None or collectionId == 0:
-        outfit = Outfit(outfit_user_id=outfit_user_id, name=name)
+        outfit = Outfit(outfit_user_id=outfit_user_id, name=name, today_outfit= body.get("today"))
         outfit.create_outfit()
         return "Created", 201
     else: 
-        outfit = Outfit(outfit_user_id=outfit_user_id, name=name)
+        outfit = Outfit(outfit_user_id=outfit_user_id, name=name,today_outfit= body.get("today"))
         outfit.create_outfit()
         collection =Collection.query.filter_by(id=collectionId).first()
         collection.outfits.append(outfit)
