@@ -112,8 +112,12 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 					}
 				};
 				fetch(endpoint, config)
-					.then(response => response.json())
-					// .then(json => console.log(json))
+					.then(response => {
+						if (response.ok) {
+							console.log("####", data);
+							getActions().getClothing(data.get("category"));
+						}
+					})
 					.catch(err => console.error(err));
 			},
 
