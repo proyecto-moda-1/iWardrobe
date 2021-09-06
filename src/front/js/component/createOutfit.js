@@ -30,6 +30,7 @@ const CreateOutfit = props => {
 			name: name
 		};
 		actions.createOutfit(data);
+		actions.getTodayOutfit();
 	};
 	const handleUserInput = e => {
 		setInputValue(e.target.value);
@@ -57,7 +58,7 @@ const CreateOutfit = props => {
 				Add new collection
 			</Button>
 			<AddCollection show={showCollection} handleClose={handleCloseCollection} />
-			<SelectOutfitBtn id="outfitCheck" name={props.name} />
+			<SelectOutfitBtn id={props.id} today={props.today} />
 			<Modal.Footer>
 				<Button
 					variant="outline-light"
@@ -81,5 +82,7 @@ export default CreateOutfit;
 CreateOutfit.propTypes = {
 	show: PropTypes.bool,
 	handleClose: PropTypes.func,
-	name: PropTypes.string
+	name: PropTypes.string,
+	id: PropTypes.int,
+	today: PropTypes.bool
 };

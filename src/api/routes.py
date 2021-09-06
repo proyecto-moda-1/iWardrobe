@@ -88,12 +88,15 @@ def get_all_clothings():
     user= User.get_user_by_email(user_email)
     args = request.args
 
-    if "category" in args:
+    if "category" in args is None or Category == 0:
         # for element in Category:
         #     if element.name == args.get("category"):
         #         category_value = element.value
         #         break
-        category_value = args.get("category")
+        # category_value = args.get("category")
+        category_value = args.get("top")
+        category_value = args.get("bottom")
+        category_value = args.get("footwear")
         all_clothings = Clothing.query.filter_by(category=category_value)
 
     else:
@@ -145,7 +148,7 @@ def create_clothing():
   
 @api.route('/outfit', methods=['GET'])
 def get_all_outfits():
-    all_outfits = Outfit.query.all()
+    all_outfits = Outfit.query.filter_by(today_outfit=False)
 
     serialized_outfits = []
     for outfit in all_outfits:
@@ -153,6 +156,26 @@ def get_all_outfits():
     print(all_outfits)
 
     return jsonify(serialized_outfits), 200
+
+@api.route('/users/today_outfits', methods=['GET'])
+@jwt_required()
+def get_user_today_outfits():
+        user_email = get_jwt_identity()
+        user= User.get_user_by_email(user_email)
+        get_all_outfits = Outfit.get_today_outfit_by_user_id(user.id)
+        serialized_outfit = []
+        for outfit in get_all_outfits:
+            serialized_outfit.append(outfit.serialize())
+        return jsonify(serialized_outfit), 200 
+
+@api.route('/today_outfit/<int:outfit_id>', methods=['POST'])
+def today_outfit(outfit_id):
+    outfit = Outfit.query.filter_by(id=outfit_id).first()
+    outfit.today_outfit= not outfit.today_outfit
+    db.session.commit()
+    return jsonify ({"Message":"Ok"}), 201
+
+
 
 
 @api.route('/outfit', methods=['POST'])
@@ -253,9 +276,7 @@ def favorite_brand(outfit_id):
     user= User.get_user_by_email(user_email)
     outfit= Outfit.query.filter_by(outfit_user_id=user.id, id=outfit_id).first()
     # payload= request.get_json()
-    # print("aqui empezamos")
-    # print(outfit.favorite)
-
+   
     outfit.favorite= not outfit.favorite
     # print(outfit.favorite)
 

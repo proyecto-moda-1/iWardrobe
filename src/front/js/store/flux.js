@@ -296,27 +296,35 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 					.then(response => response.json())
 					.catch(err => console.error(err));
 			},
-
-			setFavorites: fav => {
+			getTodayOutfit: () => {
 				const store = getStore();
-				setStore({ favorites: [...store.favorites, fav] });
+				const endpoint = `${process.env.BACKEND_URL}/api/users/today_outfits`;
+				const config = {
+					method: "GET",
+					headers: {
+						Authorization: `Bearer ${store.token}`,
+						cors: "no-cors"
+					}
+				};
+
+				fetch(endpoint, config)
+					.then(response => response.json())
+					.then(data => {
+						setStore({ todayOutfit: data });
+					})
+					.catch(err => console.error(err));
 			},
-			// selectOutfit: data => {
-			// 	const store = getStore();
-			// 	const endpoint = process.env.BACKEND_URL + `/api/outfit?id=${id}`;
-			// 	const config = {
-			// 		method: "PUT",
-			// 		body: JSON.stringify(data),
-			// 		headers: {
-			// 			"Content-Type": "application/json",
-			// 			Authorization: `Bearer ${store.token}`
-			// 		}
-			// 	};
-			// 	fetch(endpoint, config)
-			// 		.then(response => response.json())
-			// 		.then(json => data)
-			// 		.catch(err => console.error(err));
-			// },
+			todaysOutfit: id => {
+				const store = getStore();
+				const endpoint = process.env.BACKEND_URL + `/api/today_outfit/${id}`;
+				const config = {
+					method: "POST",
+					headers: {
+						Authorization: `Bearer ${store.token}`
+					}
+				};
+				fetch(endpoint, config).then(response => response.json());
+			},
 			selectCollection: collection => {
 				setStore({ selectedCollection: collection });
 			}
