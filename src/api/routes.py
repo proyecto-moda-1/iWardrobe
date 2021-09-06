@@ -88,15 +88,15 @@ def get_all_clothings():
     user= User.get_user_by_email(user_email)
     args = request.args
 
-    if "category" in args is None or Category == 0:
+    if "category" in args :
         # for element in Category:
         #     if element.name == args.get("category"):
         #         category_value = element.value
         #         break
-        # category_value = args.get("category")
-        category_value = args.get("top")
-        category_value = args.get("bottom")
-        category_value = args.get("footwear")
+        category_value = args.get("category")
+        # category_value = args.get("top")
+        # category_value = args.get("bottom")
+        # category_value = args.get("footwear")
         all_clothings = Clothing.query.filter_by(category=category_value)
 
     else:
