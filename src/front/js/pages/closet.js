@@ -11,6 +11,10 @@ import "../../styles/closet.scss";
 export const Closet = () => {
 	const { store, actions } = useContext(Context);
 
+	function handleFavorite(id) {
+		actions.favoriteBrand(id);
+	}
+
 	useEffect(() => {
 		actions.getUserFavorite();
 	}, []);
@@ -18,7 +22,17 @@ export const Closet = () => {
 	let favoriteCards = [];
 	const collectionOutfits =
 		store.selectedCollection.outfits &&
-		store.selectedCollection.outfits.map(outfit => <div key={outfit.id}>{outfit.name}</div>);
+		store.selectedCollection.outfits.map(outfit => (
+			<Card
+				name={outfit.name}
+				id={outfit.id}
+				collections={outfit.collections}
+				image={outfit.image}
+				clothing={outfit.clothing}
+				favorite={outfit.favorite}
+				key={outfit.id}
+			/>
+		));
 	if (store.favorites != undefined) {
 		favoriteCards = store.favorites.map((favorite, index) => {
 			return (
@@ -30,30 +44,35 @@ export const Closet = () => {
 					clothing={favorite.clothing}
 					favorite={favorite.favorite}
 					key={index}
+					markAsFavorite={handleFavorite}
 				/>
 			);
 		});
 	}
 	return (
-		<div className="container">
+		<div className="containerCloset">
 			<h1 className="tittleCloset">Your Closet</h1>
-			<p className="lead">Dress for every ocassion</p>
-			<div className="my-4">
+			<p className="leadCloset">Dress for every ocassion</p>
+			<div className="clothingUsed">
+				<div className="row">
+					<h1 className="todayCloset">-TODAYS OUTFIT</h1>
+					<div className="planet d-flex flex-row"></div>
+				</div>
+			</div>
+			<div className="containerClothingFavs">
 				<div className="row">
 					<h1 className="favouritesText">- FAVOURITES</h1>
-					<div className="planet d-flex flex-row">{favoriteCards}</div>
+					<div className="favClosetCard d-flex flex-row">{favoriteCards}</div>
 				</div>
+			</div>
+			<div className="clothingCollections">
 				<div className="row">
-					<div className="col-xs-3">
-						<h1 className="collectionsText">- COLLECTIONS</h1>
-						<div className="collectionDropdown">
-							<CollectionDropdown />
-						</div>
+					<h1 className="collectionsText">- COLLECTIONS</h1>
+					<div className="collectionDropdown">
+						<CollectionDropdown />
 					</div>
-				</div>
-				<div className="row">
-					<h1 className="text">{store.selectedCollection.name}</h1>
-					<div className="planet d-flex flex-row">{collectionOutfits}</div>
+					<h1>{store.selectedCollection.name}</h1>
+					<div className="collectionDrop">{collectionOutfits}</div>
 				</div>
 			</div>
 		</div>

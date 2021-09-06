@@ -8,30 +8,30 @@ import PropTypes from "prop-types";
 import "../../styles/card.scss";
 
 const Card = props => {
-	const [favorite, setFavorite] = useState("");
+	// const [favorite, setFavorite] = useState("");
 
 	const { store, actions } = useContext(Context);
 
-	// function handleFavorite(id) {
-	// 	actions.favoriteBrand(id);
-	// }
+	const handleFavorite = id => {
+		actions.favoriteBrand(id);
+	};
 
 	let clothingCards = [];
 	if (props.clothing != undefined) {
 		clothingCards = props.clothing.map((clothing, index) => {
 			return (
 				<div key={index} className="cardClothing">
-					<div className="cardBody">
-						<h5 className="cardName">{clothing.name}</h5>
-						<img className="cardImg">{clothing.image}</img>
+					<div className="cardBodyClothing">
+						<h5 className="cardNameClothing">{clothing.name}</h5>
+						<img className="cardClothingImg" src={clothing.image} />
 						<h4 className="cardClean">
 							{clothing.clean ? "limpio" : "sucio"}{" "}
-							{/* <BtnCleanOutfit
+							<BtnCleanOutfit
 								name={clothing.name}
 								image={clothing.image}
 								clothing={clothing.clean}
 								key={index}
-							/> */}
+							/>
 						</h4>
 					</div>
 				</div>
@@ -42,18 +42,17 @@ const Card = props => {
 	return (
 		<div className="cardOutfit">
 			<div className="cardCollections">{props.collections}</div>
-			<div className="card-body text-secondary">
-				<h5 className="card-title">{props.name}</h5>
-				<img className="card-title">{props.image}</img>
-				<h5 className="card-title">{clothingCards}</h5>
-				<div className="cardInfo">
-					{/* <button className="btn-fav btn-outline-danger" onClick={handleFavorite(props.id)}>
+			<div className="cardBodyOutfit text-secondary">
+				<h5 className="cardTittleOutfit">OUTFIT: {props.name}</h5>
+				<img  src={props.image} className="cardClothingImg"></img>
+				<h5 className="cardClothingImg">{clothingCards}</h5>
+				<div className="cardFooter">
+					<button className="btnFav btn-outline-danger" onClick={handleFavorite.bind(this, props.id)}>
 						♡
 					</button> */}
 				</div>
 			</div>
-			{/* <BtnCleanOutfit />
-			<SelectOutfitBtn id="outfitCheck" /> */}
+			<SelectOutfitBtn id="outfitCheck" />
 		</div>
 	);
 };

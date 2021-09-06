@@ -64,15 +64,13 @@ const CreateOutfit = props => {
 					id="btnCreate"
 					onClick={() => {
 						handleSubmit();
+						handleClose();
 						resetInputField();
 						notify();
 						handleClose();
 					}}>
 					Save creation!
 				</Button>
-				{/* <Button type="submit" id="btnCreate" value="button" onClick={handleClose}>
-					Close
-				</Button> */}
 			</Modal.Footer>
 		</Modal>
 	);

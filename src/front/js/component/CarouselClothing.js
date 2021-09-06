@@ -3,7 +3,7 @@ import { Context } from "../store/appContext";
 import { getActions } from "../store/flux.js";
 import PropTypes from "prop-types";
 
-export const CarouselClothing = props => {
+const CarouselClothing = props => {
 	const { store, actions } = useContext(Context);
 
 	return (
@@ -26,7 +26,7 @@ export const CarouselClothing = props => {
 	);
 };
 
+export default CarouselClothing;
 CarouselClothing.propTypes = {
 	selectedItems: PropTypes.object
 };
-export default CarouselClothing;

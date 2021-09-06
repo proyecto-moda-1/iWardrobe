@@ -6,8 +6,6 @@ import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import LoadClothing from "../component/loadClothing";
 
-import PropTypes from "prop-types";
-
 import "../../styles/profile.scss";
 
 export const Profile = () => {
@@ -55,14 +53,14 @@ export const Profile = () => {
 	}
 
 	return (
-		<div className="Body">
+		<div className="bodyProfile">
 			<div className="Jumbotrom">
 				<div className="row">
 					<div className="col">
 						<Button className="btnProfile" onClick={handleShow}>
 							Add clothes
 						</Button>
-						<LoadClothing show={show} handleClose={handleClose} />
+						<LoadClothing id="btnClothes" show={show} handleClose={handleClose} />
 						<p className="textBody">Tomale una foto a tu ropa y subela a tu perfil </p>
 					</div>
 					<div className="col">
@@ -82,7 +80,9 @@ export const Profile = () => {
 							</button>
 						</Link>
 
-						<p className="textBody">crea tus outfit diarios y guardalos para cuando necesites usarlo </p>
+						<p className="textBodyBottom">
+							crea tus outfit diarios y guardalos para cuando necesites usarlo{" "}
+						</p>
 					</div>
 					<div className="col">
 						<Link to="/closet">
@@ -90,20 +90,22 @@ export const Profile = () => {
 								Closet
 							</button>
 						</Link>
-						<p className="textBody">
+						<p className="textBodyBottom">
 							Puedes marcar tus piezas sucias y solo mostraremos los outfits que esten limpios
 						</p>
 					</div>
 				</div>
 			</div>
-			<div className="container">
+			<div className="containerAvailables">
 				<div className="row">
-					<h1 className="textOufit"> OUTFITS AVAILABLES</h1>
-					<div className="favorite d-flex flex-row">{outfitCards}</div>
+					<h1 className="tittleAvaibles"> OUTFITS AVAILABLES</h1>
+					<div className="availablesCard d-flex flex-row">{outfitCards}</div>
 				</div>
+			</div>
+			<div className="containerDirtyS">
 				<div className="row">
-					<h1 className="textDirty"> ALREADY USED </h1>
-					<div className="dirty d-flex flex-row">{dirtyClothing}</div>
+					<h1 className="tittleDirty"> ALREADY USED </h1>
+					<div className="dirtyCard d-flex flex-row">{dirtyClothing}</div>
 				</div>
 			</div>
 		</div>
