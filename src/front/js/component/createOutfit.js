@@ -4,7 +4,7 @@ import AddCollection from "./addCollection.js";
 import { getActions } from "../store/flux.js";
 import { Context } from "../store/appContext";
 import Button from "react-bootstrap/Button";
-import SelectOutfitBtn from "./outfitCheck";
+import SelectOutfitBtn from "./selectOutfitBtn";
 import Modal from "react-bootstrap/Modal";
 import CreateOutfitBtn from "./btnCreate";
 import "../../styles/createOutfit.scss";
@@ -24,13 +24,13 @@ const CreateOutfit = props => {
 	const handleShowCollection = () => setShowCollection(true);
 
 	const { store, actions } = useContext(Context);
-
 	const handleSubmit = () => {
 		const data = {
 			outfit_user_id: 1,
 			name: name
 		};
 		actions.createOutfit(data);
+		actions.getTodayOutfit();
 	};
 	const handleUserInput = e => {
 		setInputValue(e.target.value);
@@ -38,7 +38,6 @@ const CreateOutfit = props => {
 	const resetInputField = () => {
 		setName("");
 	};
-
 	return (
 		<Modal show={show} onHide={handleClose}>
 			<Modal.Header closeButton>
@@ -59,7 +58,7 @@ const CreateOutfit = props => {
 				Add new collection
 			</Button>
 			<AddCollection show={showCollection} handleClose={handleCloseCollection} />
-			<SelectOutfitBtn id="outfitCheck" name={props.name} />
+			<SelectOutfitBtn id={props.id} today={props.today} />
 			<Modal.Footer>
 				<Button
 					variant="outline-light"
@@ -69,8 +68,9 @@ const CreateOutfit = props => {
 						handleClose();
 						resetInputField();
 						notify();
+						handleClose();
 					}}>
-					Save creation
+					Save creation!
 				</Button>
 			</Modal.Footer>
 		</Modal>
@@ -82,5 +82,7 @@ export default CreateOutfit;
 CreateOutfit.propTypes = {
 	show: PropTypes.bool,
 	handleClose: PropTypes.func,
-	name: PropTypes.string
+	name: PropTypes.string,
+	id: PropTypes.int,
+	today: PropTypes.bool
 };

@@ -54,6 +54,7 @@ const AddCollection = props => {
 						handleClose();
 						resetInputField();
 						notify();
+						handleClose();
 					}}>
 					Save new collection
 				</Button>

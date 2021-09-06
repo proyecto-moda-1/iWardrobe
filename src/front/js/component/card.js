@@ -1,20 +1,20 @@
 import React, { useContext, useState, useEffect } from "react";
 import { Link, useHistory, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
-import SelectOutfitBtn from "./outfitCheck";
+import SelectOutfitBtn from "./selectOutfitBtn";
 import BtnCleanOutfit from "./btnCleanOutfit";
 import { Button } from "react-bootstrap";
 import PropTypes from "prop-types";
 import "../../styles/card.scss";
 
+//Hay un error que da en la consola sobre el id del card, hay que mirar eso
+
 const Card = props => {
-	// const [favorite, setFavorite] = useState("");
-
+	const [favorite, setFavorite] = useState("");
 	const { store, actions } = useContext(Context);
-
-	const handleFavorite = id => {
+	function handleFavorite(id) {
 		actions.favoriteBrand(id);
-	};
+	}
 
 	let clothingCards = [];
 	if (props.clothing != undefined) {
@@ -25,7 +25,7 @@ const Card = props => {
 						<h5 className="cardNameClothing">{clothing.name}</h5>
 						<img className="cardClothingImg" src={clothing.image} />
 						<h4 className="cardClean">
-							{clothing.clean ? "limpio" : "sucio"}{" "}
+							{/* {clothing.clean ? "limpio" : "sucio"}{" "} */}
 							<BtnCleanOutfit
 								name={clothing.name}
 								image={clothing.image}
@@ -48,10 +48,10 @@ const Card = props => {
 				<div className="cardFooter">
 					<button className="btnFav btn-outline-danger" onClick={handleFavorite.bind(this, props.id)}>
 						♡
-					</button>
+					</button>{" "}
 				</div>
 			</div>
-			<SelectOutfitBtn id="outfitCheck" />
+			<SelectOutfitBtn id={props.id} today={props.today} />
 		</div>
 	);
 };
@@ -65,5 +65,6 @@ Card.propTypes = {
 	clothing: PropTypes.array,
 	outfit: PropTypes.array,
 	image: PropTypes.string,
+	today: PropTypes.bool,
 	favorite: PropTypes.bool
 };

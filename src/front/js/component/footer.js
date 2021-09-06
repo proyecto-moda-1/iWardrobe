@@ -17,19 +17,19 @@ export const Footer = () => (
 		</div> */}
 		<div className="header">
 			<li className="text" type="submit">
-				<Link className="academy" href="https://4geeksacademy.com/es/inicio">
+				<Link to="https://4geeksacademy.com/es/inicio" className="academy">
 					4Geeks Academy
 				</Link>
 			</li>
 			<ul className="text">
 				<li className="text-left" type="submit">
-					<Link className="linkedinGaby" href="https://github.com/mgtablante">
+					<Link to="https://github.com/mgtablante" className="linkedinGaby">
 						<i className="fab fa-github" />
 						Gabriela Tablante
 					</Link>
 				</li>
 				<li className="text" type="submit">
-					<Link className="linkedinYola" href="https://github.com/yolandagb">
+					<Link to="https://github.com/yolandagb" className="linkedinYola">
 						{" "}
 						<i className="fab fa-github" />
 						Yolanda García
