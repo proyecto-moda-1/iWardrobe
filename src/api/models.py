@@ -91,7 +91,8 @@ class Clothing(db.Model):
              "image": self.image,
              "name": self.name,
              "categories": self.category.name,
-             "clean": self.clean,
+             "clean": self.clean
+             
          } 
 
 collection_outfit = db.Table('collection_outfit',
@@ -137,7 +138,8 @@ class Outfit(db.Model):
               "outfit_user_id": self.outfit_user_id,
               "name": self.name,
               "clothing": serialize_clothing,
-              "favorite": self.favorite
+              "favorite": self.favorite,
+              "today_outfit": self.today_outfit
          } 
 
 class Collection(db.Model):

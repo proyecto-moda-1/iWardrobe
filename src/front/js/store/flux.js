@@ -299,7 +299,7 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 					.then(response => response.json())
 					.catch(err => console.error(err));
 			},
-			getTodayOutfit: () => {
+			getTodayOutfit: data => {
 				const store = getStore();
 				const endpoint = `${process.env.BACKEND_URL}/api/users/today_outfits`;
 				const config = {
@@ -317,16 +317,21 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 					})
 					.catch(err => console.error(err));
 			},
-			todaysOutfit: id => {
+			todaysOutfit: (id, data) => {
 				const store = getStore();
 				const endpoint = process.env.BACKEND_URL + `/api/today_outfit/${id}`;
 				const config = {
 					method: "POST",
+					body: data,
 					headers: {
 						Authorization: `Bearer ${store.token}`
 					}
 				};
-				fetch(endpoint, config).then(response => response.json());
+				fetch(endpoint, config).then(response => {
+					if (response.ok) {
+						// getActions().getTodayOutfit(data.get("todayOutfit"));
+					}
+				});
 			},
 			selectCollection: collection => {
 				setStore({ selectedCollection: collection });
