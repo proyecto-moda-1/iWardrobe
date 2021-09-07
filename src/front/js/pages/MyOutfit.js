@@ -23,29 +23,35 @@ export const MyOutfit = props => {
 		bottom: {},
 		footwear: {}
 	});
-	const topItems = store.top.map(item => {
-		return (
-			<option key={item.id} value={item.id}>
-				{item.name}
-			</option>
-		);
-	});
-	const bottomItems = store.bottom.map(item => {
-		return (
-			<option key={item.id} value={item.id}>
-				{" "}
-				{item.name}
-			</option>
-		);
-	});
-	const footwearItems = store.footwear.map(item => {
-		return (
-			<option key={item.id} value={item.id}>
-				{" "}
-				{item.name}
-			</option>
-		);
-	});
+	const topItems = store.top
+		? store.top.map(item => {
+				return (
+					<option key={item.id} value={item.id}>
+						{item.name}
+					</option>
+				);
+		  })
+		: "";
+	const bottomItems = store.bottom
+		? store.bottom.map(item => {
+				return (
+					<option key={item.id} value={item.id}>
+						{" "}
+						{item.name}
+					</option>
+				);
+		  })
+		: "";
+	const footwearItems = store.footwear
+		? store.footwear.map(item => {
+				return (
+					<option key={item.id} value={item.id}>
+						{" "}
+						{item.name}
+					</option>
+				);
+		  })
+		: "";
 
 	useEffect(() => {
 		actions.getClothing("top");
@@ -119,7 +125,7 @@ export const MyOutfit = props => {
 					</Col>
 					<div className="containerCreate">
 						<Col sm={true}>
-							<CreateOutfitBtn id="btnCreateOutfit" />
+							<CreateOutfitBtn id="btnCreateOutfit" clothing={selectedItems} />
 						</Col>
 					</div>
 				</Row>

@@ -141,7 +141,7 @@ def create_clothing():
     cloudinary.config(cloud_name = os.getenv('CLOUD_NAME'), api_key=os.getenv('API_KEY'), api_secret=os.getenv('API_SECRET'))
     result = cloudinary.uploader.upload(image)
 
-    clothing = Clothing(user_id=user_id, name=name, category=category, image=result['secure_url'], clean=True)
+    clothing = Clothing(user_id=user_id, name=name, category=category, image=result['secure_url'], dirty=True)
     clothing.create_clothing()
 
     return "Created", 201
@@ -183,7 +183,7 @@ def today_outfit(outfit_id):
 def create_outfit():
 
     body = request.get_json()
-    
+    print(body, "ghjk")
     if body is None:
         return "The request body is null", 400
 
@@ -201,6 +201,7 @@ def create_outfit():
     if collectionId is None or collectionId == 0:
         outfit = Outfit(outfit_user_id=outfit_user_id, name=name, today_outfit= body.get("today"))
         outfit.create_outfit()
+        # outfit.clothings = outfit.clothings.append(id=top.id,id=bottom.id, id=footwear.id)
         return "Created", 201
     else: 
         outfit = Outfit(outfit_user_id=outfit_user_id, name=name,today_outfit= body.get("today"))
@@ -277,10 +278,7 @@ def favorite_brand(outfit_id):
     user= User.get_user_by_email(user_email)
     outfit= Outfit.query.filter_by(outfit_user_id=user.id, id=outfit_id).first()
     # payload= request.get_json()
-   
     outfit.favorite= not outfit.favorite
-    # print(outfit.favorite)
-
     db.session.commit()
     return "fav updated", 200 
 
