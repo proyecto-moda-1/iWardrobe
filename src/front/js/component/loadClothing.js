@@ -51,7 +51,6 @@ const LoadClothing = props => {
 				<input
 					className="nameClothing"
 					type="text"
-					id="clothingName"
 					placeholder="Clothing's Name"
 					value={name}
 					onChange={event => setName(event.target.value)}
@@ -62,7 +61,6 @@ const LoadClothing = props => {
 				size="sm"
 				as="select"
 				placeholder="your email address"
-				id="selectClothing"
 				value={category}
 				onChange={event => setCategory(event.target.value)}>
 				<option value="0">Category</option>
