@@ -29,7 +29,7 @@ const AddCollection = props => {
 	};
 
 	return (
-		<Modal show={show} onHide={handleClose}>
+		<Modal className="modalBox" show={show} onHide={handleClose}>
 			<Modal.Header className="modalCollection" closeButton>
 				<Modal.Title className="tittleModalCollection">NEW COLLECTION</Modal.Title>
 			</Modal.Header>

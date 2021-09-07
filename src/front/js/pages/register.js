@@ -33,53 +33,53 @@ export const Register = function(props) {
 	};
 
 	return (
-		<div className="container">
+		<div className="containerRegister">
 			<div className="d-flex justify-content-center">
-				<div className="loginContainer">
-					<label className="userLabel">REGISTER</label>
-					<div className="group">
+				<div className="containerBoxRegister">
+					<label className="tittleRegister">REGISTER</label>
+					<div className="groupRegister">
 						<input
 							type="text"
-							className="input btn btn-light"
+							className="inputRegister btn btn-light"
 							id="exampleFormControlInput1"
 							placeholder="NickName"
 							value={nickname}
 							onChange={event => setNickname(event.target.value)}
 						/>
 					</div>
-					<div className="group">
+					<div className="groupRegister">
 						{" "}
 						<input
 							id="pass"
 							type="text"
-							className="input btn btn-light"
+							className="inputRegister btn btn-light"
 							placeholder=" your email address"
 							value={email}
 							onChange={event => setEmail(event.target.value)}
 						/>
 					</div>
-					<div className="group">
+					<div className="groupRegister">
 						<input
 							type="password"
-							className="input btn btn-light"
+							className="inputRegister btn btn-light"
 							id="exampleFormControlInput1"
 							placeholder="your password"
 							value={password}
 							onChange={event => setPassword(event.target.value)}
 						/>
 					</div>
-					<div className="group">
+					<div className="groupRegister">
 						<input
 							id="pass"
 							type="password"
-							className="input btn btn-light"
+							className="inputRegister btn btn-light"
 							data-type="password"
 							placeholder="Repeat your password"
 							value={repeatPassword}
 							onChange={event => setRepeatPassword(event.target.value)}
 						/>
 					</div>
-					<div className="group">
+					<div className="groupRegister">
 						<Form.Control
 							className="genderDrop"
 							id="genderSelect"
@@ -99,8 +99,8 @@ export const Register = function(props) {
 							<a href="#">¿Ya tienes una cuenta?</a>
 						</Link>
 					</div>
-					<div className="group">
-						<button type="submit" value="button" className="button" onClick={handleRegister}>
+					<div className="goToLogin">
+						<button type="submit" value="button" className="btnRegister" onClick={handleRegister}>
 							Sign Up
 						</button>
 					</div>
