@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 import PropTypes from "prop-types";
 import { Context } from "../store/appContext";
 import { getActions } from "../store/flux.js";
-import "../../styles/createOutfit.scss";
+import "../../styles/addClothing.scss";
 import "react-toastify/dist/ReactToastify.css";
 import { toast } from "react-toastify";
 toast.configure();

@@ -96,15 +96,15 @@ export const Profile = () => {
 					</div>
 				</div>
 			</div>
+			<h1 className="tittleAvaibles"> OUTFITS AVAILABLES</h1>
 			<div className="containerAvailables">
 				<div className="row">
-					<h1 className="tittleAvaibles"> OUTFITS AVAILABLES</h1>
 					<div className="availablesCard d-flex flex-row">{outfitCards}</div>
 				</div>
 			</div>
+			<h1 className="tittleDirty"> ALREADY USED </h1>
 			<div className="containerDirtyS">
 				<div className="row">
-					<h1 className="tittleDirty"> ALREADY USED </h1>
 					<div className="dirtyCard d-flex flex-row">{dirtyClothing}</div>
 				</div>
 			</div>

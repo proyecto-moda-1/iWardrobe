@@ -1,58 +1,50 @@
-.modal-header, .modal-title,.h4 {
-    line-height: 4rem;
-    text-transform: uppercase;
-   
-}
-.group-clothing,.group-image{
-    width: 11rem;
-    margin-left: 3rem;
-    margin-bottom: 3rem;
-    font-size: 0.90rem;
-}
-.input-image{
-    font-size: 15px;
-    width: 300px;
-    border: 2px;
-    border-radius: 12px;
-    border-style: solid;
-    color: #5e5c5c;   
-}
-#clothingName{
-    width: 300px;
-    border-radius: 12px;
-    font-size: 0.90rem;
-    border-style: solid;
-    border: 2px solid #9b9999;
+
+.tittleModal{
+    color: burlywood;
+    margin-left: auto;
 
 }
-
-#selectClothing{
-    width: 300px;
-    border-radius: 12px;
-    font-size: 0.90rem;
-    border-style: solid;
-    border: 2px solid #9b9999;
-}
-#btnClothing{
-    border: 2px;
-    border-radius: 12px;
-    font-size: 14px;
-    background-color: white;
-    color: #9b9999;
-    border: 2px solid #9b9999;
+.modalClothing{
+    margin: 2rem;
 }
 
-.modal-content{
-    width: 100%;
-    margin: auto;
-    max-width: 25rem;
-    position: relative;
-    box-shadow: 0 0.75rem 0.938rem 0 rgba(27, 26, 26, 0.24), 0 17px 50px 0 rgba(0, 0, 0, .19)
+.nameClothing{    
+    width: 25rem;
+    height: 3rem;
+    text-align:center;
+    margin-left: 0.8rem;
+    margin-bottom: -4rem;
+    border-radius: 0.4rem;
+    font-size: 1.3rem;
+}
+.ClothingSelect{
+    margin-top: 1.6rem;
+    margin-left: 7rem;
+    margin-right: 2rem;
+    width: 18rem !important;
+    text-align:center;
+    border-radius: 0.5rem;
+
+
 }
 .selectArch{
-    width: 18rem;
-    margin-left: 3rem;
-    margin-bottom: 3rem;
-    border: 2px;
-    font-size: 0.90rem;
+    width: 25rem;
+    height: 3rem;
+    margin-top: 3rem;
+    margin-left: 6.5rem;
+    text-align: center;
+
+
+
 }
+
+.uploadClothes{
+    width: 6rem;
+
+}
+
+.clothingBtn{
+    width: 6rem;
+
+}
+

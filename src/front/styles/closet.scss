@@ -10,7 +10,7 @@
 .leadCloset{
     text-align: center;
     font-size: 3rem;
-    margin-bottom: 5rem;
+    margin-bottom: 7rem;
 }
 .clothingUsed{
     height: 30rem;
@@ -21,8 +21,23 @@
     border: 0.2rem solid rgba(90, 77, 59, 0.37);
 }
 .todayCloset{
-    margin-left: 5rem;
+    margin-left: 4.5rem;
     margin-top: 2rem;
+    color:rgb(90, 77, 59)
+}
+.containerClothingUsed{
+    border-radius: 1rem;
+    border: 0.2rem solid rgba(90, 77, 59, 0.37);
+    margin-left: 3rem;
+    margin-right: 3rem;
+    margin-bottom: 4rem;
+    margin-top: 4rem;
+}
+.todayCards{
+    margin-left: 4rem;
+    margin-right: 3rem;
+    margin-bottom: 4rem;
+    margin-top: 1rem;
 }
 .containerClothingFavs{
     border-radius: 1rem;
@@ -33,19 +48,19 @@
     margin-top: 4rem;
 
 }
-.favouritesText{
+.tittleFavourites{
     margin-left: 4.5rem;
     margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     color:rgb(90, 77, 59)
 }
 .favClosetCard{
-    margin-left: 3rem;
+    margin-left: 4rem;
     margin-right: 3rem;
-    margin-bottom: 6rem;
-    margin-top: 2rem;  
+    margin-bottom: 4rem;
+    margin-top: 1rem;
 }
-.clothingCollections{
+.containerClothingCollections{
     height: 30rem;
     margin-left:3rem ;
     margin-right:3rem ;
@@ -54,15 +69,24 @@
     margin-bottom: 6rem;
     border: 0.2rem solid rgba(90, 77, 59, 0.37);
 }
-.collectionsText{
-    margin-left: 5rem;
+.tittleCollections{
+    margin-left: 4.5rem;
     margin-top: 2rem;
+    margin-bottom: 1rem;
+    color:rgb(90, 77, 59)
 }
 .collectionDropdown{
-    margin-left: 7rem;
-    margin-bottom: 20rem;
+    margin-left: 4rem;
+    margin-right: 3rem;
+    margin-bottom: 4rem;
+    margin-top: 1rem;
+    
 }
 .collectionDrop{
     width: 20rem;
     height: 20rem;
+}
+.containerColleDropdown{
+    width: 20rem;
+    margin-top: 1rem;
 }

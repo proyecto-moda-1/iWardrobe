@@ -1,22 +1,25 @@
-// html{
-//     position: rel6tive;
-//     background-color: burlywood;
-//     margin-top: 4%;
-// }
 .myOutfitContainer{
     margin-top: 8rem;
     margin-left: 2rem;
 }
 .containerClothing{
     background-color: rgba(137, 43, 226, 0.795);
-    width: 450px;
-    height: 580px;
-    margin-top: -4%;
-    margin-left: -8%;
-    margin-right: 5%;
+    width: 30rem;
+    height: 40rem;
+    margin-top: -4rem;
+    margin-left: -5rem;
+    margin-right: 2rem;
     border: 2px solid black;
-    border-radius: 2rem;
+    border-radius: 1rem;
 }
+.carouselContainer{
+    width: 30rem;
+    height: 38rem;
+    border: 2px solid black;
+    background-color:rgba(78, 25, 87, 0.829);
+    margin-top: -1rem;
+}
+
 .tittlePage{
     margin-top: 3rem;
     margin-bottom: 2rem;
@@ -61,21 +64,3 @@
     margin-right: -7rem;
     margin-top: 9rem;
 }
-
-// #btnCreateOutfit{
-//     width: 12rem;
-//     height: 5rem;
-// }
-
-// .containerCreate{
-//     background-color: chocolate;
-//     width: 15rem;
-//     height: 10rem;
-//     margin-top: 10rem;
-//     margin-left: 6rem;
-//     margin-right: -5rem;
-
-// }
-
-
-
