@@ -87,14 +87,8 @@ def get_all_clothings():
     user_email = get_jwt_identity()
     user= User.get_user_by_email(user_email)
     args = request.args
-<<<<<<< HEAD
-    
-    # is None or Category == 0
-    if "category" in args:
-=======
 
     if "category" in args :
->>>>>>> main
         # for element in Category:
         #     if element.name == args.get("category"):
         #         category_value = element.value
@@ -284,10 +278,6 @@ def favorite_brand(outfit_id):
     user= User.get_user_by_email(user_email)
     outfit= Outfit.query.filter_by(outfit_user_id=user.id, id=outfit_id).first()
     # payload= request.get_json()
-<<<<<<< HEAD
-=======
-   
->>>>>>> main
     outfit.favorite= not outfit.favorite
     db.session.commit()
     return "fav updated", 200 

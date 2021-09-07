@@ -32,7 +32,8 @@ const CreateOutfit = props => {
 			name: name,
 			today: todayOutfit
 		};
-		actions.createOutfit(data);
+		console.log(props.clothing, "##################");
+		actions.createOutfit(data, props.clothing);
 	};
 	const handleUserInput = e => {
 		setInputValue(e.target.value);
@@ -59,10 +60,9 @@ const CreateOutfit = props => {
 			<Button id="btnAddCollection" onClick={handleShowCollection}>
 				Add new collection
 			</Button>
-			<AddCollection show={showCollection} handleClose={handleCloseCollection} />(
-			<input type="checkbox" onChange={() => setTodayOutfit(!todayOutfit)} defaultValue={todayOutfit}>
-				Use today
-			</input>
+			<AddCollection show={showCollection} handleClose={handleCloseCollection} />
+			Use today
+			<input type="checkbox" onChange={() => setTodayOutfit(!todayOutfit)} defaultValue={todayOutfit}></input>
 			<Modal.Footer>
 				<Button
 					variant="outline-light"
@@ -86,6 +86,7 @@ CreateOutfit.propTypes = {
 	show: PropTypes.bool,
 	handleClose: PropTypes.func,
 	name: PropTypes.string,
+	clothing: PropTypes.object,
 	id: PropTypes.int,
 	today: PropTypes.bool
 };
