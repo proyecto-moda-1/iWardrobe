@@ -91,7 +91,12 @@ class Clothing(db.Model):
              "image": self.image,
              "name": self.name,
              "categories": self.category.name,
+<<<<<<< HEAD
              "dirty": self.dirty,
+=======
+             "clean": self.clean
+             
+>>>>>>> main
          } 
 
 collection_outfit = db.Table('collection_outfit',
@@ -104,6 +109,7 @@ class Outfit(db.Model):
      outfit_user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
      name = db.Column(db.String(120))
      favorite = db.Column(db.Boolean, unique=False, nullable=False,default=False) 
+     today_outfit= db.Column(db.Boolean, unique=False, default=False)
 
     #RELACIONES
      clothing_items = db.relationship('Clothing', secondary= clothing_outfit , back_populates="outfits", lazy=True)
@@ -111,7 +117,11 @@ class Outfit(db.Model):
      
      @staticmethod
      def get_outfit_by_user_id(user_id):
-         return Outfit.query.filter_by(outfit_user_id=user_id).all()
+         return Outfit.query.filter_by(outfit_user_id=user_id, today_outfit=False).all()
+     @staticmethod
+     def get_today_outfit_by_user_id(user_id):
+         return Outfit.query.filter_by(outfit_user_id=user_id, today_outfit=True).all()
+
      @staticmethod
      def get_favorite_user_outfits(user_id):
          return Outfit.query.filter_by(outfit_user_id=user_id, favorite = True).all()
@@ -132,7 +142,8 @@ class Outfit(db.Model):
               "outfit_user_id": self.outfit_user_id,
               "name": self.name,
               "clothing": serialize_clothing,
-              "favorite": self.favorite
+              "favorite": self.favorite,
+              "today_outfit": self.today_outfit
          } 
 
 class Collection(db.Model):

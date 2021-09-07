@@ -4,7 +4,7 @@ import AddCollection from "./addCollection.js";
 import { getActions } from "../store/flux.js";
 import { Context } from "../store/appContext";
 import Button from "react-bootstrap/Button";
-import SelectOutfitBtn from "./outfitCheck";
+import SelectOutfitBtn from "./selectOutfitBtn";
 import Modal from "react-bootstrap/Modal";
 import CreateOutfitBtn from "./btnCreate";
 import "../../styles/createOutfit.scss";
@@ -15,7 +15,9 @@ import { toast } from "react-toastify";
 toast.configure();
 
 const CreateOutfit = props => {
+	console.log(props, "#########");
 	const { show, handleClose } = props;
+	const [todayOutfit, setTodayOutfit] = useState(false);
 	const [name, setName] = useState("");
 	const notify = () => toast("Saved outfit!");
 	//STATES FOR INSIDE MODAL <ADDCOLLECTION/>
@@ -24,14 +26,13 @@ const CreateOutfit = props => {
 	const handleShowCollection = () => setShowCollection(true);
 
 	const { store, actions } = useContext(Context);
-
-	const handleSubmit = () => {
+	const handleSubmit = id => {
 		const data = {
 			outfit_user_id: 1,
-			name: name
+			name: name,
+			today: todayOutfit
 		};
-		console.log(props.clothing, "##################");
-		actions.createOutfit(data, props.clothing);
+		actions.createOutfit(data);
 	};
 	const handleUserInput = e => {
 		setInputValue(e.target.value);
@@ -39,7 +40,6 @@ const CreateOutfit = props => {
 	const resetInputField = () => {
 		setName("");
 	};
-
 	return (
 		<Modal show={show} onHide={handleClose}>
 			<Modal.Header closeButton>
@@ -59,20 +59,21 @@ const CreateOutfit = props => {
 			<Button id="btnAddCollection" onClick={handleShowCollection}>
 				Add new collection
 			</Button>
-			<AddCollection show={showCollection} handleClose={handleCloseCollection} />
-			<SelectOutfitBtn id="outfitCheck" name={props.name} />
+			<AddCollection show={showCollection} handleClose={handleCloseCollection} />(
+			<input type="checkbox" onChange={() => setTodayOutfit(!todayOutfit)} defaultValue={todayOutfit}>
+				Use today
+			</input>
 			<Modal.Footer>
 				<Button
 					variant="outline-light"
-					id="btnCreate"
 					onClick={() => {
-						handleSubmit();
+						handleSubmit(props.id);
 						handleClose();
 						resetInputField();
 						notify();
 						handleClose();
 					}}>
-					Save creation
+					Save creation!
 				</Button>
 			</Modal.Footer>
 		</Modal>
@@ -85,5 +86,6 @@ CreateOutfit.propTypes = {
 	show: PropTypes.bool,
 	handleClose: PropTypes.func,
 	name: PropTypes.string,
-	clothing: PropTypes.object
+	id: PropTypes.int,
+	today: PropTypes.bool
 };

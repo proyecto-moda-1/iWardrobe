@@ -87,14 +87,22 @@ def get_all_clothings():
     user_email = get_jwt_identity()
     user= User.get_user_by_email(user_email)
     args = request.args
+<<<<<<< HEAD
     
     # is None or Category == 0
     if "category" in args:
+=======
+
+    if "category" in args :
+>>>>>>> main
         # for element in Category:
         #     if element.name == args.get("category"):
         #         category_value = element.value
         #         break
         category_value = args.get("category")
+        # category_value = args.get("top")
+        # category_value = args.get("bottom")
+        # category_value = args.get("footwear")
         all_clothings = Clothing.query.filter_by(category=category_value)
 
     else:
@@ -146,7 +154,7 @@ def create_clothing():
   
 @api.route('/outfit', methods=['GET'])
 def get_all_outfits():
-    all_outfits = Outfit.query.all()
+    all_outfits = Outfit.query.filter_by(today_outfit=False)
 
     serialized_outfits = []
     for outfit in all_outfits:
@@ -154,6 +162,26 @@ def get_all_outfits():
     print(all_outfits)
 
     return jsonify(serialized_outfits), 200
+
+@api.route('/users/today_outfits', methods=['GET'])
+@jwt_required()
+def get_user_today_outfits():
+        user_email = get_jwt_identity()
+        user= User.get_user_by_email(user_email)
+        get_all_outfits = Outfit.get_today_outfit_by_user_id(user.id)
+        serialized_outfit = []
+        for outfit in get_all_outfits:
+            serialized_outfit.append(outfit.serialize())
+        return jsonify(serialized_outfit), 200 
+
+@api.route('/today_outfit/<int:outfit_id>', methods=['POST'])
+def today_outfit(outfit_id):
+    outfit = Outfit.query.filter_by(id=outfit_id).first()
+    outfit.today_outfit= not outfit.today_outfit
+    db.session.commit()
+    return jsonify ({"Message":"Ok"}), 201
+
+
 
 
 @api.route('/outfit', methods=['POST'])
@@ -174,14 +202,15 @@ def create_outfit():
     if name is None or name == 0:
         return "Provide a valid name", 400
 
+
     collectionId = body.get('collectionId')
     if collectionId is None or collectionId == 0:
-        outfit = Outfit(outfit_user_id=outfit_user_id, name=name)
+        outfit = Outfit(outfit_user_id=outfit_user_id, name=name, today_outfit= body.get("today"))
         outfit.create_outfit()
         # outfit.clothings = outfit.clothings.append(id=top.id,id=bottom.id, id=footwear.id)
         return "Created", 201
     else: 
-        outfit = Outfit(outfit_user_id=outfit_user_id, name=name)
+        outfit = Outfit(outfit_user_id=outfit_user_id, name=name,today_outfit= body.get("today"))
         outfit.create_outfit()
         collection =Collection.query.filter_by(id=collectionId).first()
         collection.outfits.append(outfit)
@@ -255,6 +284,10 @@ def favorite_brand(outfit_id):
     user= User.get_user_by_email(user_email)
     outfit= Outfit.query.filter_by(outfit_user_id=user.id, id=outfit_id).first()
     # payload= request.get_json()
+<<<<<<< HEAD
+=======
+   
+>>>>>>> main
     outfit.favorite= not outfit.favorite
     db.session.commit()
     return "fav updated", 200 

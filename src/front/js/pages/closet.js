@@ -17,7 +17,9 @@ export const Closet = () => {
 
 	useEffect(() => {
 		actions.getUserFavorite();
+		actions.getTodayOutfit();
 	}, []);
+
 	let favoriteCards = [];
 	const collectionOutfits =
 		store.selectedCollection.outfits &&
@@ -29,6 +31,7 @@ export const Closet = () => {
 				image={outfit.image}
 				clothing={outfit.clothing}
 				favorite={outfit.favorite}
+				today={outfit.today_outfit}
 				key={outfit.id}
 			/>
 		));
@@ -42,6 +45,7 @@ export const Closet = () => {
 					image={favorite.image}
 					clothing={favorite.clothing}
 					favorite={favorite.favorite}
+					today={favorite.today_outfit}
 					key={index}
 					markAsFavorite={handleFavorite}
 				/>
@@ -54,8 +58,27 @@ export const Closet = () => {
 			<p className="leadCloset">Dress for every ocassion</p>
 			<div className="clothingUsed">
 				<div className="row">
-					<h1 className="todayCloset">- USADOS HOY</h1>
-					<div className="planet d-flex flex-row"></div>
+					<h1 className="todayCloset">-TODAYS OUTFIT</h1>
+					<div className="planet d-flex flex-row">
+						{store.todayOutfit
+							? store.todayOutfit.map((today, index) => {
+									console.log(today);
+									return (
+										<Card
+											name={today.name}
+											id={today.id}
+											collections={today.collections}
+											image={today.image}
+											clothing={today.clothing}
+											favorite={today.favorite}
+											today={today.today_outfit}
+											key={index}
+											markAsFavorite={handleFavorite}
+										/>
+									);
+							  })
+							: "null"}
+					</div>
 				</div>
 			</div>
 			<div className="containerClothingFavs">
