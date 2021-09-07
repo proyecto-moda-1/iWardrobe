@@ -306,9 +306,9 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 			},
 			setSelectedOutfit: data => {
 				const store = getStore();
-				setStore({outfit:[...store.outfit, data]});
+				setStore({ outfit: [...store.outfit, data] });
 			},
-					
+
 			selectCollection: collection => {
 				setStore({ selectedCollection: collection });
 			}
