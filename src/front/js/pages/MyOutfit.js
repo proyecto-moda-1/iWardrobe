@@ -125,7 +125,7 @@ export const MyOutfit = props => {
 					</Col>
 					<div className="containerCreate">
 						<Col sm={true}>
-							<CreateOutfitBtn id="btnCreateOutfit" clothing={selectedItems} />
+							<CreateOutfitBtn clothing={selectedItems} />
 						</Col>
 					</div>
 				</Row>

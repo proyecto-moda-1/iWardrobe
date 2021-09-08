@@ -8,14 +8,15 @@ import PropTypes from "prop-types";
 import "../../styles/card.scss";
 
 //Hay un error que da en la consola sobre el id del card, hay que mirar eso
-
 const Card = props => {
 	const [favorite, setFavorite] = useState("");
 	const { store, actions } = useContext(Context);
+	// console.log(favoriteId);
+	// const { favoriteId } = useParams();
+	//Para recuperar el id de favoritos, debemos recuperarlo desde la url con useParams.
 	function handleFavorite(id) {
 		actions.favoriteBrand(id);
 	}
-
 	let clothingCards = [];
 	if (props.clothing != undefined) {
 		clothingCards = props.clothing.map((clothing, index) => {
@@ -38,7 +39,6 @@ const Card = props => {
 			);
 		});
 	}
-
 	return (
 		<div className="cardOutfit">
 			<div className="cardCollections">{props.collections}</div>

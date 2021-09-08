@@ -139,7 +139,7 @@ class Outfit(db.Model):
               "clothing": serialize_clothing,
               "favorite": self.favorite,
               "today_outfit": self.today_outfit
-         } 
+             } 
 
 class Collection(db.Model):
      id = db.Column(db.Integer, primary_key=True)

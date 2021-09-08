@@ -15,7 +15,6 @@ import { toast } from "react-toastify";
 toast.configure();
 
 const CreateOutfit = props => {
-	console.log(props, "#########");
 	const { show, handleClose } = props;
 	const [todayOutfit, setTodayOutfit] = useState(false);
 	const [name, setName] = useState("");
