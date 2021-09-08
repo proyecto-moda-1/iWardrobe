@@ -41,11 +41,22 @@ export const Navbar = () => {
 						</Link>
 					</li>
 					<li>
-						<Link to="/login">
-							<button className="btnLogin" href="#">
-								LOGIN
-							</button>
-						</Link>
+						{localStorage.getItem("accessToken") ? (
+							<Link to="/">
+								<button
+									className="btnLogin"
+									href="#"
+									onClick={() => localStorage.removeItem("accessToken")}>
+									LOG OUT
+								</button>
+							</Link>
+						) : (
+							<Link to="/login">
+								<button className="btnLogin" href="#">
+									LOGIN
+								</button>
+							</Link>
+						)}
 					</li>
 				</ul>
 			</nav>

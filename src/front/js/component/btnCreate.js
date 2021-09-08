@@ -8,7 +8,7 @@ import { Form } from "react-bootstrap";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-export const CreateOutfitBtn = props => {
+const CreateOutfitBtn = props => {
 	const { store, actions } = useContext(Context);
 	const [show, setShow] = useState(false);
 	const handleClose = () => setShow(false);

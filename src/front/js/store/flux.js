@@ -331,7 +331,8 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 				};
 				fetch(endpoint, config).then(response => {
 					if (response.ok) {
-						// getActions().getTodayOutfit(data.get("todayOutfit"));
+						console.log(data);
+						getActions().getTodayOutfit(data.get("todayOutfit"));
 					}
 				});
 			},

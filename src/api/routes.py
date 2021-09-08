@@ -34,7 +34,6 @@ def get_all_users():
 #     user = User.query.get(id)
 #     serialized_user = user.serialize()
 #     return jsonify(serialized_user), 200
-    
 
 @api.route('/register', methods=['POST'])
 def create_users():
@@ -78,9 +77,6 @@ def handle_profile():
     user= User.get_user_by_email(user_email)
     return jsonify(user.serialize()), 200
 
-
-
-    
 @api.route('/clothing', methods=['GET'])
 @jwt_required()
 def get_all_clothings():
