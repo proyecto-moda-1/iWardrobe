@@ -3,22 +3,21 @@
     background-color:transparent ;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 5% solid;
     border-bottom: 0.2rem solid rgba(0, 0, 0, 0.233);
     background-color: burlywood;
 }
 
 .text-decoration-none{
     font-size: 3.5rem;
-    margin-left: 3rem;
+    margin-left: 4rem;
 }
 .text-decoration-none:hover{
     color:rgb(233, 228, 222);
     border-color: white;
   }
 li, a {
-    font-weight: 500;
-    font-size: 1.8rem;
+    font-weight: 600;
+    font-size: 1.5rem;
     color: #5e5c5c;
     
 }

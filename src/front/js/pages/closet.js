@@ -54,7 +54,7 @@ export const Closet = () => {
 	}
 	return (
 		<div className="containerCloset">
-			<h1 className="tittleCloset">Your Closet</h1>
+			<h1 className="tittleCloset">Closet</h1>
 			<p className="leadCloset">Dress for every ocassion</p>
 			<h1 className="todayCloset">TODAYS OUTFIT</h1>
 			<div className="containerClothingUsed">

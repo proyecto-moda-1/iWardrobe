@@ -66,7 +66,7 @@ export const Profile = () => {
 					<div className="col">
 						<Link to="/closet">
 							<button className="btnProfile" href="#">
-								Add Collection
+								Add collection
 							</button>
 						</Link>
 						<p className="textBody">Crea colecciones segun tus necesidades diarias y especiales</p>
@@ -76,7 +76,7 @@ export const Profile = () => {
 					<div className="col">
 						<Link to="/myOutfit">
 							<button className="btnProfile" href="#">
-								Create Outfit
+								Create outfit
 							</button>
 						</Link>
 

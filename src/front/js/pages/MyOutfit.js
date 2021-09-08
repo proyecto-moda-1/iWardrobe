@@ -118,16 +118,16 @@ export const MyOutfit = props => {
 							</Form.Control>
 						</Col>
 					</div>
+					<div className="btnCreateMyOutfit">
+						<Col lg={true}>
+							<CreateOutfitBtn clothing={selectedItems} />
+						</Col>
+					</div>
 					<Col sm={true}>
 						<div className="carouselContainer">
 							<CarouselClothing selectedItems={selectedItems} />
 						</div>
 					</Col>
-					<div className="containerCreate">
-						<Col className="btnCreateOutfit" lg={true}>
-							<CreateOutfitBtn clothing={selectedItems} />
-						</Col>
-					</div>
 				</Row>
 			</Container>
 		</>

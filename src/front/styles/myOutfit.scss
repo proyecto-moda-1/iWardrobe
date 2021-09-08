@@ -10,8 +10,8 @@
     margin-left: -5rem;
     margin-right: 2rem;
     margin-bottom: 4rem;
-    border: 2px solid black;
-    border-radius: 1rem;
+    border: 2px solid rgba(222, 184, 135, 0.747);
+    border-radius: 0.5rem;
 }
 .carouselContainer{
     background-color:rgba(222, 184, 135, 0.658);
@@ -20,10 +20,9 @@
     margin-top: -4rem;
     margin-left: 5rem;
     margin-right: 2rem;
-        margin-bottom: 4rem;
-
-    border: 2px solid black;
-    border-radius: 1rem;
+    margin-bottom: 4rem;
+    border: 2px solid rgba(222, 184, 135, 0.747);
+    border-radius: 0.5rem;
 }
 
 .tittlePage{
@@ -31,6 +30,7 @@
     margin-bottom: 2rem;
     text-align: center;
     font-size: 3rem;
+    color: rgb(90, 77, 59);
 }
 
 .btnLoad{
@@ -43,8 +43,9 @@
         font-size: 1.5rem !important;
         border:0.2rem solid rgba(222, 184, 135, 0.212)!important;
         border-radius: 0.2rem;
-        margin-left: 7rem!important;
-        margin-top: 4rem!important;
+        margin-left: 6rem!important;
+        margin-top: 1rem!important;
+        margin-bottom: 2rem;
     }
     .btnLoad:hover{
         color:rgb(233, 228, 222)!important;
@@ -86,19 +87,21 @@
     font-size: 1.5rem !important;
 }
 
-.btnCreateOutfit{
-    // width: 15rem;
-    // height: 3.5rem;
+.btnCreateMyOutfit{
+    width: 15rem;
+    height: 3.5rem;
     background-color: burlywood !important;
     border-color: burlywood !important;
+    margin-left: 1rem !important;
     color: white;
-    // font-size: 1.5rem !important;
-    // border:0.2rem solid rgba(222, 184, 135, 0.212)!important;
-    // border-radius: 0.2rem;
-    // margin-left: 7rem!important;
-    // margin-top: 4rem!important;
+    font-size: 1.5rem !important;
+    border:0.2rem solid rgba(222, 184, 135, 0.212)!important;
+    border-radius: 0.2rem;
+    margin-bottom: 2rem;
+    margin-left: 20rem!important;
+    margin-top: 24rem!important;
 }
-.btnCreateOutfit:hover{
+.btnCreateMyOutfit:hover{
     color:rgb(233, 228, 222)!important;
     border-color: rgb(233, 228, 222)!important;
   }

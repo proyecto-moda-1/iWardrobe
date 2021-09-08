@@ -1,66 +1,72 @@
 
-.slogan{
+.tittleHome{
   margin: auto;
   display: flex;
   justify-content: center;
   width: 50rem;
   position: absolute;
-    top: 50%;
+    top: 35%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: #5e5c5c;
 }
 
-.tittle1{
-   font-size: xx-large;
-   color: #5e5c5c; font-weight: 700;
-}
-.textBody{
-    font-size: x-large;
-    color: #5e5c5c;
-}
 
-.princ{
+
+.imgHome{
 width:100%; height:100%;
-opacity: 70%;
+opacity: 60%;
 
   }
 .jumbotron {
     background-color:transparent !important; 
 
 }
- 
-.btn1 {
-    position: absolute;
-    top: 70%;
-    left: 60%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    color: #9b9999;
-    border: 2px solid #9b9999;
-    padding: 15px 32px;
-    border-radius: 0.5rem;
-}
-
-.btn2 {
+.infoHome{
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  width: 80rem;
   position: absolute;
-    top: 70%;
-    left: 40%;
+  top: 80%;
+  left: 50%;
     transform: translate(-50%, -50%);
-    background-color:blac;
-    background-color: white;
-    color:  #9b9999;
-    border: 2px solid #9b9999;
+    color: rgb(54, 53, 53);
+background-color: rgba(222, 184, 135, 0.267);
+}
+ 
+.btnRegisterHome {
+    position: absolute;
+    top: 25rem;
+    left: 50rem;
     padding: 15px 32px;
-    border-radius: 0.5rem;
+    background-color: burlywood;
+    color:white;
+    border: 0.2rem solid white;
+    padding: 1rem 5.5rem;
+    border-radius: 0.2rem;
+    font-size: 1.5rem;
+}
+
+.btnLoginHome {
+  position: absolute;
+  top: 25rem;
+  left: 20rem;
+  padding: 25px 32px;
+  background-color: burlywood;
+  color:white;
+  border: 0.2rem solid white;
+  padding: 1rem 5.5rem;
+  border-radius: 0.2rem;
+  font-size: 1.5rem;
 
 }
-.btn1:hover{
-    background-color: rgb(155, 153, 153);
+.btnRegisterHome:hover{
+    background-color: rgba(222, 184, 135, 0.534);
     color:white;
 }
-.btn2:hover{
-    background-color: #9b9999;
+.btnLoginHome:hover{
+    background-color: rgba(222, 184, 135, 0.534);
     color:white;
 }
 
