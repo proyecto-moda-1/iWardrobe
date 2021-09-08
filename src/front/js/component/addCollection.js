@@ -40,7 +40,7 @@ const AddCollection = props => {
 					className="nameCollection"
 					type="text"
 					id="collectionName"
-					placeholder="Collection Name"
+					placeholder="Enter collection name"
 					value={name}
 					onChange={event => setName(event.target.value)}
 				/>{" "}
@@ -48,7 +48,7 @@ const AddCollection = props => {
 			<Modal.Footer>
 				<Button
 					type="submit"
-					id="btnCollection"
+					className="btnCollection"
 					value="button"
 					onClick={() => {
 						handleSubmit();
@@ -57,7 +57,7 @@ const AddCollection = props => {
 						notify();
 						handleClose();
 					}}>
-					Save new collection
+					Save
 				</Button>
 			</Modal.Footer>
 		</Modal>

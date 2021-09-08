@@ -45,13 +45,14 @@ const LoadClothing = props => {
 			<Modal.Header className="modalClothes" closeButton>
 				<Modal.Title className="tittleModal">ADD CLOTHING</Modal.Title>
 			</Modal.Header>
+			<input className="selectArch" type="file" onChange={e => setImage(e.target.files)} />
 			<div className="modalClothing">
 				{" "}
 				<label />{" "}
 				<input
 					className="nameClothing"
 					type="text"
-					placeholder="Clothing's Name"
+					placeholder="Enter clothing's name"
 					value={name}
 					onChange={event => setName(event.target.value)}
 				/>{" "}
@@ -60,7 +61,6 @@ const LoadClothing = props => {
 				className="ClothingSelect"
 				size="sm"
 				as="select"
-				placeholder="your email address"
 				value={category}
 				onChange={event => setCategory(event.target.value)}>
 				<option value="0">Category</option>
@@ -68,8 +68,10 @@ const LoadClothing = props => {
 				<option value="bottom">Bottom</option>
 				<option value="footwear"> Footwear</option>
 			</Form.Control>
-			<input className="selectArch" type="file" onChange={e => setImage(e.target.files)} />
 			<Modal.Footer>
+				<Button className="clothingBtn" type="submit" id="btnClothing" value="button" onClick={handleClose}>
+					Close
+				</Button>
 				<Button
 					className="uploadClothes"
 					id="btnClothing"
@@ -79,9 +81,6 @@ const LoadClothing = props => {
 						notify();
 					}}>
 					Save
-				</Button>
-				<Button className="clothingBtn" type="submit" id="btnClothing" value="button" onClick={handleClose}>
-					Close
 				</Button>
 			</Modal.Footer>
 		</Modal>

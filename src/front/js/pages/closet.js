@@ -88,12 +88,11 @@ export const Closet = () => {
 				</div>
 			</div>
 			<h1 className="tittleCollections">COLLECTIONS</h1>
+			<div className="dropCollect">
+				<CollectionDropdown />
+			</div>
 			<div className="containerClothingCollections">
 				<div className="row">
-					<div className="collectionDropdown">
-						<CollectionDropdown />
-					</div>
-					<h1>{store.selectedCollection.name}</h1>
 					<div className="collectionDrop d-flex flex-row">{collectionOutfits}</div>
 				</div>
 			</div>

@@ -42,22 +42,23 @@
 }
 .btnRegister  {
   width: 15rem;
-  height: 3rem;
-  background-color:burlywood;
-  color:  rgb(90, 77, 59);
-  margin-top: 1.4rem;
+  height: 3.5rem;
+  background-color: burlywood !important;
+  border-color: burlywood !important;
+  margin-left: 1rem !important;
+  color: white;
+  font-size: 1.5rem !important;
+  border:0.2rem solid rgba(222, 184, 135, 0.212)!important;
+  border-radius: 0.2rem;
+  margin-left: -1rem!important;
+  margin-top: 2rem!important;
   margin-bottom: 3rem;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  font-size: 1.5rem;
-  text-align:center;
 
 }
 
 .btnRegister:hover{
-  background-color: #0981e4fb;
-    color: black;
-    border-color: black;
+  color:rgb(233, 228, 222)!important;
+  border-color: rgb(233, 228, 222)!important;
 }
 .genderDrop{
   width: 20rem!important;

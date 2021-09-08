@@ -9,42 +9,58 @@
 }
 
 .nameClothing{    
-    width: 25rem;
+    width: 23rem;
     height: 3rem;
     text-align:center;
     margin-left: 0.8rem;
     margin-bottom: -4rem;
+    margin-top: 1rem;
     border-radius: 0.4rem;
-    font-size: 1.3rem;
+    font-size: 1rem;
 }
 .ClothingSelect{
     margin-top: 1.6rem;
     margin-left: 3rem;
     margin-right: 2rem;
-    width: 18rem !important;
+    margin-bottom: 3rem;
+    width: 23rem !important;
+    height: 3rem !important;
     text-align:center;
     border-radius: 0.5rem;
+    
 
 
 }
 .selectArch{
-    width: 25rem;
-    height: 3rem;
     margin-top: 3rem;
     margin-left: 3rem;
     text-align: center;
-
-
-
 }
 
 .uploadClothes{
-    width: 6rem;
-
+    width: 8rem;
+    background-color: burlywood !important;
+    border-color: burlywood !important;
+    margin-left: 1rem !important;
 }
-
+.uploadClothes:hover{
+    color:rgb(233, 228, 222)!important; 
+    background-color:burlywood !important;
+  }
 .clothingBtn{
-    width: 6rem;
+    width: 8rem;
+    background-color: white !important;
+    border-color: burlywood !important;
+    text-decoration-color: burlywood !important;
+    text-decoration: burlywood !important;
+    color: burlywood !important ;
+    margin-left: 1rem !important;
 
 }
 
+.clothingBtn:hover{
+    color: burlywood !important
+    ;
+    background-color:rgb(233, 228, 222)!important
+    ;
+  }

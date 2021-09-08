@@ -3,21 +3,27 @@
     margin-left: 2rem;
 }
 .containerClothing{
-    background-color: rgba(137, 43, 226, 0.795);
+    background-color:rgba(222, 184, 135, 0.658);
     width: 30rem;
     height: 40rem;
     margin-top: -4rem;
     margin-left: -5rem;
     margin-right: 2rem;
+    margin-bottom: 4rem;
     border: 2px solid black;
     border-radius: 1rem;
 }
 .carouselContainer{
+    background-color:rgba(222, 184, 135, 0.658);
     width: 30rem;
-    height: 38rem;
+    height: 40rem;
+    margin-top: -4rem;
+    margin-left: 5rem;
+    margin-right: 2rem;
+        margin-bottom: 4rem;
+
     border: 2px solid black;
-    background-color:rgba(78, 25, 87, 0.829);
-    margin-top: -1rem;
+    border-radius: 1rem;
 }
 
 .tittlePage{
@@ -28,39 +34,71 @@
 }
 
 .btnLoad{
-    margin-top: 2rem;
-    margin-bottom: 2.5rem;
-    width: 26rem;
-    height: 3rem;
-    background-color: rgb(78, 25, 87) !important;
-    border-color: rgb(78, 25, 87)!important;
+        width: 15rem;
+        height: 3.5rem;
+        background-color: burlywood !important;
+        border-color: burlywood !important;
+        margin-left: 1rem !important;
+        color: white;
+        font-size: 1.5rem !important;
+        border:0.2rem solid rgba(222, 184, 135, 0.212)!important;
+        border-radius: 0.2rem;
+        margin-left: 7rem!important;
+        margin-top: 4rem!important;
+    }
+    .btnLoad:hover{
+        color:rgb(233, 228, 222)!important;
+        border-color: rgb(233, 228, 222)!important;
+      }
+
+
+.selectTop{
+    margin-top: 1rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+    width: 23rem !important;
+    height: 3rem !important;
+    text-align:center;
+    border-radius: 0.5rem;
+    font-size: 1.5rem !important;
+}
+.selectBottom{
+    margin-top: 1rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+    width: 23rem !important;
+    height: 3rem !important;
+    text-align:center;
+    border-radius: 0.5rem;
+    font-size: 1.5rem !important;
+}
+.selectFootwear{
+    margin-top: 1rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+    width: 23rem !important;
+    height: 3rem !important;
+    text-align:center;
+    border-radius: 0.5rem;
     font-size: 1.5rem !important;
 }
 
-.selectTop{
-    margin-top: 2rem;
-    margin-bottom: 1.3rem;
-    font-size: 1.2rem !important;
+.btnCreateOutfit{
+    // width: 15rem;
+    // height: 3.5rem;
+    background-color: burlywood !important;
+    border-color: burlywood !important;
+    color: white;
+    // font-size: 1.5rem !important;
+    // border:0.2rem solid rgba(222, 184, 135, 0.212)!important;
+    // border-radius: 0.2rem;
+    // margin-left: 7rem!important;
+    // margin-top: 4rem!important;
 }
-.selectBottom{
-    margin-top: 3rem;
-    margin-bottom: 1.3rem;
-    font-size: 1.2rem !important;
-}
-.selectFootwear{
-    margin-top: 3rem;
-    margin-bottom: 1.5rem;
-    font-size: 1.2rem !important;
-}
-
-#btnCreateOutfit{
-    height: 70px;
-    width: 200px;
-    border: 2px;
-    border-radius: 0.4rem;
-    font-size: 1.3rem;
-    background-color:rgba(78, 25, 87, 0.829);
-    color:white;
-    margin-right: -7rem;
-    margin-top: 9rem;
-}
+.btnCreateOutfit:hover{
+    color:rgb(233, 228, 222)!important;
+    border-color: rgb(233, 228, 222)!important;
+  }

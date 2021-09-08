@@ -52,7 +52,7 @@ const CreateOutfit = props => {
 				<input
 					className="nameOutfit"
 					type="text"
-					placeholder="Outfit Name"
+					placeholder="Enter outfit name"
 					value={name}
 					onChange={event => setName(event.target.value)}
 				/>{" "}
@@ -73,7 +73,7 @@ const CreateOutfit = props => {
 					onChange={() => setTodayOutfit(!todayOutfit)}
 					defaultValue={todayOutfit}></input>{" "}
 				<Button
-					className="createOutfit"
+					className="btncreateOutfit"
 					onClick={() => {
 						handleSubmit(props.id);
 						handleClose();
@@ -81,7 +81,7 @@ const CreateOutfit = props => {
 						notify();
 						handleClose();
 					}}>
-					Save creation!
+					Save
 				</Button>
 			</Modal.Footer>
 		</Modal>
