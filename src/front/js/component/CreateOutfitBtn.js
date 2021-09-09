@@ -7,6 +7,7 @@ import Button from "react-bootstrap/Button";
 import { Form } from "react-bootstrap";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import "../../styles/CreateOutfitBtn.scss";
 
 export const CreateOutfitBtn = props => {
 	const { store, actions } = useContext(Context);
@@ -19,7 +20,7 @@ export const CreateOutfitBtn = props => {
 			<Container>
 				<Row>
 					<Col sm={true}>
-						<Button variant="outline-light" id="btnCreateOutfit" onClick={handleShow}>
+						<Button variant="outline-light" className="btnCreateMyOutfit" onClick={handleShow}>
 							Create your outfit
 						</Button>
 						<CreateOutfit show={show} handleClose={handleClose} />

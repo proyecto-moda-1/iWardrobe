@@ -2,9 +2,6 @@ import React, { useContext, useState, useEffect } from "react";
 import { Context } from "../store/appContext";
 import Card from "../component/card.js";
 import { CollectionDropdown } from "../component/collectionDropdown.js";
-import { getActions } from "../store/flux.js";
-
-// import PropTypes from "prop-types";
 
 import "../../styles/closet.scss";
 

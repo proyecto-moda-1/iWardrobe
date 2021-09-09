@@ -26,39 +26,37 @@ export const Login = function(props) {
 
 	return (
 		<div className="containerLogin">
-			<div className="d-flex justify-content-center">
-				<div className="containerBoxLogin">
-					<label className="tittleLogin">LOGIN</label>
-					<div className="groupLogin">
-						<input
-							type="text"
-							className="inputLogin btn btn-light"
-							id="exampleFormControlInput1"
-							placeholder="email@example.com"
-							value={email}
-							onChange={event => setEmail(event.target.value)}
-						/>
-					</div>
-					<div className="groupLogin">
-						<input
-							type="password"
-							className="inputLogin btn btn-light"
-							id="exampleFormControlInput1"
-							placeholder="password"
-							value={password}
-							onChange={event => setPassword(event.target.value)}
-						/>
-					</div>
-					<div className="goToRegister">
-						<Link to="/register">
-							<a href="#">Crear cuenta nueva</a>
-						</Link>
-					</div>
-					<div className="groupLogin">
-						<button type="submit" value="boton" className="btnLoginVista" onClick={handleSubmit}>
-							Sign in
-						</button>
-					</div>
+			<div className="containerBoxLogin">
+				<label className="tittleLogin">LOGIN</label>
+				<div className="groupLogin">
+					<input
+						type="text"
+						className="inputLogin btn btn-light"
+						id="exampleFormControlInput1"
+						placeholder="email@example.com"
+						value={email}
+						onChange={event => setEmail(event.target.value)}
+					/>
+				</div>
+				<div className="groupLogin">
+					<input
+						type="password"
+						className="inputLogin btn btn-light"
+						id="exampleFormControlInput1"
+						placeholder="password"
+						value={password}
+						onChange={event => setPassword(event.target.value)}
+					/>
+				</div>
+				<div className="goToRegister">
+					<Link to="/register">
+						<a href="#">Crear cuenta nueva</a>
+					</Link>
+				</div>
+				<div className="groupLogin">
+					<button type="submit" value="boton" className="btnLoginVista" onClick={handleSubmit}>
+						Sign in
+					</button>
 				</div>
 			</div>
 		</div>

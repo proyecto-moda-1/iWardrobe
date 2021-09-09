@@ -10,31 +10,31 @@
 
 .nameOutfit{
     width: 23rem;
-    height: 3rem;
+    height: 2.5rem;
     text-align:center;
-    margin-left: 0.8rem;
+    margin-left: 2rem;
     margin-bottom: 1rem;
     margin-top: 1rem;
     border-radius: 0.4rem;
-    font-size: 1rem;
+    // font-size: 1rem;
 }
 .SelectorCollection{
     margin-top: 1rem;
-    margin-left: 2rem;
+    margin-left: 3rem;
     margin-right: 2rem;
     margin-bottom: 2rem;
     width: 23rem !important;
-    height: 3rem !important;
+    height: 2.5rem !important;
     text-align:center;
     border-radius: 0.5rem;
 }
 .btnAddCollection{
-    width: 15rem;
-    height: 3rem;
+    width: 12rem;
+    height: 2.5rem;
     margin-top: 1rem;
     background-color: burlywood !important;
     border-color: burlywood !important;
-    margin-left: 2rem !important;
+    margin-left: 3rem !important;
     margin-bottom: 3rem;
 }
 .btnAddCollection:hover{
@@ -43,11 +43,12 @@
     background-color:rgb(233, 228, 222)!important
     ;
 }
-.btncreateOutfit{
-    width: 8rem;
+.createOutfitBtn{
+    margin: 0.5rem !important;
+    width: 10rem;
     background-color: burlywood !important;
     border-color: burlywood !important;
-    margin-left: 1rem !important;
+    margin-left: 10rem !important;
 
 }
 

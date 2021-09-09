@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "../../styles/footer.scss";
 
 export const Footer = () => (
-	<footer className="navbar navbar-fixed-bottom">
+	<footer>
 		{/* <div className="gitFooter">
 			<section className="mb-4">
 				<a className="btn btn-outline-light btn-floating m-1" href="#!" role="button">
@@ -15,21 +15,23 @@ export const Footer = () => (
 				</a>
 			</section>
 		</div> */}
-		<div className="header">
-			<li className="text" type="submit">
-				<Link to="https://4geeksacademy.com/es/inicio" className="academy">
-					4Geeks Academy
-				</Link>
-			</li>
-			<ul className="text">
-				<li className="text-left" type="submit">
-					<Link to="https://github.com/mgtablante" className="linkedinGaby">
+		<div className="headerFooter">
+			<div className="textAcademy">
+				<li type="submit">
+					<Link to="https://4geeksacademy.com/es/inicio" className="academy">
+						4Geeks Academy
+					</Link>
+				</li>
+			</div>
+			<div className="textFooter">
+				<li type="submit">
+					<Link href="https://github.com/mgtablante" className="linkedinGaby">
 						<i className="fab fa-github" />
 						Gabriela Tablante
 					</Link>
 				</li>
-				<li className="text" type="submit">
-					<Link to="https://github.com/yolandagb" className="linkedinYola">
+				<li type="submit">
+					<Link href="https://github.com/yolandagb" className="linkedinYola">
 						{" "}
 						<i className="fab fa-github" />
 						Yolanda García
@@ -53,7 +55,7 @@ export const Footer = () => (
 					<a href="https://github.com/mgtablante">Gabriela Tablante &</a>
 					<a href="https://github.com/yolandagb"> Yolanda García</a>
 				</li> */}
-			</ul>
+			</div>
 		</div>
 	</footer>
 );

@@ -1,6 +1,6 @@
 
 .headerNavbar{
-    background-color:transparent ;
+    // background-color:transparent ;
     display: flex;
     justify-content: space-between;
     border-bottom: 0.2rem solid rgba(0, 0, 0, 0.233);
@@ -8,18 +8,18 @@
 }
 
 .text-decoration-none{
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     margin-left: 4rem;
+    color:rgb(90, 77, 59);
+    
 }
 .text-decoration-none:hover{
-    color:rgb(233, 228, 222);
-    border-color: white;
+    color:rgb(233, 228, 222) !important;
+    border-color: white !important;
   }
 li, a {
     font-weight: 600;
-    font-size: 1.5rem;
     color: #5e5c5c;
-    
 }
 
 .navLink li{
@@ -34,10 +34,10 @@ li, a {
 .btnProfileS{
     border: none;
     background-color: burlywood;
-    margin-left: -40rem;
+    margin-left: -37rem;
     margin-top: 1.2rem;
     text-align: center;
-    font-size: 2rem;
+    // font-size: 2rem;
     color:rgb(90, 77, 59);
 }
 .btnProfileS:hover{
@@ -47,9 +47,9 @@ li, a {
 .btnOutfit{
     border: none;
     background-color: burlywood;
-    margin-left: -30rem;
+    margin-left: -31rem;
     text-align: center;
-    font-size: 2rem;
+    // font-size: 2rem;
     color:rgb(90, 77, 59);
 
 }
@@ -60,25 +60,40 @@ li, a {
 .btnCloset{
     border: none;
     background-color: burlywood;
-    margin-left: -20rem;
+    margin-left: -25rem;
     text-align: center;
-    font-size: 2rem;
+    // font-size: 2rem;
     color:rgb(90, 77, 59);
 
 }
 .btnCloset:hover{
     color:rgb(233, 228, 222);
-    background-color: burlywood;
+    background-color: burlywod;
   }
 .btnLogin{
-    border-radius:0.5rem;
+    width: 6.5rem;
+    height: 3rem;
+    border-radius:0.2rem;
     background-color: rgba(222, 184, 135, 0.534);
-    margin-left: -10rem;
-    font-size: 2rem;
-    color:rgb(90, 77, 59);
+    margin-left: -16rem;
+    border:0.2em solid white;
+    color: white;
 }
 .btnLogin:hover{
-    color:rgb(233, 228, 222);
-    border-color: rgba(222, 184, 135, 0.534);
+    color:rgb(90, 77, 59);
+    border-color:rgb(90, 77, 59);
   }
 
+.btnLogOut{
+    width: 6.5rem;
+    height: 3rem;
+    border-radius:0.2rem;
+    background-color: rgba(222, 184, 135, 0.534);
+    margin-left: -8rem;
+    border:0.2em solid white;
+    color: white;
+}
+.btnLogOut:hover{
+    color:rgb(90, 77, 59);
+    border-color:rgb(90, 77, 59);
+  }

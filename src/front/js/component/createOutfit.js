@@ -6,7 +6,7 @@ import { Context } from "../store/appContext";
 import Button from "react-bootstrap/Button";
 import SelectOutfitBtn from "./selectOutfitBtn";
 import Modal from "react-bootstrap/Modal";
-import CreateOutfitBtn from "./btnCreate";
+import CreateOutfitBtn from "./CreateOutfitBtn";
 import "../../styles/createOutfit.scss";
 import Form from "react-bootstrap/Form";
 import PropTypes from "prop-types";
@@ -32,7 +32,6 @@ const CreateOutfit = props => {
 			name: name,
 			today: todayOutfit
 		};
-		console.log(props.clothing, "##################");
 		actions.createOutfit(data, props.clothing);
 	};
 	const handleUserInput = e => {
@@ -73,7 +72,8 @@ const CreateOutfit = props => {
 					onChange={() => setTodayOutfit(!todayOutfit)}
 					defaultValue={todayOutfit}></input>{" "}
 				<Button
-					className="btncreateOutfit"
+					variant="outline-light"
+					className="createOutfitBtn"
 					onClick={() => {
 						handleSubmit(props.id);
 						handleClose();

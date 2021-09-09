@@ -15,7 +15,7 @@ export const Home = () => {
 				/>
 				<div className="container-fluid">
 					<h1 className="tittleHome">
-						MODA es lo que compras, ESTILO es lo que haces con eso. NO lo dejes para ultima hora.
+						MODA es lo que compras ESTILO es lo que haces con eso NO lo dejes para ultima hora.
 					</h1>
 					<div className="infoHome">
 						<h3>
@@ -24,13 +24,14 @@ export const Home = () => {
 							eventos especiales.
 						</h3>
 					</div>
-
-					<a href="/register" className="btnRegisterHome">
-						REGISTER
-					</a>
-					<a href="/login" className="btnLoginHome">
-						LOGIN
-					</a>
+					<div className="btnHome">
+						<a href="/register" className="btnRegisterHome">
+							REGISTER
+						</a>
+						<a href="/login" className="btnLoginHome">
+							LOGIN
+						</a>
+					</div>
 				</div>
 			</div>
 		</div>

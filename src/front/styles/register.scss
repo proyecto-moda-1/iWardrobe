@@ -1,21 +1,18 @@
 .tittleRegister{
   margin-top: 1.5rem;
+  font-size: 2.5rem;
+  color:rgb(90, 77, 59);
 }
 
 .containerRegister {  
-  margin-top: -1rem;
-  margin-bottom: 0.5rem;   
+  margin: auto;
+  display: flex;  
   text-align: center;
   color:rgb(90, 77, 59);
-  margin-bottom: 10%;
-  
 }
 
 .containerBoxRegister{
-    font-size: 2.5rem;
     width: 30rem;
-    margin-top: 6rem; 
-    margin-bottom: 6rem;
     border: rgb(128, 127, 129) solid;
     border-radius: 0.5rem;
     background-color: rgba(222, 184, 135, 0.452) ;
@@ -33,7 +30,7 @@
 
 }
 .inputRegister {
-  font-size: 1rem;
+  // font-size: 1rem;
   width: 20rem;
   height: 2.5rem;
   margin: 1rem 0;
@@ -41,13 +38,13 @@
   
 }
 .btnRegister  {
-  width: 15rem;
-  height: 3.5rem;
+  width: 10rem;
+  height: 3rem;
   background-color: burlywood !important;
   border-color: burlywood !important;
   margin-left: 1rem !important;
   color: white;
-  font-size: 1.5rem !important;
+  // font-size: 1.5rem !important;
   border:0.2rem solid rgba(222, 184, 135, 0.212)!important;
   border-radius: 0.2rem;
   margin-left: -1rem!important;
@@ -68,7 +65,7 @@
   margin-top: 1rem;
   margin-bottom: 2rem;
   text-align:center !important;
-  font-size: 1.5rem;
+  // font-size: 1.5rem;
 
 
 }

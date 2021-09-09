@@ -1,15 +1,17 @@
 .myOutfitContainer{
-    margin-top: 8rem;
-    margin-left: 2rem;
+    margin: auto;
+    display: flex; 
 }
 .containerClothing{
+    margin: auto;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    margin-right: 4rem;
+    display: flex; 
     background-color:rgba(222, 184, 135, 0.658);
     width: 30rem;
     height: 40rem;
-    margin-top: -4rem;
-    margin-left: -5rem;
-    margin-right: 2rem;
-    margin-bottom: 4rem;
+
     border: 2px solid rgba(222, 184, 135, 0.747);
     border-radius: 0.5rem;
 }
@@ -17,10 +19,8 @@
     background-color:rgba(222, 184, 135, 0.658);
     width: 30rem;
     height: 40rem;
-    margin-top: -4rem;
-    margin-left: 5rem;
-    margin-right: 2rem;
-    margin-bottom: 4rem;
+    margin: auto;
+    display: flex; 
     border: 2px solid rgba(222, 184, 135, 0.747);
     border-radius: 0.5rem;
 }
@@ -29,18 +29,17 @@
     margin-top: 3rem;
     margin-bottom: 2rem;
     text-align: center;
-    font-size: 3rem;
     color: rgb(90, 77, 59);
+    font-size: 2rem;
 }
 
 .btnLoad{
         width: 15rem;
-        height: 3.5rem;
+        height: 3rem;
         background-color: burlywood !important;
         border-color: burlywood !important;
         margin-left: 1rem !important;
         color: white;
-        font-size: 1.5rem !important;
         border:0.2rem solid rgba(222, 184, 135, 0.212)!important;
         border-radius: 0.2rem;
         margin-left: 6rem!important;
@@ -62,7 +61,7 @@
     height: 3rem !important;
     text-align:center;
     border-radius: 0.5rem;
-    font-size: 1.5rem !important;
+    // font-size: 1.5rem !important;
 }
 .selectBottom{
     margin-top: 1rem;
@@ -73,7 +72,7 @@
     height: 3rem !important;
     text-align:center;
     border-radius: 0.5rem;
-    font-size: 1.5rem !important;
+    // font-size: 1.5rem !important;
 }
 .selectFootwear{
     margin-top: 1rem;
@@ -84,24 +83,24 @@
     height: 3rem !important;
     text-align:center;
     border-radius: 0.5rem;
-    font-size: 1.5rem !important;
+    // font-size: 1.5rem !important;
 }
 
 .btnCreateMyOutfit{
-    width: 15rem;
-    height: 3.5rem;
-    background-color: burlywood !important;
-    border-color: burlywood !important;
-    margin-left: 1rem !important;
-    color: white;
-    font-size: 1.5rem !important;
-    border:0.2rem solid rgba(222, 184, 135, 0.212)!important;
-    border-radius: 0.2rem;
-    margin-bottom: 2rem;
-    margin-left: 20rem!important;
-    margin-top: 24rem!important;
+    // width: 15rem;
+    // height: 3.5rem;
+    margin-left: -29rem!important;
+    margin-top: 34.5rem!important;
+    // color: white;
+    // background-color: burlywood !important;
+    // border-color: burlywood !important;
+    // border:0.2rem solid rgba(222, 184, 135, 0.212)!important;
+    // border-radius: 0.2rem;
+    // // font-size: 1.5rem !important;
+
+    
 }
-.btnCreateMyOutfit:hover{
-    color:rgb(233, 228, 222)!important;
-    border-color: rgb(233, 228, 222)!important;
-  }
+// .btnCreateMyOutfit:hover{
+//     color:rgb(233, 228, 222)!important;
+//     border-color: rgb(233, 228, 222)!important;
+//   }

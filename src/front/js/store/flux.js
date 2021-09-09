@@ -270,7 +270,7 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 				const store = getStore();
 				const endpoint = process.env.BACKEND_URL + "/api/outfit";
 				data["collectionId"] = store.collection_id;
-				data["clothings"] = [clothings.top.id, clothings.bottom.id, clothings.footwear.id];
+				data["clothings"] = clothings;
 				const config = {
 					method: "POST",
 					body: JSON.stringify(data),

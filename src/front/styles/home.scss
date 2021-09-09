@@ -3,19 +3,22 @@
   margin: auto;
   display: flex;
   justify-content: center;
-  width: 50rem;
   position: absolute;
     top: 35%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: #5e5c5c;
+    font-size: 2rem;
 }
 
-
-
 .imgHome{
-width:100%; height:100%;
-opacity: 60%;
+  width:103.5%; 
+  height:100%;
+  opacity: 60%;
+  margin-top: -4rem;
+  margin-left: -2rem;
+
+
 
   }
 .jumbotron {
@@ -26,7 +29,7 @@ opacity: 60%;
   margin: auto;
   display: flex;
   justify-content: center;
-  width: 80rem;
+  width: 100rem;
   position: absolute;
   top: 80%;
   left: 50%;
@@ -37,28 +40,29 @@ background-color: rgba(222, 184, 135, 0.267);
  
 .btnRegisterHome {
     position: absolute;
-    top: 25rem;
-    left: 50rem;
-    padding: 15px 32px;
+    top: 30rem;
+    left: 65rem;
     background-color: burlywood;
     color:white;
     border: 0.2rem solid white;
     padding: 1rem 5.5rem;
     border-radius: 0.2rem;
-    font-size: 1.5rem;
+    // font-size: 1.5rem;
 }
-
+.btnHome{
+  // margin-right: 30rem;
+  background-color: cadetblue;
+}
 .btnLoginHome {
   position: absolute;
-  top: 25rem;
-  left: 20rem;
-  padding: 25px 32px;
+  top: 30rem;
+  left: 35rem;
   background-color: burlywood;
   color:white;
   border: 0.2rem solid white;
   padding: 1rem 5.5rem;
   border-radius: 0.2rem;
-  font-size: 1.5rem;
+  // font-size: 1.5rem;
 
 }
 .btnRegisterHome:hover{
@@ -68,9 +72,5 @@ background-color: rgba(222, 184, 135, 0.267);
 .btnLoginHome:hover{
     background-color: rgba(222, 184, 135, 0.534);
     color:white;
-}
-
-.row{
-   text-align:left;
 }
 

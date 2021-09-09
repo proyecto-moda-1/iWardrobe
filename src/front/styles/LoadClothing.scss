@@ -10,13 +10,13 @@
 
 .nameClothing{    
     width: 23rem;
-    height: 3rem;
+    height: 2.5rem;
     text-align:center;
     margin-left: 0.8rem;
     margin-bottom: -4rem;
     margin-top: 1rem;
     border-radius: 0.4rem;
-    font-size: 1rem;
+    // font-size: 1rem;
 }
 .ClothingSelect{
     margin-top: 1.6rem;
@@ -24,7 +24,7 @@
     margin-right: 2rem;
     margin-bottom: 3rem;
     width: 23rem !important;
-    height: 3rem !important;
+    height: 2.5rem !important;
     text-align:center;
     border-radius: 0.5rem;
     
@@ -38,7 +38,8 @@
 }
 
 .uploadClothes{
-    width: 8rem;
+    width: 10rem;
+    margin: 0.5rem !important;
     background-color: burlywood !important;
     border-color: burlywood !important;
     margin-left: 1rem !important;
@@ -48,7 +49,7 @@
     background-color:burlywood !important;
   }
 .clothingBtn{
-    width: 8rem;
+    width: 10rem;
     background-color: white !important;
     border-color: burlywood !important;
     text-decoration-color: burlywood !important;
