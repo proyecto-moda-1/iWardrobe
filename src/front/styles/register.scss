@@ -1,5 +1,5 @@
 .tittleRegister{
-  margin-top: 1.5rem;
+  margin-top: 2.5rem;
   font-size: 2.5rem;
   color:rgb(90, 77, 59);
 }
@@ -8,19 +8,22 @@
   margin: auto;
   display: flex;  
   text-align: center;
-  color:rgb(90, 77, 59);
+  background-color: #a885a1 !important;
+  width: 32rem;
+  height: 42rem;
 }
 
 .containerBoxRegister{
     width: 30rem;
-    border: rgb(128, 127, 129) solid;
-    border-radius: 0.5rem;
-    background-color: rgba(222, 184, 135, 0.452) ;
+    height: 40rem;
+    margin-left: 0.9rem;
+    margin-top: 0.9rem;
+    background-color: #B392AC ;
 
 }
 .goToLogin{
-    color: rgb(90, 77, 59);
-    margin-top: -1rem;
+    // color: rgb(90, 77, 59);
+    margin-top: -0.5rem;
 
 }
 .groupRegister{
@@ -40,16 +43,11 @@
 .btnRegister  {
   width: 10rem;
   height: 3rem;
-  background-color: burlywood !important;
-  border-color: burlywood !important;
+  background-color: #785964 !important;
   margin-left: 1rem !important;
   color: white;
-  // font-size: 1.5rem !important;
-  border:0.2rem solid rgba(222, 184, 135, 0.212)!important;
-  border-radius: 0.2rem;
   margin-left: -1rem!important;
   margin-top: 2rem!important;
-  margin-bottom: 3rem;
 
 }
 
@@ -63,7 +61,7 @@
   border-radius: 0.3rem !important;
   margin-left: 5rem;
   margin-top: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   text-align:center !important;
   // font-size: 1.5rem;
 

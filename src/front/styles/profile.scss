@@ -1,13 +1,15 @@
 .Jumbotrom{
-      background-color: rgba(222, 184, 135, 0.445);
-      margin-left: 3rem;
-      margin-right: 3rem;
-      margin-bottom: 4rem;
-      margin-top: 4rem;
-      border-radius: 1rem;
+      background-image: ("https://image.freepik.com/foto-gratis/hermosa-pared-ladrillo-purpura-fondo_181624-2861.jpg");
+      background-color: #9535b577;
+      border:0;
+//       margin-left: 3rem;
+//       margin-right: 3rem;
+//       margin-bottom: 4rem;
+     margin-top: 4rem;
+//       border-radius: 1rem;
 }
 .col{
-      margin-left: -4rem;
+      margin-left: 4rem;
       margin-right: -4rem;
       margin-bottom: 3rem;
       margin-top: -1rem;
@@ -16,13 +18,13 @@
 .btnProfile{
       width: 15rem;
       height: 3.5rem;
-      background-color: burlywood !important;
-      border-color: burlywood !important;
+      background-color: #9535b5 !important;
+      border-color: #9535b5  !important;
       margin-left: 1rem !important;
       color: white;
       font-size: 1.3rem !important;
       border:0.2rem solid rgba(222, 184, 135, 0.212)!important;
-      border-radius: 0.2rem;
+      border-radius: 10rem;
       margin-left: 7rem!important;
       margin-top: 4rem!important;
   }
@@ -45,11 +47,11 @@
 }
 .containerAvailables{
       border-radius: 1rem;
-      border: 0.2rem solid rgba(90, 77, 59, 0.37);
-      margin-left: 3rem;
-      margin-right: 3rem;
+      border: 0rem ;
+      margin-left: -1rem;
+      margin-right: -1rem;
       margin-bottom: 4rem;
-      background-color: rgba(222, 184, 135, 0.233);
+      background-color: #9535b52f;
 
 }
 .tittleAvaibles{
@@ -67,11 +69,11 @@
 }
 .containerDirtyS{
       border-radius: 1rem;
-      border: 0.2rem solid rgba(90, 77, 59, 0.37);
-      margin-left: 3rem;
-      margin-right: 3rem;
+      border: 0.2rem;
+      margin-left: -1rem;
+      margin-right: -1rem;
       margin-bottom: 4rem;
-      background-color: rgba(222, 184, 135, 0.233);
+      background-color: #9535b52f;
 }
 .tittleDirty{
       margin-left: 4.5rem;

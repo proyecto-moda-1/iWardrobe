@@ -3,24 +3,32 @@
     // background-color:transparent ;
     display: flex;
     justify-content: space-between;
-    border-bottom: 0.2rem solid rgba(0, 0, 0, 0.233);
-    background-color: burlywood;
+    // border-bottom: 0.2rem solid rgba(0, 0, 0, 0.233);
+    background-color:#F7F4EA ;
+}
+
+.logoNavbar{
+    background-color: #B392AC;
+    width: 5rem;
+    height: 6rem;
+    margin-left: 4rem;
+    text-align: center;
 }
 
 .text-decoration-none{
     font-size: 2.5rem;
-    margin-left: 4rem;
-    color:rgb(90, 77, 59);
+     margin-left: 2rem;
+    color:#785964;
+    
     
 }
 .text-decoration-none:hover{
-    color:rgb(233, 228, 222) !important;
-    border-color: white !important;
+    color:#4f0866!important;
+    border-color: rgb(116, 39, 39) !important;
   }
 li, a {
     font-weight: 600;
-    color: #5e5c5c;
-}
+    color:#785964;}
 
 .navLink li{
     display: inline-block;
@@ -33,67 +41,67 @@ li, a {
 }
 .btnProfileS{
     border: none;
-    background-color: burlywood;
-    margin-left: -37rem;
+    background-color: #F7F4EA;
+    margin-left: -38rem;
     margin-top: 1.2rem;
     text-align: center;
     // font-size: 2rem;
-    color:rgb(90, 77, 59);
-}
+    color:#785964;}
 .btnProfileS:hover{
-    color:rgb(233, 228, 222);
-    background-color: burlywood;
+    color:#4f0866;
+    border-bottom:0.2rem solid  #4f0866;
+    width: 6rem;
   }
 .btnOutfit{
     border: none;
-    background-color: burlywood;
+    background-color: #F7F4EA;
     margin-left: -31rem;
     text-align: center;
     // font-size: 2rem;
-    color:rgb(90, 77, 59);
-
+    color:#785964;
 }
 .btnOutfit:hover{
-    color:rgb(233, 228, 222);
-    border-color: white;
+    color:#4f0866;
+    border-bottom:0.2rem solid  #4f0866;
+    width: 6rem;
 }
 .btnCloset{
     border: none;
-    background-color: burlywood;
-    margin-left: -25rem;
+    background-color: #F7F4EA;
+    margin-left: -24rem;
     text-align: center;
     // font-size: 2rem;
-    color:rgb(90, 77, 59);
-
+    color:#785964;
 }
 .btnCloset:hover{
-    color:rgb(233, 228, 222);
-    background-color: burlywod;
+    color:#4f0866;
+    border-bottom:0.2rem solid  #4f0866;
+    width: 6rem;
   }
 .btnLogin{
-    width: 6.5rem;
+    width: 8rem;
     height: 3rem;
-    border-radius:0.2rem;
-    background-color: rgba(222, 184, 135, 0.534);
+    background-color: #B392AC;
     margin-left: -16rem;
-    border:0.2em solid white;
-    color: white;
+    margin-top: 1rem;
+    // border:0.2rem solid #4f0866;
+    color:#F7F4EA;
 }
 .btnLogin:hover{
-    color:rgb(90, 77, 59);
-    border-color:rgb(90, 77, 59);
+    color:#F7F4EA;
+    border: 0.2rem solid rgb(90, 77, 59)
   }
 
 .btnLogOut{
     width: 6.5rem;
     height: 3rem;
-    border-radius:0.2rem;
-    background-color: rgba(222, 184, 135, 0.534);
-    margin-left: -8rem;
-    border:0.2em solid white;
-    color: white;
+    background-color: #B392AC;
+    margin-left: -11rem;
+    border:0.2rem solid #4f0866;
+    color:#F7F4EA;
+
 }
 .btnLogOut:hover{
-    color:rgb(90, 77, 59);
-    border-color:rgb(90, 77, 59);
+    color:#785964;
+        border-color:rgb(90, 77, 59);
   }
