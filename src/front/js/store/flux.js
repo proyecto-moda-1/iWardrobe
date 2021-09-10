@@ -17,7 +17,7 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 			top: [],
 			bottom: [],
 			footwear: [],
-			clean: [],
+			dirty: [],
 			favorite: {},
 			collection_id: 0
 		},
@@ -140,23 +140,6 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 					.then(json => {
 						setStore({ outfits: json });
 					});
-			},
-			swicthClean: (data, id) => {
-				const store = getStore();
-				const endpoint = process.env.BACKEND_URL + `/api/clothing?id=${id}`;
-				const config = {
-					method: "PUT",
-					body: JSON.stringify(data),
-					headers: {
-						"Content-Type": "application/json",
-						Authorization: `Bearer ${store.token}`
-					}
-				};
-
-				fetch(endpoint, config)
-					.then(response => response.json())
-					.then(json => data)
-					.catch(err => console.error(err));
 			},
 			favoriteBrand: id => {
 				const store = getStore();
@@ -332,6 +315,39 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 						// getActions().getTodayOutfit(data.get("todayOutfit"));
 					}
 				});
+			},
+			getLaundry: data => {
+				const store = getStore();
+				const endpoint = process.env.BACKEND_URL + `users/clothing?id=${id}/dirty`;
+				const config = {
+					method: "GET",
+					headers: {
+						Authorization: `Bearer ${store.token}`
+					}
+				};
+
+				fetch(endpoint, config)
+					.then(response => response.json())
+					.then(data => {
+						setStore({ dirty: data });
+					})
+					.catch(err => console.error(err));
+			},
+			swicthDirty: (data, id) => {
+				const store = getStore();
+				const endpoint = process.env.BACKEND_URL + `users/clothing?id=${id}/dirty`;
+				const config = {
+					method: "PUT",
+					body: JSON.stringify(data),
+					headers: {
+						"Content-Type": "application/json",
+						Authorization: `Bearer ${store.token}`
+					}
+				};
+
+				fetch(endpoint, config)
+					.then(response => response.json())
+					.catch(err => console.error(err));
 			},
 			selectCollection: collection => {
 				setStore({ selectedCollection: collection });

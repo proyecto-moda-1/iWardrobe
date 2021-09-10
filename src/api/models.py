@@ -71,7 +71,7 @@ class Clothing(db.Model):
      image = db.Column(db.String, unique=False, nullable=False)
      name = db.Column(db.String(120), unique=False, nullable=False)
      category = db.Column(db.Enum(Category), unique=False, nullable=False)
-     clean= db.Column(db.Boolean, unique=False, nullable=False)
+     dirty= db.Column(db.Boolean, unique=False, nullable=False)
 
 
      #RELACIONES
@@ -91,7 +91,7 @@ class Clothing(db.Model):
              "image": self.image,
              "name": self.name,
              "categories": self.category.name,
-             "clean": self.clean
+             "dirty": self.dirty
              
          } 
 
