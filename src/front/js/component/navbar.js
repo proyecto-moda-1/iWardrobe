@@ -9,7 +9,7 @@ export const Navbar = () => {
 	const handleShow = () => setShow(true);
 	return (
 		<div className="headerNavbar">
-			<div type="submit">
+			<div className="logoNavbar" type="submit">
 				<Link className="text-decoration-none" to="/profile">
 					iWardrobe
 				</Link>
@@ -53,13 +53,6 @@ export const Navbar = () => {
 							</Link>
 						)}
 					</li>
-					{/* <li>
-						<Link to="/logout">
-							<button className="btnLogOut" href="#">
-								LOG OUT
-							</button>
-						</Link>
-					</li> */}
 				</ul>
 			</nav>
 		</div>

@@ -8,6 +8,8 @@ import Container from "react-bootstrap/Container";
 import { Context } from "../store/appContext";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import { Link } from "react-router-dom";
+
 import "../../styles/myOutfit.scss";
 
 export const MyOutfit = props => {
@@ -65,7 +67,9 @@ export const MyOutfit = props => {
 				<Row>
 					<div className="containerClothing">
 						<Col sm={true}>
-							<h1 className="tittlePage">YOUR CLOTHING</h1>
+							<h3 className="tittlePage">
+								<b>YOUR CLOTHING</b>
+							</h3>
 							<Button className="btnLoad" onClick={handleShow}>
 								Add clothes
 							</Button>
@@ -128,6 +132,29 @@ export const MyOutfit = props => {
 						<CarouselClothing selectedItems={selectedItems} />
 					</div>
 					{/* </Col> */}
+					<Col className="containerInfoOutfit">
+						<div className="infoOutfit">
+							<h2>Como crear tu Outfit?</h2>
+							<p>
+								1. Crea tu ropa en el botón <b>Add clothes</b>
+							</p>
+							<p>2. Juega con todas las piezas de ropa para que consigas la combinacion que te guste </p>
+							<p>
+								3. Crea tu outfit en el botón <b>Create your outfit</b>
+							</p>
+							<p>
+								4. Puedes crear colecciones que desees pulsando <b>Add new collection</b> asi puedes
+								clasificar mejor tus outfits, siendo mas facil luego conseguirlos.
+							</p>
+						</div>
+					</Col>
+					<Col>
+						<Link to="/closet">
+							<button className="btnClosetMyOutfit" href="#">
+								Closet
+							</button>
+						</Link>
+					</Col>
 				</Row>
 			</Container>
 		</>
