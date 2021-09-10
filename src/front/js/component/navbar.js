@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
-// import LoadClothing from "./loadClothing";
 import { Link } from "react-router-dom";
 import "../../styles/navbar.scss";
 
@@ -32,7 +31,6 @@ export const Navbar = () => {
 							</button>
 						</Link>
 					</li>
-
 					<li>
 						<Link to="/closet">
 							<button className="btnCloset" href="#">
@@ -41,11 +39,19 @@ export const Navbar = () => {
 						</Link>
 					</li>
 					<li>
-						<Link to="/login">
-							<button className="btnLogin" href="#">
-								LOGIN
-							</button>
-						</Link>
+						{localStorage.getItem("token") ? (
+							<Link to="/">
+								<button className="btnLogin" href="#" onClick={() => localStorage.removeItem("token")}>
+									LOG OUT
+								</button>
+							</Link>
+						) : (
+							<Link to="/login">
+								<button className="btnLogin" href="#">
+									LOGIN
+								</button>
+							</Link>
+						)}
 					</li>
 					{/* <li>
 						<Link to="/logout">

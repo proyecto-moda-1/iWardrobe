@@ -74,7 +74,7 @@ export const Closet = () => {
 										/>
 									);
 							  })
-							: "null"}
+							: ""}
 					</div>
 				</div>
 			</div>
