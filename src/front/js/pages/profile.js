@@ -54,45 +54,56 @@ export const Profile = () => {
 
 	return (
 		<div className="bodyProfile">
-			<div className="Jumbotrom">
-				<div className="row">
-					<div className="col">
-						<Button className="btnProfile" onClick={handleShow}>
-							Add clothes
-						</Button>
-						<LoadClothing id="btnClothes" show={show} handleClose={handleClose} />
-						<p className="textBody">Tomale una foto a tu ropa y subela a tu perfil </p>
+			<div className="JumbotromProfile">
+				<img className="imgHome" src="/workspace/outfit-planner/src/front/img/picture1.png" />
+				<div className="btnJumbotrom">
+					<div className="btnGropOne">
+						<div className="colProfile">
+							<Button className="btnProfile" onClick={handleShow}>
+								Add clothes
+							</Button>
+							<LoadClothing id="btnClothes" show={show} handleClose={handleClose} />
+							<p className="textBody">
+								Tomale una foto a tu ropa y subela a tu perfilPuedes marcar tus piezas sucias y solo
+								mostraremos los outfits que esten limpios{" "}
+							</p>
+						</div>
+						<div className="colProfile">
+							<Link to="/closet">
+								<button className="btnProfile" href="#">
+									Add collection
+								</button>
+							</Link>
+							<p className="textBody">
+								Crea colecciones segun tus necesidades diarias y especialesPuedes marcar tus piezas
+								sucias y solo mostraremos los outfits que esten limpios
+							</p>
+						</div>
 					</div>
-					<div className="col">
-						<Link to="/closet">
-							<button className="btnProfile" href="#">
-								Add collection
-							</button>
-						</Link>
-						<p className="textBody">Crea colecciones segun tus necesidades diarias y especiales</p>
-					</div>
-				</div>
-				<div className="row">
-					<div className="col">
-						<Link to="/myOutfit">
-							<button className="btnProfile" href="#">
-								Create outfit
-							</button>
-						</Link>
+					<div className="btnGroptwo">
+						<div className="colProfile">
+							<Link to="/myOutfit">
+								<button className="btnProfile" href="#">
+									Create outfit
+								</button>
+							</Link>
 
-						<p className="textBodyBottom">
-							crea tus outfit diarios y guardalos para cuando necesites usarlo{" "}
-						</p>
-					</div>
-					<div className="col">
-						<Link to="/closet">
-							<button className="btnProfile" href="#">
-								Closet
-							</button>
-						</Link>
-						<p className="textBodyBottom">
-							Puedes marcar tus piezas sucias y solo mostraremos los outfits que esten limpios
-						</p>
+							<p className="textBodyBottom">
+								crea tus outfit diarios y guardalos para cuando necesites usarloPuedes marcar tus piezas
+								sucias y solo mostraremos los outfits que esten limpios{" "}
+							</p>
+						</div>
+						<div className="colProfile">
+							<Link to="/closet">
+								<button className="btnProfile" href="#">
+									Closet
+								</button>
+							</Link>
+							<p className="textBodyBottom">
+								Puedes marcar tus piezas sucias y solo mostraremos los outfits que esten limpiosPuedes
+								marcar tus piezas sucias y solo mostraremos los outfits que esten limpios
+							</p>
+						</div>
 					</div>
 				</div>
 			</div>

@@ -1,9 +1,7 @@
 
 .headerNavbar{
-    // background-color:transparent ;
     display: flex;
     justify-content: space-between;
-    // border-bottom: 0.2rem solid rgba(0, 0, 0, 0.233);
     background-color:#F7F4EA ;
 }
 
@@ -19,7 +17,6 @@
     font-size: 2.5rem;
      margin-left: 2rem;
     color:#785964;
-    
     
 }
 .text-decoration-none:hover{
@@ -45,7 +42,6 @@ li, a {
     margin-left: -38rem;
     margin-top: 1.2rem;
     text-align: center;
-    // font-size: 2rem;
     color:#785964;}
 .btnProfileS:hover{
     color:#4f0866;
@@ -82,14 +78,16 @@ li, a {
     width: 8rem;
     height: 3rem;
     background-color: #B392AC;
-    margin-left: -16rem;
+    margin-left: -12rem;
     margin-top: 1rem;
-    // border:0.2rem solid #4f0866;
+    border:0.2rem solid #4f0866;
     color:#F7F4EA;
+    border-radius: 0.2rem;
 }
 .btnLogin:hover{
-    color:#F7F4EA;
-    border: 0.2rem solid rgb(90, 77, 59)
+    color:#785964;
+    border: 0.2rem solid #785964;
+    background-color:#F7F4EA;
   }
 
 .btnLogOut{
@@ -99,9 +97,11 @@ li, a {
     margin-left: -11rem;
     border:0.2rem solid #4f0866;
     color:#F7F4EA;
-
+    border-radius: 0.2rem;
 }
 .btnLogOut:hover{
     color:#785964;
-        border-color:rgb(90, 77, 59);
+    border: 0.2rem solid #785964;
+    background-color:#F7F4EA;
+
   }

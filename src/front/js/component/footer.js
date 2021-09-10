@@ -27,14 +27,14 @@ export const Footer = () => (
 				<li type="submit">
 					<Link href="https://github.com/mgtablante" className="linkedinGaby">
 						<i className="fab fa-github" />
-						Gabriela Tablante
 					</Link>
+					<p className="textGaby"> Gabriela Tablante</p>
 				</li>
 				<li type="submit">
 					<Link href="https://github.com/yolandagb" className="linkedinYola">
 						{" "}
 						<i className="fab fa-github" />
-						Yolanda García
+						<p className="textYola"> Yolanda García</p>
 					</Link>
 				</li>
 
