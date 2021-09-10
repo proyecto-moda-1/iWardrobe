@@ -11,7 +11,6 @@ export const Closet = () => {
 	function handleFavorite(id) {
 		actions.favoriteBrand(id);
 	}
-
 	useEffect(() => {
 		actions.getUserFavorite();
 		actions.getTodayOutfit();

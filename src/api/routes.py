@@ -313,7 +313,7 @@ def get_user_dirty():
     user= User.get_user_by_email(user_email)
     dirty_clothing = Clothing.get_dirty_user_clothings(user.id)
         
-     serialized_dirty = []
+    serialized_dirty = []
     for dirty in dirty_clothing:
         serialized_dirty.append(dirty.serialize())
     return jsonify(serialized_dirty), 200 

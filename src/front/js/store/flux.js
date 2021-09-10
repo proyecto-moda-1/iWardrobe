@@ -138,7 +138,6 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 						return response.json();
 					})
 					.then(json => {
-						console.log(json, "@@@@@");
 						setStore({ outfits: json });
 					});
 			},
@@ -319,7 +318,7 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 					}
 				});
 			},
-			getLaundry: data => {
+			getLaundry: (data, id) => {
 				const store = getStore();
 				const endpoint = process.env.BACKEND_URL + `users/clothing?id=${id}/dirty`;
 				const config = {

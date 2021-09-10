@@ -27,9 +27,11 @@ const Card = props => {
 						<img className="cardClothingImg" src={clothing.image} />
 						<h4 className="cardClean">
 							<BtnCleanOutfit
+								id={clothing.id}
+								dirty={clothing.dirty}
 								name={clothing.name}
 								image={clothing.image}
-								clothing={clothing.clean}
+								clothing={clothing.dirty}
 								key={index}
 							/>
 						</h4>
@@ -65,5 +67,6 @@ Card.propTypes = {
 	outfit: PropTypes.array,
 	image: PropTypes.string,
 	today: PropTypes.bool,
+	dirty: PropTypes.bool,
 	favorite: PropTypes.bool
 };
