@@ -2,9 +2,6 @@ import React, { useContext, useState, useEffect } from "react";
 import { Context } from "../store/appContext";
 import Card from "../component/card.js";
 import { CollectionDropdown } from "../component/collectionDropdown.js";
-import { getActions } from "../store/flux.js";
-
-// import PropTypes from "prop-types";
 
 import "../../styles/closet.scss";
 
@@ -54,12 +51,12 @@ export const Closet = () => {
 	}
 	return (
 		<div className="containerCloset">
-			<h1 className="tittleCloset">Your Closet</h1>
+			<h1 className="tittleCloset">Closet</h1>
 			<p className="leadCloset">Dress for every ocassion</p>
-			<div className="clothingUsed">
+			<h1 className="todayCloset">TODAYS OUTFIT</h1>
+			<div className="containerClothingUsed">
 				<div className="row">
-					<h1 className="todayCloset">-TODAYS OUTFIT</h1>
-					<div className="planet d-flex flex-row">
+					<div className="todayCards d-flex flex-row">
 						{store.todayOutfit
 							? store.todayOutfit.map((today, index) => {
 									console.log(today);
@@ -77,24 +74,23 @@ export const Closet = () => {
 										/>
 									);
 							  })
-							: "null"}
+							: ""}
 					</div>
 				</div>
 			</div>
+			<h1 className="tittleFavourites">FAVOURITES</h1>
 			<div className="containerClothingFavs">
 				<div className="row">
-					<h1 className="favouritesText">- FAVOURITES</h1>
 					<div className="favClosetCard d-flex flex-row">{favoriteCards}</div>
 				</div>
 			</div>
-			<div className="clothingCollections">
+			<h1 className="tittleCollections">COLLECTIONS</h1>
+			<div className="dropCollect">
+				<CollectionDropdown />
+			</div>
+			<div className="containerClothingCollections">
 				<div className="row">
-					<h1 className="collectionsText">- COLLECTIONS</h1>
-					<div className="collectionDropdown">
-						<CollectionDropdown />
-					</div>
-					<h1>{store.selectedCollection.name}</h1>
-					<div className="collectionDrop">{collectionOutfits}</div>
+					<div className="collectionDrop d-flex flex-row">{collectionOutfits}</div>
 				</div>
 			</div>
 		</div>

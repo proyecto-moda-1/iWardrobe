@@ -6,7 +6,7 @@ import { Context } from "../store/appContext";
 import Button from "react-bootstrap/Button";
 import SelectOutfitBtn from "./selectOutfitBtn";
 import Modal from "react-bootstrap/Modal";
-import CreateOutfitBtn from "./btnCreate";
+import CreateOutfitBtn from "./CreateOutfitBtn";
 import "../../styles/createOutfit.scss";
 import Form from "react-bootstrap/Form";
 import PropTypes from "prop-types";
@@ -31,7 +31,6 @@ const CreateOutfit = props => {
 			name: name,
 			today: todayOutfit
 		};
-		console.log(props.clothing, "##################");
 		actions.createOutfit(data, props.clothing);
 	};
 	const handleUserInput = e => {
@@ -42,29 +41,38 @@ const CreateOutfit = props => {
 	};
 	return (
 		<Modal show={show} onHide={handleClose}>
-			<Modal.Header closeButton>
+			<Modal.Header className="modalOutfit" closeButton>
 				{" "}
-				<h3 id="headerCreate">Create your outfit</h3>
+				<Modal.Title className="tittleOutfit">CREATE YOUR OUTFIT</Modal.Title>
 			</Modal.Header>
-			<label className="pass label" />{" "}
-			<input
-				type="text"
-				id="outfitName"
-				placeholder="Name"
-				value={name}
-				onChange={event => setName(event.target.value)}
-			/>{" "}
-			<CollectionSelect id="selectCollection" />
+			<div className="modalOutfit">
+				<label />{" "}
+				<input
+					className="nameOutfit"
+					type="text"
+					placeholder="Enter outfit name"
+					value={name}
+					onChange={event => setName(event.target.value)}
+				/>{" "}
+			</div>
+			<div className="selectCollection">
+				<CollectionSelect />
+			</div>
 			{/* AddCollection modal component*/}
-			<Button id="btnAddCollection" onClick={handleShowCollection}>
+			<Button className="btnAddCollection" onClick={handleShowCollection}>
 				Add new collection
 			</Button>
 			<AddCollection show={showCollection} handleClose={handleCloseCollection} />
-			Use today
-			<input type="checkbox" onChange={() => setTodayOutfit(!todayOutfit)} defaultValue={todayOutfit}></input>
 			<Modal.Footer>
+				<div className="textCheck">USE TODAY</div>
+				<input
+					className="ckeckToday"
+					type="checkbox"
+					onChange={() => setTodayOutfit(!todayOutfit)}
+					defaultValue={todayOutfit}></input>{" "}
 				<Button
 					variant="outline-light"
+					className="createOutfitBtn"
 					onClick={() => {
 						handleSubmit(props.id);
 						handleClose();
@@ -72,7 +80,7 @@ const CreateOutfit = props => {
 						notify();
 						handleClose();
 					}}>
-					Save creation!
+					Save
 				</Button>
 			</Modal.Footer>
 		</Modal>

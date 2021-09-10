@@ -29,9 +29,10 @@ export const CollectionSelect = props => {
 	return (
 		<>
 			<Form.Control
+				className="SelectorCollection"
 				size="sm"
 				as="select"
-				id="selectCollection"
+				// id="selectCollection"
 				defaultValue={collection}
 				onChange={event => {
 					setCollection(event.target.value);

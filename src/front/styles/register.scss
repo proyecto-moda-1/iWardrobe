@@ -1,66 +1,71 @@
-
-
-.container {  
-  padding-top: 2rem;
-  padding-bottom: 0.5rem;   
-  text-align: center;
-  color:rgba(223, 166, 216, 0.966);
-  margin-bottom: 10%;
-  
+.tittleRegister{
+  margin-top: 1.5rem;
+  font-size: 2.5rem;
+  color:rgb(90, 77, 59);
 }
 
-.loginContainer{
-    font-size: 2.5rem;
-    width: 50%;
-    margin-top: 6rem; 
+.containerRegister {  
+  margin: auto;
+  display: flex;  
+  text-align: center;
+  color:rgb(90, 77, 59);
+}
+
+.containerBoxRegister{
+    width: 30rem;
     border: rgb(128, 127, 129) solid;
     border-radius: 0.5rem;
-    background-color: rgba(255, 192, 203, 0.329) ;
+    background-color: rgba(222, 184, 135, 0.452) ;
 
 }
 .goToLogin{
-color: blue;
-}
-.group{
-    padding-top: 1px;
-    padding-bottom: 1px;
-    margin-top: 1px;
+    color: rgb(90, 77, 59);
+    margin-top: -1rem;
 
 }
-.input {
-  font-size: 1rem;
+.groupRegister{
+    padding-top: 0.1rem;
+    padding-bottom: 0.1rem;
+    margin-top: 0.1rem;
+
+}
+.inputRegister {
+  // font-size: 1rem;
   width: 20rem;
   height: 2.5rem;
   margin: 1rem 0;
   background: #FFFFFF;
   
 }
-.button  {
-  width: 25rem;
+.btnRegister  {
+  width: 10rem;
   height: 3rem;
-  background-color:rgba(223, 166, 216, 0.966);
-  color:  rgba(10, 11, 14, 0.644);
-  margin: 1.4rem 0;
-  border: none;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  font-size: 1.5rem;
-  text-align:center;
+  background-color: burlywood !important;
+  border-color: burlywood !important;
+  margin-left: 1rem !important;
+  color: white;
+  // font-size: 1.5rem !important;
+  border:0.2rem solid rgba(222, 184, 135, 0.212)!important;
+  border-radius: 0.2rem;
+  margin-left: -1rem!important;
+  margin-top: 2rem!important;
+  margin-bottom: 3rem;
 
 }
 
-.button:hover{
-  background-color: #0981e4fb;
-    color: black;
-    border-color: black;
+.btnRegister:hover{
+  color:rgb(233, 228, 222)!important;
+  border-color: rgb(233, 228, 222)!important;
 }
 .genderDrop{
-  width: 320px !important;
-  margin-left: 21%;
-  margin-top: 3%;
-  margin-bottom: 5%;
+  width: 20rem!important;
+  height: 2.8rem !important;
+  border-radius: 0.3rem !important;
+  margin-left: 5rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
   text-align:center !important;
-  font-size: 1.5rem;
+  // font-size: 1.5rem;
 
 
 }

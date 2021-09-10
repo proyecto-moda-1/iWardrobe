@@ -66,7 +66,7 @@ export const Profile = () => {
 					<div className="col">
 						<Link to="/closet">
 							<button className="btnProfile" href="#">
-								Add Collection
+								Add collection
 							</button>
 						</Link>
 						<p className="textBody">Crea colecciones segun tus necesidades diarias y especiales</p>
@@ -76,7 +76,7 @@ export const Profile = () => {
 					<div className="col">
 						<Link to="/myOutfit">
 							<button className="btnProfile" href="#">
-								Create Outfit
+								Create outfit
 							</button>
 						</Link>
 
@@ -96,15 +96,15 @@ export const Profile = () => {
 					</div>
 				</div>
 			</div>
+			<h1 className="tittleAvaibles"> OUTFITS AVAILABLES</h1>
 			<div className="containerAvailables">
 				<div className="row">
-					<h1 className="tittleAvaibles"> OUTFITS AVAILABLES</h1>
 					<div className="availablesCard d-flex flex-row">{outfitCards}</div>
 				</div>
 			</div>
+			<h1 className="tittleDirty"> ALREADY USED </h1>
 			<div className="containerDirtyS">
 				<div className="row">
-					<h1 className="tittleDirty"> ALREADY USED </h1>
 					<div className="dirtyCard d-flex flex-row">{dirtyClothing}</div>
 				</div>
 			</div>

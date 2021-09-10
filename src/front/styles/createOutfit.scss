@@ -1,88 +1,67 @@
-#headerCreate{
-    margin-left: 30px;
-}
-#outfitName{
-    margin:10px 50px 10px ;
-    width: 300px;
-    border-radius: 12px;
-    font-size: 0.90rem;
-    border-style: solid;
-    border: 2px solid #9b9999;
-}
-#btnAddCollection{
-    margin:10px 50px 10px ;
-    width: 300px;
-    border-radius: 12px;
-    font-size: 0.90rem;
-    color:white;
-    border: 2px solid white; 
-    background-color: rgb(29, 138, 211);
-}
-#heartBtn{
-    margin:10px 50px 10px ;
-    width: 300px;
-    border-radius: 12px;
-    font-size: 0.90rem;
-    color:white;
-    border: 2px solid white; 
-    background-color:rgba(167, 6, 6, 0.932);
-}
-//Los btns de add y fav se les tiene que dar un css que quede como los botones de bootsrap, había que ver si se les esta suporpeniendo css.
 
-#btnCreate{
-    border: 2px;
-    border-radius: 12px;
-    font-size: 14px;
-    background-color: white;
-    color: #9b9999;
-    border: 2px solid #9b9999;   
+.tittleOutfit{
+    color: burlywood;
+    margin-left: auto;
+
 }
-#selectCollection{
-    margin:10px 50px 10px ;
-    width: 300px;
-    border-radius: 12px;
-    font-size: 0.90rem;
-    border-style: solid;
-    border: 2px solid #9b9999;
+.modalOutfit{
+    margin: 1rem;
+    }
+
+.nameOutfit{
+    width: 23rem;
+    height: 2.5rem;
+    text-align:center;
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    border-radius: 0.4rem;
+    // font-size: 1rem;
+}
+.SelectorCollection{
+    margin-top: 1rem;
+    margin-left: 3rem;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+    width: 23rem !important;
+    height: 2.5rem !important;
+    text-align:center;
+    border-radius: 0.5rem;
+}
+.btnAddCollection{
+    width: 12rem;
+    height: 2.5rem;
+    margin-top: 1rem;
+    background-color: burlywood !important;
+    border-color: burlywood !important;
+    margin-left: 3rem !important;
+    margin-bottom: 3rem;
+}
+.btnAddCollection:hover{
+    color: burlywood !important
+    ;
+    background-color:rgb(233, 228, 222)!important
+    ;
+}
+.createOutfitBtn{
+    margin: 0.5rem !important;
+    width: 10rem;
+    background-color: burlywood !important;
+    border-color: burlywood !important;
+    margin-left: 10rem !important;
+
 }
 
-#collectionName{
-    width: 300px;
-    border-radius: 12px;
-    font-size: 0.90rem;
-    border-style: solid;
-    border: 2px solid #9b9999;
-}
-.pass-label{
-    width: 15rem;
-    height: 3rem;
-}
-.group-clothing{
-    width: 15rem;
-    height: 8rem;
-}
-#btnCollection{
-    border: 2px;
-    border-radius: 12px;
-    font-size: 14px;
-    background-color: white;
-    color: #9b9999;
-    border: 2px solid #9b9999;   
-}
-#outfitCheck{
-    margin:10px 50px 10px ;
-}
-  
+.textCheck{
+    color: green;
 
-// //Hay que empequeñecer los botones
-
-.button,.btn.btn-outline-light, .save-button,.close-button { 
-    border: 2px;
-    border-radius: 12px;
-    font-size: 14px;
-    background-color: white;
-    color: #9b9999;
-    border: 2px solid #9b9999;
 }
+
+
+
+
+
+
+
 
 

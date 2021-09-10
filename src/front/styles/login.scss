@@ -1,9 +1,60 @@
-
-
-// .loginContainer{
-//     font-size: 1.5rem;
-//     width: 90%;
-//     padding-top: 2rem;
-//     padding-bottom: 2rem;
-// }
-
+.tittleLogin{
+    margin-top: 1.5rem;
+    font-size: 2.5rem;
+    color:rgb(90, 77, 59);
+  }
+  
+  .containerLogin {  
+    margin: auto;
+    display: flex;
+    text-align: center;
+    color:rgb(90, 77, 59);
+  }
+  
+  .containerBoxLogin{
+      width: 30rem;
+      border: rgb(128, 127, 129) solid;
+      border-radius: 0.5rem;
+      background-color: rgba(222, 184, 135, 0.452) ;
+  
+  }
+  .goToRegister{
+      color: rgb(90, 77, 59);
+      margin-top: 0.5rem;
+  
+  }
+  .groupLogin{
+      padding-top: 0.1rem;
+      padding-bottom: 0.1rem;
+      margin-top: 0.1rem;
+  
+  }
+  .inputLogin {
+    // font-size: 1rem;
+    width: 20rem;
+    height: 2.5rem;
+    margin: 1rem 0;
+    background: #FFFFFF;
+    
+  }
+  .btnLoginVista  {
+    width: 10rem;
+    height: 3rem;
+    background-color: burlywood !important;
+    border-color: burlywood !important;
+    margin-left: 1rem !important;
+    color: white;
+    // font-size: 1.5rem !important;
+    border:0.2rem solid rgba(222, 184, 135, 0.212)!important;
+    border-radius: 0.2rem;
+    margin-left: -1rem!important;
+    margin-top: 2rem!important;
+    margin-bottom: 3rem;
+  
+  }
+  
+  .btnLoginVista:hover{
+    color:rgb(233, 228, 222)!important;
+    border-color: rgb(233, 228, 222)!important;
+  }
+ 

@@ -1,58 +1,67 @@
-.modal-header, .modal-title,.h4 {
-    line-height: 4rem;
-    text-transform: uppercase;
-   
+
+.tittleModal{
+    color: burlywood;
+    margin-left: auto;
+
 }
-.group-clothing,.group-image{
-    width: 11rem;
+.modalClothing{
+    margin: 2rem;
+}
+
+.nameClothing{    
+    width: 23rem;
+    height: 2.5rem;
+    text-align:center;
+    margin-left: 0.8rem;
+    margin-bottom: -4rem;
+    margin-top: 1rem;
+    border-radius: 0.4rem;
+    // font-size: 1rem;
+}
+.ClothingSelect{
+    margin-top: 1.6rem;
     margin-left: 3rem;
+    margin-right: 2rem;
     margin-bottom: 3rem;
-    font-size: 0.90rem;
-}
-.input-image{
-    font-size: 15px;
-    width: 300px;
-    border: 2px;
-    border-radius: 12px;
-    border-style: solid;
-    color: #5e5c5c;   
-}
-#clothingName{
-    width: 300px;
-    border-radius: 12px;
-    font-size: 0.90rem;
-    border-style: solid;
-    border: 2px solid #9b9999;
+    width: 23rem !important;
+    height: 2.5rem !important;
+    text-align:center;
+    border-radius: 0.5rem;
+    
 
-}
 
-#selectClothing{
-    width: 300px;
-    border-radius: 12px;
-    font-size: 0.90rem;
-    border-style: solid;
-    border: 2px solid #9b9999;
-}
-#btnClothing{
-    border: 2px;
-    border-radius: 12px;
-    font-size: 14px;
-    background-color: white;
-    color: #9b9999;
-    border: 2px solid #9b9999;
-}
-
-.modal-content{
-    width: 100%;
-    margin: auto;
-    max-width: 25rem;
-    position: relative;
-    box-shadow: 0 0.75rem 0.938rem 0 rgba(27, 26, 26, 0.24), 0 17px 50px 0 rgba(0, 0, 0, .19)
 }
 .selectArch{
-    width: 18rem;
+    margin-top: 3rem;
     margin-left: 3rem;
-    margin-bottom: 3rem;
-    border: 2px;
-    font-size: 0.90rem;
+    text-align: center;
 }
+
+.uploadClothes{
+    width: 10rem;
+    margin: 0.5rem !important;
+    background-color: burlywood !important;
+    border-color: burlywood !important;
+    margin-left: 1rem !important;
+}
+.uploadClothes:hover{
+    color:rgb(233, 228, 222)!important; 
+    background-color:burlywood !important;
+  }
+.clothingBtn{
+    width: 10rem;
+    background-color: white !important;
+    border-color: burlywood !important;
+    text-decoration-color: burlywood !important;
+    text-decoration: burlywood !important;
+    color: burlywood !important ;
+    margin-left: 1rem !important;
+
+}
+
+.clothingBtn:hover{
+    color: burlywood !important
+    ;
+    background-color:rgb(233, 228, 222)!important
+    ;
+  }

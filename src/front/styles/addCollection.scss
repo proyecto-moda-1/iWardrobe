@@ -1,0 +1,30 @@
+.modalBox{
+background-color: rgba(92, 91, 90, 0.473);
+}
+
+.tittleModalCollection{
+    margin-left: auto;    
+    color:burlywood;
+    margin-top: -1rem;
+}
+
+.nameCollection{    
+    width: 23rem;
+    height: 3rem;
+    text-align:center;
+    margin-left: 3.5rem;
+    margin-bottom: 3rem;
+    margin-top: 1rem;
+    border-radius: 0.4rem;
+    // font-size: 1rem;
+}
+
+.modalCollection{
+    margin: 2rem;
+}
+.btnCollection{
+    width: 8rem;
+    background-color: burlywood !important;
+    border-color: burlywood !important;
+    margin-left: 1rem !important;
+}

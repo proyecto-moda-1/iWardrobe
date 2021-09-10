@@ -3,14 +3,14 @@
     color: rgb(80, 77, 77);
 }
 .tittleCloset{
-    font-size: 5rem;
+    font-size: 3rem;
     text-align: center;
     color: rgb(80, 77, 77);
 }
 .leadCloset{
     text-align: center;
-    font-size: 3rem;
-    margin-bottom: 5rem;
+    font-size: 2rem;
+    margin-bottom: 7rem;
 }
 .clothingUsed{
     height: 30rem;
@@ -21,8 +21,27 @@
     border: 0.2rem solid rgba(90, 77, 59, 0.37);
 }
 .todayCloset{
-    margin-left: 5rem;
+    margin-left: 4.5rem;
     margin-top: 2rem;
+    margin-bottom: -3rem;
+    color:rgb(90, 77, 59);
+    font-size: 2rem;
+}
+.containerClothingUsed{
+    border-radius: 1rem;
+    border: 0.2rem solid rgba(90, 77, 59, 0.37);
+    margin-left: 3rem;
+    margin-right: 3rem;
+    margin-bottom: 4rem;
+    margin-top: 4rem;
+    background-color: rgba(222, 184, 135, 0.233);
+}
+.todayCards{
+    margin-left: 4rem;
+    margin-right: 3rem;
+    margin-bottom: 4rem;
+    margin-top: 1rem;
+    
 }
 .containerClothingFavs{
     border-radius: 1rem;
@@ -31,38 +50,54 @@
     margin-right: 3rem;
     margin-bottom: 4rem;
     margin-top: 4rem;
+    background-color: rgba(222, 184, 135, 0.233);
 
 }
-.favouritesText{
+.tittleFavourites{
     margin-left: 4.5rem;
     margin-top: 2rem;
-    margin-bottom: 2rem;
-    color:rgb(90, 77, 59)
+    margin-bottom: -3rem;
+    color:rgb(90, 77, 59);
+    font-size: 2rem;
 }
 .favClosetCard{
+    margin-left: 4rem;
+    margin-right: 3rem;
+    margin-bottom: 4rem;
+    margin-top: 1rem;
+}
+.containerClothingCollections{
+    border-radius: 1rem;
+    border: 0.2rem solid rgba(90, 77, 59, 0.37);
     margin-left: 3rem;
     margin-right: 3rem;
-    margin-bottom: 6rem;
-    margin-top: 2rem;  
+    margin-bottom: 4rem;
+    margin-top: 4rem;
+    background-color: rgba(222, 184, 135, 0.233);
 }
-.clothingCollections{
-    height: 30rem;
-    margin-left:3rem ;
-    margin-right:3rem ;
+.tittleCollections{
+    margin-left: 4.5rem;
     margin-top: 2rem;
-    border-radius: 1rem;
-    margin-bottom: 6rem;
-    border: 0.2rem solid rgba(90, 77, 59, 0.37);
+    margin-bottom: -3.5rem;
+    color:rgb(90, 77, 59);
+    font-size: 2rem;
 }
-.collectionsText{
-    margin-left: 5rem;
-    margin-top: 2rem;
-}
-.collectionDropdown{
-    margin-left: 7rem;
-    margin-bottom: 20rem;
-}
+
 .collectionDrop{
+    margin-left: 4rem;
+    margin-right: 3rem;
+    margin-bottom: 4rem;
+    margin-top: 1rem;
+}
+.containerColleDropdown{
     width: 20rem;
-    height: 20rem;
+}
+.dropCollect{
+    margin-top: 1.2rem;
+    margin-left:20rem;
+    margin-right: 2rem;
+    margin-bottom: -2rem;
+    text-align:center;
+    border-radius: 0.5rem;
+    
 }
