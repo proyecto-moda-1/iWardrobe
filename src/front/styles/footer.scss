@@ -1,34 +1,23 @@
-.header{
-  width: 95rem;
-  background-color: burlywood;
+.headerFooter{
   height: 4.5rem;
-
+  background-color: burlywood;
+  color: white;
+  border-top:0.2rem solid rgba(99, 66, 23, 0.404);
+  font-size: large;
 }
 footer {
-    // padding-bottom: 700px;
     background-color: burlywood;
-    // width: 100%;
     color: white;
-    display: flex;
-
-
   }
   
-.linkedinGaby{
-  font-size: medium;
-  color: white;
-  text-align: right;
+  .textFooter{
+  margin-left: 80rem !important;
+  margin-top: -1.5rem;
+  }
 
-}
-.linkedinYola{
-  font-size: medium;
+.textAcademy{
+  // font-size: xxs-large;
   color: white;
-  text-align: right;
-
-}
-.academy{
-  font-size: xxs-large;
-  color: white;
-  text-align:left;
-
+  margin-top: 1rem !important;
+  margin-left: 2rem;
 }

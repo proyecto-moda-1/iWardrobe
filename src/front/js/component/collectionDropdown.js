@@ -24,8 +24,8 @@ export const CollectionDropdown = () => {
 		actions.selectCollection(option.value);
 	};
 	return (
-		<div className="container">
-			<Select onChange={handleChange} options={collections} />
+		<div className="containerColleDropdown">
+			<Select placeholder="Select Collection" onChange={handleChange} options={collections} />
 			{/* <Select options={collections} /> */}
 		</div>
 	);

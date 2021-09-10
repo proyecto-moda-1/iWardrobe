@@ -138,6 +138,7 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 						return response.json();
 					})
 					.then(json => {
+						console.log(json, "@@@@@");
 						setStore({ outfits: json });
 					});
 			},
@@ -248,10 +249,11 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 					})
 					.catch(err => console.error(err));
 			},
-			createOutfit: data => {
+			createOutfit: (data, clothings) => {
 				const store = getStore();
 				const endpoint = process.env.BACKEND_URL + "/api/outfit";
 				data["collectionId"] = store.collection_id;
+				data["clothings"] = clothings;
 				const config = {
 					method: "POST",
 					body: JSON.stringify(data),
@@ -312,6 +314,7 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 				};
 				fetch(endpoint, config).then(response => {
 					if (response.ok) {
+						console.log(data);
 						// getActions().getTodayOutfit(data.get("todayOutfit"));
 					}
 				});

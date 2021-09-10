@@ -15,7 +15,6 @@ import { toast } from "react-toastify";
 toast.configure();
 
 const CreateOutfit = props => {
-	console.log(props, "#########");
 	const { show, handleClose } = props;
 	const [todayOutfit, setTodayOutfit] = useState(false);
 	const [name, setName] = useState("");
@@ -32,7 +31,7 @@ const CreateOutfit = props => {
 			name: name,
 			today: todayOutfit
 		};
-		actions.createOutfit(data);
+		actions.createOutfit(data, props.clothing);
 	};
 	const handleUserInput = e => {
 		setInputValue(e.target.value);
@@ -42,28 +41,38 @@ const CreateOutfit = props => {
 	};
 	return (
 		<Modal show={show} onHide={handleClose}>
-			<Modal.Header closeButton>
+			<Modal.Header className="modalOutfit" closeButton>
 				{" "}
-				<h3 id="headerCreate">Create your outfit</h3>
+				<Modal.Title className="tittleOutfit">CREATE YOUR OUTFIT</Modal.Title>
 			</Modal.Header>
-			<label className="pass label" />{" "}
-			<input
-				type="text"
-				id="outfitName"
-				placeholder="Name"
-				value={name}
-				onChange={event => setName(event.target.value)}
-			/>{" "}
-			<CollectionSelect id="selectCollection" />
+			<div className="modalOutfit">
+				<label />{" "}
+				<input
+					className="nameOutfit"
+					type="text"
+					placeholder="Enter outfit name"
+					value={name}
+					onChange={event => setName(event.target.value)}
+				/>{" "}
+			</div>
+			<div className="selectCollection">
+				<CollectionSelect />
+			</div>
 			{/* AddCollection modal component*/}
-			<Button id="btnAddCollection" onClick={handleShowCollection}>
+			<Button className="btnAddCollection" onClick={handleShowCollection}>
 				Add new collection
 			</Button>
-			<AddCollection show={showCollection} handleClose={handleCloseCollection} />(
-			<input type="checkbox" onChange={() => setTodayOutfit(!todayOutfit)} defaultValue={todayOutfit}></input>
+			<AddCollection show={showCollection} handleClose={handleCloseCollection} />
 			<Modal.Footer>
+				<div className="textCheck">USE TODAY</div>
+				<input
+					className="ckeckToday"
+					type="checkbox"
+					onChange={() => setTodayOutfit(!todayOutfit)}
+					defaultValue={todayOutfit}></input>{" "}
 				<Button
 					variant="outline-light"
+					className="createOutfitBtn"
 					onClick={() => {
 						handleSubmit(props.id);
 						handleClose();
@@ -71,7 +80,7 @@ const CreateOutfit = props => {
 						notify();
 						handleClose();
 					}}>
-					Save creation!
+					Save
 				</Button>
 			</Modal.Footer>
 		</Modal>
@@ -84,6 +93,7 @@ CreateOutfit.propTypes = {
 	show: PropTypes.bool,
 	handleClose: PropTypes.func,
 	name: PropTypes.string,
+	clothing: PropTypes.object,
 	id: PropTypes.int,
 	today: PropTypes.bool
 };

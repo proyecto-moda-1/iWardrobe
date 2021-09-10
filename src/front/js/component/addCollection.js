@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 import PropTypes from "prop-types";
 import { Context } from "../store/appContext";
 import { getActions } from "../store/flux.js";
-import "../../styles/createOutfit.scss";
+import "../../styles/addCollection.scss";
 import "react-toastify/dist/ReactToastify.css";
 import { toast } from "react-toastify";
 toast.configure();
@@ -29,17 +29,18 @@ const AddCollection = props => {
 	};
 
 	return (
-		<Modal show={show} onHide={handleClose}>
-			<Modal.Header closeButton>
-				<Modal.Title>New collection</Modal.Title>
+		<Modal className="modalBox" show={show} onHide={handleClose}>
+			<Modal.Header className="modalCollection" closeButton>
+				<Modal.Title className="tittleModalCollection">NEW COLLECTION</Modal.Title>
 			</Modal.Header>
-			<div className="group-clothing">
+			<div>
 				{" "}
 				<label className="pass-label" />{" "}
 				<input
+					className="nameCollection"
 					type="text"
 					id="collectionName"
-					placeholder="Collection Name"
+					placeholder="Enter collection name"
 					value={name}
 					onChange={event => setName(event.target.value)}
 				/>{" "}
@@ -47,7 +48,7 @@ const AddCollection = props => {
 			<Modal.Footer>
 				<Button
 					type="submit"
-					id="btnCollection"
+					className="btnCollection"
 					value="button"
 					onClick={() => {
 						handleSubmit();
@@ -56,7 +57,7 @@ const AddCollection = props => {
 						notify();
 						handleClose();
 					}}>
-					Save new collection
+					Save
 				</Button>
 			</Modal.Footer>
 		</Modal>

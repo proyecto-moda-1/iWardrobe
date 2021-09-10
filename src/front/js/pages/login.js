@@ -25,40 +25,38 @@ export const Login = function(props) {
 	};
 
 	return (
-		<div className="container">
-			<div className="d-flex justify-content-center">
-				<div className="loginContainer">
-					<label className="userlabel">LOGIN</label>
-					<div className="group">
-						<input
-							type="text"
-							className="input btn btn-light"
-							id="exampleFormControlInput1"
-							placeholder="email@example.com"
-							value={email}
-							onChange={event => setEmail(event.target.value)}
-						/>
-					</div>
-					<div className="group">
-						<input
-							type="password"
-							className="input btn btn-light"
-							id="exampleFormControlInput1"
-							placeholder="password"
-							value={password}
-							onChange={event => setPassword(event.target.value)}
-						/>
-					</div>
-					<div>
-						<Link to="/register">
-							<a href="#">Crear cuenta nueva</a>
-						</Link>
-					</div>
-					<div className="group">
-						<button type="submit" value="boton" className="button" onClick={handleSubmit}>
-							Sign in
-						</button>
-					</div>
+		<div className="containerLogin">
+			<div className="containerBoxLogin">
+				<label className="tittleLogin">LOGIN</label>
+				<div className="groupLogin">
+					<input
+						type="text"
+						className="inputLogin btn btn-light"
+						id="exampleFormControlInput1"
+						placeholder="email@example.com"
+						value={email}
+						onChange={event => setEmail(event.target.value)}
+					/>
+				</div>
+				<div className="groupLogin">
+					<input
+						type="password"
+						className="inputLogin btn btn-light"
+						id="exampleFormControlInput1"
+						placeholder="password"
+						value={password}
+						onChange={event => setPassword(event.target.value)}
+					/>
+				</div>
+				<div className="goToRegister">
+					<Link to="/register">
+						<a href="#">Crear cuenta nueva</a>
+					</Link>
+				</div>
+				<div className="groupLogin">
+					<button type="submit" value="boton" className="btnLoginVista" onClick={handleSubmit}>
+						Sign in
+					</button>
 				</div>
 			</div>
 		</div>

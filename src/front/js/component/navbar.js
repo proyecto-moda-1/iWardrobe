@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
-// import LoadClothing from "./loadClothing";
 import { Link } from "react-router-dom";
 import "../../styles/navbar.scss";
 
@@ -10,8 +9,8 @@ export const Navbar = () => {
 	const handleShow = () => setShow(true);
 	return (
 		<div className="headerNavbar">
-			<div className="logo" type="submit">
-				<Link to="/profile" className="text-decoration-none">
+			<div type="submit">
+				<Link className="text-decoration-none" to="/profile">
 					iWardrobe
 				</Link>
 			</div>
@@ -32,7 +31,6 @@ export const Navbar = () => {
 							</button>
 						</Link>
 					</li>
-
 					<li>
 						<Link to="/closet">
 							<button className="btnCloset" href="#">
@@ -41,12 +39,27 @@ export const Navbar = () => {
 						</Link>
 					</li>
 					<li>
-						<Link to="/login">
-							<button className="btnLogin" href="#">
-								LOGIN
+						{localStorage.getItem("token") ? (
+							<Link to="/">
+								<button className="btnLogin" href="#" onClick={() => localStorage.removeItem("token")}>
+									LOG OUT
+								</button>
+							</Link>
+						) : (
+							<Link to="/login">
+								<button className="btnLogin" href="#">
+									LOGIN
+								</button>
+							</Link>
+						)}
+					</li>
+					{/* <li>
+						<Link to="/logout">
+							<button className="btnLogOut" href="#">
+								LOG OUT
 							</button>
 						</Link>
-					</li>
+					</li> */}
 				</ul>
 			</nav>
 		</div>

@@ -1,43 +1,64 @@
+
 .cardOutfit{
-   width: 15rem ;
     margin: 1rem;
-    border: 0.1rem solid rgba(0, 0, 0, 0.418);
+    border: 0.2rem solid rgba(0, 0, 0, 0.418);
     margin: 1rem;
-    border-radius: 0.1rem;
+    border-radius: 0.2rem;
+    background-color: burlywood;
 } 
 .cardBodyClothing{
-    // border: 0.05rem solid rgba(0, 0, 0, 0.24);
+    position: relative;
     margin: 1rem;
     border-radius: 0.2rem;
 }
 .cardNameClothing{
     font-size: 0.8rem;
-    margin: 0.5rem;
     text-align: center;
+    color:rgba(0, 0, 0, 0.603)
 }
 .cardClothingImg{
     margin: auto;
     display: block;
+    max-width:15rem;
+    max-height:13.2rem;
+    width: auto;
+    height: auto;
+    border-radius: 0.2rem;
 }
 .cardClean{
     font-size: 0.8rem;
     text-align: right;
     margin-top: 0.5rem;
     margin-right: 2rem;
+    color:rgba(0, 0, 0, 0.603)
 }
 .cardTittleOutfit{
     margin: 1rem;
-    font-size: 1rem;
-    color:rgba(0, 0, 0, 0.849) ;
+    
+    // font-size: 1rem;
+    color:rgba(0, 0, 0, 0.603) ;
+}
+.cardFooter{
+    margin-top: 37rem;
+
 }
 .btnFav{
-    margin-left: 1rem;
+    margin-left: 2rem;
+    margin-bottom: -3rem;
     display: block;
+    text-align: center;
+    margin-top: 3rem;
+    float: left;
+    width: 2rem;
+    height: 2rem;
+
+
 }
 #outfitCheck{
-    margin-top: -1.6rem;
+    margin-top: 3rem;
     text-align: right;
     margin-right: 1.5rem;
     color: green;
+    float: right;
 
 }
