@@ -138,7 +138,6 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 						return response.json();
 					})
 					.then(json => {
-						console.log(json, "@@@@@");
 						setStore({ outfits: json });
 					});
 			},
