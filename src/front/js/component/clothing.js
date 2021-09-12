@@ -36,5 +36,5 @@ ClothingCard.propTypes = {
 	name: PropTypes.string,
 	image: PropTypes.string,
 	dirty: PropTypes.bool,
-	index:
+
 };
