@@ -9,9 +9,16 @@ import "../../styles/card.scss";
 
 const ClothingCard = props => {
 	const { store, actions } = useContext(Context);
+	const deleteItem = (index, event) => {
+		let newOutfit = [...outfit];
+		let removed = newOutfit.splice(index, 1);
+	};
 	return (
 		<div className="cardClothing">
-			<div className="cardBodyClothing">
+			<div className="cardBodyClothing" >
+				<button className="delete-button" onClick={e => deleteItem(index, e)}>
+					X
+				</button>
 				<h5 className="cardNameClothing">{props.name}</h5>
 				<img className="cardClothingImg" src={props.image} />
 				<h4 className="cardClean">
@@ -28,5 +35,6 @@ ClothingCard.propTypes = {
 	id: PropTypes.int,
 	name: PropTypes.string,
 	image: PropTypes.string,
-	dirty: PropTypes.bool
+	dirty: PropTypes.bool,
+	index:
 };
