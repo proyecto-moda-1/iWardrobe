@@ -9,27 +9,21 @@ import { FormCheck } from "react-bootstrap";
 
 export const BtnCleanOutfit = props => {
 	const { store, actions } = useContext(Context);
-	const [checked, setChecked] = useState(false);
+	const [dirty, setDirty] = useState(props.dirty);
 	const handleClick = () => {
+		console.log(props.id, props);
 		actions.swicthDirty(props.id);
-		setChecked(!checked);
+		setDirty(!dirty);
 	};
 
 	return (
-		<>
-			<Form.Check
-				type="switch"
-				id="custom-switch"
-				label="Switch to clean"
-				checked={checked}
-				onChange={() => handleClick()}
-			/>
-		</>
+		<input type="checkbox" id="custom-switch" label="Switchclean" checked={dirty} onChange={() => handleClick()} />
 	);
 };
 
 export default BtnCleanOutfit;
 
 BtnCleanOutfit.propTypes = {
-	id: PropTypes.int
+	id: PropTypes.int,
+	dirty: PropTypes.bool
 };

@@ -281,14 +281,17 @@ def favorite_brand(outfit_id):
     db.session.commit()
     return "fav updated", 200
 
-@api.route('/users/clothing/<clothing_id>/dirty', methods=['PUT'])
+@api.route('/users/clothing/<int:clothing_id>/dirty', methods=['PUT'])
 @jwt_required()
 def laundry_clothing(clothing_id):
+    print("#########")
     user_email = get_jwt_identity()
+    print(get_jwt_identity())
     user= User.get_user_by_email(user_email)
+    print(user)
     clothing= Clothing.query.filter_by(user_id=user.id, id=clothing_id).first()
+    print(clothing)
     clothing.dirty= not clothing.dirty
-    print(clothing.dirty)
     db.session.commit()
     return "Laundry updated", 200 
 

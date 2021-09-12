@@ -3,6 +3,7 @@ import { Link, useHistory, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import SelectOutfitBtn from "./selectOutfitBtn";
 import BtnCleanOutfit from "./btnCleanOutfit";
+import ClothingCard from "./clothing";
 import { Button } from "react-bootstrap";
 import PropTypes from "prop-types";
 import "../../styles/card.scss";
@@ -21,22 +22,13 @@ const Card = props => {
 	if (props.clothing != undefined) {
 		clothingCards = props.clothing.map((clothing, index) => {
 			return (
-				<div key={index} className="cardClothing">
-					<div className="cardBodyClothing">
-						<h5 className="cardNameClothing">{clothing.name}</h5>
-						<img className="cardClothingImg" src={clothing.image} />
-						<h4 className="cardClean">
-							<BtnCleanOutfit
-								id={clothing.id}
-								dirty={clothing.dirty}
-								name={clothing.name}
-								image={clothing.image}
-								clothing={clothing.dirty}
-								key={index}
-							/>
-						</h4>
-					</div>
-				</div>
+				<ClothingCard
+					name={clothing.name}
+					image={clothing.image}
+					dirty={clothing.dirty}
+					key={index}
+					id={clothing.id}
+				/>
 			);
 		});
 	}
