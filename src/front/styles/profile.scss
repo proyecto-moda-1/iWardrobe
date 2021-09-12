@@ -1,84 +1,120 @@
-.Jumbotrom{
-      background-color: rgba(222, 184, 135, 0.445);
+.JumbotromProfile{
+      background-color: #B392AC;
+      border:0;
+      width: 27rem;
+      height: 20rem;
+      margin-left: 4rem;
+      margin-top: 10rem;
+       margin-bottom: 6rem;
+}
+.imgHome{
       margin-left: 3rem;
-      margin-right: 3rem;
-      margin-bottom: 4rem;
       margin-top: 4rem;
-      border-radius: 1rem;
+      float: left;
+
 }
-.col{
-      margin-left: -4rem;
-      margin-right: -4rem;
-      margin-bottom: 3rem;
-      margin-top: -1rem;
-      color:rgb(90, 77, 59)
+.btnJumbotrom{
+      text-align:right ;
+      float: right;
+      display: flex;
+      position: absolute;
+      margin-left: 36rem;
+
 }
-.btnProfile{
-      width: 15rem;
-      height: 3.5rem;
-      background-color: burlywood !important;
-      border-color: burlywood !important;
-      margin-left: 1rem !important;
-      color: white;
-      font-size: 1.3rem !important;
-      border:0.2rem solid rgba(222, 184, 135, 0.212)!important;
-      border-radius: 0.2rem;
-      margin-left: 7rem!important;
-      margin-top: 4rem!important;
+
+.colProfile{
+      margin-bottom: 4rem;
+      width: 20rem !important;
+      height: 10rem;
+      float: left;
+      color:#F7F4EA
+      ;
+      background-color: #b392ac8f;
+      // border: 0.5rem solid #B392AC;
+      overflow: hidden
+}
+.colProfile:hover{
+      color:#785964!important;
+      border-color: #B392AC!important;
+      width: 20rem !important;
+      height: 15rem;
+      
+
+    }
+    .btnProfile{
+      width: 9rem;
+      height: 2.5rem;
+      background-color: #B392AC!important;
+      margin-left: -11rem!important;
+      border:0.2rem solid #785964!important;
+      color:#F7F4EA!important;
+      border-radius: 0.2rem!important;
+      margin-right: 5rem;
+      margin-top: 3rem !important;
   }
   .btnProfile:hover{
-      color:rgb(233, 228, 222)!important;
-      border-color: rgb(233, 228, 222)!important;
+      color:#785964!important;
+      border: 0.2rem solid #785964!important;
+      background-color:#F7F4EA!important;
     }
+
+
 .textBody{
-      margin-left: 7rem;
-      margin-top: 2rem;
-      margin-right: 5rem;
-      margin-bottom: -5rem;
+      margin-top: 1rem;
+      font-size: 1rem;
+      margin-right: 1rem;
+      margin-bottom: 1rem;
 
 }
 .textBodyBottom{
-      margin-left: 7rem;
-      margin-top: 2rem;
-      margin-right: 5rem;
-      margin-bottom: -1rem;
+      font-size: 1rem;
+      overflow: scroll;
+      margin-top: 1rem;
+      margin-right: 1rem;
 }
 .containerAvailables{
       border-radius: 1rem;
-      border: 0.2rem solid rgba(90, 77, 59, 0.37);
-      margin-left: 3rem;
-      margin-right: 3rem;
+      border: 0rem ;
+      margin-left: -1rem;
+      margin-right: -1rem;
       margin-bottom: 4rem;
-      background-color: rgba(222, 184, 135, 0.233);
+      background-color: #9535b52f;
 
 }
 .tittleAvaibles{
       margin-left: 4.5rem;
-      margin-top: 2rem;
-      margin-bottom: 1rem;
-      color:rgb(90, 77, 59);
+      margin-top: 10rem;
+      margin-bottom: -1rem;
+      color: #F7F4EA;
       font-size: 2rem;
+      background-color: #785964;
+      width: 25rem;
+      height: 3rem;
+      text-align: center;
 }
 .availablesCard{
       margin-left: 4rem;
       margin-right: 3rem;
       margin-bottom: 4rem;
-      margin-top: 1rem;
 }
 .containerDirtyS{
       border-radius: 1rem;
-      border: 0.2rem solid rgba(90, 77, 59, 0.37);
-      margin-left: 3rem;
-      margin-right: 3rem;
-      margin-bottom: 4rem;
-      background-color: rgba(222, 184, 135, 0.233);
+      border: 0.2rem;
+      margin-left: -1rem;
+      margin-right: -1rem;
+      margin-bottom: 10rem;
+      background-color: #9535b52f;
 }
 .tittleDirty{
       margin-left: 4.5rem;
       margin-top: 2rem;
-      margin-bottom: 1rem;
-      color:rgb(90, 77, 59);
+      margin-bottom: -1rem;
+      color: #F7F4EA;
       font-size: 2rem;
+      background-color: #785964;
+      width: 25rem;
+      height: 3rem;
+      text-align: center;
 
 }
 
