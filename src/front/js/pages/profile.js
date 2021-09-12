@@ -15,6 +15,7 @@ export const Profile = () => {
 	const handleShow = () => setShow(true);
 	useEffect(() => {
 		actions.getAllOutfit();
+		actions.getLaundry();
 	}, []);
 
 	let outfitCards = [];
@@ -116,7 +117,8 @@ export const Profile = () => {
 			<h1 className="tittleDirty"> ALREADY USED </h1>
 			<div className="containerDirtyS">
 				<div className="row">
-					<div className="dirtyCard d-flex flex-row">{dirtyClothing}</div>
+					{dirtyClothing}
+					<div className="dirtyCard d-flex flex-row"></div>
 				</div>
 			</div>
 		</div>

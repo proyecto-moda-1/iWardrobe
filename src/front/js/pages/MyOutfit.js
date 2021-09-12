@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import CarouselClothing from "../component/CarouselClothing.js";
-import CreateOutfitBtn from "../component/CreateOutfitBtn.js";
+import CreateOutfitBtn from "../component/createOutfitBtn";
 import LoadClothing from "../component/loadClothing.js";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";

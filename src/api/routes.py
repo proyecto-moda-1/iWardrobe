@@ -90,9 +90,6 @@ def get_all_clothings():
         #         category_value = element.value
         #         break
         category_value = args.get("category")
-        # category_value = args.get("top")
-        # category_value = args.get("bottom")
-        # category_value = args.get("footwear")
         all_clothings = Clothing.query.filter_by(category=category_value)
 
     else:
@@ -137,7 +134,7 @@ def create_clothing():
     cloudinary.config(cloud_name = os.getenv('CLOUD_NAME'), api_key=os.getenv('API_KEY'), api_secret=os.getenv('API_SECRET'))
     result = cloudinary.uploader.upload(image)
 
-    clothing = Clothing(user_id=user_id, name=name, category=category, image=result['secure_url'], dirty=True)
+    clothing = Clothing(user_id=user_id, name=name, category=category, image=result['secure_url'], dirty=False)
     clothing.create_clothing()
 
     return "Created", 201
@@ -171,18 +168,11 @@ def today_outfit(outfit_id):
     db.session.commit()
     return jsonify ({"Message":"Ok"}), 201
 
-
-
-
 @api.route('/outfit', methods=['POST'])
-
 def create_outfit():
-
     body = request.get_json()
-    print(body, "####################")
     if body is None:
         return "The request body is null", 400
-
 
     outfit_user_id = body.get('outfit_user_id')
     if outfit_user_id is None or outfit_user_id == 0:
@@ -291,31 +281,46 @@ def favorite_brand(outfit_id):
     db.session.commit()
     return "fav updated", 200
 
+@api.route('/users/clothing/<int:clothing_id>/dirty', methods=['PUT'])
+@jwt_required()
+def laundry_clothing(clothing_id):
+    print("#########")
+    user_email = get_jwt_identity()
+    print(get_jwt_identity())
+    user= User.get_user_by_email(user_email)
+    print(user)
+    clothing= Clothing.query.filter_by(user_id=user.id, id=clothing_id).first()
+    print(clothing)
+    clothing.dirty= not clothing.dirty
+    db.session.commit()
+    return "Laundry updated", 200 
+
 
 @api.route('/users/outfits/favorite', methods=['GET'])
 @jwt_required()
 def get_user_favorite():
-        user_email = get_jwt_identity()
-        user= User.get_user_by_email(user_email)
-        favorite_outfit = Outfit.get_favorite_user_outfits(user.id)
+    user_email = get_jwt_identity()
+    user= User.get_user_by_email(user_email)
+    favorite_outfit = Outfit.get_favorite_user_outfits(user.id)
 
-        serialized_favorites = []
-        for favorite in favorite_outfit:
-            serialized_favorites.append(favorite.serialize())
-        return jsonify(serialized_favorites), 200
+    serialized_favorites = []
+    for favorite in favorite_outfit:
+        serialized_favorites.append(favorite.serialize())
+    return jsonify(serialized_favorites), 200
 
 
-# @api.route('/collection/collection_id/outfit', methods=['GET'])
-# @jwt_required()
-# def get_user_favorite():
-#         user_email = get_jwt_identity()
-#         user= User.get_user_by_email(user_email)
-#         outfit_collection = Clothing.get_outfit_user_outfits(user.id)
+@api.route('/users/clothing/dirty', methods=['GET'])
+@jwt_required()
+def get_user_dirty():
+    user_email = get_jwt_identity()
+    user= User.get_user_by_email(user_email)
+    dirty_clothing = Clothing.get_dirty_user_clothings(user.id)
+        
+    serialized_dirty = []
+    for dirty in dirty_clothing:
+        serialized_dirty.append(dirty.serialize())
+    return jsonify(serialized_dirty), 200 
 
-#         serialized_collection = []
-#         for favorite in favorite_outfit:
-#             serialized_favorites.append(favorite.serialize())
-#         return jsonify(serialized_favorites), 200
 
 
 
