@@ -7,15 +7,21 @@ import { Link } from "react-router-dom";
 import LoadClothing from "../component/loadClothing";
 
 import "../../styles/profile.scss";
+import { propTypes } from "react-bootstrap/esm/Image";
 
 export const Profile = () => {
 	const { store, actions } = useContext(Context);
 	const [show, setShow] = useState(false);
 	const handleClose = () => setShow(false);
 	const handleShow = () => setShow(true);
+	const deleteItem = (index, event) => {
+		let newOutfit = [...outfit];
+		let removed = newOutfit.splice(index, 1);
+	};
 	useEffect(() => {
 		actions.getAllOutfit();
 		actions.getLaundry();
+		deleteOutfit();
 	}, []);
 
 	let outfitCards = [];
@@ -25,15 +31,18 @@ export const Profile = () => {
 			.filter(outfit => outfit.clothing.some(clo => clo.dirty))
 			.map((outfit, index) => {
 				return (
-					<Card
-						name={outfit.name}
-						id={outfit.id}
-						collections={outfit.collections}
-						image={outfit.image}
-						clothing={outfit.clothing}
-						favorite={outfit.favorite}
-						key={index}
-					/>
+					<button className="delete-button" onClick={e => deleteItem(index, e)}>
+						X
+						<Card
+							name={outfit.name}
+							id={outfit.id}
+							collections={outfit.collections}
+							image={outfit.image}
+							clothing={outfit.clothing}
+							favorite={outfit.favorite}
+							key={index}
+						/>
+					</button>
 				);
 			});
 		outfitCards = store.outfits
@@ -123,4 +132,8 @@ export const Profile = () => {
 			</div>
 		</div>
 	);
+};
+
+Profile.propTypes = {
+	key=propTypes.array
 };
