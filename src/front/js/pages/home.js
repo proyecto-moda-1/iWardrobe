@@ -7,7 +7,7 @@ export const Home = () => {
 
 	return (
 		<div className="containerHome">
-			<div className="jumbotron text-justify bg-cover">
+			<div className="jumbotronHome text-justify bg-cover">
 				<img
 					className="imgHome"
 					src="https://economiasustentable.com/wp-content/uploads/2020/01/ropa.png"
@@ -18,11 +18,11 @@ export const Home = () => {
 						MODA es lo que compras ESTILO es lo que haces con eso NO lo dejes para ultima hora.
 					</h1>
 					<div className="infoHome">
-						<h3>
+						<p>
 							Llego la hora de organizar tu ropa, sacar el mejor provecho a lo que tenemos en casa,
 							tomarnos el tiempo de crear outfits que se adapten a tu vida cotidiana y por supuesto a
 							eventos especiales.
-						</h3>
+						</p>
 					</div>
 					<div className="btnHome">
 						<a href="/register" className="btnRegisterHome">

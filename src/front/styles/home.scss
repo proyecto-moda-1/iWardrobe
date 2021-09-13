@@ -1,76 +1,83 @@
-
+.containerHome{
+  margin-bottom: 2rem;
+}
 .tittleHome{
   margin: auto;
   display: flex;
   justify-content: center;
   position: absolute;
-    top: 35%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #5e5c5c;
-    font-size: 2rem;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #5e5c5c;
+  font-size: 2rem;
 }
 
 .imgHome{
-  width:103.5%; 
+  width:100%; 
   height:100%;
-  opacity: 60%;
-  margin-top: -4rem;
-  margin-left: -2rem;
-
+  opacity: 90%;
+  margin-top: -1rem;
+  margin-right: 0.2rem;
 
 
   }
-.jumbotron {
-    background-color:transparent !important; 
+.jumbotronHome {
+  margin-top: -2rem;
+  margin-left: -1rem;
+  margin-bottom: 5rem;
 
 }
 .infoHome{
   margin: auto;
   display: flex;
   justify-content: center;
-  width: 100rem;
+  width: 65rem;
   position: absolute;
   top: 80%;
-  left: 50%;
-    transform: translate(-50%, -50%);
-    color: rgb(54, 53, 53);
-background-color: rgba(222, 184, 135, 0.267);
+  left: 30%;
+  transform: translate(-20%, -20%);
+  color: #4d383f;
+  background-color: #f7f4ea91;
+  opacity: 90%;
+  font-size: 1rem;
+  
 }
- 
-.btnRegisterHome {
-    position: absolute;
-    top: 30rem;
-    left: 65rem;
-    background-color: burlywood;
-    color:white;
-    border: 0.2rem solid white;
-    padding: 1rem 5.5rem;
-    border-radius: 0.2rem;
-    // font-size: 1.5rem;
-}
-.btnHome{
-  // margin-right: 30rem;
-  background-color: cadetblue;
-}
-.btnLoginHome {
-  position: absolute;
-  top: 30rem;
-  left: 35rem;
-  background-color: burlywood;
-  color:white;
-  border: 0.2rem solid white;
-  padding: 1rem 5.5rem;
-  border-radius: 0.2rem;
-  // font-size: 1.5rem;
 
+.btnRegisterHome{
+  width: 8rem;
+  height: 3rem;
+  position: absolute;
+  top: 25rem;
+  left: 50rem;
+  background-color: #B392AC;
+  border:0.2rem solid #4f0866;
+  color:#F7F4EA;
+  border-radius: 0.2rem;
+  text-align: center;
 }
 .btnRegisterHome:hover{
-    background-color: rgba(222, 184, 135, 0.534);
-    color:white;
+  color:#785964;
+  border: 0.2rem solid #785964;
+  background-color:#F7F4EA;
+
+}
+
+.btnLoginHome{
+  width: 8rem;
+  height: 3rem;
+  position: absolute;
+  top: 25rem;
+  left: 35rem;
+  background-color: #B392AC;
+  border:0.2rem solid #4f0866;
+  color:#F7F4EA;
+  border-radius: 0.2rem;
 }
 .btnLoginHome:hover{
-    background-color: rgba(222, 184, 135, 0.534);
-    color:white;
+  color:#785964;
+  border: 0.2rem solid #785964;
+  background-color:#F7F4EA;
+
 }
 

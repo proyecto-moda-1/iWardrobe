@@ -23,7 +23,7 @@ const Card = props => {
 			return (
 				<div key={index} className="cardClothing">
 					<div className="cardBodyClothing">
-						<h5 className="cardNameClothing">{clothing.name}</h5>
+						{/* <h5 className="cardNameClothing">{clothing.name}</h5> */}
 						<img className="cardClothingImg" src={clothing.image} />
 						<h4 className="cardClean">
 							<BtnCleanOutfit
