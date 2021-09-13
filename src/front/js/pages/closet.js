@@ -11,7 +11,6 @@ export const Closet = () => {
 	function handleFavorite(id) {
 		actions.favoriteBrand(id);
 	}
-
 	useEffect(() => {
 		actions.getUserFavorite();
 		actions.getTodayOutfit();
@@ -59,13 +58,13 @@ export const Closet = () => {
 			</div>
 			<div className="containerClothingCollections">
 				<div className="row">
-					<div className="collectionDrop d-flex flex-row">{collectionOutfits}</div>
+					<div className="collectionDrop d-flex flex-row cardScrollable">{collectionOutfits}</div>
 				</div>
 			</div>
 			<h1 className="todayCloset">TODAYS OUTFIT</h1>
 			<div className="containerClothingUsed">
 				<div className="row">
-					<div className="todayCards d-flex flex-row">
+					<div className="todayCards  d-flex flex-row cardScrollable">
 						{store.todayOutfit
 							? store.todayOutfit.map((today, index) => {
 									console.log(today);
@@ -91,7 +90,7 @@ export const Closet = () => {
 			<h1 className="tittleFavourites">FAVOURITES</h1>
 			<div className="containerClothingFavs">
 				<div className="row">
-					<div className="favClosetCard d-flex flex-row">{favoriteCards}</div>
+					<div className="favClosetCard d-flex flex-row cardScrollable">{favoriteCards}</div>
 				</div>
 			</div>
 		</div>

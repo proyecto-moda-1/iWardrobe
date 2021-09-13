@@ -1,7 +1,8 @@
 .tittleRegister{
   margin-top: 2.5rem;
+  margin-bottom: 2rem;
   font-size: 2.5rem;
-  color:rgb(90, 77, 59);
+  color:#785964;
 }
 
 .containerRegister {  
@@ -9,17 +10,20 @@
   display: flex;  
   text-align: center;
   background-color: #a885a1 !important;
+  color:rgb(90, 77, 59);
   width: 32rem;
   height: 42rem;
   margin-bottom: 6rem;
   margin-top: 4rem;
+  border-radius: 1rem;
 }
 
 .containerBoxRegister{
     width: 30rem;
-    height: 40rem;
+    height: 38rem;
     margin-left: 0.9rem;
     margin-top: 0.9rem;
+    margin-bottom: 1rem;
     background-color: #B392AC ;
 
 }
@@ -38,7 +42,7 @@
   // font-size: 1rem;
   width: 20rem;
   height: 2.5rem;
-  margin: 1rem 0;
+  margin: 0.7rem 0;
   background: #FFFFFF;
   
 }
@@ -49,7 +53,8 @@
   color: white;
   margin-left: 1rem !important;
   margin-top: 2rem!important;
-
+  border-radius: 1rem;
+  border:0.2rem solid #FFFFFF;
 }
 
 .btnRegister:hover{

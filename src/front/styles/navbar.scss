@@ -3,20 +3,24 @@
     display: flex;
     justify-content: space-between;
     background-color:#F7F4EA ;
+    border-bottom: 0.2rem solid #aba6ad31;
 }
 
 .logoNavbar{
-    background-color: #B392AC;
     width: 5rem;
     height: 6rem;
     margin-left: 4rem;
     text-align: center;
+    margin-top: 1rem;
+
 }
 
 .text-decoration-none{
     font-size: 2.5rem;
      margin-left: 2rem;
-    color:#785964;
+     color: rgba(0, 0, 0, 0.767);
+    text-shadow: 4px 4px 3px rgb(205, 205, 211);
+
     
 }
 .text-decoration-none:hover{
@@ -29,7 +33,6 @@ li, a {
 
 .navLink li{
     display: inline-block;
-    // padding: 0.4rem 2rem;
 }
 
 .navLink li a:hover{
@@ -42,11 +45,15 @@ li, a {
     margin-left: -38rem;
     margin-top: 1.2rem;
     text-align: center;
-    color:#785964;}
+    color:#785964;
+
+}
 .btnProfileS:hover{
     color:#4f0866;
     border-bottom:0.2rem solid  #4f0866;
     width: 6rem;
+    text-shadow: 4px 4px 2px rgb(193, 193, 204);
+
   }
 .btnOutfit{
     border: none;
@@ -60,6 +67,8 @@ li, a {
     color:#4f0866;
     border-bottom:0.2rem solid  #4f0866;
     width: 6rem;
+    text-shadow: 4px 4px 2px rgb(193, 193, 204);
+
 }
 .btnCloset{
     border: none;
@@ -73,16 +82,18 @@ li, a {
     color:#4f0866;
     border-bottom:0.2rem solid  #4f0866;
     width: 6rem;
+    text-shadow: 4px 4px 2px rgb(193, 193, 204);
+
   }
 .btnLogin{
     width: 8rem;
     height: 3rem;
     background-color: #B392AC;
-    margin-left: -12rem;
+    margin-left: -13rem;
     margin-top: 1rem;
     border:0.2rem solid #4f0866;
     color:#F7F4EA;
-    border-radius: 0.2rem;
+    border-radius: 1rem;
 }
 .btnLogin:hover{
     color:#785964;
@@ -98,6 +109,7 @@ li, a {
     border:0.2rem solid #4f0866;
     color:#F7F4EA;
     border-radius: 0.2rem;
+    margin-top: 1rem;
 }
 .btnLogOut:hover{
     color:#785964;

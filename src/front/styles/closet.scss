@@ -21,6 +21,8 @@
     border: 0.2rem solid rgba(90, 77, 59, 0.37);
 }
 .todayCloset{
+    text-shadow: 4px 4px 3px rgb(142, 142, 151);
+
     margin-left: 4.5rem;
     margin-top: 2rem;
     margin-bottom: -5rem;
@@ -32,25 +34,28 @@
     text-align: center;
 }
 .containerClothingUsed{
-
     margin-bottom: 4rem;
     margin-top: 4rem;
     background-color:  #9535b52f;
+    overflow-x: auto;
+
 }
 .todayCards{
+    
     margin-left: 4rem;
     margin-right: 3rem;
     margin-bottom: 4rem;
     margin-top: 1rem;
-    
 }
 .containerClothingFavs{
     margin-bottom: 4rem;
     margin-top: 4rem;
     background-color:  #9535b52f;
+    overflow-x: auto;
 
 }
 .tittleFavourites{
+    text-shadow: 4px 4px 3px rgb(142, 142, 151);
     margin-left: 4.5rem;
     margin-top: 2rem;
     margin-bottom: -5rem;
@@ -71,9 +76,12 @@
 
     margin-bottom: 4rem;
     margin-top: 4rem;
-    background-color:  #9535b52f;;
+    background-color:  #9535b52f;   overflow-x: auto;
+
 }
 .tittleCollections{
+    text-shadow: 4px 4px 3px rgb(142, 142, 151);
+
     margin-left: 4.5rem;
     margin-top: 2rem;
     margin-bottom: -3rem;
@@ -97,11 +105,10 @@
     // margin-top: 4rem;
 }
 .dropCollect{
-    margin-top: 0.5rem;
-    margin-left: 35rem;
+    margin-left: 32rem;
     // margin-right: 10rem;
-    margin-bottom: -4rem;
+    margin-bottom: -9rem;
     text-align:center;
-    border-radius: 0.5rem;
+    border: 0.5rem solid #F7F4EA;
     
 }

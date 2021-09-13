@@ -1,16 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&family=Montserrat:wght@300&family=Oswald&family=Overlock:ital,wght@1,900&family=Raleway&family=Roboto+Mono&family=Sigmar+One&family=Sorts+Mill+Goudy:ital@1&display=swap');
+
 .JumbotromProfile{
       background-color: #B392AC;
       border:0;
       width: 27rem;
       height: 20rem;
       margin-left: 4rem;
-      margin-top: 10rem;
-       margin-bottom: 6rem;
+      margin-top: 5rem;
+      margin-bottom: 6rem;
 }
 .imgHome{
       margin-left: 3rem;
       margin-top: 4rem;
       float: left;
+      opacity: 110%;
 
 }
 .btnJumbotrom{
@@ -25,37 +28,83 @@
 .colProfile{
       margin-bottom: 4rem;
       width: 20rem !important;
-      height: 10rem;
+      height: 17rem;
       float: left;
-      color:#F7F4EA
-      ;
+      color:#785964;
       background-color: #b392ac8f;
-      // border: 0.5rem solid #B392AC;
-      overflow: hidden
 }
 .colProfile:hover{
       color:#785964!important;
       border-color: #B392AC!important;
       width: 20rem !important;
       height: 15rem;
-      
+    }
+
+
+    .btnProfile{
+      text-shadow: 4px 4px 3px rgb(142, 142, 151);
+      padding: 1em 1.5em !important;
+      margin-right: 5rem;
+      position: relative;
+      border: none !important;
+      background-color: transparent !important;
+      cursor: pointer;
+      outline: none !important;
+      font-size: 1.5rem !important;
+  }
+  .type3{  
+      color: rgba(0, 0, 0, 0.767) !important;
+}
+  
+
+  .type3::after,
+  .type3::before{    
+    content: '';
+    display: block;
+    position: absolute;
+    width: 40%;
+    height: 40%;
+    border: 2px solid;
+    transition: all 0.6s ease;
+    border-radius: 2px}
+
+  .type3::after{  
+    bottom: 0;
+    right: 0;
+    border-top-color: transparent ;
+    border-left-color: transparent;
+    border-bottom-color: #785964;
+    border-right-color: #785964;
+}
+
+  .type3::before{ 
+    top: 0;
+    left: 0;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+    border-top-color: #785964;
+    border-left-color: #785964;
+
+}
+
+  .type3:hover:after,
+  .type3:hover:before{ 
+    border-bottom-color: #785964 !important;
+    border-right-color: #785964!important;
+    border-top-color: #785964!important;
+    border-left-color: #785964!important;  
+    width: 95%;
+    height: 90%;
+
+}
+  .btnProfile:hover{
+      color:#F7F4EA!important;
+      background-color: transparent!important;
+      border: none !important;
 
     }
-    .btnProfile{
-      width: 9rem;
-      height: 2.5rem;
-      background-color: #B392AC!important;
-      margin-left: -11rem!important;
-      border:0.2rem solid #785964!important;
-      color:#F7F4EA!important;
-      border-radius: 0.2rem!important;
-      margin-right: 5rem;
-      margin-top: 3rem !important;
-  }
-  .btnProfile:hover{
-      color:#785964!important;
-      border: 0.2rem solid #785964!important;
-      background-color:#F7F4EA!important;
+    .after2{
+          margin-right: -2rem !important;
     }
 
 
@@ -64,48 +113,46 @@
       font-size: 1rem;
       margin-right: 1rem;
       margin-bottom: 1rem;
+      font-family: 'Raleway', sans-serif !important;
+
 
 }
 .textBodyBottom{
+      font-family: 'Raleway', sans-serif !important;
       font-size: 1rem;
       overflow: scroll;
       margin-top: 1rem;
       margin-right: 1rem;
+}
+.tittleAvaibles{
+      text-shadow: 4px 4px 3px rgb(142, 142, 151);
+      margin-left: 4.5rem;
+      margin-top: 20rem;
+      margin-bottom: -1rem;
+      color: #F7F4EA;
+      font-size: 2rem;
+      background-color: #785964;
+      width: 30rem;
+      height: 3rem;
+      text-align: center;
 }
 .containerAvailables{
       border-radius: 1rem;
       border: 0rem ;
       margin-left: -1rem;
       margin-right: -1rem;
-      margin-bottom: 4rem;
-      background-color: #9535b52f;
+      margin-bottom: 6rem;
+      background-color: #9535b52f;  
+      overflow-x: auto;
 
-}
-.tittleAvaibles{
-      margin-left: 4.5rem;
-      margin-top: 10rem;
-      margin-bottom: -1rem;
-      color: #F7F4EA;
-      font-size: 2rem;
-      background-color: #785964;
-      width: 25rem;
-      height: 3rem;
-      text-align: center;
 }
 .availablesCard{
       margin-left: 4rem;
       margin-right: 3rem;
       margin-bottom: 4rem;
 }
-.containerDirtyS{
-      border-radius: 1rem;
-      border: 0.2rem;
-      margin-left: -1rem;
-      margin-right: -1rem;
-      margin-bottom: 10rem;
-      background-color: #9535b52f;
-}
 .tittleDirty{
+      text-shadow: 4px 4px 3px rgb(142, 142, 151);
       margin-left: 4.5rem;
       margin-top: 2rem;
       margin-bottom: -1rem;
@@ -115,12 +162,18 @@
       width: 25rem;
       height: 3rem;
       text-align: center;
-
 }
-
+.containerDirtyS{
+      border-radius: 1rem;
+      border: 0rem;
+      margin-left: -1rem;
+      margin-right: -1rem;
+      margin-bottom: 2rem;
+      background-color: #9535b52f;
+      overflow-x: auto;
+}
 .dirtyCard{
       margin-left: 4rem;
       margin-right: 3rem;
       margin-bottom: 4rem;
-      margin-top: 1rem;
 }

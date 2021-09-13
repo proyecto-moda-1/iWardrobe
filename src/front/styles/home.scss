@@ -1,3 +1,11 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&family=Montserrat:wght@300&family=Overlock:ital,wght@1,900&family=Roboto&family=Roboto+Mono&family=Sigmar+One&family=Sorts+Mill+Goudy:ital@1&display=swap');
+
+body{
+  font-family: 'Sigmar One', cursive !important;
+    background-color:white;
+}
+
 .containerHome{
   margin-bottom: 2rem;
 }
@@ -9,14 +17,16 @@
   top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #5e5c5c;
+  color: #785964;
   font-size: 2rem;
+  text-shadow:4px 4px 3px rgb(208, 208, 216);
+
 }
 
 .imgHome{
   width:100%; 
   height:100%;
-  opacity: 90%;
+  opacity: 80%;
   margin-top: -1rem;
   margin-right: 0.2rem;
 
@@ -44,40 +54,144 @@
   
 }
 
+
 .btnRegisterHome{
-  width: 8rem;
-  height: 3rem;
+  text-shadow:4px 4px 3px rgb(208, 208, 216);
+  padding: 1em 1.5em !important;
   position: absolute;
   top: 25rem;
-  left: 50rem;
-  background-color: #B392AC;
-  border:0.2rem solid #4f0866;
-  color:#F7F4EA;
-  border-radius: 0.2rem;
-  text-align: center;
+ left: 50rem;
+  border: none !important;
+  background-color: transparent !important;
+  cursor: pointer;
+  outline: none !important;
+  font-size: 1.5rem !important;
 }
-.btnRegisterHome:hover{
-  color:#785964;
-  border: 0.2rem solid #785964;
-  background-color:#F7F4EA;
+.type4{  
+  color: #785964 !important;
+}
+.type4::after,
+.type4::before{    
+content: '';
+display: block;
+position: absolute;
+width: 40%;
+height: 40%;
+border: 4px solid;
+transition: all 0.6s ease;
+border-radius: 2px}
 
+.type4::after{  
+bottom: 0;
+right: 0;
+border-radius: 1rem;
+border-top-color: transparent ;
+border-left-color: transparent;
+border-bottom-color: #785964;
+border-right-color: #785964;
+}
+.type4::before{ 
+top: 0;
+left: 0;
+border-bottom-color: transparent;
+border-right-color: transparent;
+border-top-color: #785964;
+border-left-color: #785964;
+
+}
+.type4:hover:after,
+.type4:hover:before{ 
+color: rgb(243, 0, 0);
+border-bottom-color: #785964 !important;
+border-right-color: #785964!important;
+border-top-color: #785964!important;
+border-left-color: #785964!important;  
+width: 95%;
+height: 90%;
+}
+.btnProfile:hover{
+  color:#F7F4EA!important;
+  background-color: transparent!important;
+  border: none !important;
+  // text-shadow: 4px 4px 3px rgb(142, 142, 151);
+}
+.after2{
+      margin-right: -2rem !important;
+}
+
+.btnRegisterHome:hover{
+  color:white !important;
+
+
+}
+.filtro1{
+  // opacity: #785964 60%;
 }
 
 .btnLoginHome{
-  width: 8rem;
-  height: 3rem;
+  text-shadow: 4px 4px 3px rgb(208, 208, 216);
+  padding: 1em 2.7em !important;
   position: absolute;
   top: 25rem;
-  left: 35rem;
-  background-color: #B392AC;
-  border:0.2rem solid #4f0866;
-  color:#F7F4EA;
-  border-radius: 0.2rem;
+ left: 30rem;
+  border: none !important;
+  background-color: transparent !important;
+  cursor: pointer;
+  outline: none !important;
+  font-size: 1.5rem !important;
 }
+.type4{  
+  color: #785964 !important;
+}
+.type4::after,
+.type4::before{    
+content: '';
+display: block;
+position: absolute;
+width: 40%;
+height: 40%;
+border: 4px solid;
+transition: all 0.6s ease;
+border-radius: 2px}
+
+.type4::after{  
+bottom: 0;
+right: 0;
+border-top-color: transparent ;
+border-left-color: transparent;
+border-bottom-color: #785964;
+border-right-color: #785964;
+}
+.type4::before{ 
+top: 0;
+left: 0;
+border-bottom-color: transparent;
+border-right-color: transparent;
+border-top-color: #785964;
+border-left-color: #785964;
+
+}
+.type4:hover:after,
+.type4:hover:before{ 
+color: rgb(243, 0, 0);
+border-bottom-color: #785964 !important;
+border-right-color: #785964!important;
+border-top-color: #785964!important;
+border-left-color: #785964!important;  
+width: 95%;
+height: 90%;
+}
+.btnProfile:hover{
+  color:white!important;
+
+}
+.after2{
+      margin-right: -2rem !important;
+}
+
 .btnLoginHome:hover{
-  color:#785964;
-  border: 0.2rem solid #785964;
-  background-color:#F7F4EA;
+  color:white!important;
+
 
 }
 

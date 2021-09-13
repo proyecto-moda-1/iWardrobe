@@ -1,10 +1,13 @@
 
 .cardOutfit{
-    margin: 1rem;
-    border: 0.2rem solid rgba(0, 0, 0, 0.418);
-    margin: 1rem;
-    border-radius: 0.2rem;
-    background-color: burlywood;
+    width: 34rem;
+    height: 25rem;
+    margin-top: 4rem !important;
+    margin: 2rem;
+    // border: 0.1rem solid #785964;
+    border-radius: 0.5rem;
+    background-color: #F7F4EA;
+   
 } 
 .cardBodyClothing{
     position: relative;
@@ -17,7 +20,8 @@
     color:rgba(0, 0, 0, 0.603)
 }
 .cardClothingImg{
-    margin: auto;
+    // margin: auto;
+    margin: 0.2rem;
     display: block;
     max-width:15rem;
     max-height:13.2rem;
@@ -34,26 +38,36 @@
 }
 .cardTittleOutfit{
     margin: 1rem;
+    text-align: center;
     
-    // font-size: 1rem;
     color:rgba(0, 0, 0, 0.603) ;
 }
 .cardFooter{
-    margin-top: 37rem;
-
+    margin-top: 1rem;
+    margin-left: 1rem;
+    margin-bottom: 1.5rem;
 }
 .btnFav{
-    margin-left: 2rem;
-    margin-bottom: -3rem;
+    margin-bottom: 1rem;
     display: block;
     text-align: center;
     margin-top: 3rem;
     float: left;
-    width: 2rem;
-    height: 2rem;
-
-
+    width: 3rem;
+    height: 3rem;
+    border-radius: 2rem;
+    border: 0.2rem solid red;
 }
+
+.btnFav:active {
+    background-color: red !important;  
+  }
+.btnProfile:hover{
+    color:white!important;
+    border: 0.2rem solid white!important;
+    background-color:red!important;
+  }
+
 #outfitCheck{
     margin-top: 3rem;
     text-align: right;

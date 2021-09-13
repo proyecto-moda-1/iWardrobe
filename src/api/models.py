@@ -91,7 +91,8 @@ class Clothing(db.Model):
              "image": self.image,
              "name": self.name,
              "categories": self.category.name,
-             "dirty": self.dirty,
+             "dirty": self.dirty
+             
          } 
 
 collection_outfit = db.Table('collection_outfit',

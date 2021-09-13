@@ -6,7 +6,7 @@ import { Context } from "../store/appContext";
 import Button from "react-bootstrap/Button";
 import SelectOutfitBtn from "./selectOutfitBtn";
 import Modal from "react-bootstrap/Modal";
-import CreateOutfitBtn from "./CreateOutfitBtn";
+import CreateOutfitBtn from "./createOutfitBtn";
 import "../../styles/createOutfit.scss";
 import Form from "react-bootstrap/Form";
 import PropTypes from "prop-types";

@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import CarouselClothing from "../component/CarouselClothing.js";
-import CreateOutfitBtn from "../component/CreateOutfitBtn.js";
+import CreateOutfitBtn from "../component/createOutfitBtn";
 import LoadClothing from "../component/loadClothing.js";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -63,7 +63,7 @@ export const MyOutfit = props => {
 
 	return (
 		<>
-			<Container className="myOutfitContainer">
+			<Container className="myOutfitContainer flex">
 				<Row>
 					<div className="containerClothing">
 						<Col sm={true}>
@@ -122,16 +122,13 @@ export const MyOutfit = props => {
 							</Form.Control>
 						</Col>
 					</div>
-					{/* <div className="btnCreateMyOutfit"> */}
 					<Col sm={true}>
 						<CreateOutfitBtn clothing={selectedItems} />
 					</Col>
-					{/* </div> */}
-					{/* <Col sm={true}> */}
 					<div className="carouselContainer">
 						<CarouselClothing selectedItems={selectedItems} />
 					</div>
-					{/* </Col> */}
+
 					<Col className="containerInfoOutfit">
 						<div className="infoOutfit">
 							<h2>Como crear tu Outfit?</h2>

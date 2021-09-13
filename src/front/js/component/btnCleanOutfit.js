@@ -9,34 +9,21 @@ import { FormCheck } from "react-bootstrap";
 
 export const BtnCleanOutfit = props => {
 	const { store, actions } = useContext(Context);
-	const [checked, setChecked] = useState(false);
-	const [clean, setClean] = useState({
-		clean: {}
-	});
-	const handleClick = () => setChecked(!checked);
-
-	// useEffect(() => {
-	// 	actions.switchClean(data, id);
-	// }, [checked]);
+	const [dirty, setDirty] = useState(props.dirty);
+	const handleClick = () => {
+		console.log(props.id, props);
+		actions.swicthDirty(props.id);
+		setDirty(!dirty);
+	};
 
 	return (
-		<>
-			<Form.Check
-				type="switch"
-				id="custom-switch"
-				label="Switch to clean"
-				checked={checked}
-				onClick={handleClick}
-			/>
-		</>
+		<input type="checkbox" id="custom-switch" label="Switchclean" checked={dirty} onChange={() => handleClick()} />
 	);
 };
 
 export default BtnCleanOutfit;
 
-BtnCleanOutfit.PropTypes = {
-	name: PropTypes.string,
-	clothing: PropTypes.array,
-	image: PropTypes.string
+BtnCleanOutfit.propTypes = {
+	id: PropTypes.int,
+	dirty: PropTypes.bool
 };
-//Esa prop que estamos seteando, la seteamos con el valor checked, es decir, la recibimos en false y con la funcion handleclock la vamos a cambiar a true (clean) en un useEffect cada vez que cambien checked (mirar Slack) que le tenemos que pasar el data y el id. Hay que meter como prop id, desde el key={index}

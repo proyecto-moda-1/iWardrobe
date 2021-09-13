@@ -8,6 +8,8 @@ export const Home = () => {
 	return (
 		<div className="containerHome">
 			<div className="jumbotronHome text-justify bg-cover">
+				<div className="filtro1"> </div>
+
 				<img
 					className="imgHome"
 					src="https://economiasustentable.com/wp-content/uploads/2020/01/ropa.png"
@@ -25,10 +27,10 @@ export const Home = () => {
 						</p>
 					</div>
 					<div className="btnHome">
-						<a href="/register" className="btnRegisterHome">
+						<a href="/register" className="btnRegisterHome type4">
 							REGISTER
 						</a>
-						<a href="/login" className="btnLoginHome">
+						<a href="/login" className="btnLoginHome type4">
 							LOGIN
 						</a>
 					</div>
