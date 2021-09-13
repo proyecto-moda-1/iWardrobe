@@ -11,7 +11,6 @@ export const Closet = () => {
 	function handleFavorite(id) {
 		actions.favoriteBrand(id);
 	}
-
 	useEffect(() => {
 		actions.getUserFavorite();
 		actions.getTodayOutfit();
@@ -53,6 +52,15 @@ export const Closet = () => {
 		<div className="containerCloset">
 			<h1 className="tittleCloset">Closet</h1>
 			<p className="leadCloset">Dress for every ocassion</p>
+			<h1 className="tittleCollections">COLLECTIONS</h1>
+			<div className="dropCollect">
+				<CollectionDropdown />
+			</div>
+			<div className="containerClothingCollections">
+				<div className="row">
+					<div className="collectionDrop d-flex flex-row">{collectionOutfits}</div>
+				</div>
+			</div>
 			<h1 className="todayCloset">TODAYS OUTFIT</h1>
 			<div className="containerClothingUsed">
 				<div className="row">
@@ -78,19 +86,11 @@ export const Closet = () => {
 					</div>
 				</div>
 			</div>
+
 			<h1 className="tittleFavourites">FAVOURITES</h1>
 			<div className="containerClothingFavs">
 				<div className="row">
 					<div className="favClosetCard d-flex flex-row">{favoriteCards}</div>
-				</div>
-			</div>
-			<h1 className="tittleCollections">COLLECTIONS</h1>
-			<div className="dropCollect">
-				<CollectionDropdown />
-			</div>
-			<div className="containerClothingCollections">
-				<div className="row">
-					<div className="collectionDrop d-flex flex-row">{collectionOutfits}</div>
 				</div>
 			</div>
 		</div>

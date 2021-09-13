@@ -23,18 +23,19 @@
 .todayCloset{
     margin-left: 4.5rem;
     margin-top: 2rem;
-    margin-bottom: -3rem;
-    color:rgb(90, 77, 59);
+    margin-bottom: -5rem;
+    color: #F7F4EA;
     font-size: 2rem;
+    background-color: #785964;
+    width: 25rem;
+    height: 3rem;
+    text-align: center;
 }
 .containerClothingUsed{
-    border-radius: 1rem;
-    border: 0.2rem solid rgba(90, 77, 59, 0.37);
-    margin-left: 3rem;
-    margin-right: 3rem;
+
     margin-bottom: 4rem;
     margin-top: 4rem;
-    background-color: rgba(222, 184, 135, 0.233);
+    background-color:  #9535b52f;
 }
 .todayCards{
     margin-left: 4rem;
@@ -44,21 +45,21 @@
     
 }
 .containerClothingFavs{
-    border-radius: 1rem;
-    border: 0.2rem solid rgba(90, 77, 59, 0.37);
-    margin-left: 3rem;
-    margin-right: 3rem;
     margin-bottom: 4rem;
     margin-top: 4rem;
-    background-color: rgba(222, 184, 135, 0.233);
+    background-color:  #9535b52f;
 
 }
 .tittleFavourites{
     margin-left: 4.5rem;
     margin-top: 2rem;
-    margin-bottom: -3rem;
-    color:rgb(90, 77, 59);
+    margin-bottom: -5rem;
+    color: #F7F4EA;
     font-size: 2rem;
+    background-color: #785964;
+    width: 25rem;
+    height: 3rem;
+    text-align: center;
 }
 .favClosetCard{
     margin-left: 4rem;
@@ -67,36 +68,39 @@
     margin-top: 1rem;
 }
 .containerClothingCollections{
-    border-radius: 1rem;
-    border: 0.2rem solid rgba(90, 77, 59, 0.37);
-    margin-left: 3rem;
-    margin-right: 3rem;
+
     margin-bottom: 4rem;
     margin-top: 4rem;
-    background-color: rgba(222, 184, 135, 0.233);
+    background-color:  #9535b52f;;
 }
 .tittleCollections{
     margin-left: 4.5rem;
     margin-top: 2rem;
-    margin-bottom: -3.5rem;
-    color:rgb(90, 77, 59);
+    margin-bottom: -3rem;
+    color: #F7F4EA;
     font-size: 2rem;
+    background-color: #785964;
+    width: 25rem;
+    height: 3rem;
+    text-align: center;
 }
 
 .collectionDrop{
     margin-left: 4rem;
     margin-right: 3rem;
     margin-bottom: 4rem;
-    margin-top: 1rem;
+    // margin-top: 1rem;
 }
 .containerColleDropdown{
     width: 20rem;
+    margin-bottom: 4rem;
+    // margin-top: 4rem;
 }
 .dropCollect{
-    margin-top: 1.2rem;
-    margin-left:20rem;
-    margin-right: 2rem;
-    margin-bottom: -2rem;
+    margin-top: 0.5rem;
+    margin-left: 35rem;
+    // margin-right: 10rem;
+    margin-bottom: -4rem;
     text-align:center;
     border-radius: 0.5rem;
     

@@ -1,7 +1,7 @@
 .tittleLogin{
-    margin-top: 1.5rem;
+    margin-top: 2.5rem;
     font-size: 2.5rem;
-    color:rgb(90, 77, 59);
+    color:#785964;
   }
   
   .containerLogin {  
@@ -9,28 +9,32 @@
     display: flex;
     text-align: center;
     color:rgb(90, 77, 59);
+    width: 32rem;
+    height: 35rem;
+    background-color: #a885a1 !important;
   }
   
   .containerBoxLogin{
       width: 30rem;
-      border: rgb(128, 127, 129) solid;
-      border-radius: 0.5rem;
-      background-color: rgba(222, 184, 135, 0.452) ;
+      height: 33rem;
+      background-color: #B392AC ;
+      margin-left: 0.9rem;
+      margin-top: 0.9rem;
   
   }
   .goToRegister{
       color: rgb(90, 77, 59);
-      margin-top: 0.5rem;
+      margin-top: 2rem;
   
   }
   .groupLogin{
       padding-top: 0.1rem;
       padding-bottom: 0.1rem;
       margin-top: 0.1rem;
+      
   
   }
   .inputLogin {
-    // font-size: 1rem;
     width: 20rem;
     height: 2.5rem;
     margin: 1rem 0;
@@ -40,15 +44,11 @@
   .btnLoginVista  {
     width: 10rem;
     height: 3rem;
-    background-color: burlywood !important;
-    border-color: burlywood !important;
+    background-color: #785964 !important;
     margin-left: 1rem !important;
     color: white;
-    // font-size: 1.5rem !important;
-    border:0.2rem solid rgba(222, 184, 135, 0.212)!important;
-    border-radius: 0.2rem;
     margin-left: -1rem!important;
-    margin-top: 2rem!important;
+    margin-top: 4rem!important;
     margin-bottom: 3rem;
   
   }

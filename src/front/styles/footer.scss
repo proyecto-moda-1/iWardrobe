@@ -1,18 +1,19 @@
 .headerFooter{
   height: 4.5rem;
-  background-color: burlywood;
+  background-color: #B392AC;
   color: white;
   border-top:0.2rem solid rgba(99, 66, 23, 0.404);
   font-size: large;
 }
 footer {
-    background-color: burlywood;
+    background-color: #B392AC;
     color: white;
   }
   
   .textFooter{
-  margin-left: 80rem !important;
-  margin-top: -1.5rem;
+  margin-left: 60rem !important;
+  margin-top: -2.5rem;
+  color: white;
   }
 
 .textAcademy{
@@ -20,4 +21,10 @@ footer {
   color: white;
   margin-top: 1rem !important;
   margin-left: 2rem;
+}
+.textGaby{
+float: left;
+}
+.textYola{
+float: right;
 }

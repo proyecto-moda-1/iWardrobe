@@ -17,7 +17,7 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 			top: [],
 			bottom: [],
 			footwear: [],
-			clean: [],
+			dirty: [],
 			favorite: {},
 			collection_id: 0
 		},
@@ -134,29 +134,13 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 					.then(response => {
 						if (!response.ok) {
 							window.location.href = "/";
+							// getActions().todaysOutfit();
 						}
 						return response.json();
 					})
 					.then(json => {
 						setStore({ outfits: json });
 					});
-			},
-			swicthClean: (data, id) => {
-				const store = getStore();
-				const endpoint = process.env.BACKEND_URL + `/api/clothing?id=${id}`;
-				const config = {
-					method: "PUT",
-					body: JSON.stringify(data),
-					headers: {
-						"Content-Type": "application/json",
-						Authorization: `Bearer ${store.token}`
-					}
-				};
-
-				fetch(endpoint, config)
-					.then(response => response.json())
-					.then(json => data)
-					.catch(err => console.error(err));
 			},
 			favoriteBrand: id => {
 				const store = getStore();
@@ -174,6 +158,7 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 						setStore({
 							favorite: response.favorite
 						});
+						getActions().getUserFavorite();
 					})
 					.catch(err => console.error(err));
 			},
@@ -300,7 +285,7 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 					.then(response => response.json())
 					.catch(err => console.error(err));
 			},
-			getTodayOutfit: data => {
+			getTodayOutfit: () => {
 				const store = getStore();
 				const endpoint = `${process.env.BACKEND_URL}/api/users/today_outfits`;
 				const config = {
@@ -331,9 +316,43 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 				fetch(endpoint, config).then(response => {
 					if (response.ok) {
 						console.log(data);
-						// getActions().getTodayOutfit(data.get("todayOutfit"));
+						getActions().getTodayOutfit();
 					}
 				});
+			},
+			getLaundry: (data, id) => {
+				const store = getStore();
+				const endpoint = process.env.BACKEND_URL + `/users/clothing?id=${id}/dirty`;
+				const config = {
+					method: "GET",
+					headers: {
+						Authorization: `Bearer ${store.token}`
+					}
+				};
+
+				fetch(endpoint, config)
+					.then(response => response.json())
+					.then(data => {
+						setStore({ dirty: data });
+					})
+					.catch(err => console.error(err));
+			},
+			swicthDirty: id => {
+				const store = getStore();
+				const endpoint = process.env.BACKEND_URL + `/api/users/clothing/${id}/dirty`;
+				const config = {
+					method: "PUT",
+					headers: {
+						"Content-Type": "application/json",
+						Authorization: `Bearer ${store.token}`
+					}
+				};
+
+				fetch(endpoint, config)
+					.then(response => {
+						getActions().getAllOutfit();
+					})
+					.catch(err => console.error(err));
 			},
 			selectCollection: collection => {
 				setStore({ selectedCollection: collection });

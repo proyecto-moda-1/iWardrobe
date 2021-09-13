@@ -57,7 +57,6 @@ export const Navbar = () => {
 								</button>
 							</Link>
 						</li>
-
 						<li>
 							<Link to="/closet">
 								<button className="btnCloset" href="#">
