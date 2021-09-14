@@ -1,16 +1,20 @@
 .cardClean{
     display: flex;
+    margin-left: 0.5rem;
 
 }
 .clothingDirty{
     margin-left: 0.5rem;
 }
 .cardClothingImg{
+    
     // float: left;
     // position: absolute;
 
 }
 .cardBodyClothing{
+    box-shadow: 4px 10px 12px rgba(0,0,0,.5);
+    border: 0.07rem solid rgba(128, 128, 128, 0.349);
     // position: absolute;
     // float: left;
 

@@ -8,6 +8,7 @@
       margin-left: 4rem;
       margin-top: 5rem;
       margin-bottom: 6rem;
+       box-shadow: 4px 6px 10px rgba(0,0,0,.5);
 }
 .imgHome{
       margin-left: 3rem;
@@ -32,6 +33,8 @@
       float: left;
       color:#785964;
       background-color: #b392ac8f;
+      box-shadow: 4px 6px 10px rgba(0,0,0,.5);
+
 }
 .colProfile:hover{
       color:#785964!important;
@@ -125,6 +128,7 @@
       margin-right: 1rem;
 }
 .tittleAvaibles{
+      box-shadow: 4px 10px 12px rgba(0,0,0,.5);
       text-shadow: 4px 4px 3px rgb(142, 142, 151);
       margin-left: 4.5rem;
       margin-top: 20rem;
@@ -135,6 +139,7 @@
       width: 30rem;
       height: 3rem;
       text-align: center;
+      border-radius: 1rem;
 }
 .containerAvailables{
       border-radius: 1rem;
@@ -152,6 +157,7 @@
       margin-bottom: 4rem;
 }
 .tittleDirty{
+      box-shadow: 4px 10px 12px rgba(0,0,0,.5);
       text-shadow: 4px 4px 3px rgb(142, 142, 151);
       margin-left: 4.5rem;
       margin-top: 2rem;
@@ -162,6 +168,8 @@
       width: 25rem;
       height: 3rem;
       text-align: center;
+      border-radius: 1rem;
+
 }
 .containerDirtyS{
       border-radius: 1rem;
@@ -171,6 +179,7 @@
       margin-bottom: 2rem;
       background-color: #9535b52f;
       overflow-x: auto;
+      
 }
 .dirtyCard{
       margin-left: 4rem;

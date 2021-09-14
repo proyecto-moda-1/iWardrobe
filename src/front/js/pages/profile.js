@@ -109,13 +109,13 @@ export const Profile = () => {
 					</div>
 				</div>
 			</div>
-			<h1 className="tittleAvaibles"> OUTFITS AVAILABLES</h1>
+			<h1 className="tittleAvaibles"> Outfits availables</h1>
 			<div className="containerAvailables">
 				<div className="row">
 					<div className="availablesCard d-flex flex-row cardScrollable">{outfitCards}</div>
 				</div>
 			</div>
-			<h1 className="tittleDirty"> ALREADY USED </h1>
+			<h1 className="tittleDirty"> Already used</h1>
 			<div className="containerDirtyS">
 				<div className="row">
 					<div className="dirtyCard d-flex flex-row cardScrollable">{dirtyClothing}</div>

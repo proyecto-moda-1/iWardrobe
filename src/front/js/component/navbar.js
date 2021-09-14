@@ -35,7 +35,7 @@ export const Navbar = () => {
 	} else {
 		return (
 			<div className="headerNavbar">
-				<div className="logo" type="submit">
+				<div className="logoNavbar" type="submit">
 					<Link to="/profile" className="text-decoration-none">
 						iWardrobe
 					</Link>

@@ -67,9 +67,7 @@ export const MyOutfit = props => {
 				<Row>
 					<div className="containerClothing">
 						<Col sm={true}>
-							<h3 className="tittlePage">
-								<b>YOUR CLOTHING</b>
-							</h3>
+							<h3 className="tittlePage">Wardrobe</h3>
 							<Button className="btnLoad" onClick={handleShow}>
 								Add clothes
 							</Button>
