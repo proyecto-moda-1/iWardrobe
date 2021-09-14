@@ -26,7 +26,7 @@ const ClothingCard = props => {
 export default ClothingCard;
 
 ClothingCard.propTypes = {
-	id: PropTypes.int,
+	id: PropTypes.number,
 	// name: PropTypes.string,
 	image: PropTypes.string,
 	dirty: PropTypes.bool

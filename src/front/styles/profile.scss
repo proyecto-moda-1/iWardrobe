@@ -1,20 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&family=Montserrat:wght@300&family=Oswald&family=Overlock:ital,wght@1,900&family=Raleway&family=Roboto+Mono&family=Sigmar+One&family=Sorts+Mill+Goudy:ital@1&display=swap');
 
 .JumbotromProfile{
-      background-color: #B392AC;
+      background-color:transparent;
       border:0;
       width: 27rem;
       height: 20rem;
       margin-left: 4rem;
       margin-top: 5rem;
       margin-bottom: 6rem;
-       box-shadow: 4px 6px 10px rgba(0,0,0,.5);
+      //  box-shadow: 4px 6px 10px rgba(0,0,0,.5);
 }
 .imgHome{
-      margin-left: 3rem;
-      margin-top: 4rem;
       float: left;
       opacity: 110%;
+      width: 100%;
 
 }
 .btnJumbotrom{
@@ -32,7 +31,8 @@
       height: 17rem;
       float: left;
       color:#785964;
-      background-color: #b392ac8f;
+      background-color: #B392AC;
+
       box-shadow: 4px 6px 10px rgba(0,0,0,.5);
 
 }
@@ -46,17 +46,21 @@
 
     .btnProfile{
       text-shadow: 4px 4px 3px rgb(142, 142, 151);
-      padding: 1em 1.5em !important;
-      margin-right: 5rem;
+      padding: 0.5em 1em !important;
+      margin: 0.5rem;
       position: relative;
       border: none !important;
       background-color: transparent !important;
       cursor: pointer;
       outline: none !important;
-      font-size: 1.5rem !important;
+      font-size: 1.7rem !important;
+      width: 19rem;
+      height: 5rem;
   }
   .type3{  
-      color: rgba(0, 0, 0, 0.767) !important;
+      color: #3f3b3d !important;
+      font-weight: bolder!important;
+      font-weight: 600!important;
 }
   
 
@@ -65,8 +69,8 @@
     content: '';
     display: block;
     position: absolute;
-    width: 40%;
-    height: 40%;
+    width: 50%;
+    height: 50%;
     border: 2px solid;
     transition: all 0.6s ease;
     border-radius: 2px}
@@ -76,8 +80,8 @@
     right: 0;
     border-top-color: transparent ;
     border-left-color: transparent;
-    border-bottom-color: #785964;
-    border-right-color: #785964;
+    border-bottom-color:black;
+    border-right-color:black;
 }
 
   .type3::before{ 
@@ -85,8 +89,8 @@
     left: 0;
     border-bottom-color: transparent;
     border-right-color: transparent;
-    border-top-color: #785964;
-    border-left-color: #785964;
+    border-top-color:black;
+    border-left-color:black;
 
 }
 
@@ -116,22 +120,20 @@
       font-size: 1rem;
       margin-right: 1rem;
       margin-bottom: 1rem;
-      font-family: 'Raleway', sans-serif !important;
-
-
+      color: #000;
 }
 .textBodyBottom{
-      font-family: 'Raleway', sans-serif !important;
       font-size: 1rem;
       overflow: scroll;
-      margin-top: 1rem;
-      margin-right: 1rem;
+      margin:2rem;
+      color: #000;
+
 }
 .tittleAvaibles{
       box-shadow: 4px 10px 12px rgba(0,0,0,.5);
       text-shadow: 4px 4px 3px rgb(142, 142, 151);
       margin-left: 4.5rem;
-      margin-top: 20rem;
+      margin-top: 25rem;
       margin-bottom: -1rem;
       color: #F7F4EA;
       font-size: 2rem;
@@ -142,10 +144,9 @@
       border-radius: 1rem;
 }
 .containerAvailables{
-      border-radius: 1rem;
       border: 0rem ;
-      margin-left: -1rem;
-      margin-right: -1rem;
+      // margin-left: -1.5rem;
+      // margin-right: -1.5rem;
       margin-bottom: 6rem;
       background-color: #9535b52f;  
       overflow-x: auto;
@@ -174,10 +175,9 @@
 
 }
 .containerDirtyS{
-      border-radius: 1rem;
       border: 0rem;
-      margin-left: -1rem;
-      margin-right: -1rem;
+      // margin-left: -1.5rem;
+      // margin-right: -1.5rem;
       margin-bottom: 2rem;
       background-color: #9535b52f;
       overflow-x: auto;

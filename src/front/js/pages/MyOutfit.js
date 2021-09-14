@@ -70,7 +70,9 @@ export const MyOutfit = props => {
 			<Container className="myOutfitContainer flex">
 				<div className="containerClothing">
 					<Col className="col-3">
-						<h3 className="tittlePage">Wardrobe</h3>
+						<h1 className="tittlePage">
+							<b>Wardrobe</b>
+						</h1>
 						<Button className="btnLoad" onClick={handleShow}>
 							Add clothes
 						</Button>
@@ -134,7 +136,9 @@ export const MyOutfit = props => {
 
 				<Col className="containerInfoOutfit col-4">
 					<div className="infoOutfit">
-						<h2>Como crear tu Outfit?</h2>
+						<h2>
+							<b>Como crear tu Outfit?</b>
+						</h2>
 						<p>
 							1. Crea tu ropa en el botón <b>Add clothes</b>
 						</p>

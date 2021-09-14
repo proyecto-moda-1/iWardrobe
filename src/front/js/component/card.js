@@ -12,11 +12,14 @@ import "../../styles/card.scss";
 const Card = props => {
 	const [favorite, setFavorite] = useState("");
 	const { store, actions } = useContext(Context);
+	const [checked, setChecked] = useState(props.today);
+
 	// console.log(favoriteId);
 	// const { favoriteId } = useParams();
 	//Para recuperar el id de favoritos, debemos recuperarlo desde la url con useParams.
 	function handleFavorite(id) {
 		actions.favoriteBrand(id);
+		setChecked(!checked);
 	}
 	let clothingCards = [];
 	if (props.clothing != undefined) {
@@ -44,10 +47,7 @@ const Card = props => {
 				<h5 className="cardTittleOutfit ">{props.name}</h5>
 				<div className="cardClothingImg d-flex flex-row">{clothingCards}</div>
 				<div className="cardFooter">
-					<button
-						className="btnFav btn-outline-danger"
-						checked={favorite}
-						onClick={handleFavorite.bind(this, props.id)}>
+					<button className="btnFav btn-outline-danger" onClick={handleFavorite.bind(this, props.id)}>
 						<i className="fas fa-heart"></i>
 					</button>{" "}
 					<SelectOutfitBtn id={props.id} today={props.today} />
@@ -60,7 +60,7 @@ const Card = props => {
 export default Card;
 
 Card.propTypes = {
-	id: PropTypes.int,
+	id: PropTypes.number,
 	collections: PropTypes.string,
 	name: PropTypes.string,
 	clothing: PropTypes.array,
