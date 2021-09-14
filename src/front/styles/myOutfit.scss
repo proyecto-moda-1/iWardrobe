@@ -1,45 +1,51 @@
 .myOutfitContainer{
     margin: auto;
     display: flex; 
-    margin-bottom: 6rem;
+    margin-bottom: 3rem;
     margin-top: 3rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
 
 }
 .containerClothing{
-
     background-color:#b392acde;
     width: 25rem;
-    height: 38rem;
-    margin-right: 2rem;
+    height: 42rem;
+    position: relative;
+    left: -1%;
+    // box-shadow: 4px 8px 2px rgba(0,0,0,.5);
 }
 .carouselContainer{
     background-color:#b392ac50;
-    width: 25rem;
-    height: 38rem;
-    margin-left: -6rem;
-    margin-right: 3rem;
-}
-.infoOutfit{
-    width: 18rem;
-    height: 35rem !important;
-    margin-right: -18rem;
-    background-color: #b392ac;
-    margin-top:1.5rem;
-    border: 2rem solid #B392AC;
-
+    width: 20rem;
+    height: 42rem;
+    position: relative;
+    right: 7%;
+    box-shadow: 4px 10px 12px rgba(0,0,0,.5);
 }
 .containerInfoOutfit{
-
+    width: 20rem;
+    height: 42rem;
+    position: relative;
+    right: 2.7%;
+    background-color: #b392ac;
+    border: 2rem solid #B392AC;
+    // box-shadow: 4px 10px 12px rgba(0,0,0,.5);
 }
+.infoOutfit{
+    width: 15rem;
+   //    height: 40rem;
+   //     margin-right: -9rem;
+   //     background-color: #b392ac;
+   //     border: 2rem solid #B392AC;
+    }
 .tittlePage{
     margin-top: 3rem;
-    margin-bottom: 2rem;
+    margin-bottom: 7rem;
     text-align: center;
     color: #785964;
     font-size: 2rem;
-    // background-color: #B392AC;
 }
-
 .btnLoad{
     width: 12rem;
     height: 2.5rem;
@@ -47,7 +53,7 @@
     border:0.2rem solid #785964!important;
     color:#dad7d1!important;
     border-radius: 0.2rem!important;
-    margin-left: 6rem!important;
+    margin-left: 5.5rem!important;
     margin-top: 1rem!important;
     margin-bottom: 2rem;
 }
@@ -55,10 +61,7 @@
     color:#785964!important;
     border: 0.2rem solid #785964!important;
     background-color:#F7F4EA!important;
-
-  }
-
-
+}
 .selectTop{
     margin-top: 1rem;
     margin-left: 3rem;
@@ -90,22 +93,17 @@
     border-radius: 0.5rem;
 }
 
-.btnCreateMyOutfit {
-    margin-left: -22rem!important;
-    margin-top: 30rem!important;    
-}
 
 
 .btnClosetMyOutfit{
     width: 12rem;
     height: 2.5rem;
     background-color: #785964!important;
-    margin-left: 1rem !important;
+    margin-left: 0.2rem !important;
     border:0.2rem solid #785964!important;
     color:#dad7d1!important;
     border-radius: 0.2rem!important;
-    // margin-right: 53rem!important;
-    margin-top: 32.3rem!important;
+    margin-top: 32rem!important;
 }
 .btnClosetMyOutfit:hover{
     color:#785964!important;
@@ -113,3 +111,9 @@
     background-color:#F7F4EA!important;
 
   }
+.btnCreateMyOutfit {
+    margin-left: -22rem!important;
+    margin-top: 35rem!important;    
+}
+
+

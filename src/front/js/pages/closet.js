@@ -52,19 +52,19 @@ export const Closet = () => {
 		<div className="containerCloset">
 			<h1 className="tittleCloset">Closet</h1>
 			<p className="leadCloset">Dress for every ocassion</p>
-			<h1 className="tittleCollections">COLLECTIONS</h1>
+			<h1 className="tittleCollections">Collections</h1>
 			<div className="dropCollect">
 				<CollectionDropdown />
 			</div>
 			<div className="containerClothingCollections">
 				<div className="row">
-					<div className="collectionDrop d-flex flex-row">{collectionOutfits}</div>
+					<div className="collectionDrop d-flex flex-row cardScrollable">{collectionOutfits}</div>
 				</div>
 			</div>
-			<h1 className="todayCloset">TODAYS OUTFIT</h1>
+			<h1 className="todayCloset">Todays outfit</h1>
 			<div className="containerClothingUsed">
 				<div className="row">
-					<div className="todayCards d-flex flex-row">
+					<div className="todayCards  d-flex flex-row cardScrollable">
 						{store.todayOutfit
 							? store.todayOutfit.map((today, index) => {
 									console.log(today);
@@ -87,10 +87,10 @@ export const Closet = () => {
 				</div>
 			</div>
 
-			<h1 className="tittleFavourites">FAVOURITES</h1>
+			<h1 className="tittleFavourites">Favourites</h1>
 			<div className="containerClothingFavs">
 				<div className="row">
-					<div className="favClosetCard d-flex flex-row">{favoriteCards}</div>
+					<div className="favClosetCard d-flex flex-row cardScrollable">{favoriteCards}</div>
 				</div>
 			</div>
 		</div>

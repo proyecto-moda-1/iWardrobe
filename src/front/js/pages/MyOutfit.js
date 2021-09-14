@@ -63,13 +63,11 @@ export const MyOutfit = props => {
 
 	return (
 		<>
-			<Container className="myOutfitContainer">
+			<Container className="myOutfitContainer flex">
 				<Row>
 					<div className="containerClothing">
 						<Col sm={true}>
-							<h3 className="tittlePage">
-								<b>YOUR CLOTHING</b>
-							</h3>
+							<h3 className="tittlePage">Wardrobe</h3>
 							<Button className="btnLoad" onClick={handleShow}>
 								Add clothes
 							</Button>
@@ -122,16 +120,13 @@ export const MyOutfit = props => {
 							</Form.Control>
 						</Col>
 					</div>
-					{/* <div className="btnCreateMyOutfit"> */}
 					<Col sm={true}>
 						<CreateOutfitBtn clothing={selectedItems} />
 					</Col>
-					{/* </div> */}
-					{/* <Col sm={true}> */}
 					<div className="carouselContainer">
 						<CarouselClothing selectedItems={selectedItems} />
 					</div>
-					{/* </Col> */}
+
 					<Col className="containerInfoOutfit">
 						<div className="infoOutfit">
 							<h2>Como crear tu Outfit?</h2>

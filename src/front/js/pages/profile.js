@@ -3,6 +3,7 @@ import { Context } from "../store/appContext";
 import Card from "../component/card.js";
 import { getActions } from "../store/flux.js";
 import Button from "react-bootstrap/Button";
+import Picture1 from "../../img/picture1.png";
 import { Link } from "react-router-dom";
 import LoadClothing from "../component/loadClothing";
 
@@ -56,11 +57,11 @@ export const Profile = () => {
 	return (
 		<div className="bodyProfile">
 			<div className="JumbotromProfile">
-				<img className="imgHome" src="/workspace/outfit-planner/src/front/img/picture1.png" />
+				<img className="imgHome" src={Picture1} />
 				<div className="btnJumbotrom">
 					<div className="btnGropOne">
 						<div className="colProfile">
-							<Button className="btnProfile" onClick={handleShow}>
+							<Button className="btnProfile type3" onClick={handleShow}>
 								Add clothes
 							</Button>
 							<LoadClothing id="btnClothes" show={show} handleClose={handleClose} />
@@ -71,7 +72,7 @@ export const Profile = () => {
 						</div>
 						<div className="colProfile">
 							<Link to="/closet">
-								<button className="btnProfile" href="#">
+								<button className="btnProfile type3" href="#">
 									Add collection
 								</button>
 							</Link>
@@ -84,7 +85,7 @@ export const Profile = () => {
 					<div className="btnGroptwo">
 						<div className="colProfile">
 							<Link to="/myOutfit">
-								<button className="btnProfile" href="#">
+								<button className="btnProfile type3" href="#">
 									Create outfit
 								</button>
 							</Link>
@@ -94,9 +95,9 @@ export const Profile = () => {
 								sucias y solo mostraremos los outfits que esten limpios{" "}
 							</p>
 						</div>
-						<div className="colProfile">
+						<div className="colProfile after2">
 							<Link to="/closet">
-								<button className="btnProfile" href="#">
+								<button className="btnProfile type3" href="#">
 									Closet
 								</button>
 							</Link>
@@ -108,17 +109,16 @@ export const Profile = () => {
 					</div>
 				</div>
 			</div>
-			<h1 className="tittleAvaibles"> OUTFITS AVAILABLES</h1>
+			<h1 className="tittleAvaibles"> Outfits availables</h1>
 			<div className="containerAvailables">
 				<div className="row">
-					<div className="availablesCard d-flex flex-row">{outfitCards}</div>
+					<div className="availablesCard d-flex flex-row cardScrollable">{outfitCards}</div>
 				</div>
 			</div>
-			<h1 className="tittleDirty"> ALREADY USED </h1>
+			<h1 className="tittleDirty"> Already used</h1>
 			<div className="containerDirtyS">
 				<div className="row">
-					{dirtyClothing}
-					<div className="dirtyCard d-flex flex-row"></div>
+					<div className="dirtyCard d-flex flex-row cardScrollable">{dirtyClothing}</div>
 				</div>
 			</div>
 		</div>
