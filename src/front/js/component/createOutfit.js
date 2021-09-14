@@ -1,6 +1,5 @@
 import React, { useState, useContext } from "react";
 import CollectionSelect from "./collectionSelect ";
-import AddCollection from "./addCollection.js";
 import { getActions } from "../store/flux.js";
 import { Context } from "../store/appContext";
 import Button from "react-bootstrap/Button";
@@ -19,11 +18,6 @@ const CreateOutfit = props => {
 	const [todayOutfit, setTodayOutfit] = useState(false);
 	const [name, setName] = useState("");
 	const notify = () => toast("Saved outfit!");
-	//STATES FOR INSIDE MODAL <ADDCOLLECTION/>
-	const [showCollection, setShowCollection] = useState(false);
-	const handleCloseCollection = () => setShowCollection(false);
-	const handleShowCollection = () => setShowCollection(true);
-
 	const { store, actions } = useContext(Context);
 	const handleSubmit = id => {
 		const data = {
@@ -58,11 +52,6 @@ const CreateOutfit = props => {
 			<div className="selectCollection">
 				<CollectionSelect />
 			</div>
-			{/* AddCollection modal component*/}
-			<Button className="btnAddCollection" onClick={handleShowCollection}>
-				Add new collection
-			</Button>
-			<AddCollection show={showCollection} handleClose={handleCloseCollection} />
 			<Modal.Footer>
 				<div className="textCheck">USE TODAY</div>
 				<input

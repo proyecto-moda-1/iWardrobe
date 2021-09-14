@@ -1,4 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
+import AddCollection from "../component/addCollection.js";
 import { Context } from "../store/appContext";
 import Card from "../component/card.js";
 import { getActions } from "../store/flux.js";
@@ -11,6 +12,9 @@ import "../../styles/profile.scss";
 
 export const Profile = () => {
 	const { store, actions } = useContext(Context);
+	const [showCollection, setShowCollection] = useState(false);
+	const handleCloseCollection = () => setShowCollection(false);
+	const handleShowCollection = () => setShowCollection(true);
 	const [show, setShow] = useState(false);
 	const handleClose = () => setShow(false);
 	const handleShow = () => setShow(true);
@@ -71,11 +75,10 @@ export const Profile = () => {
 							</p>
 						</div>
 						<div className="colProfile">
-							<Link to="/closet">
-								<button className="btnProfile type3" href="#">
-									Add collection
-								</button>
-							</Link>
+							<Button className="btnProfile type3" onClick={handleShowCollection}>
+								Add new collection
+							</Button>
+							<AddCollection show={showCollection} handleClose={handleCloseCollection} />
 							<p className="textBody">
 								Crea colecciones segun tus necesidades diarias y especialesPuedes marcar tus piezas
 								sucias y solo mostraremos los outfits que esten limpios
