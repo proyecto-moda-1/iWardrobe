@@ -1,20 +1,17 @@
 
 .cardOutfit{
-    width: 35rem;
-    height: 27rem;
+    width: 34.5rem;
+    height: 29rem;
     margin-top: 4rem !important;
     margin: 2rem;
-
-    // border: 0.1rem solid #785964;
     border-radius: 1rem;
     background-color: #F7F4EA;
     box-shadow: 14px 14px 12px rgba(0,0,0,.5);
-
-   
 } 
 .cardBodyClothing{
     position: relative;
     margin: 1rem;
+    margin-top: 0.5rem;
     border-radius: 0.2rem;
 }
 .cardNameClothing{
@@ -30,25 +27,30 @@
     width: auto;
     height: auto;
     border-radius: 0.2rem;
-
+}
+.deleteBtn{
+    float: right;
+    margin-top: -1rem;
+    margin-right: 1.5rem;
+    border: transparent;
+   color: rgba(0, 0, 0, 0.801)
 }
 .cardClean{
     font-size: 0.8rem;
     text-align: right;
     margin-top: 0.5rem;
     margin-right: 2rem;
-    color:rgba(0, 0, 0, 0.603)
+    color:rgba(0, 0, 0, 0.507)
 }
 .cardTittleOutfit{
-    margin: 1rem;
+    margin: 2rem;
     text-align: center;
-    
     color:rgba(0, 0, 0, 0.603) ;
 }
 .cardFooter{
-    margin-top: 2.5rem;
+    margin-top: 2rem;
     margin-left: 2rem;
-    margin-bottom: 1.5rem;
+    // margin-bottom: 1.5rem;
 }
 .btnFav{
     margin-bottom: 1rem;

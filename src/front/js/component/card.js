@@ -36,7 +36,11 @@ const Card = props => {
 		<div className="cardOutfit">
 			<div className="cardCollections">{props.collections}</div>
 			<div className="cardBodyOutfit text-secondary">
-				<button onClick={() => actions.deleteOutfit(props.id)}>X</button>
+				<button className="deleteBtn" onClick={() => actions.deleteOutfit(props.id)}>
+					<div>
+						<b>X</b>
+					</div>
+				</button>
 				<h5 className="cardTittleOutfit ">{props.name}</h5>
 				<div className="cardClothingImg d-flex flex-row">{clothingCards}</div>
 				<div className="cardFooter">
@@ -44,7 +48,7 @@ const Card = props => {
 						className="btnFav btn-outline-danger"
 						checked={favorite}
 						onClick={handleFavorite.bind(this, props.id)}>
-						♡
+						<i className="fas fa-heart"></i>
 					</button>{" "}
 					<SelectOutfitBtn id={props.id} today={props.today} />
 				</div>
