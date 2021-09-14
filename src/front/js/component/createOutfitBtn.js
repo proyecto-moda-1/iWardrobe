@@ -18,16 +18,10 @@ const CreateOutfitBtn = props => {
 
 	return (
 		<>
-			<Container>
-				<Row>
-					<Col sm={true}>
-						<Button variant="outline-light" className="btnCreateMyOutfit" onClick={handleShow}>
-							Create your outfit
-						</Button>
-						<CreateOutfit show={show} handleClose={handleClose} clothing={props.clothing} />
-					</Col>
-				</Row>
-			</Container>
+			<Button variant="outline-light" className="btnCreateMyOutfit" onClick={handleShow}>
+				Create your outfit
+			</Button>
+			<CreateOutfit show={show} handleClose={handleClose} clothing={props.clothing} />
 		</>
 	);
 };

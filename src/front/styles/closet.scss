@@ -21,6 +21,9 @@
     border: 0.2rem solid rgba(90, 77, 59, 0.37);
 }
 .todayCloset{
+    box-shadow: 4px 10px 12px rgba(0,0,0,.5);
+    text-shadow: 4px 4px 3px rgb(142, 142, 151);
+    border-radius: 1rem;
     margin-left: 4.5rem;
     margin-top: 2rem;
     margin-bottom: -5rem;
@@ -32,25 +35,33 @@
     text-align: center;
 }
 .containerClothingUsed{
-
     margin-bottom: 4rem;
     margin-top: 4rem;
     background-color:  #9535b52f;
+    overflow-x: auto;
+    box-shadow: 4px 10px 12px rgba(0,0,0,.5);
+
+
 }
 .todayCards{
     margin-left: 4rem;
     margin-right: 3rem;
     margin-bottom: 4rem;
     margin-top: 1rem;
-    
 }
 .containerClothingFavs{
     margin-bottom: 4rem;
     margin-top: 4rem;
     background-color:  #9535b52f;
+    overflow-x: auto;
+    box-shadow: 4px 10px 12px rgba(0,0,0,.5);
+
 
 }
 .tittleFavourites{
+    box-shadow: 4px 10px 12px rgba(0,0,0,.5);
+    border-radius: 1rem;
+    text-shadow: 4px 4px 3px rgb(142, 142, 151);
     margin-left: 4.5rem;
     margin-top: 2rem;
     margin-bottom: -5rem;
@@ -68,12 +79,18 @@
     margin-top: 1rem;
 }
 .containerClothingCollections{
-
     margin-bottom: 4rem;
     margin-top: 4rem;
-    background-color:  #9535b52f;;
+    background-color:  #9535b52f;   
+    overflow-x: auto;
+    box-shadow: 4px 10px 12px rgba(0,0,0,.5);
+
+
 }
 .tittleCollections{
+    box-shadow: 4px 10px 12px rgba(0,0,0,.5);
+    text-shadow: 4px 4px 3px rgb(142, 142, 151);
+    border-radius: 1rem;
     margin-left: 4.5rem;
     margin-top: 2rem;
     margin-bottom: -3rem;
@@ -89,19 +106,17 @@
     margin-left: 4rem;
     margin-right: 3rem;
     margin-bottom: 4rem;
-    // margin-top: 1rem;
 }
 .containerColleDropdown{
+    box-shadow: 4px 10px 12px rgba(0,0,0,.5);
     width: 20rem;
-    margin-bottom: 4rem;
-    // margin-top: 4rem;
+    margin-bottom: 5rem;
 }
 .dropCollect{
-    margin-top: 0.5rem;
-    margin-left: 35rem;
-    // margin-right: 10rem;
-    margin-bottom: -4rem;
+    margin-left: 32rem;
+
+    margin-bottom: -9rem;
     text-align:center;
-    border-radius: 0.5rem;
+    border: 0.5rem solid #F7F4EA;
     
 }
