@@ -13,7 +13,13 @@ const AddCollection = props => {
 	const { store, actions } = useContext(Context);
 	const { show, handleClose } = props;
 	const [name, setName] = useState("");
-	const notify = () => toast("Saved collection!");
+	const notify = () =>
+		toast.success("🦄 Saved collection!", {
+			position: "top-center",
+			hideProgressBar: false,
+			pauseOnHover: true,
+			draggable: true
+		});
 	const handleSubmit = () => {
 		const data = {
 			collection_user_id: 1,

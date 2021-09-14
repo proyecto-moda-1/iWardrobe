@@ -17,7 +17,10 @@ const CreateOutfit = props => {
 	const { show, handleClose } = props;
 	const [todayOutfit, setTodayOutfit] = useState(false);
 	const [name, setName] = useState("");
-	const notify = () => toast("Saved outfit!");
+	const notify = () =>
+		toast("Saved outfit! Let's go and get some more done ", {
+			position: "top-center"
+		});
 	const { store, actions } = useContext(Context);
 	const handleSubmit = id => {
 		const data = {

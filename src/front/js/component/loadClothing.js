@@ -4,7 +4,6 @@ import { Context } from "../store/appContext";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
-// import "../../styles/myOutfit.scss";
 import "../../styles/LoadClothing.scss";
 import PropTypes from "prop-types";
 import "react-toastify/dist/ReactToastify.css";
@@ -17,7 +16,7 @@ const LoadClothing = props => {
 	const [image, setImage] = useState(null);
 	const [category, setCategory] = useState("");
 	const { store, actions } = useContext(Context);
-	const notify = () => toast("Upload clothing!");
+	const notify = () => toast.success("Upload clothing!", { position: "top-center" });
 
 	const handleSubmit = () => {
 		const data = new FormData();

@@ -25,8 +25,6 @@ export const Profile = () => {
 	};
 	useEffect(() => {
 		actions.getAllOutfit();
-		actions.getLaundry();
-		deleteOutfit();
 	}, []);
 
 	let outfitCards = [];
@@ -36,18 +34,15 @@ export const Profile = () => {
 			.filter(outfit => outfit.clothing.some(clo => clo.dirty))
 			.map((outfit, index) => {
 				return (
-					<button className="delete-button" onClick={e => deleteItem(index, e)}>
-						X
-						<Card
-							name={outfit.name}
-							id={outfit.id}
-							collections={outfit.collections}
-							image={outfit.image}
-							clothing={outfit.clothing}
-							favorite={outfit.favorite}
-							key={index}
-						/>
-					</button>
+					<Card
+						name={outfit.name}
+						id={outfit.id}
+						collections={outfit.collections}
+						image={outfit.image}
+						clothing={outfit.clothing}
+						favorite={outfit.favorite}
+						key={index}
+					/>
 				);
 			});
 		outfitCards = store.outfits
@@ -138,5 +133,5 @@ export const Profile = () => {
 };
 
 Profile.propTypes = {
-	key=propTypes.array
+	key: propTypes.array
 };
