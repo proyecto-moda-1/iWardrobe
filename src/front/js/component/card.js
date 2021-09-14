@@ -36,6 +36,7 @@ const Card = props => {
 		<div className="cardOutfit">
 			<div className="cardCollections">{props.collections}</div>
 			<div className="cardBodyOutfit text-secondary">
+				<button onClick={() => actions.deleteOutfit(props.id)}>X</button>
 				<h5 className="cardTittleOutfit ">{props.name}</h5>
 				<div className="cardClothingImg d-flex flex-row">{clothingCards}</div>
 				<div className="cardFooter">

@@ -25,13 +25,13 @@ export const Footer = () => (
 			</div>
 			<div className="textFooter">
 				<li type="submit">
-					<Link href="https://github.com/mgtablante" className="linkedinGaby">
+					<Link to="https://github.com/mgtablante" className="linkedinGaby">
 						<i className="fab fa-github" />
 					</Link>
 					<p className="textGaby"> Gabriela Tablante</p>
 				</li>
 				<li type="submit">
-					<Link href="https://github.com/yolandagb" className="linkedinYola">
+					<Link to="https://github.com/yolandagb" className="linkedinYola">
 						{" "}
 						<i className="fab fa-github" />
 						<p className="textYola"> Yolanda García</p>

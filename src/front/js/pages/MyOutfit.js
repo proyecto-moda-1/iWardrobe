@@ -1,6 +1,8 @@
 import React, { useContext, useState, useEffect } from "react";
 import CarouselClothing from "../component/CarouselClothing.js";
 import CreateOutfitBtn from "../component/createOutfitBtn";
+import AddCollection from "../component/addCollection.js";
+
 import LoadClothing from "../component/loadClothing.js";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -9,11 +11,13 @@ import { Context } from "../store/appContext";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Link } from "react-router-dom";
-
 import "../../styles/myOutfit.scss";
 
 export const MyOutfit = props => {
 	const { store, actions } = useContext(Context);
+	const [showCollection, setShowCollection] = useState(false);
+	const handleCloseCollection = () => setShowCollection(false);
+	const handleShowCollection = () => setShowCollection(true);
 	const [show, setShow] = useState(false);
 	const handleClose = () => setShow(false);
 	const handleShow = () => setShow(true);
@@ -64,93 +68,91 @@ export const MyOutfit = props => {
 	return (
 		<>
 			<Container className="myOutfitContainer flex">
-				<Row>
-					<div className="containerClothing">
-						<Col sm={true}>
-							<h3 className="tittlePage">Wardrobe</h3>
-							<Button className="btnLoad" onClick={handleShow}>
-								Add clothes
-							</Button>
-							<LoadClothing show={show} handleClose={handleClose} />
-							<Form.Control
-								size="sm"
-								as="select"
-								className="selectTop"
-								defaultValue={top}
-								onChange={event => {
-									setTop(event.target.value);
-									setselectedItems({
-										...selectedItems,
-										top: store.top.find(item => item.id == event.target.value)
-									});
-								}}>
-								<option value="0">Top</option>
-								{topItems}
-							</Form.Control>
-							<Form.Control
-								size="sm"
-								as="select"
-								className="selectBottom"
-								defaultValue={bottom}
-								onChange={event => {
-									setBottom(event.target.value);
-									setselectedItems({
-										...selectedItems,
-										bottom: store.bottom.find(item => item.id == event.target.value)
-									});
-								}}>
-								<option value="0">Bottom</option>
-								{bottomItems}
-							</Form.Control>
-							<Form.Control
-								size="sm"
-								as="select"
-								className="selectFootwear"
-								defaultValue={footwear}
-								placeholder="password"
-								onChange={event => {
-									setFootwear(event.target.value);
-									setselectedItems({
-										...selectedItems,
-										footwear: store.footwear.find(item => item.id == event.target.value)
-									});
-								}}>
-								<option value="0">Footwear</option>
-								{footwearItems}
-							</Form.Control>
-						</Col>
-					</div>
-					<Col sm={true}>
+				<div className="containerClothing">
+					<Col className="col-3">
+						<h3 className="tittlePage">Wardrobe</h3>
+						<Button className="btnLoad" onClick={handleShow}>
+							Add clothes
+						</Button>
+						<LoadClothing show={show} handleClose={handleClose} />
+						<Form.Control
+							size="sm"
+							as="select"
+							className="selectTop"
+							defaultValue={top}
+							onChange={event => {
+								setTop(event.target.value);
+								setselectedItems({
+									...selectedItems,
+									top: store.top.find(item => item.id == event.target.value)
+								});
+							}}>
+							<option value="0">Top</option>
+							{topItems}
+						</Form.Control>
+						<Form.Control
+							size="sm"
+							as="select"
+							className="selectBottom"
+							defaultValue={bottom}
+							onChange={event => {
+								setBottom(event.target.value);
+								setselectedItems({
+									...selectedItems,
+									bottom: store.bottom.find(item => item.id == event.target.value)
+								});
+							}}>
+							<option value="0">Bottom</option>
+							{bottomItems}
+						</Form.Control>
+						<Form.Control
+							size="sm"
+							as="select"
+							className="selectFootwear"
+							defaultValue={footwear}
+							placeholder="password"
+							onChange={event => {
+								setFootwear(event.target.value);
+								setselectedItems({
+									...selectedItems,
+									footwear: store.footwear.find(item => item.id == event.target.value)
+								});
+							}}>
+							<option value="0">Footwear</option>
+							{footwearItems}
+						</Form.Control>
 						<CreateOutfitBtn clothing={selectedItems} />
+						<Button className="btnAddCollection" onClick={handleShowCollection}>
+							Add new collection
+						</Button>
+						<AddCollection show={showCollection} handleClose={handleCloseCollection} />
 					</Col>
-					<div className="carouselContainer">
-						<CarouselClothing selectedItems={selectedItems} />
-					</div>
+				</div>
+				<Col className="carouselContainer col-4">
+					<CarouselClothing selectedItems={selectedItems} />
+				</Col>
 
-					<Col className="containerInfoOutfit">
-						<div className="infoOutfit">
-							<h2>Como crear tu Outfit?</h2>
-							<p>
-								1. Crea tu ropa en el botón <b>Add clothes</b>
-							</p>
-							<p>2. Juega con todas las piezas de ropa para que consigas la combinacion que te guste </p>
-							<p>
-								3. Crea tu outfit en el botón <b>Create your outfit</b>
-							</p>
-							<p>
-								4. Puedes crear colecciones que desees pulsando <b>Add new collection</b> asi puedes
-								clasificar mejor tus outfits, siendo mas facil luego conseguirlos.
-							</p>
-						</div>
-					</Col>
-					<Col>
-						<Link to="/closet">
-							<button className="btnClosetMyOutfit" href="#">
-								Closet
-							</button>
-						</Link>
-					</Col>
-				</Row>
+				<Col className="containerInfoOutfit col-4">
+					<div className="infoOutfit">
+						<h2>Como crear tu Outfit?</h2>
+						<p>
+							1. Crea tu ropa en el botón <b>Add clothes</b>
+						</p>
+						<p>2. Juega con todas las piezas de ropa para que consigas la combinacion que te guste </p>
+						<p>
+							3. Crea tu outfit en el botón <b>Create your outfit</b>
+						</p>
+						<p>
+							4. Puedes crear colecciones que desees pulsando <b>Add new collection</b> asi puedes
+							clasificar mejor tus outfits, siendo mas facil luego conseguirlos.
+						</p>
+					</div>
+					<Link to="/closet">
+						<button className="btnClosetMyOutfit" href="#">
+							Wardrobe
+						</button>
+					</Link>
+				</Col>
 			</Container>
 		</>
 	);
