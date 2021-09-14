@@ -2,9 +2,7 @@
     margin: auto;
     display: flex; 
     margin-bottom: 3rem;
-    margin-top: 3rem;
-    margin-left: 2rem;
-    margin-right: 2rem;
+    margin-top: 6rem;
 
 }
 .containerClothing{
@@ -13,13 +11,13 @@
     height: 42rem;
     position: relative;
     left: -1%;
-    
+    box-shadow: 1px 14px 10px rgba(0,0,0,.5);
 }
 .carouselContainer{
     background-color:#b392ac50;
     margin-left:-12px;
     width: 45%;
-    // box-shadow: 4px 10px 12px rgba(0,0,0,.5);
+    box-shadow: 4px 14px 14px rgba(0,0,0,.5);
 }
 .containerInfoOutfit{
     width: 20rem;
@@ -28,23 +26,29 @@
     margin-left:-7px;
     background-color: #b392ac;
     border: 2rem solid #B392AC;
+    box-shadow: 4px 14px 14px rgba(0,0,0,.5);
+
    
 }
 .infoOutfit{
     width: 15rem;
-   font-size: 14px;
+   font-size: 1.1rem;
+   margin-left: 1rem;
+   margin-top: 1.5rem;
  }
 .tittlePage{
     margin-top: 3rem;
-    margin-left:79px;
+    margin-left:60px;
     color: #785964;
-    font-size: 2rem;
+    font-size: 3rem;
+    text-shadow:4px 4px 3px rgb(120, 120, 122);
+
 }
 .btnLoad{
     width: 12rem;
     height: 2.5rem;
     background-color: #785964!important;
-    border:0.2rem solid #785964!important;
+    border:0.1rem solid #dad7d1 !important;
     color:#dad7d1!important;
     border-radius: 1rem!important;
     margin-left: 5.5rem!important;
@@ -93,7 +97,7 @@
     background-color: #785964!important;
     margin-top: 1rem!important;
     margin-left:10px;    
-    border:0.2rem solid #785964!important;
+    border:0.1rem solid #dad7d1 !important;
     color:#dad7d1!important;
     border-radius: 1rem!important;
     
@@ -108,7 +112,7 @@
     width: 12rem;
     height: 2.5rem;
     background-color: #785964!important;
-    border:0.2rem solid #785964!important;
+    border:0.1rem solid #dad7d1 !important;
     color:#dad7d1!important;
     border-radius: 1rem!important;
     margin-left: 5.5rem!important;
@@ -119,7 +123,7 @@
     width: 12rem;
     height: 2.5rem;
     background-color: #785964!important;
-    border:0.2rem solid #785964!important;
+    border:0.1rem solid #dad7d1 !important;
     color:#dad7d1!important;
     border-radius: 1rem!important;
     margin-left: 5.5rem!important;

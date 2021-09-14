@@ -1,9 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,900;1,900&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&family=Montserrat:wght@300&family=Overlock:ital,wght@1,900&family=Roboto&family=Roboto+Mono&family=Sigmar+One&family=Sorts+Mill+Goudy:ital@1&display=swap');
 
-body{
-  font-family: 'Sigmar One', cursive !important;
+body{font-family: 'Montserrat', sans-serif!important;
     background-color:white;
+    // font-size: 1.5rem !important;
+
 }
 
 .containerHome{
@@ -18,7 +19,7 @@ body{
   left: 50%;
   transform: translate(-50%, -50%);
   color: #785964;
-  font-size: 2rem;
+  font-size: 3rem;
   text-shadow:4px 4px 3px rgb(208, 208, 216);
 
 }
@@ -60,7 +61,7 @@ body{
   padding: 1em 1.5em !important;
   position: absolute;
   top: 25rem;
- left: 50rem;
+  left: 50rem;
   border: none !important;
   background-color: transparent !important;
   cursor: pointer;
