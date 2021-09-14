@@ -262,19 +262,19 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 					// .then(json => console.log(json))
 					.catch(err => console.error(err));
 			},
-			deleteOutfit: data => {
-				const store = getStore();
-				const endpoint = process.env.BACKEND_URL + "/api/outfit";
-				const config = {
-					method: "DELETE",
-					headers: {
-						"Content-Type": "application/json"
-					}
-				};
-				fetch(endpoint, config)
-					.then(response => response.json())
-					.catch(err => console.error(err));
-			},
+			// deleteOutfit: data => {
+			// 	const store = getStore();
+			// 	const endpoint = process.env.BACKEND_URL + "/api/outfit";
+			// 	const config = {
+			// 		method: "DELETE",
+			// 		headers: {
+			// 			"Content-Type": "application/json"
+			// 		}
+			// 	};
+			// 	fetch(endpoint, config)
+			// 		.then(response => response.json())
+			// 		.catch(err => console.error(err));
+			// },
 			createCollection: data => {
 				const store = getStore();
 				const endpoint = process.env.BACKEND_URL + "/api/collection";

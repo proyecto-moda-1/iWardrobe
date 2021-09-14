@@ -144,12 +144,12 @@ def get_all_outfits():
 
     return jsonify(serialized_outfits), 200
 
-@api.route('/outfit', methods=['DELETE'])
-def outfit():
-    outfit = Outfit.query.get_or_404()
-    outfit.deleted = True
-    db.session.commit()
-    return 'Removed outfit', 204
+# @api.route('/outfit', methods=['DELETE'])
+# def outfit():
+#     outfit = Outfit.query.get_or_404()
+#     outfit.deleted = True
+#     db.session.commit()
+#     return 'Removed outfit', 204
 
 
 @api.route('/users/today_outfits', methods=['GET'])
