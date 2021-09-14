@@ -28,12 +28,6 @@ def get_all_users():
 
     return jsonify(serialized_users), 200
 
-# @app.route('/user/<int:id>', methods=['GET'])
-# def get_user(id):
-
-#     user = User.query.get(id)
-#     serialized_user = user.serialize()
-#     return jsonify(serialized_user), 200
 
 @api.route('/register', methods=['POST'])
 def create_users():
@@ -149,6 +143,14 @@ def get_all_outfits():
     print(all_outfits)
 
     return jsonify(serialized_outfits), 200
+
+# @api.route('/outfit', methods=['DELETE'])
+# def outfit():
+#     outfit = Outfit.query.get_or_404()
+#     outfit.deleted = True
+#     db.session.commit()
+#     return 'Removed outfit', 204
+
 
 @api.route('/users/today_outfits', methods=['GET'])
 @jwt_required()
