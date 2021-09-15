@@ -1,9 +1,29 @@
+.bodyCloset{
+        background-image: url("https://www.decoandyou.com/67969/corazones.jpg");
+        opacity: 100%;
+  }
+//https://delipapel.com/wp-content/uploads/2020/04/coraznes-fondo-rosa-Delipapel.jpg
+//https://www.lutinpetitpois.com/1999-large_default/papier-peint-prairie.jpg
+  //https://image.freepik.com/vector-gratis/fondo-zigzag-transparente-geometrico-blanco_108964-1358.jpg"
+//https://lh3.googleusercontent.com/proxy/NFFb6PlokdOvLBOEMG8JqpZveaPj_BgBiKTLLF7FkA5ekcq-QtOUdPQ1Zn81Z-BW3aL-XkAy1qIKsGxl0gWTC4cAKTH8gduyYJgrd6ZIDFkZxuQXEebTBbxMQzxnjfw36M78Pff2KOC_QtwUbotBLgGcvkrodeM"
+
+
+
+
+
 .containerCloset{
     margin-top: 0.6rem;
     color: rgb(80, 77, 77);
+
 }
+
 .imgCloset{
-    margin-bottom: 6rem;
+    margin-top: -2rem;
+    margin-left: 10rem;
+    position:relative ;
+    width: 70%;
+    height: 60%;
+
 }
 // .tittleCloset{
 //     font-size: 3rem;
@@ -29,18 +49,18 @@
     border-radius: 1rem;
     margin-left: 4.5rem;
     margin-top: 2rem;
-    margin-bottom: -5rem;
+    margin-bottom: -3rem;
     color: #F7F4EA;
     font-size: 2rem;
     background-color: #785964;
-    width: 25rem;
-    height: 3rem;
+    width: 30rem;
+    height: 4rem;
     text-align: center;
 }
 .containerClothingUsed{
     margin-bottom: 4rem;
     margin-top: 4rem;
-    background-color:  #9535b52f;
+    background-color:  #bd96a4;   
     overflow-x: auto;
     box-shadow: 4px 10px 12px rgba(0,0,0,.5);
 
@@ -55,7 +75,7 @@
 .containerClothingFavs{
     margin-bottom: 4rem;
     margin-top: 4rem;
-    background-color:  #9535b52f;
+    background-color:  #bd96a4;   
     overflow-x: auto;
     box-shadow: 4px 10px 12px rgba(0,0,0,.5);
 
@@ -67,13 +87,27 @@
     text-shadow: 4px 4px 3px rgb(142, 142, 151);
     margin-left: 4.5rem;
     margin-top: 2rem;
-    margin-bottom: -5rem;
+    margin-bottom: -3rem;
     color: #F7F4EA;
     font-size: 2rem;
     background-color: #785964;
-    width: 25rem;
-    height: 3rem;
+    width: 30rem;
+    height: 4rem;
     text-align: center;
+}
+.infoCloset{
+    margin: auto;
+  display: flex;
+  justify-content: center;
+  width: 65rem;
+  position: absolute;
+  top: 60%;
+  left: 30%;
+  transform: translate(-20%, -20%);
+  color: #4d383f;
+  background-color: #f7f4ea91;
+  opacity: 98%;
+  font-size: 1.5rem;  
 }
 .favClosetCard{
     margin-left: 4rem;
@@ -84,7 +118,7 @@
 .containerClothingCollections{
     margin-bottom: 4rem;
     margin-top: 4rem;
-    background-color:  #9535b52f;   
+    background-color:  #bd96a4;   
     overflow-x: auto;
     box-shadow: 4px 10px 12px rgba(0,0,0,.5);
 
@@ -95,13 +129,13 @@
     text-shadow: 4px 4px 3px rgb(142, 142, 151);
     border-radius: 1rem;
     margin-left: 4.5rem;
-    margin-top: 2rem;
+    margin-top: 3rem;
     margin-bottom: -3rem;
     color: #F7F4EA;
     font-size: 2rem;
     background-color: #785964;
-    width: 25rem;
-    height: 3rem;
+    width: 30rem;
+    height: 4rem;
     text-align: center;
 }
 
@@ -109,17 +143,23 @@
     margin-left: 4rem;
     margin-right: 3rem;
     margin-bottom: 4rem;
+    margin-top: 1rem;
 }
 .containerColleDropdown{
     box-shadow: 4px 10px 12px rgba(0,0,0,.5);
     width: 20rem;
     margin-bottom: 5rem;
+    margin-top: 0.5rem;
+    margin-left: 4rem;
+    background-color:  #bd96a4;  
+
+
 }
 .dropCollect{
     margin-left: 32rem;
 
     margin-bottom: -9rem;
     text-align:center;
-    border: 0.5rem solid white;
+    border: 0.5rem solid transparent;
     
 }
