@@ -94,9 +94,7 @@ export const Register = function(props) {
 				</div>
 
 				<div className="goToLogin">
-					<Link to="/login">
-						<a href="#">¿Ya tienes una cuenta?</a>
-					</Link>
+					<Link to="/login">¿Ya tienes una cuenta?</Link>
 				</div>
 				<div className="goToLogin">
 					<button type="submit" value="button" className="btnRegister" onClick={handleRegister}>

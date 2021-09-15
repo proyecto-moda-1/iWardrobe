@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect } from "react";
 import { Context } from "../store/appContext";
 import Card from "../component/card.js";
 import { CollectionDropdown } from "../component/collectionDropdown.js";
+import Closet2 from "../../img/closet2.png";
 
 import "../../styles/closet.scss";
 
@@ -50,8 +51,9 @@ export const Closet = () => {
 	}
 	return (
 		<div className="containerCloset">
-			<h1 className="tittleCloset">Closet</h1>
-			<p className="leadCloset">Dress for every ocassion</p>
+			{/* <h1 className="tittleCloset">Closet</h1>
+			<p className="leadCloset">Dress for every ocassion</p> */}
+			<img className="imgCloset" src={Closet2} />
 			<h1 className="tittleCollections">Collections</h1>
 			<div className="dropCollect">
 				<CollectionDropdown />

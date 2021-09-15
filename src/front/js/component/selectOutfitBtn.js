@@ -25,6 +25,6 @@ const SelectOutfitBtn = props => {
 export default SelectOutfitBtn;
 
 SelectOutfitBtn.propTypes = {
-	id: PropTypes.int,
+	id: PropTypes.number,
 	today: PropTypes.bool
 };

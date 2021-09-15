@@ -4,7 +4,7 @@ import { Context } from "../store/appContext";
 import Card from "../component/card.js";
 import { getActions } from "../store/flux.js";
 import Button from "react-bootstrap/Button";
-import Picture1 from "../../img/picture1.png";
+import Creativity from "../../img/creativity.png";
 import { Link } from "react-router-dom";
 import LoadClothing from "../component/loadClothing";
 
@@ -41,7 +41,7 @@ export const Profile = () => {
 						image={outfit.image}
 						clothing={outfit.clothing}
 						favorite={outfit.favorite}
-						key={index}
+						key={outfit.id}
 					/>
 				);
 			});
@@ -65,7 +65,7 @@ export const Profile = () => {
 	return (
 		<div className="bodyProfile">
 			<div className="JumbotromProfile">
-				<img className="imgHome" src={Picture1} />
+				<img className="imgHome" src={Creativity} />
 				<div className="btnJumbotrom">
 					<div className="btnGropOne">
 						<div className="colProfile">
@@ -80,7 +80,7 @@ export const Profile = () => {
 						</div>
 						<div className="colProfile">
 							<Button className="btnProfile type3" onClick={handleShowCollection}>
-								Add new collection
+								New collection
 							</Button>
 							<AddCollection show={showCollection} handleClose={handleCloseCollection} />
 							<p className="textBody">
@@ -132,6 +132,6 @@ export const Profile = () => {
 	);
 };
 
-Profile.propTypes = {
-	key: propTypes.array
-};
+// Profile.propTypes = {
+// 	key: propTypes.array
+// };

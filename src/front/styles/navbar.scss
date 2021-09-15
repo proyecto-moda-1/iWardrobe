@@ -4,7 +4,7 @@
     justify-content: space-between;
     background-color:#F7F4EA ;
     border-bottom: 0.2rem solid #aba6ad31;
-    margin-top: 0.5rem;
+    margin-top: 0rem;
 }
 
 .logoNavbar{
@@ -14,7 +14,7 @@
     text-align: center;
     margin-top: -0.3rem;
     background-color: #B392AC;
-    width: 6rem;
+    width: 4rem;
     height: 6rem;
     box-shadow: 4px 10px 12px rgba(0,0,0,.5);
 
@@ -22,17 +22,17 @@
 }
 
 .text-decoration-none{
-    font-size: 2.5rem;
+    font-size: 3.8rem;
      margin-left: 2rem;
      color: black !important;
-    text-shadow: 4px 4px 3px #b987ca67;
+    text-shadow: 4px 4px 3px #45434667;
   
     
 }
 .text-decoration-none:hover{
     color:#4f0866!important;
     border-color: #4f0866!important;
-    text-shadow: 4px 4px 3px #1c1a1d67;
+    text-shadow: 4px 4px 3px #f0edf167;
 
   }
 li, a {
@@ -50,11 +50,11 @@ li, a {
 .btnProfileS{
     border: none;
     background-color: #F7F4EA;
-    margin-left: -38rem;
+    margin-left: -44rem;
     margin-top: 1.2rem;
     text-align: center;
+    font-size: 1.8rem;
     color:#785964;
-
 }
 .btnProfileS:hover{
     color:#4f0866;
@@ -66,9 +66,9 @@ li, a {
 .btnOutfit{
     border: none;
     background-color: #F7F4EA;
-    margin-left: -31rem;
+    margin-left: -34rem;
     text-align: center;
-    // font-size: 2rem;
+    font-size: 1.8rem;
     color:#785964;
 }
 .btnOutfit:hover{
@@ -83,7 +83,7 @@ li, a {
     background-color: #F7F4EA;
     margin-left: -24rem;
     text-align: center;
-    // font-size: 2rem;
+    font-size: 1.8rem;
     color:#785964;
 }
 .btnCloset:hover{
@@ -121,7 +121,7 @@ li, a {
     border-radius: 0.2rem;
     margin-top: 1rem;
     box-shadow: 4px 8px 10px rgba(0,0,0,.5);
- 
+
 }
 .btnLogOut:hover{
     color:#785964;

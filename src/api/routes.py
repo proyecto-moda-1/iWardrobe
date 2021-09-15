@@ -135,7 +135,7 @@ def create_clothing():
 
 @api.route('/outfit', methods=['GET'])
 def get_all_outfits():
-    all_outfits = Outfit.query.filter_by(today_outfit=False)
+    all_outfits = Outfit.query.filter_by(today_outfit=False, deleted=False)
 
     serialized_outfits = []
     for outfit in all_outfits:
@@ -144,12 +144,14 @@ def get_all_outfits():
 
     return jsonify(serialized_outfits), 200
 
-# @api.route('/outfit', methods=['DELETE'])
-# def outfit():
-#     outfit = Outfit.query.get_or_404()
-#     outfit.deleted = True
-#     db.session.commit()
-#     return 'Removed outfit', 204
+@api.route('/outfit/<int:id>', methods=['DELETE'])
+def outfit(id):
+
+    outfit = Outfit.query.get_or_404(id)
+    print(outfit, "prueba delete")
+    outfit.deleted = True
+    db.session.commit()
+    return 'Removed outfit', 204
 
 
 @api.route('/users/today_outfits', methods=['GET'])

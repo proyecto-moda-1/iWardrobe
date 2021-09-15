@@ -86,6 +86,6 @@ CreateOutfit.propTypes = {
 	handleClose: PropTypes.func,
 	name: PropTypes.string,
 	clothing: PropTypes.object,
-	id: PropTypes.int,
+	id: PropTypes.number,
 	today: PropTypes.bool
 };
