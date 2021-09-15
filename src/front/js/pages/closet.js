@@ -52,11 +52,11 @@ export const Closet = () => {
 	return (
 		<div className="bodyCloset">
 			<div className="containerCloset">
-				{/* <h1 className="tittleCloset">Closet</h1>
-			<p className="leadCloset">Dress for every ocassion</p> */}
 				<img className="imgCloset" src={Gente1} />
 				<div className="infoCloset">
-					<p>Estilo es una forma de decir quién eres sin tener que hablar. -Rachel Zoe.</p>
+					<p>
+						If you can`t be better than your competition, <b>just dress better.</b> -Anna Wintour.
+					</p>
 				</div>
 				<h1 className="tittleCollections">Collections</h1>
 				<div className="dropCollect">

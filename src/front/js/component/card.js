@@ -47,7 +47,7 @@ const Card = props => {
 				<h5 className="cardTittleOutfit ">{props.name}</h5>
 				<div className="cardClothingImg d-flex flex-row">{clothingCards}</div>
 				<div className="cardFooter">
-					<button className="btnFav btn-outline-danger" onClick={handleFavorite.bind(this, props.id)}>
+					<button className="btnFav btn btn-danger active" onClick={handleFavorite.bind(this, props.id)}>
 						<i className="fas fa-heart"></i>
 					</button>{" "}
 					<SelectOutfitBtn id={props.id} today={props.today} />

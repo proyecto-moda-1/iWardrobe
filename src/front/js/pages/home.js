@@ -1,5 +1,7 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
+// import People1 from "../../img/people1.jpg";
+
 import "../../styles/home.scss";
 
 export const Home = () => {
@@ -8,10 +10,10 @@ export const Home = () => {
 	return (
 		<div className="containerHome">
 			<div className="jumbotronHome text-justify bg-cover">
-				<div className="filtro1"> </div>
+				{/* <img className="imgHome1" src={People1} /> */}
 
 				<img
-					className="imgHome"
+					className="imgHome2"
 					src="https://economiasustentable.com/wp-content/uploads/2020/01/ropa.png"
 					alt="imgFond"
 				/>

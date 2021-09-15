@@ -1,47 +1,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,900;1,900&display=swap');
 
-
-
 body{font-family: 'Montserrat', sans-serif!important;
     background-color:white;
-    // font-size: 1.5rem !important;
-
 }
-
 .containerHome{
+  background-color:rgba(255, 192, 203, 0.233) ;
+  // width: 100%;
+  // height: 200rem;
   margin-bottom: 2rem;
-  margin-top: 3rem;
+  margin-top: 0rem;
 }
+// .jumbotronHome {
+//   margin-top: 3rem;
+//   margin-left: -1rem;
+//   margin-bottom: 5rem;
+// }
 .tittleHome{
   margin: auto;
   display: flex;
   justify-content: center;
   position: absolute;
-  width: 80rem;
-  top: 35%;
+  width: 60rem;
+  top: 65%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: #4d4a4bd5;
-  font-size: 2.5rem;
+  font-size: 2rem;
   text-shadow:4px 4px 3px rgb(208, 208, 216);
   font-weight: 600;
-
-
 }
-
-.imgHome{
-  width:100%; 
-  height:100%;
-  opacity: 80%;
-  margin-top: 10rem;
-  margin-right: 0.2rem;
-
-
+.imgHome1{
+  width:90%; 
+  height:30%;
+  opacity: 110%;
+  margin-top: 5rem;
   }
-.jumbotronHome {
-  margin-top: -2rem;
-  margin-left: -1rem;
-  margin-bottom: 5rem;
+.imgHome2{
+  width:100%; 
+  height:30%;
+  opacity: 60%;
+  margin-top: 5rem;
 
 }
 .infoHome{
@@ -130,9 +128,7 @@ height: 90%;
 
 
 }
-.filtro1{
-  // opacity: #785964 60%;
-}
+
 
 .btnLoginHome{
   text-shadow: 4px 4px 3px rgb(208, 208, 216);
@@ -175,7 +171,6 @@ border-bottom-color: transparent;
 border-right-color: transparent;
 border-top-color: #785964;
 border-left-color: #785964;
-
 }
 .type4:hover:after,
 .type4:hover:before{ 
@@ -189,7 +184,6 @@ height: 90%;
 }
 .btnProfile:hover{
   color:white!important;
-
 }
 .after2{
       margin-right: -2rem !important;
@@ -197,7 +191,5 @@ height: 90%;
 
 .btnLoginHome:hover{
   color:white!important;
-
-
 }
 
