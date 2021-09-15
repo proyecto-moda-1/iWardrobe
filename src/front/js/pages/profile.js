@@ -4,7 +4,7 @@ import { Context } from "../store/appContext";
 import Card from "../component/card.js";
 import { getActions } from "../store/flux.js";
 import Button from "react-bootstrap/Button";
-import Creativity from "../../img/creativity.png";
+import Espejoropa from "../../img/espejoropa.png";
 import { Link } from "react-router-dom";
 import LoadClothing from "../component/loadClothing";
 
@@ -65,12 +65,12 @@ export const Profile = () => {
 	return (
 		<div className="bodyProfile">
 			<div className="JumbotromProfile">
-				<img className="imgHome" src={Creativity} />
+				<img className="imgHome" src={Espejoropa} />
 				<div className="btnJumbotrom">
 					<div className="btnGropOne">
 						<div className="colProfile">
 							<Button className="btnProfile type3" onClick={handleShow}>
-								Add clothes
+								<b>Add clothes</b>
 							</Button>
 							<LoadClothing id="btnClothes" show={show} handleClose={handleClose} />
 							<p className="textBody">
@@ -80,7 +80,7 @@ export const Profile = () => {
 						</div>
 						<div className="colProfile">
 							<Button className="btnProfile type3" onClick={handleShowCollection}>
-								New collection
+								<b>New collection</b>
 							</Button>
 							<AddCollection show={showCollection} handleClose={handleCloseCollection} />
 							<p className="textBody">
@@ -93,7 +93,7 @@ export const Profile = () => {
 						<div className="colProfile">
 							<Link to="/myOutfit">
 								<button className="btnProfile type3" href="#">
-									Create outfit
+									<b>Create outfit</b>
 								</button>
 							</Link>
 
@@ -105,7 +105,7 @@ export const Profile = () => {
 						<div className="colProfile after2">
 							<Link to="/closet">
 								<button className="btnProfile type3" href="#">
-									Closet
+									<b>Closet</b>
 								</button>
 							</Link>
 							<p className="textBodyBottom">
@@ -116,7 +116,7 @@ export const Profile = () => {
 					</div>
 				</div>
 			</div>
-			<h1 className="tittleAvaibles"> Outfits availables</h1>
+			<h1 className="tittleAvaibles "> Outfits availables</h1>
 			<div className="containerAvailables">
 				<div className="row">
 					<div className="availablesCard d-flex flex-row cardScrollable">{outfitCards}</div>

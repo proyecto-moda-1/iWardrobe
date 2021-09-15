@@ -2,8 +2,8 @@
 .headerNavbar{
     display: flex;
     justify-content: space-between;
-    background-color:#F7F4EA ;
-    border-bottom: 0.2rem solid #aba6ad31;
+    background-color:rgba(255, 192, 203, 0.233) ;
+    border-bottom: 0.2rem solid #08040a31;
     margin-top: 0rem;
 }
 
@@ -22,16 +22,16 @@
 }
 
 .text-decoration-none{
-    font-size: 3.8rem;
+    font-size: 3.2rem;
      margin-left: 2rem;
-     color: black !important;
+     color: #785964c9;
     text-shadow: 4px 4px 3px #45434667;
   
     
 }
 .text-decoration-none:hover{
-    color:#4f0866!important;
-    border-color: #4f0866!important;
+    color:#785964 !important;
+    border-color: #785964;
     text-shadow: 4px 4px 3px #f0edf167;
 
   }
@@ -49,30 +49,34 @@ li, a {
 }
 .btnProfileS{
     border: none;
-    background-color: #F7F4EA;
-    margin-left: -44rem;
+    background-color:transparent;
+    margin-left: -46rem;
     margin-top: 1.2rem;
     text-align: center;
     font-size: 1.8rem;
     color:#785964;
+    font-weight: 600;
 }
 .btnProfileS:hover{
-    color:#4f0866;
+    color:#785964;
     border-bottom:0.2rem solid  #4f0866;
     width: 6rem;
     text-shadow: 4px 4px 2px rgb(193, 193, 204);
 
+
   }
 .btnOutfit{
     border: none;
-    background-color: #F7F4EA;
+    background-color:transparent;
     margin-left: -34rem;
     text-align: center;
     font-size: 1.8rem;
     color:#785964;
+    font-weight: 600;
+
 }
 .btnOutfit:hover{
-    color:#4f0866;
+    color:#785964;
     border-bottom:0.2rem solid  #4f0866;
     width: 6rem;
     text-shadow: 4px 4px 2px rgb(193, 193, 204);
@@ -80,14 +84,16 @@ li, a {
 }
 .btnCloset{
     border: none;
-    background-color: #F7F4EA;
+    background-color:transparent;
     margin-left: -24rem;
     text-align: center;
     font-size: 1.8rem;
     color:#785964;
+    font-weight: 600;
+
 }
 .btnCloset:hover{
-    color:#4f0866;
+    color:#785964;
     border-bottom:0.2rem solid  #4f0866;
     width: 6rem;
     text-shadow: 4px 4px 2px rgb(193, 193, 204);
@@ -99,10 +105,12 @@ li, a {
     background-color: #B392AC;
     margin-left: -13rem;
     margin-top: 1rem;
-    border:0.2rem solid #4f0866;
+    border:0.2rem solid #785964;
     color:#F7F4EA;
     border-radius: 1rem;
     box-shadow: 4px 8px 10px rgba(0,0,0,.5);
+    font-weight: 600;
+
 
 }
 .btnLogin:hover{
@@ -116,11 +124,13 @@ li, a {
     height: 3rem;
     background-color: #B392AC;
     margin-left: -11rem;
-    border:0.2rem solid #4f0866;
+    border:0.2rem solid #785964;
     color:#F7F4EA;
     border-radius: 0.2rem;
     margin-top: 1rem;
     box-shadow: 4px 8px 10px rgba(0,0,0,.5);
+    font-weight: 600;
+
 
 }
 .btnLogOut:hover{

@@ -1,11 +1,19 @@
 .myOutfitContainer{
     margin: auto;
     display: flex; 
-    margin-bottom: 3rem;
+    margin-bottom: 6rem;
     margin-top: 6rem;
+    
 
 }
+.bodyOutfit1{
+        background-image: url("https://www.decoandyou.com/67969/corazones.jpg");
+        opacity: 90%;
+}
+//https://image.freepik.com/vector-gratis/fondo-linea-elegante-hexagonal-patron_1017-19742.jpg"
 .containerClothing{
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius:1rem ;
     background-color:#b392acde;
     width: 25rem;
     height: 42rem;
@@ -14,7 +22,7 @@
     box-shadow: 1px 14px 10px rgba(0,0,0,.5);
 }
 .carouselContainer{
-    background-color:#b392ac50;
+    background-color:#f3eff2;
     margin-left:-12px;
     width: 45%;
     box-shadow: 4px 14px 14px rgba(0,0,0,.5);
@@ -27,6 +35,8 @@
     background-color: #b392ac;
     border: 2rem solid #B392AC;
     box-shadow: 4px 14px 14px rgba(0,0,0,.5);
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
 
    
 }
@@ -39,21 +49,23 @@
 .tittlePage{
     margin-top: 3rem;
     margin-left:60px;
-    color: #785964;
+    // color: #785964;
     font-size: 3rem;
     text-shadow:4px 4px 3px rgb(120, 120, 122);
 
 }
 .btnLoad{
-    width: 12rem;
+    width: 10rem;
     height: 2.5rem;
     background-color: #785964!important;
-    border:0.1rem solid #dad7d1 !important;
+    border:0.2rem solid #dad7d1 !important;
     color:#dad7d1!important;
     border-radius: 1rem!important;
-    margin-left: 5.5rem!important;
+    margin-left: 3rem!important;
     margin-top: 2rem;
     margin-bottom: 2rem;
+    box-shadow: 4px 10px 12px rgba(0,0,0,.5);
+
 }
 .btnLoad:hover{
     color:#785964!important;
@@ -61,12 +73,12 @@
     background-color:#F7F4EA!important;
 }
 .selectTop{
-    margin-top: 2rem;
+    margin-top: 3.5rem;
     margin-left: 3rem;
     margin-right: 2rem;
     margin-bottom: 2rem;
     width: 17rem !important;
-    height: 2.5rem !important;
+    height: 2rem !important;
     text-align:center;
     border-radius: 0.5rem;
 }
@@ -76,7 +88,7 @@
     margin-right: 2rem;
     margin-bottom: 2rem;
     width: 17rem !important;
-    height: 2.5rem !important;
+    height: 2rem !important;
     text-align:center;
     border-radius: 0.5rem;
 }
@@ -84,9 +96,9 @@
     margin-top: 2rem;
     margin-left: 3rem;
     margin-right: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 3.5rem;
     width: 17rem !important;
-    height: 2.5rem !important;
+    height: 2rem !important;
     text-align:center;
     border-radius: 0.5rem;
 }
@@ -95,11 +107,13 @@
     width: 12rem;
     height: 2.5rem;
     background-color: #785964!important;
-    margin-top: 1rem!important;
-    margin-left:10px;    
-    border:0.1rem solid #dad7d1 !important;
+    margin-top: 0.1rem!important;
+    margin-left:2.5rem;    
+    border:0.2rem solid #dad7d1 !important;
     color:#dad7d1!important;
     border-radius: 1rem!important;
+    box-shadow: 4px 10px 12px rgba(0,0,0,.5);
+
     
 }
 .btnClosetMyOutfit:hover{
@@ -112,23 +126,27 @@
     width: 12rem;
     height: 2.5rem;
     background-color: #785964!important;
-    border:0.1rem solid #dad7d1 !important;
+    border:0.2rem solid #dad7d1 !important;
     color:#dad7d1!important;
     border-radius: 1rem!important;
-    margin-left: 5.5rem!important;
+    margin-left: 4.5rem!important;
     margin-top:3rem!important;
+    box-shadow: 4px 10px 12px rgba(0,0,0,.5);
+ 
        
 }
 .btnAddCollection{
     width: 12rem;
     height: 2.5rem;
     background-color: #785964!important;
-    border:0.1rem solid #dad7d1 !important;
-    color:#dad7d1!important;
-    border-radius: 1rem!important;
-    margin-left: 5.5rem!important;
-    margin-top: 1.5rem!important;
-    
+    border:0.2rem solid #dad7d1 !important;
+    color:#dad7d1;
+    border-radius: 1rem !important;
+    margin-left: 3rem;
+    margin-top: -0.6rem; 
+    box-shadow: 4px 10px 12px rgba(0,0,0,.5);
+   
+
 
 }
 .btnAddCollection:hover{
