@@ -5,6 +5,7 @@ import Form from "react-bootstrap/Form";
 import PropTypes from "prop-types";
 import "../../styles/register.scss";
 import { Link } from "react-router-dom";
+import Ropa2 from "../../img/ropa2.png";
 
 export const Register = function(props) {
 	const [email, setEmail] = useState("");
@@ -34,6 +35,8 @@ export const Register = function(props) {
 
 	return (
 		<div className="bodyRegister">
+			<img className="imgRegister" src={Ropa2} />
+
 			<div className="containerRegister">
 				<div className="containerBoxRegister">
 					<label className="tittleRegister">REGISTER</label>

@@ -2,28 +2,38 @@
   background-color:rgba(255, 192, 203, 0.233) ;
 }
 
-
+.imgRegister{
+  margin-top: 0.5rem;
+  float: right;
+  opacity: 100%;
+  width: 40%;
+  height: 100%;
+  border: transparent;
+  margin-left: 2rem;
+  margin-right: 4rem
+}
 
 .tittleRegister{
   margin-top: 2.5rem;
   margin-bottom: 2rem;
   font-size: 2.5rem;
   color:#785964;
-  
+  font-weight: 600;
 }
 
 .containerRegister {  
   margin: auto;
   display: flex;  
   text-align: center;
-  background-color: #a885a1 !important;
-  color:rgb(90, 77, 59);
+  background-color: #bd96a4  !important;
+  color:#785964;
   width: 32rem;
   height: 40rem;
   margin-bottom: 6rem;
   margin-top: 4rem;
   border-radius: 1rem;
   box-shadow: 4px 10px 12px rgba(0,0,0,.5);
+  border: 0.4rem solid #785964;
 
 }
 
@@ -33,7 +43,7 @@
     margin-left: 0.9rem;
     margin-top: 0.9rem;
     margin-bottom: 1rem;
-    background-color: #B392AC ;
+    // background-color: #B392AC ;
 
 }
 .goToLogin{

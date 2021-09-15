@@ -46,16 +46,19 @@
 .todayCloset{
     box-shadow: 4px 10px 12px rgba(0,0,0,.5);
     text-shadow: 4px 4px 3px rgb(142, 142, 151);
-    border-radius: 1rem;
     margin-left: 4.5rem;
-    margin-top: 2rem;
+    margin-top: 10rem;
     margin-bottom: -3rem;
     color: #F7F4EA;
     font-size: 2rem;
-    background-color: #785964;
+    background-color:rgba(255, 255, 255, 0.534);
     width: 30rem;
     height: 4rem;
     text-align: center;
+    color: #3f3b3d;
+    font-weight: bolder;
+    font-weight: 600;
+    border: 2px solid #3f3b3d;
 }
 .containerClothingUsed{
     margin-bottom: 4rem;
@@ -83,17 +86,19 @@
 }
 .tittleFavourites{
     box-shadow: 4px 10px 12px rgba(0,0,0,.5);
-    border-radius: 1rem;
     text-shadow: 4px 4px 3px rgb(142, 142, 151);
     margin-left: 4.5rem;
-    margin-top: 2rem;
+    margin-top: 10rem;
     margin-bottom: -3rem;
     color: #F7F4EA;
     font-size: 2rem;
-    background-color: #785964;
     width: 30rem;
     height: 4rem;
     text-align: center;
+    color: #3f3b3d;
+    font-weight: bolder;
+    font-weight: 600;
+    border: 2px solid #3f3b3d;
 }
 .infoCloset{
     margin: auto;
@@ -127,16 +132,19 @@
 .tittleCollections{
     box-shadow: 4px 10px 12px rgba(0,0,0,.5);
     text-shadow: 4px 4px 3px rgb(142, 142, 151);
-    border-radius: 1rem;
     margin-left: 4.5rem;
     margin-top: 3rem;
-    margin-bottom: -3rem;
+    margin-bottom: -3.5rem;
     color: #F7F4EA;
     font-size: 2rem;
-    background-color: #785964;
     width: 30rem;
     height: 4rem;
     text-align: center;
+    color: #3f3b3d;
+    font-weight: bolder;
+    font-weight: 600;
+    border: 2px solid #3f3b3d;
+
 }
 
 .collectionDrop{
@@ -147,7 +155,8 @@
 }
 .containerColleDropdown{
     box-shadow: 4px 10px 12px rgba(0,0,0,.5);
-    width: 20rem;
+    width: 15rem;
+    height: 2rem;
     margin-bottom: 5rem;
     margin-top: 0.5rem;
     margin-left: 4rem;
@@ -156,9 +165,9 @@
 
 }
 .dropCollect{
+    margin-top: -1rem;
     margin-left: 32rem;
-
-    margin-bottom: -9rem;
+    margin-bottom: -8rem;
     text-align:center;
     border: 0.5rem solid transparent;
     

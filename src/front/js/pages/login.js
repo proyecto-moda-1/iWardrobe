@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { useHistory } from "react-router-dom";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import Ropa2 from "../../img/ropa2.png";
 
 import "../../styles/login.scss";
 import { Context } from "../store/appContext";
@@ -26,6 +27,7 @@ export const Login = function(props) {
 
 	return (
 		<div className="bodyLogin">
+			<img className="imgLogin" src={Ropa2} />
 			<div className="containerLogin">
 				<div className="containerBoxLogin">
 					<label className="tittleLogin">LOGIN</label>

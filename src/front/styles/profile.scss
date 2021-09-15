@@ -5,20 +5,14 @@
       opacity: 90%;
 
 }
-//https://img.pixers.pics/pho(s3:700/PI/95/63/39/41/700_PI95633941_549a9cb02ff9850ed2bc6537cac5c721_5b7abb8c25eaf_.,700,700,jpg)/almohadas-largas-seamless-abstract-geometric-pattern-fashion-80-90s-it-can-be-used-in-printing-website-background-and-fabric-design.jpg.jpg
-//https://st2.depositphotos.com/4376739/6818/v/600/depositphotos_68189077-stock-illustration-abstract-geometric-pattern-dot-with.jpg
-//https://us.123rf.com/450wm/nadiinko/nadiinko1808/nadiinko180800072/112037430-patr%C3%B3n-transparente-de-vector-geom%C3%A9trico-simple-moderno-con-textura-de-l%C3%ADnea-dorada-sobre-fondo-blan.jpg?ver=6
-// https://st2.depositphotos.com/1000848/8857/i/600/depositphotos_88576502-stock-photo-high-resolution-seamless-linen-canvas.jpg
+
 .JumbotromProfile{
-      // background-color:transparent;
       border:0;
       width: 27rem;
       height: 35rem;
       margin-left: 2rem;
       margin-top: 7rem;
       margin-bottom: 1rem;
-
-      //  box-shadow: 4px 6px 10px rgba(0,0,0,.5);
 }
 .imgHome{
       margin-top: -1rem;
@@ -27,9 +21,6 @@
       width: 120%;
       height: 120%;
       border: transparent;
-      // box-shadow: 4px 6px 10px rgba(0,0,0,.5);
-
-
 }
 .btnJumbotrom{
       text-align:right ;
@@ -50,20 +41,8 @@
       border: 0.4rem solid #785964;
       border-radius: 2rem;
       box-shadow: 14px 16px 16px rgba(0,0,0,.5);
-
 }
-// .colProfile:hover{
-//       color:#785964!important;
-//       border-color: #B392AC!important;
-//       width: 20rem !important;
-//       height: 15rem;
-//     }
-// .imgFondoProfile{
-//       width:200%; 
-//       height:200%;
-//       opacity: 80%;
 
-// }
 
     .btnProfile{
       text-shadow: 4px 4px 3px rgb(142, 142, 151);
@@ -98,7 +77,7 @@
     height: 50%;
     border: 2px solid;
     transition: all 0.6s ease;
-    border-radius: 2px
+//     border-radius: 2px
 }
 
   .type3::after{  
@@ -167,11 +146,14 @@
       margin-bottom: 1rem;
       color: #F7F4EA;
       font-size: 2rem;
-      background-color: #785964;
+      background-color: rgba(255, 255, 255, 0.534);
       width: 30rem;
       height: 4rem;
       text-align: center;
-      border-radius: 1rem;
+      color: #3f3b3d;
+      font-weight: bolder;
+      font-weight: 600;
+      border: 2px solid #3f3b3d;
 }
 .containerAvailables{
       border: 0rem ;
@@ -195,13 +177,15 @@
       margin-left: 4.5rem;
       margin-top: 2rem;
       margin-bottom: 1rem;
-      color: #F7F4EA;
       font-size: 2rem;
-      background-color: #785964;
+      background-color:rgba(255, 255, 255, 0.534);
       width: 30rem;
       height: 4rem;
       text-align: center;
-      border-radius: 1rem;
+      color: #3f3b3d;
+      font-weight: bolder;
+      font-weight: 600;
+      border: 2px solid #3f3b3d;
 
 }
 .containerDirtyS{

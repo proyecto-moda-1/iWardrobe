@@ -67,10 +67,6 @@ export const Profile = () => {
 	return (
 		<div className="bodyProfile">
 			<div className="JumbotromProfile">
-				{/* <img
-					className="imgFondoProfile"
-					src="https://static.vecteezy.com/system/resources/previews/001/936/598/non_2x/abstract-black-dash-lines-and-circles-pattern-isolated-on-white-background-vector.jpg"
-				/> */}
 				<img className="imgHome" src={Espejoropa} />
 				<div className="btnJumbotrom">
 					<div className="btnGropOne">
@@ -122,7 +118,7 @@ export const Profile = () => {
 					</div>
 				</div>
 			</div>
-			<h1 className="tittleAvaibles"> Outfits availables</h1>
+			<h1 className="tittleAvaibles "> Outfits availables</h1>
 			<div className="containerAvailables">
 				<div className="row">
 					<div className="availablesCard d-flex flex-row cardScrollable">{outfitCards}</div>
