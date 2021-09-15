@@ -36,9 +36,7 @@ const Card = props => {
 			<div className="cardBodyOutfit text-secondary">
 				<button className="deleteBtn" onClick={() => actions.deleteOutfit(props.id)}>
 					<div>
-						<b>
-							<i className="far fa-trash-alt"></i>
-						</b>
+						<b>X</b>
 					</div>
 				</button>
 				<h5 className="cardTittleOutfit ">{props.name}</h5>
