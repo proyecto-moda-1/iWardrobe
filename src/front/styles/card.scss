@@ -1,3 +1,4 @@
+@charset "utf-8";
 
 .cardOutfit{
     width: 34.5rem;
@@ -50,7 +51,7 @@
     margin-left: 2rem;
     // margin-bottom: 1.5rem;
 }
-.btnFav{
+.heart-like-button{
     margin-bottom: 1rem;
     display: block;
     text-align: center;
@@ -62,9 +63,24 @@
     border: 0.2rem solid red;
     box-shadow: 4px 8px 8px rgba(0,0,0,.5);
 }
-.btnFav:hover{
-    
+.heart-like-button.liked::before,
+.heart-like-button.liked::after {
+  background-color: #d65076;
 }
+.heart-like-button.liked {
+  animation: liked .4s ease;
+}
+@keyframes liked {
+    0% {
+      transform: scale(.8);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
 
 .btnProfile:hover{
     color:white!important;
