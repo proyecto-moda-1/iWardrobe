@@ -23,14 +23,14 @@ const CarouselClothing = props => {
 				<div className="bottomContainer">
 					<img
 						src={props.selectedItems.bottom ? props.selectedItems.bottom.image : ""}
-						className="topImgCarousel d-block"
+						className="topImgCarousel"
 					/>
 				</div>
 
 				<div className="footwearContainer">
 					<img
 						src={props.selectedItems.footwear ? props.selectedItems.footwear.image : ""}
-						className="topImgCarousel d-block "
+						className="topImgCarousel "
 					/>
 				</div>
 			</div>

@@ -2,39 +2,19 @@
         background-image: url("https://www.decoandyou.com/67969/corazones.jpg");
         opacity: 100%;
   }
-//https://delipapel.com/wp-content/uploads/2020/04/coraznes-fondo-rosa-Delipapel.jpg
-//https://www.lutinpetitpois.com/1999-large_default/papier-peint-prairie.jpg
-  //https://image.freepik.com/vector-gratis/fondo-zigzag-transparente-geometrico-blanco_108964-1358.jpg"
-//https://lh3.googleusercontent.com/proxy/NFFb6PlokdOvLBOEMG8JqpZveaPj_BgBiKTLLF7FkA5ekcq-QtOUdPQ1Zn81Z-BW3aL-XkAy1qIKsGxl0gWTC4cAKTH8gduyYJgrd6ZIDFkZxuQXEebTBbxMQzxnjfw36M78Pff2KOC_QtwUbotBLgGcvkrodeM"
-
-
-
-
-
 .containerCloset{
     margin-top: 0.6rem;
     color: rgb(80, 77, 77);
-
 }
-
 .imgCloset{
-    margin-top: -2rem;
-    margin-left: 10rem;
+    margin-top: -3rem;
+    margin-left: 15rem;
     position:relative ;
-    width: 70%;
-    height: 60%;
+    width: 60%;
+    height: 50%;
 
 }
-// .tittleCloset{
-//     font-size: 3rem;
-//     text-align: center;
-//     color: rgb(80, 77, 77);
-// }
-// .leadCloset{
-//     text-align: center;
-//     font-size: 2rem;
-//     margin-bottom: 7rem;
-// }
+
 .clothingUsed{
     height: 30rem;
     margin-left:3rem ;
@@ -101,17 +81,17 @@
     border: 2px solid #3f3b3d;
 }
 .infoCloset{
-    margin: auto;
+  margin: auto;
   display: flex;
   justify-content: center;
   width: 65rem;
   position: absolute;
-  top: 60%;
+  top: 65%;
   left: 30%;
-  transform: translate(-20%, -20%);
+  transform: translate(-23%, -10%);
   color: #4d383f;
-  background-color: #f7f4ea91;
-  opacity: 98%;
+  background-color: white;
+  opacity: 73%;
   font-size: 1.5rem;  
 }
 .favClosetCard{

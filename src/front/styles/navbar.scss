@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
 
 .headerNavbar{
     display: flex;
@@ -22,15 +23,16 @@
 }
 
 .text-decoration-none{
-    font-size: 3.2rem;
+    font-family: 'Rancho', cursive!important;
+    font-size: 4.5rem;
     margin-left: 2rem;
-    color: #785964c9;
-    text-shadow: 4px 4px 3px #45434667;
+    color: #aa5371ab;
+    text-shadow: 8px 8px 8px #02020267;
   
     
 }
 .text-decoration-none:hover{
-    color:#785964 !important;
+    color:#a5687e !important;
     border-color: #785964;
     text-shadow: 4px 4px 3px #f0edf167;
 
