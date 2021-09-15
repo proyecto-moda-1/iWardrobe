@@ -5,6 +5,7 @@ import Form from "react-bootstrap/Form";
 import PropTypes from "prop-types";
 import "../../styles/register.scss";
 import { Link } from "react-router-dom";
+import Ropa2 from "../../img/ropa2.png";
 
 export const Register = function(props) {
 	const [email, setEmail] = useState("");
@@ -33,73 +34,77 @@ export const Register = function(props) {
 	};
 
 	return (
-		<div className="containerRegister">
-			<div className="containerBoxRegister">
-				<label className="tittleRegister">REGISTER</label>
-				<div className="groupRegister">
-					<input
-						type="text"
-						className="inputRegister btn btn-light"
-						id="exampleFormControlInput1"
-						placeholder="NickName"
-						value={nickname}
-						onChange={event => setNickname(event.target.value)}
-					/>
-				</div>
-				<div className="groupRegister">
-					{" "}
-					<input
-						id="pass"
-						type="text"
-						className="inputRegister btn btn-light"
-						placeholder=" your email address"
-						value={email}
-						onChange={event => setEmail(event.target.value)}
-					/>
-				</div>
-				<div className="groupRegister">
-					<input
-						type="password"
-						className="inputRegister btn btn-light"
-						id="exampleFormControlInput1"
-						placeholder="your password"
-						value={password}
-						onChange={event => setPassword(event.target.value)}
-					/>
-				</div>
-				<div className="groupRegister">
-					<input
-						id="pass"
-						type="password"
-						className="inputRegister btn btn-light"
-						data-type="password"
-						placeholder="Repeat your password"
-						value={repeatPassword}
-						onChange={event => setRepeatPassword(event.target.value)}
-					/>
-				</div>
-				<div className="groupRegister">
-					<Form.Control
-						className="genderDrop"
-						id="genderSelect"
-						as="select"
-						size="sm"
-						value={gender}
-						onChange={event => setGender(event.target.value)}>
-						<option value="0">Gender</option>
-						<option value="female">Female</option>
-						<option value="male">Male</option>
-						<option value="nonbinary"> Non binary</option>
-					</Form.Control>
-				</div>
+		<div className="bodyRegister">
+			<img className="imgRegister" src={Ropa2} />
 
-				<div className="goToLogin">
-					<Link to="/login">¿Ya tienes una cuenta?</Link>
-				</div>
-				<div className="goToLogin">
-					<button type="submit" value="button" className="btnRegister" onClick={handleRegister}>
-						Sign Up
-					</button>
+			<div className="containerRegister">
+				<div className="containerBoxRegister">
+					<label className="tittleRegister">REGISTER</label>
+					<div className="groupRegister">
+						<input
+							type="text"
+							className="inputRegister btn btn-light"
+							id="exampleFormControlInput1"
+							placeholder="NickName"
+							value={nickname}
+							onChange={event => setNickname(event.target.value)}
+						/>
+					</div>
+					<div className="groupRegister">
+						{" "}
+						<input
+							id="pass"
+							type="text"
+							className="inputRegister btn btn-light"
+							placeholder=" your email address"
+							value={email}
+							onChange={event => setEmail(event.target.value)}
+						/>
+					</div>
+					<div className="groupRegister">
+						<input
+							type="password"
+							className="inputRegister btn btn-light"
+							id="exampleFormControlInput1"
+							placeholder="your password"
+							value={password}
+							onChange={event => setPassword(event.target.value)}
+						/>
+					</div>
+					<div className="groupRegister">
+						<input
+							id="pass"
+							type="password"
+							className="inputRegister btn btn-light"
+							data-type="password"
+							placeholder="Repeat your password"
+							value={repeatPassword}
+							onChange={event => setRepeatPassword(event.target.value)}
+						/>
+					</div>
+					<div className="groupRegister">
+						<Form.Control
+							className="genderDrop"
+							id="genderSelect"
+							as="select"
+							size="sm"
+							value={gender}
+							onChange={event => setGender(event.target.value)}>
+							<option value="0">Gender</option>
+							<option value="female">Female</option>
+							<option value="male">Male</option>
+							<option value="nonbinary"> Non binary</option>
+						</Form.Control>
+					</div>
+
+					<div className="goToLogin">
+						<Link to="/login">¿Ya tienes una cuenta?</Link>
+					</div>
+					<div className="goToLogin">
+						<button type="submit" value="button" className="btnRegister" onClick={handleRegister}>
+							Sign Up
+						</button>
+					</div>
 				</div>
 			</div>
 		</div>
