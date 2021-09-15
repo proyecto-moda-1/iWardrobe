@@ -10,7 +10,6 @@
 } 
 .cardBodyClothing{
     position: relative;
-    left: 2%;
     margin-left: 1.5rem;
     margin-top: 0.5rem;
     border-radius: 0.2rem;
@@ -18,9 +17,10 @@
 
 .cardClothingImg{
     margin: 0.2rem;
-    display: block;
-    max-width:15rem;
-    max-height:13.2rem;
+    
+    // display: block;
+    max-width:15em;
+    max-height:13.2em;
     width: auto;
     height: auto;
     border-radius: 0.2rem;
