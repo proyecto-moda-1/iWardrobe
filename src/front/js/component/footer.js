@@ -13,7 +13,8 @@ export const Footer = () => (
 					<h5 className="text-uppercase">iWardrobe</h5>
 					<br />
 
-					<p>Welcome to iWardrobe. We would like to introduce your a new way of organizing your clothes! </p>
+					<p>Welcome to iWardrobe 🦄 ! </p>
+					<p>We would like to introduce your a new way of organizing your clothes. </p>
 					<p>
 						From make the perfect outfit for the next MET Gala, to organise that summer vacations that you
 						deseperately need.
@@ -81,7 +82,6 @@ export const Footer = () => (
 							</Link>
 						</li>
 						<br />
-
 						<li>
 							<Link to="https://4geeksacademy.com/es/inicio" target="_blank">
 								<h5>4GeeksAcademy</h5>
