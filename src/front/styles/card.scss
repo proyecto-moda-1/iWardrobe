@@ -1,84 +1,85 @@
+@charset "utf-8";
 
 .cardOutfit{
-    width: 37.5rem;
-    height: 30rem;
-    margin-top: 4rem !important;
-    margin: 2rem;
-    border-radius: 1rem;
-    background-color: #F7F4EA;
-    box-shadow: 14px 14px 12px rgba(0,0,0,.5);
+  width: 37.5rem;
+  height: 30rem;
+  margin-top: 4rem !important;
+  margin: 2rem;
+  border-radius: 1rem;
+  background-color: #F7F4EA;
+  box-shadow: 14px 14px 12px rgba(0,0,0,.5);
 } 
 .cardBodyClothing{
-    position: relative;
-    left: 2%;
-    margin-left: 1.5rem;
-    margin-top: 0.5rem;
-    border-radius: 0.2rem;
+  position: relative;
+  left: 2%;
+  margin-left: 1.5rem;
+  margin-top: 0.5rem;
+  border-radius: 0.2rem;
 }
 
 .cardClothingImg{
-    margin: 0.2rem;
-    display: block;
-    max-width:15rem;
-    max-height:13.2rem;
-    width: auto;
-    height: auto;
-    border-radius: 0.2rem;
+  margin: 0.2rem;
+  display: block;
+  max-width:15rem;
+  max-height:13.2rem;
+  width: auto;
+  height: auto;
+  border-radius: 0.2rem;
     
 }
 .deleteBtn{
-    float: right;
-    margin-top: -1rem;
-    margin-right: 1.5rem;
-    border: transparent;
-   color: rgba(0, 0, 0, 0.801)
+  float: right;
+  margin-top: -1rem;
+  margin-right: 1.5rem;
+  border: transparent;
+  color: rgba(0, 0, 0, 0.801)
 }
 .cardClean{
-    font-size: 0.8rem;
-    text-align: right;
-    margin-top: 0.5rem;
-    margin-right: 2rem;
-    color:rgba(0, 0, 0, 0.507)
+  font-size: 0.8rem;
+  text-align: right;
+  margin-top: 0.5rem;
+  margin-right: 2rem;
+  color:rgba(0, 0, 0, 0.507)
 }
 .cardTittleOutfit{
-    margin: 2rem;
-    text-align: center;
-    font-size: 1.8rem;
-    color:rgba(0, 0, 0, 0.603) ;
-    font-weight: bolder;
+  margin: 2rem;
+  text-align: center;
+  font-size: 1.8rem;
+  color:rgba(0, 0, 0, 0.603) ;
+  font-weight: bolder;
 }
 .cardFooter{
-    margin-top: 2rem;
-    margin-left: 2rem;
-    // margin-bottom: 1.5rem;
+  margin-top: 2rem;
+  margin-left: 2rem;
+  // margin-bottom: 1.5rem;
 }
-.btnFav{
-    margin-bottom: 1rem;
-    display: block;
-    text-align: center;
-    margin-top: 3rem;
-    float: left;
-    width: 3rem;
-    height: 3rem;
-    border-radius: 1rem;
-    border: 0.2rem solid red;
-    box-shadow: 4px 8px 8px rgba(0,0,0,.5);
+.heart-like-button{
+  margin-bottom: 1rem;
+  display: block;
+  text-align: center;
+  margin-top: 3rem;
+  float: left;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 1rem;
+  border: 0.2rem solid red;
+  box-shadow: 4px 8px 8px rgba(0,0,0,.5);
 }
 
 
 .btnProfile:active{
-    color:white!important;
-    border: 0.2rem solid white!important;
-    background-color:red!important;
+  color:white!important;
+  border: 0.2rem solid white!important;
+  background-color:red!important;
   }
 
 #outfitCheck{
-    margin-top: 4rem;
-    text-align: right;
-    margin-right: 2rem;
-    color: green;
-    float: right;
-    font-weight: bolder;
-    font-weight: 900rem
+  margin-top: 4rem;
+  text-align: right;
+  margin-right: 2rem;
+  color: green;
+  float: right;
+  font-weight: bolder;
+  font-weight: 900rem
 
 }

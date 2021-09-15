@@ -2,7 +2,6 @@ import React, { useContext, useState, useEffect } from "react";
 import CarouselClothing from "../component/CarouselClothing.js";
 import CreateOutfitBtn from "../component/createOutfitBtn";
 import AddCollection from "../component/addCollection.js";
-
 import LoadClothing from "../component/loadClothing.js";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -78,10 +77,7 @@ export const MyOutfit = props => {
 								Add clothes
 							</Button>
 							<LoadClothing show={show} handleClose={handleClose} />
-							<Button className="btnAddCollection" onClick={handleShowCollection}>
-								Add new collection
-							</Button>
-							<AddCollection show={showCollection} handleClose={handleCloseCollection} />
+
 							<Form.Control
 								size="sm"
 								as="select"
@@ -128,6 +124,10 @@ export const MyOutfit = props => {
 								<option value="0">Footwear</option>
 								{footwearItems}
 							</Form.Control>
+							<Button className="btnAddCollection" onClick={handleShowCollection}>
+								Add new collection
+							</Button>
+							<AddCollection show={showCollection} handleClose={handleCloseCollection} />
 							<CreateOutfitBtn clothing={selectedItems} />
 						</Col>
 					</div>
@@ -137,19 +137,25 @@ export const MyOutfit = props => {
 
 					<Col className="containerInfoOutfit col-4">
 						<div className="infoOutfit">
-							<h2>
-								<b>Como crear tu Outfit?</b>
-							</h2>
+							<h3>
+								<b>But, how do I create my first outfit?</b>
+							</h3>
 							<p>
-								1. Crea tu ropa en el botón <b>Add clothes</b>
+								1. Use our <b>Add clothes</b> button to upload all your items.
 							</p>
-							<p>2. Juega con todas las piezas de ropa para que consigas la combinacion que te guste </p>
+							<p>2. Mix and match your tops and bottoms with your favorite boots to make it work! </p>
 							<p>
-								3. Crea tu outfit en el botón <b>Create your outfit</b>
+								3. Click{" "}
+								<b
+									className="hovertext"
+									data-hover="For default your outfits will be shown in AVAILABLES, we suggest to create a couple of collections first and the start creating your outfits">
+									Create your outfit
+								</b>{" "}
+								and you will have your look ready!
 							</p>
 							<p>
-								4. Puedes crear colecciones que desees pulsando <b>Add new collection</b> asi puedes
-								clasificar mejor tus outfits, siendo mas facil luego conseguirlos.
+								4. Additionally, you can organize your looks in collections with{" "}
+								<b>Add new collection</b>
 							</p>
 						</div>
 						<Link to="/closet">

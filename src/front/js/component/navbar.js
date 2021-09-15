@@ -60,7 +60,7 @@ export const Navbar = () => {
 						<li>
 							<Link to="/closet">
 								<button className="btnCloset" href="#">
-									CLOSET
+									WARDROBE
 								</button>
 							</Link>
 						</li>

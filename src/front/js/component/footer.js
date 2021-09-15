@@ -4,58 +4,100 @@ import { Link } from "react-router-dom";
 import "../../styles/footer.scss";
 
 export const Footer = () => (
-	<footer>
-		{/* <div className="gitFooter">
-			<section className="mb-4">
-				<a className="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-					<i className="fab fa-github" />
-				</a>
-				<a className="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-					<i className="fab fa-github" />
-				</a>
-			</section>
-		</div> */}
-		<div className="headerFooter">
-			<div className="textAcademy">
-				<li type="submit">
-					<Link to="https://4geeksacademy.com/es/inicio" className="academy">
-						4Geeks Academy
-					</Link>
-				</li>
-			</div>
-			<div className="textFooter">
-				<li type="submit">
-					<Link to="https://github.com/mgtablante" className="linkedinGaby">
-						<i className="fab fa-github" />
-					</Link>
-					<p className="textGaby"> Gabriela Tablante</p>
-				</li>
-				<li type="submit">
-					<Link to="https://github.com/yolandagb" className="linkedinYola">
-						{" "}
-						<i className="fab fa-github" />
-						<p className="textYola"> Yolanda García</p>
-					</Link>
-				</li>
+	<footer className="page-footer font-small unique-color-dark">
+		<div className="container-fluid text-center text-md-left">
+			<div className="row">
+				<div className="col-md-6 mt-md-0 mt-3">
+					<br />
 
-				{/* <ul className="col"> */}
-				{/* <div className="col-4"> */}
-				{/* <li className="academy">
-					<a className="col-4" href="https://4geeksacademy.com/es/inicio">
-						4Geeks Academy
-					</a>
-				</li> */}
+					<h5 className="text-uppercase ">iWardrobe</h5>
+					<br />
 
-				{/* <li className="proyect">
-					<a className="col-4" href="">
-						iWardrobe Proyect by{" "}
-					</a>
-				</li>
-				<li className="linkedinGabyYola">
-					<a href="https://github.com/mgtablante">Gabriela Tablante &</a>
-					<a href="https://github.com/yolandagb"> Yolanda García</a>
-				</li> */}
+					<p>Welcome to iWardrobe! </p>
+					<p>We would like to introduce you a new way of organizing your clothes. </p>
+					<p>
+						From make the perfect outfit for the next MET Gala, to that summer vacation that you
+						deseperately need.
+					</p>
+					<p>Hope your have a lot of fun and enjoy this app as much as we did on the process of making it!</p>
+
+					<p>Lots of love!</p>
+					<p> iWardrobe Team 🦄</p>
+				</div>
+
+				<div className="col-md-3 mb-md-0 mb-3">
+					<br />
+
+					<h5 className="text-uppercase">COMPANY</h5>
+
+					<ul className="list-unstyled">
+						<li>
+							<Link to="#!">Our team</Link>
+						</li>
+						<br />
+
+						<li>
+							<Link to="#!">Conctact us</Link>
+						</li>
+						<br />
+						<li>
+							<Link to="#!">About us</Link>
+						</li>
+					</ul>
+				</div>
+
+				<div className="col-md-3 mb-md-0 mb-3">
+					<br />
+
+					<h5 className=" text-uppercase">HOW TO FIND US</h5>
+
+					<ul className="list-unstyled">
+						<li>
+							<h5>Gabriela Tablante</h5>
+						</li>
+
+						<li>
+							<Link to="https://www.linkedin.com/in/mgtablante/" target="_blank">
+								<a className="btn-floating btn-li mx-1">
+									<i className="fab fa-linkedin"></i>
+								</a>
+							</Link>
+							<Link to="https://github.com/yolandagb">
+								<i className="fab fa-github"></i>
+							</Link>
+						</li>
+						<li>
+							<br />
+
+							<h5>Yolanda García</h5>
+						</li>
+						<li>
+							<Link to="https://www.linkedin.com/in/yolandagarciabarrancofullstackdeveloper/">
+								<a className="btn-floating btn-li mx-1">
+									<i className="fab fa-linkedin"></i>
+								</a>
+							</Link>
+							<Link to="https://github.com/yolandagb">
+								<i className="fab fa-github" id="socialnetwrork"></i>
+							</Link>
+						</li>
+						<br />
+						<li>
+							<Link to="https://4geeksacademy.com/es/inicio" target="_blank">
+								<h5>4GeeksAcademy</h5>
+							</Link>
+						</li>
+					</ul>
+				</div>
 			</div>
+		</div>
+
+		<div className="textFooter-copyright text-center py-3">
+			© 2021 Copyright:
+			<Link to="https://github.com/proyecto-moda-1/outfit-planner/tree/main" target="_blank">
+				{" "}
+				iWardrobe Team
+			</Link>
 		</div>
 	</footer>
 );

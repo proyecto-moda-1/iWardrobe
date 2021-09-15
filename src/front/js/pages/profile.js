@@ -74,8 +74,7 @@ export const Profile = () => {
 							</Button>
 							<LoadClothing id="btnClothes" show={show} handleClose={handleClose} />
 							<p className="textBody">
-								Tomale una foto a tu ropa y subela a tu perfilPuedes marcar tus piezas sucias y solo
-								mostraremos los outfits que esten limpios{" "}
+								Upload your pictures here! You can personalise every item to make it recognizable.{" "}
 							</p>
 						</div>
 						<div className="colProfile">
@@ -84,8 +83,8 @@ export const Profile = () => {
 							</Button>
 							<AddCollection show={showCollection} handleClose={handleCloseCollection} />
 							<p className="textBody">
-								Crea colecciones segun tus necesidades diarias y especialesPuedes marcar tus piezas
-								sucias y solo mostraremos los outfits que esten limpios
+								Have fun with it and organize your outfits into seasonal or thematic collections
+								creating your own!
 							</p>
 						</div>
 					</div>
@@ -98,19 +97,17 @@ export const Profile = () => {
 							</Link>
 
 							<p className="textBodyBottom">
-								crea tus outfit diarios y guardalos para cuando necesites usarloPuedes marcar tus piezas
-								sucias y solo mostraremos los outfits que esten limpios{" "}
+								Create funky outfits and awesome fits for your every day life!
 							</p>
 						</div>
 						<div className="colProfile after2">
 							<Link to="/closet">
 								<button className="btnProfile type3" href="#">
-									<b>Closet</b>
+									<b>Wardrobe</b>
 								</button>
 							</Link>
 							<p className="textBodyBottom">
-								Puedes marcar tus piezas sucias y solo mostraremos los outfits que esten limpiosPuedes
-								marcar tus piezas sucias y solo mostraremos los outfits que esten limpios
+								Here your will be able to see all your items personally organise! How about that, huh?
 							</p>
 						</div>
 					</div>

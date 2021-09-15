@@ -12,11 +12,12 @@ const ClothingCard = props => {
 	return (
 		<div className="cardClothing">
 			<div className="cardBodyClothing">
-				{/* <h5 className="cardNameClothing">{props.name}</h5> */}
 				<img className="cardClothingImg d-flex flex-row" src={props.image} />
 				<h4 className="cardClean">
 					<BtnCleanOutfit id={props.id} dirty={props.dirty} />
-					<p className="clothingDirty">DIRTY</p>
+					<p className="clothingDirty">
+						LAUNDRY
+					</p>
 				</h4>
 			</div>
 		</div>

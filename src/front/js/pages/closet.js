@@ -93,7 +93,7 @@ export const Closet = () => {
 					</div>
 				</div>
 
-				<h1 className="tittleFavourites">Favourites</h1>
+				<h1 className="tittleFavourites">Favorites</h1>
 				<div className="containerClothingFavs">
 					<div className="row">
 						<div className="favClosetCard d-flex flex-row cardScrollable">{favoriteCards}</div>
