@@ -16,7 +16,7 @@ const LoadClothing = props => {
 	const [image, setImage] = useState(null);
 	const [category, setCategory] = useState("");
 	const { store, actions } = useContext(Context);
-	const notify = () => toast.success("Upload clothing!", { position: "top-center" });
+	const notify = () => toast.success("🦄 Upload succesful!", { position: "top-center" });
 
 	const handleSubmit = () => {
 		const data = new FormData();

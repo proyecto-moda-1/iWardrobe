@@ -15,10 +15,7 @@ const AddCollection = props => {
 	const [name, setName] = useState("");
 	const notify = () =>
 		toast.success("🦄 Saved collection!", {
-			position: "top-center",
-			hideProgressBar: false,
-			pauseOnHover: true,
-			draggable: true
+			position: "top-center"
 		});
 	const handleSubmit = () => {
 		const data = {
