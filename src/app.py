@@ -28,7 +28,7 @@ jwt = JWTManager(app)
 
 # database condiguration
 if os.getenv("DATABASE_URL") is not None:
-    uri = os.getenv["DATABASE_URL"]
+    uri = os.getenv("DATABASE_URL")
     if uri.startswith("postgres://"):
         uri = uri.replace("postgres://", "postgresql://", 1)
     app.config['SQLALCHEMY_DATABASE_URI'] = uri
