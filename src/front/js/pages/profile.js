@@ -25,8 +25,6 @@ export const Profile = () => {
 	};
 	useEffect(() => {
 		actions.getAllOutfit();
-		// actions.getLaundry();
-		// deleteOutfit();
 	}, []);
 
 	let outfitCards = [];
