@@ -15,9 +15,7 @@ const ClothingCard = props => {
 				<img className="cardClothingImg d-flex flex-row" src={props.image} />
 				<h4 className="cardClean">
 					<BtnCleanOutfit id={props.id} dirty={props.dirty} />
-					<p className="clothingDirty">
-						LAUNDRY
-					</p>
+					<p className="clothingDirty">LAUNDRY</p>
 				</h4>
 			</div>
 		</div>

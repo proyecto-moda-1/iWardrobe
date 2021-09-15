@@ -16,7 +16,7 @@ export const Footer = () => (
 					<p>Welcome to iWardrobe! </p>
 					<p>We would like to introduce you a new way of organizing your clothes. </p>
 					<p>
-						From make the perfect outfit for the next MET Gala, to that summer vacation that you
+						From creating the perfect outfit for the next MET Gala, to that summer vacation that you
 						deseperately need.
 					</p>
 					<p>Hope your have a lot of fun and enjoy this app as much as we did on the process of making it!</p>

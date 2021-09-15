@@ -20,11 +20,7 @@ export const Navbar = () => {
 	if (token == null) {
 		return (
 			<div className="headerNavbar">
-				<div className="logoNavbar" type="submit">
-					<Link to="/profile" className="text-decoration-none">
-						iWardrobe
-					</Link>
-				</div>
+				<div className="no" type="submit"></div>
 				<Link to="/login">
 					<button className="btnLogin" href="#">
 						LOGIN
