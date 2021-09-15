@@ -43,7 +43,7 @@ const AddCollection = props => {
 					className="nameCollection"
 					type="text"
 					id="collectionName"
-					placeholder="Enter collection name"
+					placeholder="Collection name"
 					value={name}
 					onChange={event => setName(event.target.value)}
 				/>{" "}

@@ -45,7 +45,7 @@ export const Register = function(props) {
 							type="text"
 							className="inputRegister btn btn-light"
 							id="exampleFormControlInput1"
-							placeholder="NickName"
+							placeholder="Nickname"
 							value={nickname}
 							onChange={event => setNickname(event.target.value)}
 						/>
@@ -56,7 +56,7 @@ export const Register = function(props) {
 							id="pass"
 							type="text"
 							className="inputRegister btn btn-light"
-							placeholder=" your email address"
+							placeholder="  E-mail "
 							value={email}
 							onChange={event => setEmail(event.target.value)}
 						/>
@@ -66,7 +66,7 @@ export const Register = function(props) {
 							type="password"
 							className="inputRegister btn btn-light"
 							id="exampleFormControlInput1"
-							placeholder="your password"
+							placeholder=" Password"
 							value={password}
 							onChange={event => setPassword(event.target.value)}
 						/>
@@ -77,7 +77,7 @@ export const Register = function(props) {
 							type="password"
 							className="inputRegister btn btn-light"
 							data-type="password"
-							placeholder="Repeat your password"
+							placeholder="Repeat password"
 							value={repeatPassword}
 							onChange={event => setRepeatPassword(event.target.value)}
 						/>
@@ -98,11 +98,11 @@ export const Register = function(props) {
 					</div>
 
 					<div className="goToLogin">
-						<Link to="/login">¿Ya tienes una cuenta?</Link>
+						<Link to="/login">Do you have an account?</Link>
 					</div>
 					<div className="goToLogin">
 						<button type="submit" value="button" className="btnRegister" onClick={handleRegister}>
-							Sign Up
+							Sign up
 						</button>
 					</div>
 				</div>

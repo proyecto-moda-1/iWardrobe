@@ -8,15 +8,10 @@ import { Button } from "react-bootstrap";
 import PropTypes from "prop-types";
 import "../../styles/card.scss";
 
-//Hay un error que da en la consola sobre el id del card, hay que mirar eso
 const Card = props => {
 	const [favorite, setFavorite] = useState("");
 	const { store, actions } = useContext(Context);
 	const [checked, setChecked] = useState(props.today);
-
-	// console.log(favoriteId);
-	// const { favoriteId } = useParams();
-	//Para recuperar el id de favoritos, debemos recuperarlo desde la url con useParams.
 	function handleFavorite(id) {
 		actions.favoriteBrand(id);
 		setChecked(!checked);
@@ -41,7 +36,9 @@ const Card = props => {
 			<div className="cardBodyOutfit text-secondary">
 				<button className="deleteBtn" onClick={() => actions.deleteOutfit(props.id)}>
 					<div>
-						<b>X</b>
+						<b>
+							<i className="far fa-trash-alt"></i>
+						</b>
 					</div>
 				</button>
 				<h5 className="cardTittleOutfit ">{props.name}</h5>

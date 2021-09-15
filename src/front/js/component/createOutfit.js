@@ -47,7 +47,7 @@ const CreateOutfit = props => {
 				<input
 					className="nameOutfit"
 					type="text"
-					placeholder="Enter outfit name"
+					placeholder="Outfit name"
 					value={name}
 					onChange={event => setName(event.target.value)}
 				/>{" "}
