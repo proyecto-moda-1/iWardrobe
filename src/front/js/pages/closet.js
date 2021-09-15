@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect } from "react";
 import { Context } from "../store/appContext";
 import Card from "../component/card.js";
 import { CollectionDropdown } from "../component/collectionDropdown.js";
+import Gente1 from "../../img/gente1.png";
 
 import "../../styles/closet.scss";
 
@@ -49,48 +50,54 @@ export const Closet = () => {
 		});
 	}
 	return (
-		<div className="containerCloset">
-			<h1 className="tittleCloset">Closet</h1>
-			<p className="leadCloset">Dress for every ocassion</p>
-			<h1 className="tittleCollections">Collections</h1>
-			<div className="dropCollect">
-				<CollectionDropdown />
-			</div>
-			<div className="containerClothingCollections">
-				<div className="row">
-					<div className="collectionDrop d-flex flex-row cardScrollable">{collectionOutfits}</div>
+		<div className="bodyCloset">
+			<div className="containerCloset">
+				{/* <h1 className="tittleCloset">Closet</h1>
+			<p className="leadCloset">Dress for every ocassion</p> */}
+				<img className="imgCloset" src={Gente1} />
+				<div className="infoCloset">
+					<p>Estilo es una forma de decir quién eres sin tener que hablar. -Rachel Zoe.</p>
 				</div>
-			</div>
-			<h1 className="todayCloset">Todays outfit</h1>
-			<div className="containerClothingUsed">
-				<div className="row">
-					<div className="todayCards  d-flex flex-row cardScrollable">
-						{store.todayOutfit
-							? store.todayOutfit.map((today, index) => {
-									console.log(today);
-									return (
-										<Card
-											name={today.name}
-											id={today.id}
-											collections={today.collections}
-											image={today.image}
-											clothing={today.clothing}
-											favorite={today.favorite}
-											today={today.today_outfit}
-											key={index}
-											markAsFavorite={handleFavorite}
-										/>
-									);
-							  })
-							: ""}
+				<h1 className="tittleCollections">Collections</h1>
+				<div className="dropCollect">
+					<CollectionDropdown />
+				</div>
+				<div className="containerClothingCollections">
+					<div className="row">
+						<div className="collectionDrop d-flex flex-row cardScrollable">{collectionOutfits}</div>
 					</div>
 				</div>
-			</div>
+				<h1 className="todayCloset">Todays outfit</h1>
+				<div className="containerClothingUsed">
+					<div className="row">
+						<div className="todayCards  d-flex flex-row cardScrollable">
+							{store.todayOutfit
+								? store.todayOutfit.map((today, index) => {
+										console.log(today);
+										return (
+											<Card
+												name={today.name}
+												id={today.id}
+												collections={today.collections}
+												image={today.image}
+												clothing={today.clothing}
+												favorite={today.favorite}
+												today={today.today_outfit}
+												key={index}
+												markAsFavorite={handleFavorite}
+											/>
+										);
+								  })
+								: ""}
+						</div>
+					</div>
+				</div>
 
-			<h1 className="tittleFavourites">Favourites</h1>
-			<div className="containerClothingFavs">
-				<div className="row">
-					<div className="favClosetCard d-flex flex-row cardScrollable">{favoriteCards}</div>
+				<h1 className="tittleFavourites">Favorites</h1>
+				<div className="containerClothingFavs">
+					<div className="row">
+						<div className="favClosetCard d-flex flex-row cardScrollable">{favoriteCards}</div>
+					</div>
 				</div>
 			</div>
 		</div>

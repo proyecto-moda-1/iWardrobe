@@ -1,28 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&family=Montserrat:wght@300&family=Oswald&family=Overlock:ital,wght@1,900&family=Raleway&family=Roboto+Mono&family=Sigmar+One&family=Sorts+Mill+Goudy:ital@1&display=swap');
 
+.bodyProfile{
+      background-image: url("https://www.decoandyou.com/67969/corazones.jpg");
+      opacity: 90%;
+
+}
+
 .JumbotromProfile{
-      background-color: #B392AC;
       border:0;
       width: 27rem;
-      height: 20rem;
-      margin-left: 4rem;
-      margin-top: 5rem;
-      margin-bottom: 6rem;
-       box-shadow: 4px 6px 10px rgba(0,0,0,.5);
+      height: 35rem;
+      margin-left: 2rem;
+      margin-top: 7rem;
+      margin-bottom: 1rem;
 }
 .imgHome{
-      margin-left: 3rem;
-      margin-top: 4rem;
+      margin-top: -1rem;
       float: left;
-      opacity: 110%;
-
+      opacity: 120%;
+      width: 120%;
+      height: 120%;
+      border: transparent;
 }
 .btnJumbotrom{
       text-align:right ;
       float: right;
       display: flex;
       position: absolute;
-      margin-left: 36rem;
+      margin-left: 33rem;
 
 }
 
@@ -32,31 +37,34 @@
       height: 17rem;
       float: left;
       color:#785964;
-      background-color: #b392ac8f;
-      box-shadow: 4px 6px 10px rgba(0,0,0,.5);
-
+      background-color:  #bd96a4;   
+      border: 0.4rem solid #785964;
+      border-radius: 2rem;
+      box-shadow: 14px 16px 16px rgba(0,0,0,.5);
 }
-.colProfile:hover{
-      color:#785964!important;
-      border-color: #B392AC!important;
-      width: 20rem !important;
-      height: 15rem;
-    }
 
 
     .btnProfile{
       text-shadow: 4px 4px 3px rgb(142, 142, 151);
-      padding: 1em 1.5em !important;
-      margin-right: 5rem;
+      padding: 0.5em 1em !important;
+      margin: 0.9rem;
+      margin-right: 2rem;
+      margin-top: 1.6rem;
       position: relative;
       border: none !important;
-      background-color: transparent !important;
+      background-color: rgba(255, 255, 255, 0.534) !important;
       cursor: pointer;
       outline: none !important;
       font-size: 1.5rem !important;
+      width: 15.5rem;
+      height: 4rem;
+      box-shadow: 4px 6px 6px rgba(0,0,0,.5);
+
   }
   .type3{  
-      color: rgba(0, 0, 0, 0.767) !important;
+      color: #3f3b3d !important;
+      font-weight: bolder!important;
+      font-weight: 500!important;
 }
   
 
@@ -65,19 +73,22 @@
     content: '';
     display: block;
     position: absolute;
-    width: 40%;
-    height: 40%;
+    width: 50%;
+    height: 50%;
     border: 2px solid;
     transition: all 0.6s ease;
-    border-radius: 2px}
+//     border-radius: 2px
+}
 
   .type3::after{  
     bottom: 0;
     right: 0;
     border-top-color: transparent ;
     border-left-color: transparent;
-    border-bottom-color: #785964;
-    border-right-color: #785964;
+    border-bottom-color:#3f3b3d;
+    border-right-color:#3f3b3d;
+    border-radius: 2px
+
 }
 
   .type3::before{ 
@@ -85,17 +96,19 @@
     left: 0;
     border-bottom-color: transparent;
     border-right-color: transparent;
-    border-top-color: #785964;
-    border-left-color: #785964;
+    border-top-color:#3f3b3d;
+    border-left-color:#3f3b3d;
+    border-radius: 2px
+
 
 }
 
   .type3:hover:after,
   .type3:hover:before{ 
-    border-bottom-color: #785964 !important;
-    border-right-color: #785964!important;
-    border-top-color: #785964!important;
-    border-left-color: #785964!important;  
+    border-bottom-color: rgba(255, 255, 255, 0.534) !important;
+    border-right-color: rgba(255, 255, 255, 0.534)!important;
+    border-top-color: rgba(255, 255, 255, 0.534)!important;
+    border-left-color: rgba(255, 255, 255, 0.534)!important;  
     width: 95%;
     height: 90%;
 
@@ -116,39 +129,41 @@
       font-size: 1rem;
       margin-right: 1rem;
       margin-bottom: 1rem;
-      font-family: 'Raleway', sans-serif !important;
-
-
+      color: #000;
 }
 .textBodyBottom{
-      font-family: 'Raleway', sans-serif !important;
       font-size: 1rem;
       overflow: scroll;
-      margin-top: 1rem;
-      margin-right: 1rem;
+      margin:1rem;
+      color: #000;
+
 }
 .tittleAvaibles{
       box-shadow: 4px 10px 12px rgba(0,0,0,.5);
       text-shadow: 4px 4px 3px rgb(142, 142, 151);
       margin-left: 4.5rem;
-      margin-top: 20rem;
-      margin-bottom: -1rem;
+      margin-top: 13rem;
+      margin-bottom: 1rem;
       color: #F7F4EA;
       font-size: 2rem;
-      background-color: #785964;
+      background-color: rgba(255, 255, 255, 0.534);
       width: 30rem;
-      height: 3rem;
+      height: 4rem;
       text-align: center;
-      border-radius: 1rem;
+      color: #3f3b3d;
+      font-weight: bolder;
+      font-weight: 600;
+      border: 2px solid #3f3b3d;
 }
 .containerAvailables{
-      border-radius: 1rem;
       border: 0rem ;
-      margin-left: -1rem;
-      margin-right: -1rem;
+      // margin-left: -1.5rem;
+      // margin-right: -1.5rem;
       margin-bottom: 6rem;
-      background-color: #9535b52f;  
+      background-color:  #bd96a4;   
       overflow-x: auto;
+      box-shadow: 4px 10px 12px rgba(0,0,0,.5);
+
 
 }
 .availablesCard{
@@ -161,24 +176,27 @@
       text-shadow: 4px 4px 3px rgb(142, 142, 151);
       margin-left: 4.5rem;
       margin-top: 2rem;
-      margin-bottom: -1rem;
-      color: #F7F4EA;
+      margin-bottom: 1rem;
       font-size: 2rem;
-      background-color: #785964;
-      width: 25rem;
-      height: 3rem;
+      background-color:rgba(255, 255, 255, 0.534);
+      width: 30rem;
+      height: 4rem;
       text-align: center;
-      border-radius: 1rem;
+      color: #3f3b3d;
+      font-weight: bolder;
+      font-weight: 600;
+      border: 2px solid #3f3b3d;
 
 }
 .containerDirtyS{
-      border-radius: 1rem;
       border: 0rem;
-      margin-left: -1rem;
-      margin-right: -1rem;
-      margin-bottom: 2rem;
-      background-color: #9535b52f;
+      // margin-left: -1.5rem;
+      // margin-right: -1.5rem;
+      margin-bottom: 8rem;
+      background-color:  #bd96a4;   
       overflow-x: auto;
+      box-shadow: 4px 10px 12px rgba(0,0,0,.5);
+
       
 }
 .dirtyCard{

@@ -17,6 +17,7 @@ const ClothingCard = props => {
 				<h4 className="cardClean">
 					<BtnCleanOutfit id={props.id} dirty={props.dirty} />
 					<p className="clothingDirty">DIRTY</p>
+					<i className="fas fa-trash"></i>
 				</h4>
 			</div>
 		</div>
@@ -26,7 +27,7 @@ const ClothingCard = props => {
 export default ClothingCard;
 
 ClothingCard.propTypes = {
-	id: PropTypes.int,
+	id: PropTypes.number,
 	// name: PropTypes.string,
 	image: PropTypes.string,
 	dirty: PropTypes.bool

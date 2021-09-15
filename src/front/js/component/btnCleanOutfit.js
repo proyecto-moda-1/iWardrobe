@@ -24,6 +24,6 @@ export const BtnCleanOutfit = props => {
 export default BtnCleanOutfit;
 
 BtnCleanOutfit.propTypes = {
-	id: PropTypes.int,
+	id: PropTypes.number,
 	dirty: PropTypes.bool
 };

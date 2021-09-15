@@ -1,35 +1,51 @@
+.bodyLogin{
+  background-color:rgba(255, 192, 203, 0.233) ;
+}
+.imgLogin{
+  margin-top: 0.5rem;
+  float: left;
+  opacity: 100%;
+  width: 40%;
+  height: 100%;
+  border: transparent;
+  margin-left: 2rem;
+  margin-right: -4rem;
+}
+
 .tittleLogin{
     margin-top: 2.5rem;
     font-size: 2.5rem;
     color:#785964;
+    font-weight: 600;
   }
   
   .containerLogin {  
     margin: auto;
-    margin-top: 3rem;
+    margin-top: 4rem;
     display: flex;
     text-align: center;
-    color:rgb(90, 77, 59);
+    color:#785964;
     width: 32rem;
-    height: 37rem;
+    height: 36rem;
     margin-bottom: 4rem;
-    background-color: #a885a1 !important;
+    background-color:  #bd96a4 !important;
     border-radius: 1rem;
     box-shadow: 4px 10px 12px rgba(0,0,0,.5);
+    border: 0.4rem solid #785964;
 
   }
   
   .containerBoxLogin{
       width: 30rem;
       height: 34rem;
-      background-color: #B392AC ;
+      // background-color: #B392AC ;
       margin-left: 0.9rem;
       margin-top: 0.9rem;
       margin-bottom: 1rem;
   
   }
   .goToRegister{
-      color: rgb(90, 77, 59);
+      // color: rgb(90, 77, 59);
       margin-top: 2rem;
 
   }
@@ -60,6 +76,8 @@
     margin-bottom: 3rem;
     border-radius: 1rem;
     border:0.2rem solid #FFFFFF;
+    box-shadow: 6px 6px 10px rgba(0,0,0,.5);
+
   }
   
   .btnLoginVista:hover{

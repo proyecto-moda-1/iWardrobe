@@ -42,9 +42,7 @@ export const CollectionSelect = props => {
 					});
 					actions.collection_id(parseInt(event.target.value));
 				}}>
-				<option selected value="0">
-					My collections
-				</option>
+				<option value="0">My collections</option>
 				{allCollections}
 			</Form.Control>
 		</>

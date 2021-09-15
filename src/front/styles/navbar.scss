@@ -2,9 +2,9 @@
 .headerNavbar{
     display: flex;
     justify-content: space-between;
-    background-color:#F7F4EA ;
-    border-bottom: 0.2rem solid #aba6ad31;
-    margin-top: 0.5rem;
+    background-color:rgba(255, 192, 203, 0.233) ;
+    border-bottom: 0.2rem solid #08040a31;
+    margin-top: 0rem;
 }
 
 .logoNavbar{
@@ -14,7 +14,7 @@
     text-align: center;
     margin-top: -0.3rem;
     background-color: #B392AC;
-    width: 6rem;
+    width: 4rem;
     height: 6rem;
     box-shadow: 4px 10px 12px rgba(0,0,0,.5);
 
@@ -22,17 +22,17 @@
 }
 
 .text-decoration-none{
-    font-size: 2.5rem;
-     margin-left: 2rem;
-     color: black !important;
-    text-shadow: 4px 4px 3px #b987ca67;
+    font-size: 3.2rem;
+    margin-left: 2rem;
+    color: #785964c9;
+    text-shadow: 4px 4px 3px #45434667;
   
     
 }
 .text-decoration-none:hover{
-    color:#4f0866!important;
-    border-color: #4f0866!important;
-    text-shadow: 4px 4px 3px #1c1a1d67;
+    color:#785964 !important;
+    border-color: #785964;
+    text-shadow: 4px 4px 3px #f0edf167;
 
   }
 li, a {
@@ -49,30 +49,34 @@ li, a {
 }
 .btnProfileS{
     border: none;
-    background-color: #F7F4EA;
-    margin-left: -38rem;
+    background-color:transparent;
+    margin-left: -46rem;
     margin-top: 1.2rem;
     text-align: center;
+    font-size: 1.8rem;
     color:#785964;
-
+    font-weight: 600;
 }
 .btnProfileS:hover{
-    color:#4f0866;
+    color:#785964;
     border-bottom:0.2rem solid  #4f0866;
     width: 6rem;
     text-shadow: 4px 4px 2px rgb(193, 193, 204);
 
+
   }
 .btnOutfit{
     border: none;
-    background-color: #F7F4EA;
-    margin-left: -31rem;
+    background-color:transparent;
+    margin-left: -34rem;
     text-align: center;
-    // font-size: 2rem;
+    font-size: 1.8rem;
     color:#785964;
+    font-weight: 600;
+
 }
 .btnOutfit:hover{
-    color:#4f0866;
+    color:#785964;
     border-bottom:0.2rem solid  #4f0866;
     width: 6rem;
     text-shadow: 4px 4px 2px rgb(193, 193, 204);
@@ -80,16 +84,18 @@ li, a {
 }
 .btnCloset{
     border: none;
-    background-color: #F7F4EA;
+    background-color:transparent;
     margin-left: -24rem;
     text-align: center;
-    // font-size: 2rem;
+    font-size: 1.8rem;
     color:#785964;
+    font-weight: 600;
+
 }
 .btnCloset:hover{
-    color:#4f0866;
+    color:#785964;
     border-bottom:0.2rem solid  #4f0866;
-    width: 6rem;
+    width: 12rem;
     text-shadow: 4px 4px 2px rgb(193, 193, 204);
 
   }
@@ -97,12 +103,14 @@ li, a {
     width: 8rem;
     height: 3rem;
     background-color: #B392AC;
-    margin-left: -13rem;
+    margin-left: -9rem;
     margin-top: 1rem;
-    border:0.2rem solid #4f0866;
+    border:0.2rem solid #785964;
     color:#F7F4EA;
     border-radius: 1rem;
     box-shadow: 4px 8px 10px rgba(0,0,0,.5);
+    font-weight: 600;
+
 
 }
 .btnLogin:hover{
@@ -116,12 +124,14 @@ li, a {
     height: 3rem;
     background-color: #B392AC;
     margin-left: -11rem;
-    border:0.2rem solid #4f0866;
+    border:0.2rem solid #785964;
     color:#F7F4EA;
     border-radius: 0.2rem;
     margin-top: 1rem;
     box-shadow: 4px 8px 10px rgba(0,0,0,.5);
- 
+    font-weight: 600;
+
+
 }
 .btnLogOut:hover{
     color:#785964;

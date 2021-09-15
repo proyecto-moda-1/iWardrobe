@@ -17,7 +17,10 @@ const CreateOutfit = props => {
 	const { show, handleClose } = props;
 	const [todayOutfit, setTodayOutfit] = useState(false);
 	const [name, setName] = useState("");
-	const notify = () => toast("Saved outfit!");
+	const notify = () =>
+		toast("Saved outfit! Let's go and get some more done ", {
+			position: "top-center"
+		});
 	const { store, actions } = useContext(Context);
 	const handleSubmit = id => {
 		const data = {
@@ -44,7 +47,7 @@ const CreateOutfit = props => {
 				<input
 					className="nameOutfit"
 					type="text"
-					placeholder="Enter outfit name"
+					placeholder="Outfit name"
 					value={name}
 					onChange={event => setName(event.target.value)}
 				/>{" "}
@@ -83,6 +86,6 @@ CreateOutfit.propTypes = {
 	handleClose: PropTypes.func,
 	name: PropTypes.string,
 	clothing: PropTypes.object,
-	id: PropTypes.int,
+	id: PropTypes.number,
 	today: PropTypes.bool
 };

@@ -10,19 +10,19 @@ export const Footer = () => (
 				<div className="col-md-6 mt-md-0 mt-3">
 					<br />
 
-					<h5 className="text-uppercase">iWardrobe</h5>
+					<h5 className="text-uppercase ">iWardrobe</h5>
 					<br />
 
-					<p>Welcome to iWardrobe 🦄 ! </p>
-					<p>We would like to introduce your a new way of organizing your clothes. </p>
+					<p>Welcome to iWardrobe! </p>
+					<p>We would like to introduce you a new way of organizing your clothes. </p>
 					<p>
-						From make the perfect outfit for the next MET Gala, to organise that summer vacations that you
+						From make the perfect outfit for the next MET Gala, to that summer vacation that you
 						deseperately need.
 					</p>
 					<p>Hope your have a lot of fun and enjoy this app as much as we did on the process of making it!</p>
 
 					<p>Lots of love!</p>
-					<p> iWardrobe Team</p>
+					<p> iWardrobe Team 🦄</p>
 				</div>
 
 				<div className="col-md-3 mb-md-0 mb-3">
@@ -49,7 +49,7 @@ export const Footer = () => (
 				<div className="col-md-3 mb-md-0 mb-3">
 					<br />
 
-					<h5 className="text-uppercase">HOW TO FIND US</h5>
+					<h5 className=" text-uppercase">HOW TO FIND US</h5>
 
 					<ul className="list-unstyled">
 						<li>
@@ -92,11 +92,11 @@ export const Footer = () => (
 			</div>
 		</div>
 
-		<div className="footer-copyright text-center py-3">
+		<div className="textFooter-copyright text-center py-3">
 			© 2021 Copyright:
 			<Link to="https://github.com/proyecto-moda-1/outfit-planner/tree/main" target="_blank">
 				{" "}
-				iWardrobe team
+				iWardrobe Team
 			</Link>
 		</div>
 	</footer>

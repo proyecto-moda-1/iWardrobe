@@ -106,6 +106,7 @@ class Outfit(db.Model):
      name = db.Column(db.String(120))
      favorite = db.Column(db.Boolean, unique=False, nullable=False,default=False) 
      today_outfit= db.Column(db.Boolean, unique=False, default=False)
+     deleted = db.Column(db.Boolean, unique=False, nullable=False, default=False)
 
     #RELACIONES
      clothing_items = db.relationship('Clothing', secondary= clothing_outfit , back_populates="outfits", lazy=True)
@@ -113,14 +114,14 @@ class Outfit(db.Model):
      
      @staticmethod
      def get_outfit_by_user_id(user_id):
-         return Outfit.query.filter_by(outfit_user_id=user_id, today_outfit=False).all()
+         return Outfit.query.filter_by(outfit_user_id=user_id, today_outfit=False, deleted=False).all()
      @staticmethod
      def get_today_outfit_by_user_id(user_id):
-         return Outfit.query.filter_by(outfit_user_id=user_id, today_outfit=True).all()
+         return Outfit.query.filter_by(outfit_user_id=user_id, today_outfit=True, deleted=False).all()
 
      @staticmethod
      def get_favorite_user_outfits(user_id):
-         return Outfit.query.filter_by(outfit_user_id=user_id, favorite = True).all()
+         return Outfit.query.filter_by(outfit_user_id=user_id, favorite = True, deleted=False).all()
 
      def create_outfit(self):
          db.session.add(self)
@@ -139,7 +140,8 @@ class Outfit(db.Model):
               "name": self.name,
               "clothing": serialize_clothing,
               "favorite": self.favorite,
-              "today_outfit": self.today_outfit
+              "today_outfit": self.today_outfit,
+              "deleted": self.deleted
              } 
 
 class Collection(db.Model):

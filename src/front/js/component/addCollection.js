@@ -13,7 +13,10 @@ const AddCollection = props => {
 	const { store, actions } = useContext(Context);
 	const { show, handleClose } = props;
 	const [name, setName] = useState("");
-	const notify = () => toast("Saved collection!");
+	const notify = () =>
+		toast.success("🦄 Saved collection!", {
+			position: "top-center"
+		});
 	const handleSubmit = () => {
 		const data = {
 			collection_user_id: 1,
@@ -40,7 +43,7 @@ const AddCollection = props => {
 					className="nameCollection"
 					type="text"
 					id="collectionName"
-					placeholder="Enter collection name"
+					placeholder="Collection name"
 					value={name}
 					onChange={event => setName(event.target.value)}
 				/>{" "}

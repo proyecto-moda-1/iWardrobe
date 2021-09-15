@@ -78,12 +78,6 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 					})
 					.catch(error => {});
 			},
-
-			logOut: () => {
-				localStorage.removeItem("token");
-				setStore({ token: null });
-			},
-
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
@@ -266,6 +260,22 @@ const getState = ({ getStore, getActions, setState, setStore }) => {
 				fetch(endpoint, config)
 					.then(response => response.json())
 					// .then(json => console.log(json))
+					.catch(err => console.error(err));
+			},
+			deleteOutfit: id => {
+				const store = getStore();
+				const endpoint = process.env.BACKEND_URL + "/api/outfit/" + id;
+				const config = {
+					method: "DELETE",
+					headers: {
+						"Content-Type": "application/json",
+						Authorization: `Bearer ${store.token}`
+					}
+				};
+				fetch(endpoint, config)
+					.then(response => {
+						getActions().getAllOutfit();
+					})
 					.catch(err => console.error(err));
 			},
 			createCollection: data => {

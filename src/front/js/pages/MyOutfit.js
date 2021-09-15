@@ -2,7 +2,6 @@ import React, { useContext, useState, useEffect } from "react";
 import CarouselClothing from "../component/CarouselClothing.js";
 import CreateOutfitBtn from "../component/createOutfitBtn";
 import AddCollection from "../component/addCollection.js";
-
 import LoadClothing from "../component/loadClothing.js";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -67,93 +66,106 @@ export const MyOutfit = props => {
 
 	return (
 		<>
-			<Container className="myOutfitContainer flex">
-				<div className="containerClothing">
-					<Col className="col-3">
-						<h3 className="tittlePage">Wardrobe</h3>
-						<Button className="btnLoad" onClick={handleShow}>
-							Add clothes
-						</Button>
-						<LoadClothing show={show} handleClose={handleClose} />
-						<Form.Control
-							size="sm"
-							as="select"
-							className="selectTop"
-							defaultValue={top}
-							onChange={event => {
-								setTop(event.target.value);
-								setselectedItems({
-									...selectedItems,
-									top: store.top.find(item => item.id == event.target.value)
-								});
-							}}>
-							<option value="0">Top</option>
-							{topItems}
-						</Form.Control>
-						<Form.Control
-							size="sm"
-							as="select"
-							className="selectBottom"
-							defaultValue={bottom}
-							onChange={event => {
-								setBottom(event.target.value);
-								setselectedItems({
-									...selectedItems,
-									bottom: store.bottom.find(item => item.id == event.target.value)
-								});
-							}}>
-							<option value="0">Bottom</option>
-							{bottomItems}
-						</Form.Control>
-						<Form.Control
-							size="sm"
-							as="select"
-							className="selectFootwear"
-							defaultValue={footwear}
-							placeholder="password"
-							onChange={event => {
-								setFootwear(event.target.value);
-								setselectedItems({
-									...selectedItems,
-									footwear: store.footwear.find(item => item.id == event.target.value)
-								});
-							}}>
-							<option value="0">Footwear</option>
-							{footwearItems}
-						</Form.Control>
-						<CreateOutfitBtn clothing={selectedItems} />
-						<Button className="btnAddCollection" onClick={handleShowCollection}>
-							Add new collection
-						</Button>
-						<AddCollection show={showCollection} handleClose={handleCloseCollection} />
-					</Col>
-				</div>
-				<Col className="carouselContainer col-4">
-					<CarouselClothing selectedItems={selectedItems} />
-				</Col>
+			<div className="bodyOutfit1">
+				<Container className="myOutfitContainer flex">
+					<div className="containerClothing">
+						<Col className="col-3">
+							<h1 className="tittlePage">
+								<b>Wardrobe</b>
+							</h1>
+							<Button className="btnLoad" onClick={handleShow}>
+								Add clothes
+							</Button>
+							<LoadClothing show={show} handleClose={handleClose} />
 
-				<Col className="containerInfoOutfit col-4">
-					<div className="infoOutfit">
-						<h2>Como crear tu Outfit?</h2>
-						<p>
-							1. Crea tu ropa en el botón <b>Add clothes</b>
-						</p>
-						<p>2. Juega con todas las piezas de ropa para que consigas la combinacion que te guste </p>
-						<p>
-							3. Crea tu outfit en el botón <b>Create your outfit</b>
-						</p>
-						<p>
-							4. Puedes crear colecciones que desees pulsando <b>Add new collection</b> asi puedes
-							clasificar mejor tus outfits, siendo mas facil luego conseguirlos.
-						</p>
+							<Form.Control
+								size="sm"
+								as="select"
+								className="selectTop"
+								defaultValue={top}
+								onChange={event => {
+									setTop(event.target.value);
+									setselectedItems({
+										...selectedItems,
+										top: store.top.find(item => item.id == event.target.value)
+									});
+								}}>
+								<option value="0">Top</option>
+								{topItems}
+							</Form.Control>
+							<Form.Control
+								size="sm"
+								as="select"
+								className="selectBottom"
+								defaultValue={bottom}
+								onChange={event => {
+									setBottom(event.target.value);
+									setselectedItems({
+										...selectedItems,
+										bottom: store.bottom.find(item => item.id == event.target.value)
+									});
+								}}>
+								<option value="0">Bottom</option>
+								{bottomItems}
+							</Form.Control>
+							<Form.Control
+								size="sm"
+								as="select"
+								className="selectFootwear"
+								defaultValue={footwear}
+								placeholder="password"
+								onChange={event => {
+									setFootwear(event.target.value);
+									setselectedItems({
+										...selectedItems,
+										footwear: store.footwear.find(item => item.id == event.target.value)
+									});
+								}}>
+								<option value="0">Footwear</option>
+								{footwearItems}
+							</Form.Control>
+							<Button className="btnAddCollection" onClick={handleShowCollection}>
+								Add new collection
+							</Button>
+							<AddCollection show={showCollection} handleClose={handleCloseCollection} />
+							<CreateOutfitBtn clothing={selectedItems} />
+						</Col>
 					</div>
-					<Link to="/closet">
-						<button className="btnClosetMyOutfit" href="#">
-							Wardrobe
-						</button>
-					</Link>
-				</Col>
-			</Container>
+					<Col className="carouselContainer col-4">
+						<CarouselClothing selectedItems={selectedItems} />
+					</Col>
+
+					<Col className="containerInfoOutfit col-4">
+						<div className="infoOutfit">
+							<h3>
+								<b>But, how do I create my first outfit?</b>
+							</h3>
+							<p>
+								1. Use our <b>Add clothes</b> button to upload all your items.
+							</p>
+							<p>2. Mix and match your tops and bottoms with your favorite boots to make it work! </p>
+							<p>
+								3. Click{" "}
+								<b
+									className="hovertext"
+									data-hover="For default your outfits will be shown in AVAILABLES, we suggest to create a couple of collections first and the start creating your outfits">
+									Create your outfit
+								</b>{" "}
+								and you will have your look ready!
+							</p>
+							<p>
+								4. Additionally, you can organize your looks in collections with{" "}
+								<b>Add new collection</b>
+							</p>
+						</div>
+						<Link to="/closet">
+							<button className="btnClosetMyOutfit" href="#">
+								Wardrobe
+							</button>
+						</Link>
+					</Col>
+				</Container>
+			</div>
 		</>
 	);
 };
