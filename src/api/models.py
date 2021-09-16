@@ -169,7 +169,8 @@ class Collection(db.Model):
         print(self.outfits)
 
         for outfit in self.outfits:
-            serialized_outfits.append(outfit.serialize())
+            if outfit.deleted == False:
+                serialized_outfits.append(outfit.serialize())
         return {
             "id": self.id,
             "user_id": self.collection_user_id,

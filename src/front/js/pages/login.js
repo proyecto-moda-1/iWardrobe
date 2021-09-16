@@ -53,7 +53,7 @@ export const Login = function(props) {
 					</div>
 					<div className="goToRegister">
 						<Link to="/register">
-							<a href="#">Crear cuenta nueva</a>
+							<a href="#">New here? Create an Account</a>
 						</Link>
 					</div>
 					<div className="groupLogin">
