@@ -26,7 +26,6 @@ export default ClothingCard;
 
 ClothingCard.propTypes = {
 	id: PropTypes.number,
-	// name: PropTypes.string,
 	image: PropTypes.string,
 	dirty: PropTypes.bool
 };
